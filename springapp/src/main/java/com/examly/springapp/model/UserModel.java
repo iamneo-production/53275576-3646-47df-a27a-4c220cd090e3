@@ -7,9 +7,8 @@ import java.util.Objects;
 @Table(name="users")
 public class UserModel {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
+    @Id
     @Column(name = "email")
     private String email;
 
