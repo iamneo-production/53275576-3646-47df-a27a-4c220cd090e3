@@ -25,6 +25,9 @@ public class InstituteModel {
     @Column(name = "mobileNumber")
     private String mobileNo;
 
+    @Column(name="email")
+    private String email;
+
     InstituteModel(){}
 
     public InstituteModel(int instituteId, String instituteName, String instituteDescription, String instituteAddress, String mobileNo, String email) {
@@ -88,7 +91,6 @@ public class InstituteModel {
         this.email = email;
     }
 
-    private String email;
 
 
 
