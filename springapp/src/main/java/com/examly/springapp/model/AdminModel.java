@@ -9,6 +9,7 @@ public class AdminModel {
 
     AdminModel(){}
 
+    @Id
     @Column(name = "email")
     private String email;
 

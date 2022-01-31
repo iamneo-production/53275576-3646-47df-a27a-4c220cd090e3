@@ -11,6 +11,7 @@ import java.util.Objects;
 public class InstituteModel {
 
     @Id
+    @Column(name="instituteId")
     private int instituteId;
 
     @Column(name = "instituteName")
