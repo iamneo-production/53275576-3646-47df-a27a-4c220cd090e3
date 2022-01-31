@@ -4,11 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
+import javax.persistence.Id;
+
+import java.util.Objects;
 
 @Entity
 @Table(name = "student")
 public class StudentModel {
 
+    @Id
     @Column(name = "studentId")
     private int studentId;
 
@@ -27,7 +31,10 @@ public class StudentModel {
     @Column(name = "std")
     private int std;
 
-    StudentModel(){}
+    StudentModel(){
+
+        
+    }
 
     public int getStudentId() {
         return studentId;
