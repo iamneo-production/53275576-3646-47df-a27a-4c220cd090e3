@@ -17,7 +17,7 @@ public class UserService {
     public List<UserModel> getAllUsers(){
         List<UserModel> users = new ArrayList<>();
         userRepository.findAll().forEach(users::add );
-        return  users;
+        return users;
     }
 
     public boolean addUser(UserModel user){
@@ -32,7 +32,7 @@ public class UserService {
             UserModel dataUser = userRepository.findById(user.getEmail()).get();
             String username = dataUser.getEmail();
             String password = dataUser.getPassword();
-            return username.equals(user.getEmail()) && password.equals(user.getPassword())
+            return username.equals(user.getEmail()) && password.equals(user.getPassword());
         }
         return false;
     }
