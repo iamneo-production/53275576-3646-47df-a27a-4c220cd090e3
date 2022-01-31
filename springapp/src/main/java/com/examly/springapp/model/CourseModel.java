@@ -1,5 +1,6 @@
 package com.examly.springapp.model;
-
+import javax.persistence.*;
+import java.util.Objects;
 @Entity
 @Table(name="course")
 public class CourseModel {
