@@ -1,4 +1,4 @@
-package com.examly.springapp.repository;
+package repository;
 
 import com.examly.springapp.model.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
