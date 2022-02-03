@@ -1,4 +1,4 @@
-package com.examly.springapp.repository;
+package repository;
 
 import com.examly.springapp.model.CourseModel;
 
