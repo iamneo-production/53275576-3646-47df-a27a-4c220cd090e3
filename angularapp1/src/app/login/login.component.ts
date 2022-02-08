@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  loginfunc() {
+    console.log("login successful");
+    // this.router.navigate{["/institute"]};
   }
 
 }
