@@ -1,1 +1,79 @@
-<p>signup works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>School Admission</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Rubik:400,700"
+  />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="./signup.component.css" />
+
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <div class="icon">
+          <h2 class="logo">School Admission</h2>
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li>
+              <button (click)="homepage()" id="redirectHome">HOME</button>
+            </li>
+            <li>
+              <button (click)="loginpage()" id="redirectLogin">LOGIN</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="registerbox">
+        <h1>Register</h1>
+        <form>
+          <div id="select">
+            <select id="adminoruser">
+              <option value="" disabled selected>Enter Admin/User</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+          </div>
+          <div id="email">
+            <input type="email" placeholder="Enter Mail ID" required />
+          </div>
+
+          <div id="username">
+            <input type="text" placeholder="Username" required />
+          </div>
+
+          <div id="mobileNumber">
+            <input type="number" placeholder="Enter Mobile Number" required />
+          </div>
+
+          <div id="password">
+            <input type="password" placeholder="Enter Password" required />
+          </div>
+
+          <div id="confirmPassword">
+            <input type="password" placeholder="Confirm Password" required />
+          </div>
+
+          <div id="submitButton">
+            <button (click)="loginpage()" type="Submit" id="submit">
+              submit
+            </button>
+          </div>
+
+          <span id="already">
+            Already a user? <a href="#" id="signinLink">Login</a></span
+          >
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

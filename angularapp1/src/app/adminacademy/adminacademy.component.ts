@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adminacademy',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminacademyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
+  viewAcademy(){
+    console.log("Button Click");
 
+  }
+  viewCourse(){
+    console.log("Button Click");
+  }
+  viewStudents(){
+    console.log("Button Click");
+  }
+  logout(){
+    this.router.navigate(["/homepage"]);
+
+
+  }
+  addAcademy(){
+    console.log("Button Click");
+
+  }
 }
