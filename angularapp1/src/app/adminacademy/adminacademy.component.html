@@ -1,1 +1,53 @@
-<p>adminacademy works!</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<div id="academyHeader">
+    <h2>School Admission</h2>
+    <ul id="academyList">
+        <li id="adminAcademy">
+            <button (click)="viewAcademy()" id="adminAcademy">Academy</button>
+        </li>
+        <li id="adminCourse">
+            <button (click)="viewCourse()" id="adminCourse">Course</button>
+        </li>
+        <li id="adminStudents">
+            <button (click)="viewStudents()" id="adminStudents">Students</button>
+        </li>
+        
+
+         
+    </ul>
+    <div>
+
+    <button (click)="logout()" id="logout">Logout</button></div>
+</div>
+<div id="academyBackground">
+    
+    <h5>Add Academy</h5><br>
+    <div id="academyLeft">
+    <div  id="academyName" >
+        <input type="text" class="form-control" placeholder="Enter Academy name"><br>
+    </div><br><br>
+    <div  id="imageUrl" >
+        <input type="text" class="form-control" placeholder="Enter the academy Image url"><br>
+    </div><br><br>
+    <div  id="academyLocation" >
+        <input type="text" class="form-control" placeholder="Enter Academy Location"><br>
+    </div><br><br>
+    
+    </div>
+    <div id="academyCenter">
+        <div id="contactNumber" >
+            <input type="text " class="form-control"  placeholder="Enter the contact number"><br>
+        </div><br><br>
+        <div  id="emailId" >
+            <input type="text" class="form-control" placeholder="Enter the academy email"><br>
+        </div><br><br>
+        <div  id="academyDescription" >
+            <input type="text" class="form-control"  placeholder="Enter Academy description"><br><br>
+        </div><br><br>
+    </div>
+    <div id="academyRight">
+        <button (click)="addAcademy()" class="btn btn-success" id="addAcademy">Add Academy</button>
+
+    </div>
+
+</div>
