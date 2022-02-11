@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { User } from '../user';
+import { UserService } from '../user.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -7,8 +9,9 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   
+  user: User = new User();
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private userService: UserService) { }
   loginpage(){
     console.log("Button Click");
     this.router.navigate(["/login"]);
@@ -19,5 +22,12 @@ export class SignupComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-
+  saveUser(){
+    this.userService.createUser(this.user).subscribe(data=>{
+      console.log(data)
+    }, error=>console.error());
+  }
+  onSubmit(){
+    this.saveUser();
+  }
 }
