@@ -7,7 +7,7 @@ public class CourseModel {
 
     @Id
     @Column(name="courseid")
-    private int courseId;
+    private Integer courseId;
 
 
     CourseModel(){

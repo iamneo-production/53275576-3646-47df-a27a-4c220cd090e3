@@ -12,7 +12,7 @@ public class InstituteModel {
 
     @Id
     @Column(name="instituteId")
-    private int instituteId;
+    private Integer instituteId;
 
     @Column(name = "instituteName")
     private String instituteName;
