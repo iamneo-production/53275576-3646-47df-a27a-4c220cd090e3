@@ -27,7 +27,9 @@ export class SignupComponent implements OnInit {
       console.log(data)
     }, error=>console.error());
   }
-  onSubmit(){
-    this.saveUser();
-  }
+    onSubmit(){
+      this.saveUser();
+      console.log(this.user)
+      console.log("working")
+    }
 }

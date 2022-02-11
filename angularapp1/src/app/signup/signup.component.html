@@ -37,7 +37,7 @@
         <h1>Register</h1>
         <form (ngSubmit)="onSubmit()">
           <div id="select"
-          [(ngModel)] = "user.userRole">
+          [(ngModel)] = "user.userRole" name = "userRole">
             <select id="adminoruser">
               <option value="" disabled selected>Enter Admin/User</option>
               <option value="admin">Admin</option>
@@ -46,22 +46,22 @@
           </div>
           <div id="email">
             <input type="email" placeholder="Enter Mail ID" required
-            [(ngModel)] = "user.email" />
+            [(ngModel)] = "user.email" name = "email" />
           </div>
 
           <div id="username">
             <input type="text" placeholder="Username" required
-            [(ngModel)] = "user.username" />
+            [(ngModel)] = "user.username" name = "username" />
           </div>
 
           <div id="mobileNumber">
             <input type="number" placeholder="Enter Mobile Number" required 
-            [(ngModel)] = "user.mobileNumber"/>
+            [(ngModel)] = "user.mobileNumber" name = "mobileNumber" />
           </div>
 
           <div id="password">
             <input type="password" placeholder="Enter Password" required 
-            [(ngModel)] = "user.password" />
+            [(ngModel)] = "user.password" name="password" />
           </div>
 
           <div id="confirmPassword">
@@ -69,14 +69,13 @@
           </div>
 
           <div id="submitButton">
-            <button (click)="loginpage()" type="Submit" id="submit">
+            <button  type="submit" (click)="onSubmit()" id="submit">
               submit
             </button>
           </div>
 
           <span id="already">
-            Already a user? <a href="#" id="signinLink">Login</a></span
-          >
+            Already a user? <a href="#" id="signinLink">Login</a></span>
         </form>
       </div>
     </div>
