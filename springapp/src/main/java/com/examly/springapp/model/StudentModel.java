@@ -14,7 +14,7 @@ public class StudentModel {
 
     @Id
     @Column(name = "studentId")
-    private int studentId;
+    private Integer studentId;
 
     @Column(name = "studentName")
     private String studentName;
