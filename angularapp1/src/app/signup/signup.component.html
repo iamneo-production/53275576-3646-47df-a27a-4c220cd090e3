@@ -36,14 +36,21 @@
       <div id="registerbox">
         <h1>Register</h1>
         <form (ngSubmit)="onSubmit()">
-          <div id="select"
-          [(ngModel)] = "user.userRole" name = "userRole">
-            <select id="adminoruser">
+          <!-- <div id="select">
+            <select id="adminoruser" [(ngModel)] = "user.userRole" name = "userRole">
               <option value="" disabled selected>Enter Admin/User</option>
               <option value="admin">Admin</option>
               <option value="user">User</option>
             </select>
-          </div>
+          </div> -->
+          <label>
+            <input type="radio" [(ngModel)]="user.userRole" name="userRole" value="admin">
+            Admin
+          </label> <br/><label>
+            <input type="radio" [(ngModel)]="user.userRole" name="userRole" value="User">
+            User
+          </label><br/>
+
           <div id="email">
             <input type="email" placeholder="Enter Mail ID" required
             [(ngModel)] = "user.email" name = "email" />
