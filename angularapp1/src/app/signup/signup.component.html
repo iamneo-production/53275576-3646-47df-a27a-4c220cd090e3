@@ -35,7 +35,7 @@
       </div>
       <div id="registerbox">
         <h1>Register</h1>
-        <form (ngSubmit)="onSubmit()">
+        <form [formGroup]="form" #ngForm="ngForm" (ngSubmit)="onSubmit($event)">
           <!-- <div id="select">
             <select id="adminoruser" [(ngModel)] = "user.userRole" name = "userRole">
               <option value="" disabled selected>Enter Admin/User</option>
@@ -46,19 +46,25 @@
           <label>
             <input type="radio" [(ngModel)]="user.userRole" name="userRole" value="admin">
             Admin
-          </label> <br/><label>
+          </label> <label>
             <input type="radio" [(ngModel)]="user.userRole" name="userRole" value="User">
             User
           </label><br/>
 
           <div id="email">
-            <input type="email" placeholder="Enter Mail ID" required
-            [(ngModel)] = "user.email" name = "email" />
+            <input type="email" placeholder="Enter Mail ID" required pattern="[A-Za-z0-9]{8,20}" name = "email"
+            [(ngModel)] = "user.email"  name = "email" />
           </div>
 
           <div id="username">
             <input type="text" placeholder="Username" required
             [(ngModel)] = "user.username" name = "username" />
+            <!-- <span
+              *ngIf="username.invalid && (form.submitted || username.dirty || password.touched)"
+            >
+            <span *ngIf="password.hasError('yup_required')"
+              >Firstname is required</span>
+            </span> -->
           </div>
 
           <div id="mobileNumber">
@@ -67,16 +73,23 @@
           </div>
 
           <div id="password">
-            <input type="password" placeholder="Enter Password" required 
+            <input type="password" formControlName="password" placeholder="Enter Password" required 
             [(ngModel)] = "user.password" name="password" />
-          </div>
+            <!-- <span
+              *ngIf="password.invalid && (form.submitted || password.dirty || password.touched)"
+            >
+            <span *ngIf="password.hasError('yup_required')"
+              >Firstname is required</span>
+            </span> -->
+
+          </div>            
 
           <div id="confirmPassword">
             <input type="password" placeholder="Confirm Password" required />
           </div>
 
           <div id="submitButton">
-            <button  type="submit" (click)="onSubmit()" id="submit">
+            <button  type="submit" id="submit">
               submit
             </button>
           </div>

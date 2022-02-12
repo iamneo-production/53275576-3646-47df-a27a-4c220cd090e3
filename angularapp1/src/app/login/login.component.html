@@ -46,7 +46,7 @@
             </div>
 
             <div class="cred">
-              <input type="password" placeholder="Password"
+              <input type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
               [(ngModel)] = "login.password" name="password" />
             </div>
           </div>
