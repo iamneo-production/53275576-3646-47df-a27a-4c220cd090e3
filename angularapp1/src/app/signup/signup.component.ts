@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../user';
-import { FormControl, FormGroup } from "@angular/forms";
 import { UserService } from '../user.service';
-import { RegisterFormSchema } from "./form-schema";
-import { createYupValidator } from "./validator";
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -14,22 +10,6 @@ import { createYupValidator } from "./validator";
 export class SignupComponent implements OnInit {
   
   user: User = new User();
-  form = new FormGroup(
-    {
-      mobileNumber: new FormControl(),
-      userName: new FormControl(),
-      email: new FormControl(),
-      password: new FormControl(),
-      confirmPassword: new FormControl()
-
-    },
-    {
-      asyncValidators: createYupValidator({
-        schema: RegisterFormSchema
-        // context: () => this.data
-      })
-    }
-  );
 
   constructor(private router:Router, private userService: UserService) { }
   loginpage(){
@@ -47,7 +27,7 @@ export class SignupComponent implements OnInit {
       console.log(data)
     }, error=>console.error());
   }
-    onSubmit(e){
+    onSubmit(){
       this.saveUser();
       console.log(this.user)
       console.log("working")
