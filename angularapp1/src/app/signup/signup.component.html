@@ -35,61 +35,47 @@
       </div>
       <div id="registerbox">
         <h1>Register</h1>
-        <form [formGroup]="form" #ngForm="ngForm" (ngSubmit)="onSubmit($event)">
-          <!-- <div id="select">
-            <select id="adminoruser" [(ngModel)] = "user.userRole" name = "userRole">
-              <option value="" disabled selected>Enter Admin/User</option>
-              <option value="admin">Admin</option>
-              <option value="user">User</option>
-            </select>
-          </div> -->
+        <form [formGroup]="signupform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)">
           <label>
             <input type="radio" [(ngModel)]="user.userRole" name="userRole" value="admin">
             Admin
-          </label> <label>
+          </label> <br/><label>
             <input type="radio" [(ngModel)]="user.userRole" name="userRole" value="User">
             User
           </label><br/>
 
           <div id="email">
-            <input type="email" placeholder="Enter Mail ID" required pattern="[A-Za-z0-9]{8,20}" name = "email"
+            <input formControlName="email" type="email" placeholder="Enter Mail ID" class="form-control" name = "email" 
             [(ngModel)] = "user.email"  name = "email" />
+            <small *ngIf="!signupform.get('email').valid && signupform.get('email').touched" class="text-danger">Invalid Email ID</small> 
           </div>
 
           <div id="username">
-            <input type="text" placeholder="Username" required
+            <input formControlName="username" type="text" class="form-control" placeholder="Username"
             [(ngModel)] = "user.username" name = "username" />
-            <!-- <span
-              *ngIf="username.invalid && (form.submitted || username.dirty || password.touched)"
-            >
-            <span *ngIf="password.hasError('yup_required')"
-              >Firstname is required</span>
-            </span> -->
+            <small *ngIf="!signupform.get('username').valid && signupform.get('username').touched" class="text-danger">Invalid Username</small> 
           </div>
 
           <div id="mobileNumber">
-            <input type="number" placeholder="Enter Mobile Number" required 
+            <input formControlName="mobileNumber" type="number" placeholder="Enter Mobile Number" class="form-control"
             [(ngModel)] = "user.mobileNumber" name = "mobileNumber" />
+            <small *ngIf="!signupform.get('mobileNumber').valid && signupform.get('mobileNumber').touched" class="text-danger">Invalid Mobile Number</small> 
           </div>
 
-          <div id="password">
-            <input type="password" formControlName="password" placeholder="Enter Password" required 
+          <div id="password" class="form-group">
+            <input formControlName="password" type="password" class="form-control" placeholder="Enter Password"
             [(ngModel)] = "user.password" name="password" />
-            <!-- <span
-              *ngIf="password.invalid && (form.submitted || password.dirty || password.touched)"
-            >
-            <span *ngIf="password.hasError('yup_required')"
-              >Firstname is required</span>
-            </span> -->
-
+            <small *ngIf="!signupform.get('password').valid && signupform.get('password').touched" class="text-danger">Invalid Password</small> 
+            
           </div>            
 
           <div id="confirmPassword">
-            <input type="password" placeholder="Confirm Password" required />
+            <input formControlName="confirmPassword" type="password" class="form-control" placeholder="Confirm Password"/>
+            <small *ngIf="!signupform.get('confirmPassword').valid && signupform.get('confirmPassword').touched" class="text-danger">Password doesn't match</small> 
           </div>
 
           <div id="submitButton">
-            <button  type="submit" id="submit">
+            <button  (click)="signupfunc()" type="submit" id="submit">
               submit
             </button>
           </div>

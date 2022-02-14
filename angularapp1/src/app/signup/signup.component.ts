@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../user';
-import { FormControl, FormGroup } from "@angular/forms";
+import { FormControl,FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from '../user.service';
-import { RegisterFormSchema } from "./form-schema";
-import { createYupValidator } from "./validator";
+import { SignupPayload } from './signup.payload';
 
 @Component({
   selector: 'app-signup',
@@ -14,24 +13,19 @@ import { createYupValidator } from "./validator";
 export class SignupComponent implements OnInit {
   
   user: User = new User();
-  form = new FormGroup(
-    {
-      mobileNumber: new FormControl(),
-      userName: new FormControl(),
-      email: new FormControl(),
-      password: new FormControl(),
-      confirmPassword: new FormControl()
+  signupform: FormGroup;
+  signuppayload:SignupPayload;
+  
+  constructor(private formBuilder : FormBuilder , private router:Router, private userService: UserService) { 
+    this.signuppayload={
+      username:'',
+      email:'',
+      mobileNumber:'',
+      password:'',
+      confirmPassword:''
+    } 
+  }
 
-    },
-    {
-      asyncValidators: createYupValidator({
-        schema: RegisterFormSchema
-        // context: () => this.data
-      })
-    }
-  );
-
-  constructor(private router:Router, private userService: UserService) { }
   loginpage(){
     console.log("Button Click");
     this.router.navigate(["/login"]);
@@ -41,6 +35,18 @@ export class SignupComponent implements OnInit {
     this.router.navigate(["/homepage"]);
   }
   ngOnInit(): void {
+    this.signupform = new FormGroup({
+      username : new FormControl('', [Validators.required,Validators.minLength(6)]),
+      email : new FormControl('', [Validators.required, Validators.email]),
+      mobileNumber : new FormControl('',
+        [
+          Validators.required,
+          // Validators.pattern('^\\s*(?:\\+?(\\d{1,3}))?[-. (](\\d{3})[-. )](\\d{3})[-. ](\\d{4})(?: *x(\\d+))?\\s$')
+          Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')
+        ]),
+      password : new FormControl('', [Validators.required, Validators.minLength(8),Validators.maxLength(16)]),
+      confirmPassword : new FormControl('', [Validators.required, Validators.minLength(8),Validators.maxLength(16)])
+    });
   }
   saveUser(){
     this.userService.createUser(this.user).subscribe(data=>{
@@ -48,6 +54,15 @@ export class SignupComponent implements OnInit {
     }, error=>console.error());
   }
     onSubmit(e){
+      this.signuppayload.email = this.signupform.get('email').value;
+      this.signuppayload.username = this.signupform.get('username').value;
+      this.signuppayload.mobileNumber = this.signupform.get('mobileNumber').value;
+      this.signuppayload.password = this.signupform.get('password').value;
+      this.signuppayload.confirmPassword = this.signupform.get('confirmPassword').value;
+      // this.router.navigate(['/login']);
+     
+    }
+    signupfunc(){
       this.saveUser();
       console.log(this.user)
       console.log("working")

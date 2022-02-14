@@ -36,18 +36,20 @@
         </div>
       </div>
       <div class="login1">
-        <form>
+        <form [formGroup]="loginform">
           <h1>Login</h1>
 
           <div class="content">
             <div class="cred">
-              <input type="email" placeholder="Email ID"
+              <input formControlName="email" type="email" placeholder="Email ID" class="form-control"
               [(ngModel)]="login.email" name = "email" />
+              <small *ngIf="!loginform.get('email').valid && loginform.get('email').touched" class="text-danger">Invalid Email ID</small> 
             </div>
 
             <div class="cred">
-              <input type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              <input formControlName="password" type="password" placeholder="Password" class="form-control"
               [(ngModel)] = "login.password" name="password" />
+              <small *ngIf="!loginform.get('password').valid && loginform.get('password').touched" class="text-danger">Invalid Password</small> 
             </div>
           </div>
 

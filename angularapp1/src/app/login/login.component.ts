@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Login } from '../login';
 import { LoginService } from '../login.service';
+import {LoginPayload} from './login.payload';
+import { FormGroup,FormControl,Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,9 +12,15 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent implements OnInit {
   login: Login = new Login();
+  loginform: FormGroup;
+  loginpayload: LoginPayload;
   constructor(private router: Router, private loginService:LoginService) { }
 
   ngOnInit(): void {
+    this.loginform = new FormGroup({
+      email : new FormControl('', [Validators.required, Validators.email]),
+      password : new FormControl('', [Validators.required, Validators.minLength(8),Validators.maxLength(16)]),
+    });
     this.saveLogin();
   }
   saveLogin(){
@@ -26,6 +35,8 @@ export class LoginComponent implements OnInit {
     this.router.navigate(["/homepage"]);
   }
   loginfunc() {
+    this.loginpayload.email = this.loginform.get('email').value;
+    this.loginpayload.email = this.loginform.get('password').value;
     this.saveLogin();
 
     console.log("login successful");
