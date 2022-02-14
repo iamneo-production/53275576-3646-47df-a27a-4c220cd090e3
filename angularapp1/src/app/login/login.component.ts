@@ -4,7 +4,7 @@ import { Login } from '../login';
 import { LoginService } from '../login.service';
 import {LoginPayload} from './login.payload';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
