@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../user';
+
 import { FormControl,FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { UserService } from '../user.service';
 import { SignupPayload } from './signup.payload';
+
 
 @Component({
   selector: 'app-signup',
@@ -25,7 +27,6 @@ export class SignupComponent implements OnInit {
       confirmPassword:''
     } 
   }
-
   loginpage(){
     console.log("Button Click");
     this.router.navigate(["/login"]);

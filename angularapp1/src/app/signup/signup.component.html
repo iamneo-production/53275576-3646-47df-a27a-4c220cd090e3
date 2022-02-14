@@ -35,7 +35,7 @@
       </div>
       <div id="registerbox">
         <h1>Register</h1>
-        <form [formGroup]="signupform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)">
+        <form [formGroup]="signupform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)">        
           <label>
             <input type="radio" [(ngModel)]="user.userRole" name="userRole" value="admin">
             Admin
