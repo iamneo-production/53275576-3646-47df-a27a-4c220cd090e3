@@ -13,7 +13,14 @@ import { AdminacademyComponent } from './adminacademy/adminacademy.component';
 import { AdmincourseComponent } from './admincourse/admincourse.component';
 import { AdminstudentComponent } from './adminstudent/adminstudent.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { DisplayuserComponent } from './displayuser/displayuser.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatTableDataSource,MatTableModule} from '@angular/material/table';
+const MATERIAL_MODULES = [
+  MatFormFieldModule,
+  ];
 
 @NgModule({
   declarations: [
@@ -26,15 +33,20 @@ import { HttpClientModule } from '@angular/common/http'
     AdminacademyComponent,
     AdmincourseComponent,
     AdminstudentComponent,
-    HomepageComponent
+    HomepageComponent,
+    DisplayuserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatTableModule,
   ],
+  exports: MATERIAL_MODULES,
   providers: [],
   bootstrap: [AppComponent]
 })
