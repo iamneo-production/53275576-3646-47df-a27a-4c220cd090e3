@@ -37,16 +37,17 @@ export class SignupComponent implements OnInit {
   }
   ngOnInit(): void {
     this.signupform = new FormGroup({
-      username : new FormControl('', [Validators.required,Validators.minLength(6)]),
-      email : new FormControl('', [Validators.required, Validators.email]),
+      username : new FormControl('', [Validators.required,Validators.minLength(6),Validators.pattern('^[a-z0-9_-]{8,15}$')]),
+      email : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
       mobileNumber : new FormControl('',
         [
           Validators.required,
-          // Validators.pattern('^\\s*(?:\\+?(\\d{1,3}))?[-. (](\\d{3})[-. )](\\d{3})[-. ](\\d{4})(?: *x(\\d+))?\\s$')
           Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')
         ]),
-      password : new FormControl('', [Validators.required, Validators.minLength(8),Validators.maxLength(16)]),
-      confirmPassword : new FormControl('', [Validators.required, Validators.minLength(8),Validators.maxLength(16)])
+        password : new FormControl('', [Validators.required, Validators.minLength(8),Validators.maxLength(16),
+          Validators.pattern('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$')]),
+        confirmPassword : new FormControl('', [Validators.required, Validators.minLength(8),Validators.maxLength(16),
+          Validators.pattern('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$')])
     });
   }
   saveUser(){
