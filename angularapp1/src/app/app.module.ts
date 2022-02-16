@@ -18,6 +18,9 @@ import { DisplayuserComponent } from './displayuser/displayuser.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatTableDataSource,MatTableModule} from '@angular/material/table';
+import { UpdateacademyComponent } from './updateacademy/updateacademy.component';
+import { InstituteComponent } from './institute/institute.component';
+import { AddacademyComponent } from './addacademy/addacademy.component';
 const MATERIAL_MODULES = [
   MatFormFieldModule,
   ];
@@ -34,7 +37,10 @@ const MATERIAL_MODULES = [
     AdmincourseComponent,
     AdminstudentComponent,
     HomepageComponent,
-    DisplayuserComponent
+    DisplayuserComponent,
+    UpdateacademyComponent,
+    InstituteComponent,
+    AddacademyComponent
   ],
   imports: [
     BrowserModule,
