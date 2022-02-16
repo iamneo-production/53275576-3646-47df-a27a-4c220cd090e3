@@ -1,0 +1,27 @@
+<nav class="navbar" style="background-color:green; border-bottom: 1em solid white;">
+    <div class="container-fluid">
+        <h1 style="color:aliceblue;">School Admission</h1>
+        <h4 style="color:aliceblue;">Academy</h4>
+        <h4 style="color:aliceblue;">Course</h4>
+        <h4 style="color:aliceblue;">Students</h4>
+        <h4 style="color:aliceblue;" routerLink="/login">Logout</h4>
+    </div>
+</nav>
+<div style="background-color: gray; height: 100vh;">
+<h5 style="padding-top: 1em; text-align: center; color: white;" >Edit Academy</h5>
+<form action="" id="editaddAcademy" style="margin-top: 4em; ">
+  <div style="margin-bottom: 6em; margin-left: 2em;">
+  <input type="text" id="editacademyName" placeholder="Enter the Academy Name" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
+  <input type="text" id="editcontactNumber" placeholder="Enter the contact number" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
+  </div>
+  <div style="margin-bottom: 6em; margin-left: 2em;">
+  <input type="text" id="editimageUrl" placeholder="Enter the academy Image url" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em">
+  <input type="text" id="editemailId" placeholder="Enter the academy email" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
+  </div>
+  <div style="margin-left: 2em;">
+  <input type="text" id="editacademyLocation" placeholder="Enter Academy Location" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em">
+  <textarea rows="4" cols="30" form="addAcademy" id="editacademyDescription" placeholder="Enter Academy description" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"></textarea>
+  <input type="button" id="updateAcademy" value="Update Academy" style="border-radius: 12px; background-color: forestgreen; padding: 0.5em; color: white;" routerLink="/institute">
+  </div>
+</form>
+</div>

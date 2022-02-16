@@ -1,0 +1,20 @@
+
+.college{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.input-group{
+    flex-direction: row;
+
+}
+.checked{
+    color:orange;
+}
+.button{
+    text-align: end;
+    
+}
+input{
+    width:85%;  
+}
