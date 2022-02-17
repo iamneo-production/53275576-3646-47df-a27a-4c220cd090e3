@@ -9,6 +9,9 @@ import { DisplayuserComponent } from './displayuser/displayuser.component';
 import { InstituteComponent } from './institute/institute.component';
 import { AddacademyComponent } from './addacademy/addacademy.component';
 import { UpdateacademyComponent } from './updateacademy/updateacademy.component';
+import { AddcourseComponent } from './addcourse/addcourse.component';
+import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
+import { CourseComponent } from './course/course.component';
 const routes: Routes = [
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'adminacademy',component:AdminacademyComponent},
@@ -19,7 +22,10 @@ const routes: Routes = [
   {path:'displayuser',component:DisplayuserComponent},
   {path:'institute' ,component:InstituteComponent},
   {path:'addacademy' ,component:AddacademyComponent},
-  {path:'updateacademy' ,component:UpdateacademyComponent}
+  {path:'updateacademy' ,component:UpdateacademyComponent},
+  {path:'addcourse' ,component:AddcourseComponent},
+  {path:'updatecourse',component:UpdatecourseComponent},
+  {path:'course',component:CourseComponent}
 ];
 
 @NgModule({

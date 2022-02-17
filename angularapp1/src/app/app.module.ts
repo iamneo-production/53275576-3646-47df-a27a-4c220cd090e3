@@ -21,6 +21,9 @@ import {MatTableDataSource,MatTableModule} from '@angular/material/table';
 import { UpdateacademyComponent } from './updateacademy/updateacademy.component';
 import { InstituteComponent } from './institute/institute.component';
 import { AddacademyComponent } from './addacademy/addacademy.component';
+import { AddcourseComponent } from './addcourse/addcourse.component';
+import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
+import { CourseComponent } from './course/course.component';
 const MATERIAL_MODULES = [
   MatFormFieldModule,
   ];
@@ -40,7 +43,10 @@ const MATERIAL_MODULES = [
     DisplayuserComponent,
     UpdateacademyComponent,
     InstituteComponent,
-    AddacademyComponent
+    AddacademyComponent,
+    AddcourseComponent,
+    UpdatecourseComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
