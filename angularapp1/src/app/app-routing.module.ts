@@ -14,6 +14,7 @@ import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { CourseComponent } from './course/course.component';
 import { AddstudentComponent } from './addstudent/addstudent.component';
 import { UpdatestudentComponent } from './updatestudent/updatestudent.component';
+import { StudentComponent } from './student/student.component';
 const routes: Routes = [
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'adminacademy',component:AdminacademyComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'updatecourse',component:UpdatecourseComponent},
   {path:'course',component:CourseComponent},
   {path:'addstudent',component:AddstudentComponent},
-  {path:'updatestudent',component:UpdatestudentComponent}
+  {path:'updatestudent',component:UpdatestudentComponent},
+  {path:'student',component:StudentComponent}
 ];
 
 @NgModule({

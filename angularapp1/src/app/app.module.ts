@@ -26,6 +26,7 @@ import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { CourseComponent } from './course/course.component';
 import { AddstudentComponent } from './addstudent/addstudent.component';
 import { UpdatestudentComponent } from './updatestudent/updatestudent.component';
+import { StudentComponent } from './student/student.component';
 const MATERIAL_MODULES = [
   MatFormFieldModule,
   ];
@@ -50,7 +51,8 @@ const MATERIAL_MODULES = [
     UpdatecourseComponent,
     CourseComponent,
     AddstudentComponent,
-    UpdatestudentComponent
+    UpdatestudentComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,
