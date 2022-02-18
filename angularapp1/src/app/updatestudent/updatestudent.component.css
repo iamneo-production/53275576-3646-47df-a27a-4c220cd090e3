@@ -1,0 +1,15 @@
+.row {
+    float: left;
+  }
+
+.column1
+{
+    width: 50em;
+}
+
+.column2
+{
+   width: 72em;
+   background-color: lightgray;
+   padding-right: 20em;
+}

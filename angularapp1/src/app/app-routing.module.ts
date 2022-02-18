@@ -13,6 +13,7 @@ import { AddcourseComponent } from './addcourse/addcourse.component';
 import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { CourseComponent } from './course/course.component';
 import { AddstudentComponent } from './addstudent/addstudent.component';
+import { UpdatestudentComponent } from './updatestudent/updatestudent.component';
 const routes: Routes = [
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'adminacademy',component:AdminacademyComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:'addcourse' ,component:AddcourseComponent},
   {path:'updatecourse',component:UpdatecourseComponent},
   {path:'course',component:CourseComponent},
-  {path:'addstudent',component:AddstudentComponent}
+  {path:'addstudent',component:AddstudentComponent},
+  {path:'updatestudent',component:UpdatestudentComponent}
 ];
 
 @NgModule({
