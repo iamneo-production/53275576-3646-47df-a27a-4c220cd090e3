@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <nav class="navbar" style="background-color:green; border-bottom: 1em solid white;">
     <div class="container-fluid">
         <h1 style="color:aliceblue;">School Admission</h1>
@@ -8,31 +9,54 @@
     </div>
 </nav>
 <div style="background-color: gray; height: 100vh;">
+    
     <h5 style="padding-top: 1em; text-align: center; color: white;" >Add Student</h5>
     <form action="" id="addCourse" style="margin-top: 4em; ">
-      <div style="margin-bottom: 6em; margin-left: 2em;">
+      <div style="margin-bottom: 6em; margin-left: 3em;">
       <input type="text" id="firstName" placeholder="enter your first name" style="margin-right: 30em; background-color: white; padding: 1em; width: 20em;">
       <input type="text" id="lastName" placeholder="enter your last name" style="margin-right: 30em; background-color: white; padding: 1em; width: 20em">
       <input type="text" id="malefemale" placeholder="enter male or female" style="margin-right: 8em; background-color: white; padding: 1em; width: 20em">
       </div>
-      <div style="margin-bottom: 8em; margin-left: 2em;">
+      <div style="margin-bottom: 8em; margin-left: 3em;">
       <input type="text" id="fatherName" placeholder="enter your father name" style="margin-right: 30em; background-color: white; padding: 1em; width: 20em">
       <input type="text" id="phoneNumber1" placeholder="enter phone number" style="margin-right: 30em; background-color: white; padding: 1em; width: 20em">
       <input type="text" id="phoneNumber2" placeholder="enter alternate number" style="margin-right: 8em; background-color: white; padding: 1em; width: 20em">
       </div>
-      <div style="margin-bottom: 8em; margin-left: 2em;">
-      <input type="text" id="motherName" placeholder="enter your mother name" style="margin-right: 30em; background-color: white; padding: 1em; width: 20em">
-      <input type="text" id="houseNo" style="margin-right: 30em; background-color: white; padding: 1em; width: 30em">
-      </div>
-      <div style="margin-bottom: 8em; margin-left: 2em;">
-      <input type="text" id="emailId" placeholder="enter email Id" style="margin-right: 30em; background-color: white; padding: 1em; width: 20em">
-      <input type="text" id="streetName" style="margin-right: 30em; background-color: white; padding: 1em; width: 30em">
-      </div>
-      <div style="margin-bottom: 8em; margin-left: 2em;">
-      <input type="text" id="age" placeholder="enter your age" style="margin-right: 30em; background-color: white; padding: 1em; width: 20em;">
-      <input type="text" id="state" style="margin-right: 30em; background-color: white; padding: 1em; width: 30em">
-      
-      </div>
+      <div class="row" style="margin-bottom: 8em; margin-left: 2em;">
+        <div class="column1">
+            <input type="text" id="motherName" placeholder="enter your mother name" style="margin-right: 30em; background-color: white; padding: 1em; width: 20em; margin-bottom: 6em;">
+            <input type="text" id="emailId" placeholder="enter email Id" style="margin-right: 30em; background-color: white; padding: 1em; width: 20em; margin-bottom: 6em;">
+            <input type="text" id="age" placeholder="enter your age" style="background-color: white; padding: 1em; width: 20em;">
+        </div>
+        <div class="column2">
+            <p style="margin-top: 1em;"> Address Information </p>
+            <div style="padding : 1em">
+            <label for="houseNo">House No :</label>
+            <input type="text" id="houseNo" style="background-color: white; padding: 0.5em; width: 20em; margin-left: 2em;"><br>
+            </div>
+            <div style="padding : 1em">
+            <label for="streetName">Street Name :</label>
+            <input type="text" id="streetName" style="background-color: white; padding: 0.5em; width: 20em; margin-left: 2em;"><br>
+            </div>
+            <div style="padding : 1em">
+            <label for="areaName">Area Name :</label>
+            <input type="text" id="areaName" style="background-color: white; padding: 0.5em; margin-right: 8em; width: 15em; margin-left: 2em;">
+            <label for="pincode">Pincode :</label>
+            <input type="text" id="pincode" style="background-color: white; padding: 0.5em; margin-left: 2em;"><br>
+            </div>
+            <div style="padding : 1em">
+            <label for="state">State :</label>
+            <input type="text" id="state" style="background-color: white; padding: 0.5em; margin-right: 8em; margin-left: 2em;">
+            <label for="nationality">Nationality :</label>
+            <input type="text" id="nationality" style="background-color: white; padding: 0.5em; margin-left: 2em;">
+            </div>
+
+        </div>
+    </div>
     </form>
+    
     </div>
     
+    
+        
+            
