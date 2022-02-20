@@ -29,7 +29,9 @@ public class InstituteModel {
     @Column(name="email")
     private String email;
 
-    InstituteModel(){}
+    InstituteModel(){
+        
+    }
 
     public InstituteModel(int instituteId, String instituteName, String instituteDescription, String instituteAddress, String mobileNo, String email) {
         this.instituteId = instituteId;

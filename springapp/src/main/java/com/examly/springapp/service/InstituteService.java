@@ -15,18 +15,18 @@ public class InstituteService {
     @Autowired
     private InstituteRepository instituteRepository;
 
-    public List<InstituteModel> getAllInstitutes(){
-        List<InstituteModel> institutes = new ArrayList<>();
-        InstituteRepository.findAll().forEach(institutes::add );
-        return institutes;
-    }
+    // public List<InstituteModel> getAllInstitutes(){
+    //     List<InstituteModel> institutes = new ArrayList<>();
+    //     InstituteRepository.findAll().forEach(institutes::add );
+    //     return institutes;
+    // }
 
-    public boolean addInstitute(InstituteModel institute){
-        if(InstituteRepository.findById(institute.getInstituteId()).isEmpty()){
-            InstituteRepository.save(institute);
-            return true;
-        }
-        return false;
-    }
+    // public boolean addInstitute(InstituteModel institute){
+    //     if(InstituteRepository.findById(institute.getInstituteId()).isEmpty()){
+    //         InstituteRepository.save(institute);
+    //         return true;
+    //     }
+    //     return false;
+    // }
 
 }
