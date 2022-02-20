@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { ViewacademyComponent } from './viewacademy/viewacademy.component';
 import { EnrolledcourseComponent } from './enrolledcourse/enrolledcourse.component';
 import { AdminacademyComponent } from './adminacademy/adminacademy.component';
-import { AdmincourseComponent } from './admincourse/admincourse.component';
+
 import { AdminstudentComponent } from './adminstudent/adminstudent.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -40,7 +40,6 @@ const MATERIAL_MODULES = [
     ViewacademyComponent,
     EnrolledcourseComponent,
     AdminacademyComponent,
-    AdmincourseComponent,
     AdminstudentComponent,
     HomepageComponent,
     DisplayuserComponent,
