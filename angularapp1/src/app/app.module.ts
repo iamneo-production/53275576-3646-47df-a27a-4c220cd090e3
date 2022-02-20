@@ -10,7 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { ViewacademyComponent } from './viewacademy/viewacademy.component';
 import { EnrolledcourseComponent } from './enrolledcourse/enrolledcourse.component';
 import { AdminacademyComponent } from './adminacademy/adminacademy.component';
-import { AdmincourseComponent } from './admincourse/admincourse.component';
+
 import { AdminstudentComponent } from './adminstudent/adminstudent.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +25,8 @@ import { AddcourseComponent } from './addcourse/addcourse.component';
 import { UpdatecourseComponent } from './updatecourse/updatecourse.component';
 import { CourseComponent } from './course/course.component';
 import { AddstudentComponent } from './addstudent/addstudent.component';
+import { UpdatestudentComponent } from './updatestudent/updatestudent.component';
+import { StudentComponent } from './student/student.component';
 const MATERIAL_MODULES = [
   MatFormFieldModule,
   ];
@@ -38,7 +40,6 @@ const MATERIAL_MODULES = [
     ViewacademyComponent,
     EnrolledcourseComponent,
     AdminacademyComponent,
-    AdmincourseComponent,
     AdminstudentComponent,
     HomepageComponent,
     DisplayuserComponent,
@@ -48,7 +49,9 @@ const MATERIAL_MODULES = [
     AddcourseComponent,
     UpdatecourseComponent,
     CourseComponent,
-    AddstudentComponent
+    AddstudentComponent,
+    UpdatestudentComponent,
+    StudentComponent
   ],
   imports: [
     BrowserModule,
