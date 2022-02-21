@@ -11,17 +11,19 @@
 <h5 style="padding-top: 1em; text-align: center; color: white;" >Add Academy</h5>
 <form action="" id="addAcademy" style="margin-top: 4em; ">
   <div style="margin-bottom: 6em; margin-left: 2em;">
-  <input type="text" id="academyName" placeholder="Enter the Academy Name" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
-  <input type="text" id="contactNumber" placeholder="Enter the contact number" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
+    <input type="text" id="instituteId" [(ngModel)]="institute.instituteId" name="instituteId" placeholder="Enter the Academy ID" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
+
+  <input type="text" id="instituteName" [(ngModel)]="institute.instituteName" name="instituteName" placeholder="Enter the Academy Name" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
+  <input type="text" id="mobileNumber" [(ngModel)]="institute.mobileNumber" name="mobileNumber" placeholder="Enter the contact number" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
   </div>
   <div style="margin-bottom: 6em; margin-left: 2em;">
   <input type="text" id="imageUrl" placeholder="Enter the academy Image url" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em">
-  <input type="text" id="emailId" placeholder="Enter the academy email" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
+  <input type="text" id="emailId" [(ngModel)]="institute.email" name="email" placeholder="Enter the academy email" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
   </div>
   <div style="margin-left: 2em;">
-  <input type="text" id="academyLocation" placeholder="Enter Academy Location" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
-  <textarea rows="4" cols="30" form="addAcademy" id="academyDescription" placeholder="Enter Academy description" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 25em; margin-left: 40em;"></textarea>
-  <input type="button"  id="addAcademy" value="Add Academy" style="border-radius: 12px; background-color: forestgreen; padding: 0.5em; color: white;"   routerLink="/institute">
+  <input type="text" id="academyLocation" [(ngModel)]="institute.instituteAddress" name="instituteAddress" placeholder="Enter Academy Location" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
+  <textarea rows="4" cols="30" form="addAcademy" [(ngModel)]="institute.instituteDescription" name="instituteDescription" id="academyDescription" placeholder="Enter Academy description" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 25em; margin-left: 40em;"></textarea>
+  <input type="submit" (click)="addinstitute()" id="addAcademy" value="Add Academy" style="border-radius: 12px; background-color: forestgreen; padding: 0.5em; color: white;"   routerLink="/institute">
   </div>
 </form>
 </div>
