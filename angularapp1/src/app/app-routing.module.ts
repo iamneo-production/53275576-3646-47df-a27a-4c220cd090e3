@@ -25,7 +25,7 @@ const routes: Routes = [
   {path:'displayuser',component:DisplayuserComponent},
   {path:'institute' ,component:InstituteComponent},
   {path:'addacademy' ,component:AddacademyComponent},
-  {path:'updateacademy' ,component:UpdateacademyComponent},
+  {path:'updateacademy/:id' ,component:UpdateacademyComponent},
   {path:'addcourse' ,component:AddcourseComponent},
   {path:'updatecourse',component:UpdatecourseComponent},
   {path:'course',component:CourseComponent},
