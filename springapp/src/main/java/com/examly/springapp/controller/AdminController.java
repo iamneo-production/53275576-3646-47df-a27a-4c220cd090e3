@@ -7,6 +7,9 @@ import com.examly.springapp.service.InstituteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.examly.springapp.repository.CourseRepository;
+import com.examly.springapp.repository.StudentRepository;
+import com.examly.springapp.model.StudentModel;
+
 // import org.springframework.web.bind.annotation.DeletedMapping;
 
 import org.apache.catalina.User;
@@ -31,7 +34,12 @@ public class AdminController {
     // private InstituteService instituteService;
 
     @Autowired
+    private CourseRepository courseRepository;
+
+    @Autowired
     private InstituteRepository instituteRepository;
+
+    
 
     // @GetMapping("/institutes")
     // public List<InstituteModel> getAllInstitute(){ return instituteService.getAllInstitutes(); }
@@ -78,11 +86,15 @@ public class AdminController {
       // @Autowired
     // private CourseService courseService;
 
-    @Autowired
-    private CourseRepository courseRepository;
+    
 
     // @GetMapping("/courses")
     // public List<CourseModel> getAllCourse(){ return courseService.getAllCourses(); }
+
+    @GetMapping("/allcourse")
+    public List<CourseModel> getCourse(){
+        return courseRepository.findAll();
+    }
 
     @GetMapping("/course")
     public List<CourseModel> getAllCourse(){
@@ -108,10 +120,10 @@ public class AdminController {
 
         course.setCourseName(courseDetails.getCourseName());
         course.setCourseDescription(courseDetails.getCourseDescription());
-        course.setCourseAddress(courseDetails.getCourseDescription());
-        course.setCourseAddress(courseDetails.getCoureAddress());
+        course.setCourseDuration(courseDetails.getCourseDuration());
+        //course.setCourseAddress(courseDetails.getCoureAddress());
 
-        CourseModel updateInstitute = courseRepository.save(course);
+        CourseModel updateCourse = courseRepository.save(course);
         return ResponseEntity.ok(updateCourse);
     }
 
@@ -123,5 +135,7 @@ public class AdminController {
         response.put("Deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
+
+    
 }
 
