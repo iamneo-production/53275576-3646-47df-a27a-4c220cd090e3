@@ -6,7 +6,7 @@ import java.util.Objects;
 public class CourseModel {
 
     @Id
-    @Column(name="courseid")
+    @Column(name="courseId")
     private Integer courseId;
 
 
@@ -19,13 +19,13 @@ public class CourseModel {
         this.courseDuration = courseDuration;
     }
 
-    @Column(name="coursename")
+    @Column(name="courseName")
     private String courseName;
 
-    @Column(name="coursedescription")
+    @Column(name="courseDescription")
     private String courseDescription;
 
-    @Column(name="courseduration")
+    @Column(name="courseDuration")
     private int courseDuration;
 
 

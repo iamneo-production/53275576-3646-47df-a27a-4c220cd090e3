@@ -48,6 +48,10 @@ public class AdminController {
     public List<InstituteModel> getAllInstitute(){
         return instituteRepository.findAll();
     }
+    @GetMapping("/allinstitute")
+    public List<InstituteModel> getInstitute(){
+        return instituteRepository.findAll();
+    }
 
     @PostMapping("/addinstitute")
     public InstituteModel createInstitute(@RequestBody InstituteModel institute){
