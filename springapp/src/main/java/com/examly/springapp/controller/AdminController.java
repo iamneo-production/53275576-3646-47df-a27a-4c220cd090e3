@@ -1,12 +1,10 @@
 package com.examly.springapp.controller;
 import com.examly.springapp.exception.ResourceNotFound;
-import com.examly.springapp.model.CourseModel;
-import com.examly.springapp.service.CourseService;
+
 import com.examly.springapp.model.InstituteModel;
 import com.examly.springapp.service.InstituteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import com.examly.springapp.repository.CourseRepository;
 // import org.springframework.web.bind.annotation.DeletedMapping;
 
 import org.apache.catalina.User;
@@ -20,6 +18,8 @@ import java.util.Map;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.Map;
+
+
 
 
 @CrossOrigin(origins = "*")
@@ -71,54 +71,6 @@ public class AdminController {
     public ResponseEntity<Map<String, Boolean>> deleteInstitute(@PathVariable Integer id){
         InstituteModel institute = instituteRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Employee not exists with id : "+id));
         instituteRepository.delete(institute);
-        Map<String, Boolean> response = new HashMap<>();
-        response.put("Deleted", Boolean.TRUE);
-        return ResponseEntity.ok(response);
-    }
-      // @Autowired
-    // private CourseService courseService;
-
-    @Autowired
-    private CourseRepository courseRepository;
-
-    // @GetMapping("/courses")
-    // public List<CourseModel> getAllCourse(){ return courseService.getAllCourses(); }
-
-    @GetMapping("/course")
-    public List<CourseModel> getAllCourse(){
-        return courseRepository.findAll();
-    }
-
-    @PostMapping("/addcourse")
-    public CourseModel createCourse(@RequestBody CourseModel course){
-        return courseRepository.save(course);
-    }
-
-    @GetMapping("/course/{id}")
-    public ResponseEntity<CourseModel> getCourseById(@PathVariable Integer id){
-        CourseModel course = courseRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Course not exixts with this ID : "+id));
-
-        return ResponseEntity.ok(course);
-        
-    }
-
-    @PutMapping("/course/{id}")
-    public ResponseEntity<CourseModel> updateCourse(@PathVariable Integer id, @RequestBody CourseModel courseDetails){
-        CourseModel course = courseRepository.findById(id).orElseThrow(()-> new ResourceNotFound("course not found with id :"+id));
-
-        course.setCourseName(courseDetails.getCourseName());
-        course.setCourseDescription(courseDetails.getCourseDescription());
-        course.setCourseAddress(courseDetails.getCourseDescription());
-        course.setCourseAddress(courseDetails.getCoureAddress());
-
-        CourseModel updateInstitute = courseRepository.save(course);
-        return ResponseEntity.ok(updateCourse);
-    }
-
-    @DeleteMapping("/course/{id}")
-    public ResponseEntity<Map<String, Boolean>> deleteCourse(@PathVariable Integer id){
-        CourseModel course = courseRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Employee not exists with id : "+id));
-        courseRepository.delete(course);
         Map<String, Boolean> response = new HashMap<>();
         response.put("Deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
