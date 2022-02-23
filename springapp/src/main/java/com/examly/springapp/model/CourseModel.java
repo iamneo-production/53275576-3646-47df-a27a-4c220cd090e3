@@ -12,15 +12,19 @@ public class CourseModel {
 
     CourseModel(){
     }
-    public CourseModel(int courseId, String courseName, String courseDescription, int courseDuration) {
-        this.courseId = courseId;
+    public CourseModel( String courseName, int courseEnrolled, String courseDescription, int courseDuration, int courseTiming) {
         this.courseName = courseName;
+        this.courseEnrolled = courseEnrolled;
         this.courseDescription = courseDescription;
         this.courseDuration = courseDuration;
+        this.courseTiming = courseTiming;
     }
 
     @Column(name="coursename")
     private String courseName;
+
+    @Column(name="courseenrolled")
+    private int courseEnrolled;
 
     @Column(name="coursedescription")
     private String courseDescription;
@@ -28,21 +32,24 @@ public class CourseModel {
     @Column(name="courseduration")
     private int courseDuration;
 
+    @Column(name="coursetiming")
+    private int courseTiming;
 
-    public int getCourseId() {
-        return courseId;
-    }
 
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
-    }
-
-    public String getCourseName() {
+    public int getCourseName() {
         return courseName;
     }
 
-    public void setCourseName(String courseName) {
+    public void setCourseName(int courseName) {
         this.courseName = courseName;
+    }
+
+    public String getCourseEnrolled() {
+        return courseEnrolled;
+    }
+
+    public void setCourseEnrolled(String courseEnrolled) {
+        this.courseEnrolled = courseEnrolled;
     }
 
     public String getCourseDescription() {
@@ -59,6 +66,13 @@ public class CourseModel {
 
     public void setCourseDuration(int courseDuration) {
         this.courseDuration = courseDuration;
+    }
+
+    public int getCourseTiming(){
+        return courseTiming;
+    }
+    public void setCourseTiming(int courseTiming) {
+        this.courseTiming = courseTiming;
     }
 
 
