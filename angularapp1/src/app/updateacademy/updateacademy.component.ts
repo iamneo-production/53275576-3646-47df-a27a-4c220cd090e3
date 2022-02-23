@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { Institute } from '../service/institute';
 import { InstituteService } from '../service/institute.service';
 
@@ -12,9 +12,7 @@ export class UpdateacademyComponent implements OnInit {
   id:number;
   institute: Institute = new Institute();
 
-  constructor(private instituteService: InstituteService,
-    private route: ActivatedRoute,
-    private router:Router) { }
+  constructor(private instituteService: InstituteService,private route: ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -22,7 +20,22 @@ export class UpdateacademyComponent implements OnInit {
       this.institute = data;
     }, error => console.log(error));
   }
-  update(){
+  viewAcademy(){
+    console.log("Button Click");
+
+  }
+  viewCourse(){
+    console.log("Button Click");
+  }
+  viewStudents(){
+    console.log("Button Click");
+  }
+  logout(){
+    this.router.navigate(["/homepage"]);
+
+
+  }
+  updateAcademy(){
     this.instituteService.updateInstitute(this.id, this.institute).subscribe(data =>{
       this.goToInstitute();
     },

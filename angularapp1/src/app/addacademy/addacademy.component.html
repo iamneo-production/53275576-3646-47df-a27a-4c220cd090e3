@@ -1,29 +1,73 @@
-<nav class="navbar" style="background-color:green; border-bottom: 1em solid white;">
-    <div class="container-fluid">
-        <h1 style="color:aliceblue;">School Admission</h1>
-        <h4 style="color:aliceblue;">Academy</h4>
-        <h4 style="color:aliceblue;">Course</h4>
-        <h4 style="color:aliceblue;">Students</h4>
-        <h4 style="color:aliceblue;" routerLink="/login">Logout</h4>
-    </div>
-</nav>
-<div style="background-color: gray; height: 100vh;">
-<h5 style="padding-top: 1em; text-align: center; color: white;" >Add Academy</h5>
-<form action="" id="addAcademy" style="margin-top: 4em; ">
-  <div style="margin-bottom: 6em; margin-left: 2em;">
-    <input type="text" id="instituteId" [(ngModel)]="institute.instituteId" name="instituteId" placeholder="Enter the Academy ID" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
+<div id="academyHeader">
+  <h2>School Admission</h2>
+  <ul id="academyList">
+      <li id="adminAcademy">
+          <button (click)="viewAcademy()" id="adminAcademy">Academy</button>
+      </li>
+      <li id="adminCourse">
+          <button (click)="viewCourse()" id="adminCourse">Course</button>
+      </li>
+      <li id="adminStudents">
+          <button (click)="viewStudents()" id="adminStudents">Students</button>
+      </li>
+      
 
-  <input type="text" id="instituteName" [(ngModel)]="institute.instituteName" name="instituteName" placeholder="Enter the Academy Name" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
-  <input type="text" id="mobileNumber" [(ngModel)]="institute.mobileNumber" name="mobileNumber" placeholder="Enter the contact number" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
+       
+  </ul>
+  <div>
+
+  <button (click)="logout()" id="logout">Logout</button></div>
+</div>
+<div id="academyBackground">
+    <form [formGroup]="addAcademyform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)">        
+
+  <h5>Add Academy</h5><br>
+  <div id="academyLeft">
+  <div  id="academyName" >
+      <input formControlName="academyName" type="text" class="form-control" placeholder="Enter Academy name"
+      [(ngModel)]="institute.instituteId" name="instituteId"><br>
+      <small *ngIf="!addAcademyform.get('academyName').valid && addAcademyform.get('academyName').touched" class="text-danger">Invalid Academy Name</small> 
+
+  </div><br><br>
+  <div  id="imageUrl" >
+      <input type="text" class="form-control" placeholder="Enter the academy Image url"
+      ><br>
+  </div><br><br>
+  <div  id="academyLocation" >
+      <input formControlName="academyLocation" type="text" class="form-control" placeholder="Enter Academy Location"
+      [(ngModel)]="institute.instituteAddress" name="instituteAddress"><br>
+      <small *ngIf="!addAcademyform.get('academyLocation').valid && addAcademyform.get('academyLocation').touched" class="text-danger">
+          Invalid Academy Loacation</small> 
+
+  </div><br><br>
+  
   </div>
-  <div style="margin-bottom: 6em; margin-left: 2em;">
-  <input type="text" id="imageUrl" placeholder="Enter the academy Image url" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em">
-  <input type="text" id="emailId" [(ngModel)]="institute.email" name="email" placeholder="Enter the academy email" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
+  <div id="academyCenter">
+      <div id="contactNumber" >
+          <input formControlName="contactNumber" type="number" class="form-control"  placeholder="Enter the contact number"
+          [(ngModel)]="institute.mobileNumber" name="mobileNumber"><br>
+            <small *ngIf="!addAcademyform.get('contactNumber').valid && addAcademyform.get('contactNumber').touched  "class="text-danger">
+                Invalid Mobile Number
+            </small>
+      </div><br><br>
+      <div  id="emailId" >
+          <input  formControlName="emailId" type="email" class="form-control" placeholder="Enter the academy email"
+          [(ngModel)]="institute.email" name="email" ><br>
+          <small *ngIf="!addAcademyform.get('emailId').valid && addAcademyform.get('emailId'),touched" class="text-danger">
+              Invalid Email Id
+          </small>
+
+      </div><br><br>
+      <div  id="academyDescription" >
+          <input type="text" class="form-control"  placeholder="Enter Academy description"
+          [(ngModel)]="institute.instituteDescription" name="instituteDescription"><br><br>
+
+      </div><br><br>
   </div>
-  <div style="margin-left: 2em;">
-  <input type="text" id="academyLocation" [(ngModel)]="institute.instituteAddress" name="instituteAddress" placeholder="Enter Academy Location" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
-  <textarea rows="4" cols="30" form="addAcademy" [(ngModel)]="institute.instituteDescription" name="instituteDescription" id="academyDescription" placeholder="Enter Academy description" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 25em; margin-left: 40em;"></textarea>
-  <input type="submit" (click)="addinstitute()" id="addAcademy" value="Add Academy" style="border-radius: 12px; background-color: forestgreen; padding: 0.5em; color: white;"   routerLink="/institute">
+  <div id="academyRight">
+      <button (click)="addAcademy()" class="btn btn-success" id="addAcademy">Add Academy</button>
+
   </div>
 </form>
+
 </div>
