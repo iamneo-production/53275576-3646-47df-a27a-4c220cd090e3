@@ -1,29 +1,57 @@
-<nav class="navbar" style="background-color:green; border-bottom: 1em solid white;">
-  <div class="container-fluid">
-      <h1 style="color:aliceblue;">School Admission</h1>
-      <h4 style="color:aliceblue;">Academy</h4>
-      <h4 style="color:aliceblue;">Course</h4>
-      <h4 style="color:aliceblue;">Students</h4>
-      <h4 style="color:aliceblue;" routerLink="/login">Logout</h4>
-  </div>
-</nav>
-<div style="background-color: gray; height: 100vh;">
-<h5 style="padding-top: 1em; text-align: center; color: white;" >Add Academy</h5>
-<form action="" id="addAcademy" style="margin-top: 4em; ">
-<div style="margin-bottom: 6em; margin-left: 2em;">
-  <input type="text" id="instituteId" [(ngModel)]="institute.instituteId" name="instituteId" placeholder="Enter the Academy ID" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
+<div id="academyHeader">
+  <h2>School Admission</h2>
+  <ul id="academyList">
+      <li id="adminAcademy">
+          <button (click)="viewAcademy()" id="adminAcademy">Academy</button>
+      </li>
+      <li id="adminCourse">
+          <button (click)="viewCourse()" id="adminCourse">Course</button>
+      </li>
+      <li id="adminStudents">
+          <button (click)="viewStudents()" id="adminStudents">Students</button>
+      </li>
+      
 
-<input type="text" id="instituteName" [(ngModel)]="institute.instituteName" name="instituteName" placeholder="Enter the Academy Name" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
-<input type="text" id="mobileNumber" [(ngModel)]="institute.mobileNumber" name="mobileNumber" placeholder="Enter the contact number" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
+       
+  </ul>
+  <div>
+
+  <button (click)="logout()" id="logout">Logout</button></div>
 </div>
-<div style="margin-bottom: 6em; margin-left: 2em;">
-<input type="text" id="imageUrl" placeholder="Enter the academy Image url" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em">
-<input type="text" id="emailId" [(ngModel)]="institute.email" name="email" placeholder="Enter the academy email" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
-</div>
-<div style="margin-left: 2em;">
-<input type="text" id="academyLocation" [(ngModel)]="institute.instituteAddress" name="instituteAddress" placeholder="Enter Academy Location" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
-<textarea rows="4" cols="30" form="addAcademy" [(ngModel)]="institute.instituteDescription" name="instituteDescription" id="academyDescription" placeholder="Enter Academy description" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 25em; margin-left: 40em;"></textarea>
-<input type="submit" (click)="update()" id="addAcademy" value="update academy" style="border-radius: 12px; background-color: forestgreen; padding: 0.5em; color: white;"   routerLink="/institute">
-</div>
-</form>
+<div id="academyBackground">
+  
+  <h5>Edit Academy</h5><br>
+  <div id="academyLeft">
+  <div  id="editAcademyName" >
+      <input type="text" class="form-control" placeholder="Enter Academy name" 
+      id="instituteId" [(ngModel)]="institute.instituteId" name="instituteId"  ><br>
+  </div><br><br>
+  <div  id="editimageUrl" >
+      <input type="text" class="form-control" placeholder="Enter the academy Image url"><br>
+  </div><br><br>
+  <div  id="editAcademyLocation" >
+      <input type="text" class="form-control" placeholder="Enter Academy Location" 
+      [(ngModel)]="institute.instituteAddress" name="instituteAddress"><br>
+  </div><br><br>
+  
+  </div>
+  <div id="academyCenter">
+      <div id="editContactNumber" >
+          <input type="text " class="form-control"  placeholder="Enter the contact number"
+          [(ngModel)]="institute.mobileNumber" name="mobileNumber"><br>
+      </div><br><br>
+      <div  id="editEmailId" >
+          <input type="text" class="form-control" placeholder="Enter the academy email"
+          [(ngModel)]="institute.email" name="email" ><br>
+      </div><br><br>
+      <div  id="editAcademyDescription" >
+          <input type="text" class="form-control"  placeholder="Enter Academy description"
+          [(ngModel)]="institute.instituteDescription" name="instituteDescription"><br><br>
+      </div><br><br>
+  </div>
+  <div id="academyRight">
+      <button (click)="updateAcademy()" class="btn btn-success" id="updateAcademy">Update Academy</button>
+
+  </div>
+
 </div>

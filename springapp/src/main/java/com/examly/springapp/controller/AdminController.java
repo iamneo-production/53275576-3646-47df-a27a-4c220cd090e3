@@ -1,7 +1,6 @@
 package com.examly.springapp.controller;
 import com.examly.springapp.exception.ResourceNotFound;
-import com.examly.springapp.model.CourseModel;
-import com.examly.springapp.service.CourseService;
+
 import com.examly.springapp.model.InstituteModel;
 import com.examly.springapp.service.InstituteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.examly.springapp.repository.CourseRepository;
 import com.examly.springapp.repository.StudentRepository;
 import com.examly.springapp.model.StudentModel;
+
 
 // import org.springframework.web.bind.annotation.DeletedMapping;
 
@@ -23,6 +23,8 @@ import java.util.Map;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.Map;
+
+
 
 
 @CrossOrigin(origins = "*")
@@ -141,5 +143,6 @@ public class AdminController {
     }
 
     
+
 }
 
