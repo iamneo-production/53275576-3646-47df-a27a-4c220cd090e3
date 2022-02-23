@@ -11,16 +11,16 @@
 <h5 style="padding-top: 1em; text-align: center; color: white;" >Add Course</h5>
 <form action="" id="addCourse" style="margin-top: 4em; ">
   <div style="margin-bottom: 6em; margin-left: 2em;">
-  <input type="text" id="courseName" placeholder="Enter the course Name" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
-  <input type="text" id="courseEnrolled" placeholder="Enter no of student enrolled for the course" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
+  <input type="text" id="courseName" [(ngModel)]="course.courseName" placeholder="Enter the course Name" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
+  <input type="text" id="courseEnrolled" [(ngModel)]="course.courseEnrolled" placeholder="Enter no of student enrolled for the course" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
   </div>
   <div style="margin-bottom: 6em; margin-left: 2em;">
-  <input type="text" id="courseDuration" placeholder="Enter the course Duration" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em">
+  <input type="text" id="courseDuration" [(ngModel)]="course.courseDuration" placeholder="Enter the course Duration" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em">
   </div>
   <div style="margin-left: 2em;">
-  <input type="text" id="courseTiming" placeholder="Enter the course Timing" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
-  <textarea rows="4" cols="30" form="addAcademy" id="courseDescription" placeholder="Enter Academy description" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 25em; margin-left: 40em;"></textarea>
-  <input type="button"  id="addCourse" value="Add Course" style="border-radius: 12px; background-color: forestgreen; padding: 0.5em; color: white;"   routerLink="/institute">
+  <input type="text" id="courseTiming"  [(ngModel)]="course.courseTiming"  placeholder="Enter the course Timing" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
+  <textarea rows="4" cols="30" form="addAcademy" id="courseDescription"  [(ngModel)]="course.courseDescription" placeholder="Enter Academy description" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 25em; margin-left: 40em;"></textarea>
+  <input type="button" (click)="addcourse()"  id="addCourse" value="Add Course" style="border-radius: 12px; background-color: forestgreen; padding: 0.5em; color: white;"   routerLink="/course">
   </div>
 </form>
 </div>
