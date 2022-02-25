@@ -32,7 +32,7 @@ export class AdminacademyComponent implements OnInit {
           Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')
         ]),
       emailId : new FormControl('', [Validators.required,Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,30}$')]),
-      academyDescription : new FormControl('', [Validators.required,Validators.minLength(2),Validators.pattern('^[A-Za-z0-9_-/*]{2,100}$')])
+      academyDescription : new FormControl('', [Validators.required,Validators.minLength(2),Validators.pattern('^[A-Za-z0-9]{2,100}$')])
     });
   }
   viewAcademy(){

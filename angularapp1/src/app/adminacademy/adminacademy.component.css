@@ -1,5 +1,5 @@
 #academyBackground{
-    background:url(https://i.ibb.co/y8MS7C8/photo-1579546929518-9e396f3cc809.jpg);
+    background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -10,8 +10,6 @@
     width: 100%;
     height:50px;
     background-color: rgb(239, 245, 239);
-    
-
 }
 h2{
     margin-left: 20px;

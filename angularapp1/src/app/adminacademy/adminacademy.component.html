@@ -10,12 +10,8 @@
         <li id="adminStudents">
             <button (click)="viewStudents()" id="adminStudents">Students</button>
         </li>
-        
-
-         
     </ul>
     <div>
-
     <button (click)="logout()" id="logout">Logout</button></div>
 </div>
 <form [formGroup]="adminacademyform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)"> 
@@ -24,29 +20,29 @@
     <div id="academyLeft">
     <div  id="academyName" >
         <input formControlName="academyName" type="text" class="form-control" placeholder="Enter Academy name"><br>
-        <small *ngIf="!adminacademyform.get('academyName').valid && adminacademyform.get('academyName').touched" class="text-danger">Academy name is Required</small>
+        <span *ngIf="!adminacademyform.get('academyName').valid && adminacademyform.get('academyName').touched" class="text-danger">* Invalid Academy name</span>
     </div><br><br>
     <div  id="imageUrl" >
         <input formControlName="imageUrl" type="text" class="form-control" placeholder="Enter the academy Image url"><br>
-        <small *ngIf="!adminacademyform.get('imageUrl').valid && adminacademyform.get('imageUrl').touched" class="text-danger">Academy image Url is required</small>
+        <span *ngIf="!adminacademyform.get('imageUrl').valid && adminacademyform.get('imageUrl').touched" class="text-danger">* Invalid Academy image Url</span>
     </div><br><br>
     <div  id="academyLocation" >
         <input formControlName="academyLocation" type="text" class="form-control" placeholder="Enter Academy Location"><br>
-        <small *ngIf="!adminacademyform.get('academyLocation').valid && adminacademyform.get('academyLocation').touched" class="text-danger">Academy Location is Required</small>
+        <span *ngIf="!adminacademyform.get('academyLocation').valid && adminacademyform.get('academyLocation').touched" class="text-danger">* Invalid Academy Location</span>
     </div><br><br>
     </div>
     <div id="academyCenter">
         <div id="contactNumber" >
             <input formControlName="contactNumber" type="text " class="form-control"  placeholder="Enter the contact number"><br>
-            <small *ngIf="!adminacademyform.get('contactNumber').valid && adminacademyform.get('contactNumber').touched" class="text-danger">Contact Number is Required</small>
+            <span *ngIf="!adminacademyform.get('contactNumber').valid && adminacademyform.get('contactNumber').touched" class="text-danger">* Invalid Contact Number</span>
         </div><br><br>
         <div  id="emailId" >
             <input formControlName="emailId" type="text" class="form-control" placeholder="Enter the academy email"><br>
-            <small *ngIf="!adminacademyform.get('emailId').valid && adminacademyform.get('emailId').touched" class="text-danger">Academy email ID is Required</small>
+            <span *ngIf="!adminacademyform.get('emailId').valid && adminacademyform.get('emailId').touched" class="text-danger">* Invalid Academy email ID</span>
         </div><br><br>
         <div  id="academyDescription" >
             <input formControlName="academyDescription" type="text" class="form-control"  placeholder="Enter Academy description"><br><br>
-            <small *ngIf="!adminacademyform.get('academyDescription').valid && adminacademyform.get('academyDescription').touched" class="text-danger">Academy Description is Required</small>
+            <span *ngIf="!adminacademyform.get('academyDescription').valid && adminacademyform.get('academyDescription').touched" class="text-danger">* Invalid Academy Description</span>
         </div><br><br>
     </div>
     <div id="academyRight">
