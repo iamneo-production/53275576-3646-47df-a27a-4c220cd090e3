@@ -3,3 +3,11 @@
     font-weight: 600;
     text-align: center;
 }
+input{
+    width:330px;
+    height:54px;
+}
+select{
+    width:100px;
+    height:54px;
+}
