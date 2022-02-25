@@ -19,11 +19,11 @@
             <input formControlName="courseId" type="text" class="form-control" placeholder="Enter the Course ID"
               [(ngModel)]="course.courseId" name="courseId"><br><br>
             <small *ngIf="!addcourseform.get('courseId').valid && addcourseform.get('courseId').touched"
-              class="text-white">* Course Name is required</small>
+              class="text-white">* Invalid Course Name</small>
             <input formControlName="courseName" type="text" class="form-control" placeholder="Enter the Course name"
               [(ngModel)]="course.courseName" name="courseName"><br><br>
             <small *ngIf="!addcourseform.get('courseName').valid && addcourseform.get('courseName').touched"
-              class="text-white">* Course Name is required</small>
+              class="text-white">* Invalid Course Name</small>
             <p class="text-dark" style="font-size:large; font-weight:bold;">COURSE DURATION</p>
             <select style="width:170px; height:54px;" class="form-control" id="duration" name="fromduration">
               <option value="3m">3 Months</option>
@@ -66,13 +66,13 @@
               placeholder="Enter the Number of students enrolled" [(ngModel)]="course.courseEnrolled"
               name="courseEnrolled" style="padding: 1em; width: 20em; margin-top: 0;"><br>
             <small *ngIf="!addcourseform.get('courseEnrolled').valid && addcourseform.get('courseEnrolled').touched"
-              class="text-white">* No of student enrolled for the course is required</small>
+              class="text-white">* Enter Valid No of student enrolled for the course</small>
             <textarea formControlName="courseDescription" rows="4" cols="30" class="form-control" form="addAcademy"
               id="courseDescription" [(ngModel)]="course.courseDescription" name="courseDescription"
               placeholder="Enter Academy description" style="padding: 1em; width: 20em;  margin-top: 0;"></textarea><br>
             <small
               *ngIf="!addcourseform.get('courseDescription').valid && addcourseform.get('courseDescription').touched"
-              class="text-white">* Course Description is required</small>
+              class="text-white">* Invalid Course Description</small>
           </td>
         </tr>
       </table>

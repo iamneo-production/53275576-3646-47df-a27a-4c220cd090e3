@@ -46,25 +46,24 @@
       <div id="contactNumber" >
           <input formControlName="mobileNumber" type="number" class="form-control"  placeholder="Enter the contact number"
           [(ngModel)]="institute.mobileNumber" name="mobileNumber"><br>
-          <small *ngIf="!addacademyform.get('mobileNumber').valid && addacademyform.get('mobileNumber').touched" class="text-white">* Mobile Number is required</small>
+          <small *ngIf="!addacademyform.get('mobileNumber').valid && addacademyform.get('mobileNumber').touched" class="text-white">* Invalid Mobile Number</small>
       </div>
       <div  id="emailId" >
           <input  formControlName="instituteEmail" type="email" class="form-control" placeholder="Enter the academy email"
           [(ngModel)]="institute.email" name="email" ><br>
-          <small *ngIf="!addacademyform.get('instituteEmail').valid && addacademyform.get('instituteEmail').touched" class="text-white">* Academy Email ID is required</small>   
+          <small *ngIf="!addacademyform.get('instituteEmail').valid && addacademyform.get('instituteEmail').touched" class="text-white">* Invalid Academy Email ID</small>   
 
 
       </div>
       <div  id="academyDescription" >
           <input formControlName="academyDesc" type="text" class="form-control"  placeholder="Enter Academy description"
           [(ngModel)]="institute.instituteDescription" name="instituteDescription"><br><br>
-          <small *ngIf="!addacademyform.get('academyDesc').valid && addacademyform.get('academyDesc').touched" class="text-white">* Academy Description is required</small>
+          <small *ngIf="!addacademyform.get('academyDesc').valid && addacademyform.get('academyDesc').touched" class="text-white">* Invalid Academy Description</small>
 
       </div><br><br>
   </div>
   <div id="academyRight">
       <button (click)="addAcademy()" class="btn btn-success" id="addAcademy">Add Academy</button>
-
   </div>
 </form>
 
