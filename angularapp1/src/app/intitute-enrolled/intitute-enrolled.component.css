@@ -1,0 +1,43 @@
+.instcontainer-fluid{
+    text-align: center;
+    background-color:darkmagenta;
+    color: white;
+    width: 100%;
+    
+}
+.instEnroll{
+    margin-left: 80%;
+}
+.instlogout{
+    margin-left: 80%;
+}
+.instsearch{
+    text-align: center;
+    margin-left: 50%;
+}
+.instsubmit{
+    background-color: darkmagenta;
+    color: white;
+}
+input[type=text] {
+    background-color: lightgray;
+  }
+  .instright-col{
+      margin-left: 30%;
+  }
+  .instcourse-block{
+      background-color: lightgray;
+      position:relative;
+      top: 50;
+      margin-left: 3%;
+      width: 50%;
+      height: 100;
+      padding-left: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      margin-top: 5px;
+  }
+.instbtn1{
+    margin-left: 85%;
+};
