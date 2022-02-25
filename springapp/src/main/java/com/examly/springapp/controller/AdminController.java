@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import com.examly.springapp.repository.CourseRepository;
 import com.examly.springapp.repository.StudentRepository;
 import com.examly.springapp.model.StudentModel;
+import com.examly.springapp.model.CourseModel;
 
 
 // import org.springframework.web.bind.annotation.DeletedMapping;

@@ -33,6 +33,6 @@ export class CourseService {
   }
   
   deleteCourse(id:number):Observable<Object>{
-    return this.httpClient.delete(`https://8080-bcdefdbbabbbeababfffcebfafdfadaefddc.examlyiopb.examly.io/api/v1/institute/${id}`)
+    return this.httpClient.delete(`https://8080-bcdefdbbabbbeababfffcebfafdfadaefddc.examlyiopb.examly.io/api/v1/course/${id}`)
   }
 }
