@@ -1,28 +1,88 @@
 <nav class="navbar" style="background-color:green; border-bottom: 1em solid white;">
-    <div class="container-fluid">
-        <h1 style="color:aliceblue;">School Admission</h1>
-        <h4 style="color:aliceblue;">Academy</h4>
-        <h4 style="color:aliceblue;">Course</h4>
-        <h4 style="color:aliceblue;">Students</h4>
-        <h4 style="color:aliceblue;" routerLink="/login">Logout</h4>
-    </div>
+  <div class="container-fluid">
+    <h1 style="color:aliceblue;">School Admission</h1>
+    <h4 style="color:aliceblue;">Academy</h4>
+    <h4 style="color:aliceblue;">Course</h4>
+    <h4 style="color:aliceblue;">Students</h4>
+    <h4 style="color:aliceblue;" routerLink="/login">Logout</h4>
+  </div>
 </nav>
-<div style="background-color: gray; height: 100vh;">
-<h5 style="padding-top: 1em; text-align: center; color: white;" >Add Course</h5>
-<form action="" id="addCourse" style="margin-top: 4em; ">
-  <div style="margin-bottom: 6em; margin-left: 2em;">
-    <input type="text" id="courseName" [(ngModel)]="course.courseId" name="courseId" placeholder="Enter the  courseId" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
 
-  <input type="text" id="courseName" [(ngModel)]="course.courseName" name="courseName" placeholder="Enter the course Name" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
-  <input type="text" id="courseEnrolled" [(ngModel)]="course.courseEnrolled" name="courseEnrolled" placeholder="Enter no of student enrolled for the course" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
-  </div>
-  <div style="margin-bottom: 6em; margin-left: 2em;">
-  <input type="text" id="courseDuration" [(ngModel)]="course.courseDuration" name="courseDuration" placeholder="Enter the course Duration" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em">
-  </div>
-  <div style="margin-left: 2em;">
-  <input type="text" id="courseTiming"  [(ngModel)]="course.courseTiming" name="courseTiming"  placeholder="Enter the course Timing" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
-  <textarea rows="4" cols="30" form="addAcademy" id="courseDescription"  [(ngModel)]="course.courseDescription" name="courseDescription" placeholder="Enter Academy description" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 25em; margin-left: 40em;"></textarea>
-  <input type="button" (click)="addcourse()"  id="addCourse" value="Add Course" style="border-radius: 12px; background-color: forestgreen; padding: 0.5em; color: white;"   routerLink="/course">
-  </div>
-</form>
+<div style="background-color: gray; height: 100vh;">
+  <h5 style="padding-top: 1em; text-align: center; color: white;">Add Course</h5>
+  <form [formGroup]="addcourseform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)" id="addCourse"
+    style="margin-top: 4em; ">
+    <div style="margin-bottom: 6em; margin-left: 2em;">
+      <table>
+        <tr>
+          <td>
+            <input formControlName="courseId" type="text" class="form-control" placeholder="Enter the Course ID"
+              [(ngModel)]="course.courseId" name="courseId"><br><br>
+            <small *ngIf="!addcourseform.get('courseId').valid && addcourseform.get('courseId').touched"
+              class="text-white">* Course Name is required</small>
+            <input formControlName="courseName" type="text" class="form-control" placeholder="Enter the Course name"
+              [(ngModel)]="course.courseName" name="courseName"><br><br>
+            <small *ngIf="!addcourseform.get('courseName').valid && addcourseform.get('courseName').touched"
+              class="text-white">* Course Name is required</small>
+            <p class="text-dark" style="font-size:large; font-weight:bold;">COURSE DURATION</p>
+            <select style="width:170px; height:54px;" class="form-control" id="duration" name="fromduration">
+              <option value="3m">3 Months</option>
+              <option value="6m">6 Months</option>
+              <option value="12m">12 Months</option>
+            </select><br>
+            <p class="text-dark" style="font-size:large; font-weight:bold;">COURSE TIMINGS</p>
+            <select style="display:inline;" class="form-control" id="fromduration" name="fromduration">
+              <option value="mon">MONDAY</option>
+              <option value="tue">TUEDAY</option>
+              <option value="wed">WEDNESDAY</option>
+              <option value="thurs">THURSDAY</option>
+              <option value="fri">FRIDAY</option>
+              <option value="sat">SATURDAY</option>
+            </select>
+            <p class="text-dark" style="display:inline; font-size:medium"> TO </p>
+            <select style="display:inline;" class="form-control" id="toduration" name="toduration">
+              <option value="mon">MONDAY</option>
+              <option value="tue">TUEDAY</option>
+              <option value="wed">WEDNESDAY</option>
+              <option value="thurs">THURSDAY</option>
+              <option value="fri">FRIDAY</option>
+              <option value="sat">SATURDAY</option>
+            </select><br><br>
+
+            <select style="display:inline; padding: 1em;margin-top: 0;" class="form-control" id="fromtiming" name="fromtiming">
+              <option value="8am">8 AM</option>
+              <option value="9am">9 AM</option>
+              <option value="10am">10 AM</option>
+            </select>
+            <p class="text-dark" style="display:inline; font-size:medium;"> TO </p>
+            <select style="display:inline; padding: 1em;margin-top: 0;" class="form-control" id="totiming" name="timing">
+              <option value="1pm">1 PM</option>
+              <option value="2pm">2 PM</option>
+              <option value="3pm">3 PM</option>
+            </select><br>
+          </td>
+          <td style="padding-left:150px; vertical-align:top">
+            <input formControlName="courseEnrolled" type="text" class="form-control"
+              placeholder="Enter the Number of students enrolled" [(ngModel)]="course.courseEnrolled"
+              name="courseEnrolled" style="padding: 1em; width: 20em; margin-top: 0;"><br>
+            <small *ngIf="!addcourseform.get('courseEnrolled').valid && addcourseform.get('courseEnrolled').touched"
+              class="text-white">* No of student enrolled for the course is required</small>
+            <textarea formControlName="courseDescription" rows="4" cols="30" class="form-control" form="addAcademy"
+              id="courseDescription" [(ngModel)]="course.courseDescription" name="courseDescription"
+              placeholder="Enter Academy description" style="padding: 1em; width: 20em;  margin-top: 0;"></textarea><br>
+            <small
+              *ngIf="!addcourseform.get('courseDescription').valid && addcourseform.get('courseDescription').touched"
+              class="text-white">* Course Description is required</small>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div style="margin-bottom: 6em; margin-left: 2em;">
+    </div>
+    <div style="margin-left: 2em;">
+      <input type="button" (click)="addcourse()" id="addCourse" value="Add Course"
+        style="border-radius: 12px; background-color: forestgreen; padding: 0.5em; color: white;" routerLink="/course">
+    </div>
+  </form>
 </div>
+

@@ -14,31 +14,35 @@ import { AddacademyPayload } from './addacademy.payload';
 export class AddacademyComponent implements OnInit {
 
   institute: Institute = new Institute();
-  addAcademyform: FormGroup;
+  addacademyform: FormGroup;
   addacademypayload:AddacademyPayload;
   
 
   
   constructor(private formBuilder : FormBuilder,private router:Router,private instituteService: InstituteService) { 
   this.addacademypayload={
-    academyName:'',
-    emailId:'',
-    contactNumber:'',
-    academyLocation:''
+    instituteId:'',
+    imageUrl:'',
+    instituteEmail:'',
+    instituteName:'',
+    mobileNumber:'',
+    academyLocation:'',
+    academyDesc:''
   } 
 }
   ngOnInit(): void {
-    this.addAcademyform = new FormGroup({
-      academyName : new FormControl('', [Validators.required,Validators.minLength(6),Validators.pattern('^[a-z0-9_-]{8,15}$')]),
-      emailId : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
-      contactNumber : new FormControl('',
+    this.addacademyform = new FormGroup({
+      instituteId : new FormControl('', [Validators.required,Validators.pattern('^[A-Za-z0-9_-]{8,15}$')]),
+      imageUrl : new FormControl('', [Validators.required]),
+      instituteName : new FormControl('', [Validators.required,Validators.minLength(3),Validators.pattern('^[A-Za-z0-9_-]{3,40}$')]),
+      instituteEmail : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^([a-zA-Z]+.*?)+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
+      mobileNumber : new FormControl('',
         [
           Validators.required,
           Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')
         ]),
-      academyLocation : new FormControl('', [Validators.required])
-
-        
+      academyLocation : new FormControl('', [Validators.required,Validators.minLength(2),Validators.pattern('^[a-z0-9_-]{2,40}$')]),  
+      academyDesc : new FormControl('', [Validators.required,Validators.minLength(2),Validators.pattern('^[A-Za-z0-9_-]{2,100}$')]),
     });
 
   }
@@ -65,15 +69,15 @@ export class AddacademyComponent implements OnInit {
     error => console.log(this.institute));
   }
   onSubmit(e){
-    this.addacademypayload.academyName = this.addAcademyform.get('academyName').value;
-    this.addacademypayload.emailId = this.addAcademyform.get('emailId').value;
-    this.addacademypayload.contactNumber = this.addAcademyform.get('contactNumber').value;
-    this.addacademypayload.academyLocation = this.addAcademyform.get('academyLocation').value;
+    this.addacademypayload.instituteId = this.addacademyform.get('instituteId').value;
+    this.addacademypayload.imageUrl = this.addacademyform.get('imageUrl').value;
+    this.addacademypayload.instituteName = this.addacademyform.get('instituteName').value;
+    this.addacademypayload.instituteEmail = this.addacademyform.get('instituteEmail').value;
+    this.addacademypayload.mobileNumber = this.addacademyform.get('mobileNumber').value;
+    this.addacademypayload.academyLocation = this.addacademyform.get('academyLocation').value;
+    this.addacademypayload.academyDesc = this.addacademyform.get('academyDesc').value;
   }
   addAcademy(){
-   
-
-
     console.log(this.institute);
     this.saveInstitute();
     console.log("success");

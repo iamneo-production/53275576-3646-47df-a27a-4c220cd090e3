@@ -1,7 +1,9 @@
 export class AddacademyPayload{
-    academyName!:string;
-    emailId!:string;
-    academyLocation!:string;
-    contactNumber!:string;
-    
+    instituteId!:string;
+    imageUrl!:string;
+    instituteName!:string;
+    instituteEmail!: string;
+    mobileNumber!: string;
+    academyLocation!: string;
+    academyDesc!: string;
 }
