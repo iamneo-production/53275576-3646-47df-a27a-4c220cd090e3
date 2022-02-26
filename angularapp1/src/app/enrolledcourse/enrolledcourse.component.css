@@ -1,3 +1,7 @@
+body 
+{
+  background-color: gray;
+}
 #academyBackground{
     
     background-color: gray;
@@ -71,13 +75,13 @@
     color: brown;
   }
   #academyLeft{
-    display: flex ;
+    
     flex-direction: column;
     justify-content: space-around;
     margin-left: 30px;
     float: left;
     size: 10%;
-    
+    height: 10%;
   }
   #academyLeft input{
     width:330px;
@@ -128,14 +132,17 @@
    width: 50em;
    background-color: lightgray;
    float: right;
-   
+   bottom: 40px;
+   margin-left: 40%;
 }
-.form2
-{
-  background-color: rgb(108, 9, 238);
-  justify-content: center;
-   
-    margin-right:100%;
+#enroll{
+  position: absolute;
+  bottom: 0px;
+  right: 100px;
+  margin-right: 10%;
+  border-radius:5%;
+  top: 100%;
+  
 }
   
   
