@@ -129,19 +129,18 @@ body
   .column2
 {
   position: absolute;
-   width: 50em;
+   width: 55em;
    background-color: lightgray;
    float: right;
-   bottom: 40px;
-   margin-left: 40%;
+   bottom: -10px;
+   margin-left: 35%;
 }
 #enroll{
   position: absolute;
-  bottom: 0px;
   right: 100px;
   margin-right: 10%;
   border-radius:5%;
-  top: 100%;
+  top: 105%;
   
 }
   
