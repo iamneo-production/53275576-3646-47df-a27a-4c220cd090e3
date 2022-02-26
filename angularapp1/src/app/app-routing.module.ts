@@ -17,6 +17,7 @@ import { UpdatestudentComponent } from './updatestudent/updatestudent.component'
 import { StudentComponent } from './student/student.component';
 import { ViewinstituteComponent } from './viewinstitute/viewinstitute.component';
 import { IntituteEnrolledComponent } from './intitute-enrolled/intitute-enrolled.component';
+import { EnrolledcourseComponent } from './enrolledcourse/enrolledcourse.component';
 const routes: Routes = [
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'adminacademy',component:AdminacademyComponent},
@@ -35,7 +36,8 @@ const routes: Routes = [
   {path:'updatestudent',component:UpdatestudentComponent},
   {path:'student',component:StudentComponent},
   {path:'viewinstitute',component:ViewinstituteComponent},
-  {path:'institute-enroll',component:IntituteEnrolledComponent}
+  {path:'institute-enroll',component:IntituteEnrolledComponent},
+  {path:'enrolledcourse',component:EnrolledcourseComponent}
 ];
 
 @NgModule({
