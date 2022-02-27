@@ -15,7 +15,7 @@ export class InstituteService {
     return this.httpClient.get<Institute[]>("https://8080-bcdefdbbabbbeababfffcebfafdfadaefddc.examlyiopb.examly.io/api/v1/institute")
   };
 
-  createInstitute(institute: Institute, mobileNo :string): Observable<Object>{
+  createInstitute(institute: Institute): Observable<Object>{
     return this.httpClient.post("https://8080-bcdefdbbabbbeababfffcebfafdfadaefddc.examlyiopb.examly.io/api/v1/addinstitute",institute);
   }
 

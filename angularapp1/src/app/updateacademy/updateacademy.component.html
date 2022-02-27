@@ -27,7 +27,7 @@
       id="instituteId" [(ngModel)]="institute.instituteId" name="instituteId"  ><br>
   </div><br><br>
   <div  id="editimageUrl" >
-      <input type="text" class="form-control" placeholder="Enter the academy Image url"><br>
+      <input type="text" [(ngModel)]="institute.imgUrl" class="form-control" placeholder="Enter the academy Image url"><br>
   </div><br><br>
   <div  id="editAcademyLocation" >
       <input type="text" class="form-control" placeholder="Enter Academy Location" 
@@ -35,6 +35,8 @@
   </div><br><br>
   
   </div>
+
+  <form>
   <div id="academyCenter">
       <div id="editContactNumber" >
           <input type="text " class="form-control"  placeholder="Enter the contact number"
@@ -50,8 +52,7 @@
       </div><br><br>
   </div>
   <div id="academyRight">
-      <button type="submit" (click)="updateAcademy()" class="btn btn-success" id="updateAcademy">Update Academy</button>
+      <input type="button" (click)="updateAcademy()" class="btn btn-success" id="updateAcademy" name="update academy" value="update academy">
 
   </div>
-
-</div>
+</form>
