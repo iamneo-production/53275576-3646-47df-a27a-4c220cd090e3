@@ -29,17 +29,21 @@ public class InstituteModel {
     @Column(name="email")
     private String email;
 
+    @Column(name="imgUrl")
+    private String imgUrl;
+
     InstituteModel(){
         
     }
 
-    public InstituteModel(int instituteId, String instituteName, String instituteDescription, String instituteAddress, String mobileNo, String email) {
+    public InstituteModel(int instituteId, String instituteName, String instituteDescription, String instituteAddress, String mobileNo, String email, String imgUrl) {
         this.instituteId = instituteId;
         this.instituteName = instituteName;
         this.instituteDescription = instituteDescription;
         this.instituteAddress = instituteAddress;
         this.mobileNo = mobileNo;
         this.email = email;
+        this.imgUrl = imgUrl;
     }
 
 
@@ -52,6 +56,14 @@ public class InstituteModel {
 
     public void setInstituteId(int instituteId) {
         this.instituteId = instituteId;
+    }
+
+    public String getImgUrl() {
+        return instituteId;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public String getInstituteName() {

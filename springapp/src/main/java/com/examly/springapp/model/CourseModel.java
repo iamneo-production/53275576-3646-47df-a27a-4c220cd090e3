@@ -72,14 +72,14 @@ public class CourseModel {
         return courseDuration;
     }
 
-    public void setCourseDuration(int courseDuration) {
+    public void setCourseDuration(String courseDuration) {
         this.courseDuration = courseDuration;
     }
 
     public String getCourseTiming(){
         return courseTiming;
     }
-    public void setCourseTiming(int courseTiming) {
+    public void setCourseTiming(String courseTiming) {
         this.courseTiming = courseTiming;
     }
 

@@ -5,4 +5,5 @@ export class Institute {
     instituteAddress:string;
     mobileNo: string;
     email: string;
+    imgUrl: string;
 }

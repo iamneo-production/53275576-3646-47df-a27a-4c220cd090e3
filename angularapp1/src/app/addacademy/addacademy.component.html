@@ -31,7 +31,7 @@
       <small *ngIf="!addacademyform.get('instituteName').valid && addacademyform.get('instituteName').touched" class="text-white">* Invalid Academy Name</small>
     </div>
   <div  id="imageUrl" >
-      <input formControlName="imageUrl" type="text" class="form-control" placeholder="Enter the academy Image url"
+      <input [(ngModel)]="institute.imgUrl" formControlName="imageUrl" type="text" class="form-control" placeholder="Enter the academy Image url"
       ><br>
       <small *ngIf="!addacademyform.get('imageUrl').valid && addacademyform.get('imageUrl').touched" class="text-white">* Invalid Image URL</small>
   </div>
