@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Course } from '../service/course';
 import { CourseService } from '../service/course.service'; 
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-course',
@@ -26,11 +29,34 @@ export class CourseComponent implements OnInit {
   updateCourse(id: number){
     this.router.navigate(['updatecourse',id]);
   }
-  deleteCourse(id:number){
-    this.courseService.deleteCourse(id).subscribe(data=>{
-      console.log(data);
-      this.getCourse(); 
-      console.log("deleted");
+  opensweetalert(id:number){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this imaginary file!',
+      icon: 'error',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No keep it'
+    }).then((result) => {
+      if(result.value) {
+        this.courseService.deleteCourse(id).subscribe(data=>{
+          console.log(data);
+          this.getCourse();
+          console.log("deleted");
+          alert("Course Deleted Successfully!!!");
+        })
+        Swal.fire(
+          'Deleted!',
+          'Your imaginary file has been deleted.',
+          'success'
+        )
+      } else if (result.dismiss === Swal.DismissReason.cancel){
+        Swal.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
+        )
+      }
     })
   }
 }

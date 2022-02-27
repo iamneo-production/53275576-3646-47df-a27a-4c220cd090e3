@@ -52,6 +52,7 @@ export class AddcourseComponent implements OnInit {
     this.cousedue = this.courseduration.nativeElement.value;
     this.saveCourse();
     console.log("success");
+    alert("Course Added Successfully!!!");
   }
   onSubmit(e){
     this.addcoursepayload.courseId= this.addcourseform.get('courseId').value;

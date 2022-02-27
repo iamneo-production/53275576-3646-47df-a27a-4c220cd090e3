@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Institute } from '../service/institute';
 import { InstituteService } from '../service/institute.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-institute',
@@ -25,12 +26,41 @@ export class InstituteComponent implements OnInit {
 
   updateInstitute(id: number){
     this.router.navigate(['updateacademy',id]);
-  }
-  deleteInstitute(id:number){
     this.instituteService.deleteInstitute(id).subscribe(data=>{
       console.log(data);
-      this.getInsititute(); 
-      console.log("deleted");
+      this.getInsititute();
+      console.log("updated");
+      alert("Institute Updated Successfully!!!");
+    })
+  }
+  opensweetalert(id:number){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this imaginary file!',
+      icon: 'error',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No keep it'
+    }).then((result) => {
+      if(result.value) {
+        this.instituteService.deleteInstitute(id).subscribe(data=>{
+          console.log(data);
+          this.getInsititute(); 
+          console.log("deleted");
+          alert("Institute Deleted Successfully!!!");
+        })
+        Swal.fire(
+          'Deleted!',
+          'Your imaginary file has been deleted.',
+          'success'
+        )
+      } else if (result.dismiss === Swal.DismissReason.cancel){
+        Swal.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
+        )
+      }
     })
   }
 }

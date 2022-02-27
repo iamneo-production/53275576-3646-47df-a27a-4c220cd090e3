@@ -7,6 +7,9 @@ import { Course } from './course';
   providedIn: 'root'
 })
 export class CourseService {
+  addCourse(course: Course) {
+    throw new Error('Method not implemented.');
+  }
 
   private baseURL : "https://8080-bcdefdbbabbbeababfffcebfafdfadaefddc.examlyiopb.examly.io/api/v1/institute";
   constructor(private httpClient: HttpClient) { }

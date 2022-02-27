@@ -5,4 +5,5 @@ export class Course {
     courseDescription : string;
     courseDuration : string;
     courseTiming : string;
+    reset: any;
 }

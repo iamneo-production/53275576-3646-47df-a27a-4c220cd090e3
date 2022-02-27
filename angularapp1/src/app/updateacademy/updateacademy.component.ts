@@ -38,6 +38,7 @@ export class UpdateacademyComponent implements OnInit {
   updateAcademy(){
     this.instituteService.updateInstitute(this.id, this.institute).subscribe(data =>{
       this.goToInstitute();
+      alert("Academy Updated Successfully!!!");
     },
     error=>console.log("error"));
   }
