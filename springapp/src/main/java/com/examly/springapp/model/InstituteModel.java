@@ -59,7 +59,7 @@ public class InstituteModel {
     }
 
     public String getImgUrl() {
-        return instituteId;
+        return imgUrl;
     }
 
     public void setImgUrl(String imgUrl) {
