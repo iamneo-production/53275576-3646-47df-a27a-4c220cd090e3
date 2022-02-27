@@ -12,7 +12,7 @@ public class CourseModel {
 
     CourseModel(){
     }
-    public CourseModel(int courseId, int courseTiming, String courseEnrolled, String courseName, String courseDescription, int courseDuration) {
+    public CourseModel(int courseId, String courseTiming, String courseEnrolled, String courseName, String courseDescription, String courseDuration) {
         this.courseId = courseId;
         this.courseName = courseName;
         this.courseEnrolled = courseEnrolled;
@@ -31,10 +31,10 @@ public class CourseModel {
     private String courseDescription;
 
     @Column(name="courseDuration")
-    private int courseDuration;
+    private String courseDuration;
 
     @Column(name="courseTiming")
-    private int courseTiming;
+    private String courseTiming;
 
     public int getCourseId(){
         return courseId;
@@ -68,7 +68,7 @@ public class CourseModel {
         this.courseDescription = courseDescription;
     }
 
-    public int getCourseDuration() {
+    public String getCourseDuration() {
         return courseDuration;
     }
 
@@ -76,7 +76,7 @@ public class CourseModel {
         this.courseDuration = courseDuration;
     }
 
-    public int getCourseTiming(){
+    public String getCourseTiming(){
         return courseTiming;
     }
     public void setCourseTiming(int courseTiming) {

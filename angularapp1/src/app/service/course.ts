@@ -3,6 +3,6 @@ export class Course {
     courseName : string;
     courseEnrolled : number;
     courseDescription : string;
-    courseDuration : number;
-    courseTiming : number;
+    courseDuration : string;
+    courseTiming : string;
 }

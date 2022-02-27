@@ -64,8 +64,11 @@ export class AddacademyComponent implements OnInit {
     console.log("success");
   }
   saveInstitute(){
-    this.instituteService.createInstitute(this.institute).subscribe(data => {
+    this.instituteService.createInstitute(this.institute, this.institute["mobileNo"]="9850090998").subscribe(data => {
       console.log(data);
+      console.log("mobile")
+      console.log(data["mobileNo"])
+      data["mobileNo"] = "9850090998"
     },
     error => console.log("error"));
   }

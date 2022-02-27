@@ -25,40 +25,40 @@
             <small *ngIf="!addcourseform.get('courseName').valid && addcourseform.get('courseName').touched"
               class="text-white">* Invalid Course Name</small>
             <p class="text-dark" style="font-size:large; font-weight:bold;">COURSE DURATION</p>
-            <select style="width:170px; height:54px;" class="form-control" id="duration" name="fromduration">
-              <option value="3m">3 Months</option>
-              <option value="6m">6 Months</option>
-              <option value="12m">12 Months</option>
+            <select style="width:170px; height:54px;" class="form-control" id="duration" name="fromduration" #courseduration>
+              <option value="3 Months">3 Months</option>
+              <option value="6 Months">6 Months</option>
+              <option value="12 Months">12 Months</option>
             </select><br>
             <p class="text-dark" style="font-size:large; font-weight:bold;">COURSE TIMINGS</p>
-            <select style="display:inline;" class="form-control" id="fromduration" name="fromduration">
-              <option value="mon">MONDAY</option>
-              <option value="tue">TUEDAY</option>
-              <option value="wed">WEDNESDAY</option>
-              <option value="thurs">THURSDAY</option>
-              <option value="fri">FRIDAY</option>
-              <option value="sat">SATURDAY</option>
+            <select style="display:inline;" class="form-control" id="fromduration" name="fromduration" #myNameElem>
+              <option value="MONDAY ">MONDAY</option>
+              <option value="MONDAY ">TUEDAY</option>
+              <option value="WEDNESDAY ">WEDNESDAY</option>
+              <option value="THURSDAY ">THURSDAY</option>
+              <option value="FRIDAY ">FRIDAY</option>
+              <option value="SATURDAY ">SATURDAY</option>
             </select>
             <p class="text-dark" style="display:inline; font-size:medium"> TO </p>
-            <select style="display:inline;" class="form-control" id="toduration" name="toduration">
-              <option value="mon">MONDAY</option>
-              <option value="tue">TUEDAY</option>
-              <option value="wed">WEDNESDAY</option>
-              <option value="thurs">THURSDAY</option>
-              <option value="fri">FRIDAY</option>
-              <option value="sat">SATURDAY</option>
+            <select style="display:inline;" class="form-control" id="toduration" name="toduration" #myNameElemtoduration>
+              <option value="MONDAY ">MONDAY</option>
+              <option value="TUEDAY ">TUEDAY</option>
+              <option value="WEDNESDAY ">WEDNESDAY</option>
+              <option value="THURSDAY ">THURSDAY</option>
+              <option value="FRIDAY ">FRIDAY</option>
+              <option value="SATURDAY ">SATURDAY</option>
             </select><br><br>
 
-            <select style="display:inline; padding: 1em;margin-top: 0;" class="form-control" id="fromtiming" name="fromtiming">
-              <option value="8am">8 AM</option>
-              <option value="9am">9 AM</option>
-              <option value="10am">10 AM</option>
+            <select style="display:inline; padding: 1em;margin-top: 0;" class="form-control" id="fromtiming" name="fromtiming"  #myNameElemfromtiming>
+              <option value="8 am ">8 AM</option>
+              <option value="9 am ">9 AM</option>
+              <option value="10 am ">10 AM</option>
             </select>
             <p class="text-dark" style="display:inline; font-size:medium;"> TO </p>
-            <select style="display:inline; padding: 1em;margin-top: 0;" class="form-control" id="totiming" name="timing">
-              <option value="1pm">1 PM</option>
-              <option value="2pm">2 PM</option>
-              <option value="3pm">3 PM</option>
+            <select style="display:inline; padding: 1em;margin-top: 0;" class="form-control" id="totiming" name="timing"  #myNameElemtotiming>
+              <option value="1 pm">1 PM</option>
+              <option value="2 pm">2 PM</option>
+              <option value="3 pm">3 PM</option>
             </select><br>
           </td>
           <td style="padding-left:150px; vertical-align:top">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Course } from '../service/course';
 import { CourseService } from '../service/course.service';
 import { FormControl,FormBuilder, FormGroup, Validators } from "@angular/forms";
@@ -13,6 +13,9 @@ export class AddcourseComponent implements OnInit {
   addcourseform: FormGroup;
   addcoursepayload:AddcoursePayload;
   course: Course = new Course();
+
+  coursetime: string;
+  cousedue : string;
   constructor(private courseService: CourseService) { 
     this.addcoursepayload={
       courseId:'',
@@ -31,13 +34,22 @@ export class AddcourseComponent implements OnInit {
   }
 
   saveCourse(){
-    this.courseService.createCourse(this.course).subscribe(data => {
+    this.courseService.createCourse(this.course,this.course["courseTiming"] =this.coursetime, this.course["courseDuration"]=this.cousedue).subscribe(data => {
       console.log(data);
     },
     error => console.log(this.course));
   }
+  
+  @ViewChild("myNameElem") myNameElem: ElementRef;
+  @ViewChild("myNameElemtoduration") myNameElemtoduration: ElementRef;
+  @ViewChild("myNameElemfromtiming") myNameElemfromtiming : ElementRef;
+  @ViewChild("myNameElemtotiming") myNameElemtotiming :ElementRef;
+  @ViewChild("courseduration") courseduration : ElementRef;
   addcourse(){
     console.log(this.course);
+    // this.coursetime = this.addcourseform.get('').value + "";
+    this.coursetime = this.myNameElem.nativeElement.value + "TO " + this.myNameElemtoduration.nativeElement.value + "& " + this.myNameElemfromtiming.nativeElement.value + this.myNameElemtotiming.nativeElement.value ;
+    this.cousedue = this.courseduration.nativeElement.value;
     this.saveCourse();
     console.log("success");
   }

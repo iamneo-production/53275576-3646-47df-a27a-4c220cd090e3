@@ -15,7 +15,7 @@ export class CourseService {
     return this.httpClient.get<Course[]>("https://8080-bcdefdbbabbbeababfffcebfafdfadaefddc.examlyiopb.examly.io/api/v1/course")
   };
 
-  createCourse(course: Course): Observable<Object>{
+  createCourse(course: Course, coursetime: String, coursedu:String): Observable<Object>{
     return this.httpClient.post("https://8080-bcdefdbbabbbeababfffcebfafdfadaefddc.examlyiopb.examly.io/api/v1/addcourse",course);
   }
 
