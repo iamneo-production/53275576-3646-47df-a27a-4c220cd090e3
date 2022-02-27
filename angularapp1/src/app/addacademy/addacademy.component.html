@@ -44,8 +44,8 @@
   </div>
   <div id="academyCenter">
       <div id="contactNumber" >
-          <input formControlName="mobileNumber" type="number" class="form-control"  placeholder="Enter the contact number"
-          [(ngModel)]="institute.mobileNumber" name="mobileNumber"><br>
+          <input formControlName="mobileNumber" type="text" class="form-control"  placeholder="Enter the contact number"
+          [(ngModel)]="institute.mobileNo" name="mobileNo"><br>
           <small *ngIf="!addacademyform.get('mobileNumber').valid && addacademyform.get('mobileNumber').touched" class="text-white">* Invalid Mobile Number</small>
       </div>
       <div  id="emailId" >

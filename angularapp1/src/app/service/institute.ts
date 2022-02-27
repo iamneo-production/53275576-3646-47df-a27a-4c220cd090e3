@@ -3,6 +3,6 @@ export class Institute {
     instituteName: string;
     instituteDescription: string;
     instituteAddress:string;
-    mobileNumber: string;
+    mobileNo: string;
     email: string;
 }

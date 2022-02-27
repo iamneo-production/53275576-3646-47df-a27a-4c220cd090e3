@@ -19,7 +19,7 @@
             <input formControlName="courseId" type="text" class="form-control" placeholder="Enter the Course ID"
               [(ngModel)]="course.courseId" name="courseId"><br><br>
             <small *ngIf="!addcourseform.get('courseId').valid && addcourseform.get('courseId').touched"
-              class="text-white">* Invalid Course Name</small>
+              class="text-white">* Invalid Course ID</small>
             <input formControlName="courseName" type="text" class="form-control" placeholder="Enter the Course name"
               [(ngModel)]="course.courseName" name="courseName"><br><br>
             <small *ngIf="!addcourseform.get('courseName').valid && addcourseform.get('courseName').touched"
@@ -67,7 +67,7 @@
               name="courseEnrolled" style="padding: 1em; width: 20em; margin-top: 0;"><br>
             <small *ngIf="!addcourseform.get('courseEnrolled').valid && addcourseform.get('courseEnrolled').touched"
               class="text-white">* Enter Valid No of student enrolled for the course</small>
-            <textarea formControlName="courseDescription" rows="4" cols="30" class="form-control" form="addAcademy"
+            <textarea type="text" formControlName="courseDescription" rows="4" cols="30" class="form-control" 
               id="courseDescription" [(ngModel)]="course.courseDescription" name="courseDescription"
               placeholder="Enter Academy description" style="padding: 1em; width: 20em;  margin-top: 0;"></textarea><br>
             <small

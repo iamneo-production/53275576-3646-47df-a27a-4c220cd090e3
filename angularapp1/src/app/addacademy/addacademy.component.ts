@@ -32,17 +32,13 @@ export class AddacademyComponent implements OnInit {
 }
   ngOnInit(): void {
     this.addacademyform = new FormGroup({
-      instituteId : new FormControl('', [Validators.required,Validators.pattern('^[A-Za-z0-9_-]{8,15}$')]),
+      instituteId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,15}$')]),
       imageUrl : new FormControl('', [Validators.required]),
       instituteName : new FormControl('', [Validators.required,Validators.minLength(3),Validators.pattern('^[A-Za-z0-9_-]{3,40}$')]),
       instituteEmail : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^([a-zA-Z]+.*?)+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
-      mobileNumber : new FormControl('',
-        [
-          Validators.required,
-          Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')
-        ]),
-      academyLocation : new FormControl('', [Validators.required,Validators.minLength(2),Validators.pattern('^[a-z0-9_-]{2,40}$')]),  
-      academyDesc : new FormControl('', [Validators.required,Validators.minLength(2),Validators.pattern('^[A-Za-z0-9_-]{2,100}$')]),
+      mobileNumber : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{10}$')]),
+      academyLocation : new FormControl('', [Validators.required,Validators.minLength(0),Validators.pattern('^[a-z0-9_-]{2,40}$')]),  
+      academyDesc : new FormControl('', [Validators.required,Validators.minLength(0),Validators.pattern('^[A-Za-z0-9_-]{0,100}$')]),
     });
 
   }
@@ -62,12 +58,18 @@ export class AddacademyComponent implements OnInit {
 
   }
 
+  addAcademy(){
+    console.log(this.institute);
+    this.saveInstitute();
+    console.log("success");
+  }
   saveInstitute(){
     this.instituteService.createInstitute(this.institute).subscribe(data => {
       console.log(data);
     },
-    error => console.log(this.institute));
+    error => console.log("error"));
   }
+ 
   onSubmit(e){
     this.addacademypayload.instituteId = this.addacademyform.get('instituteId').value;
     this.addacademypayload.imageUrl = this.addacademyform.get('imageUrl').value;
@@ -77,9 +79,5 @@ export class AddacademyComponent implements OnInit {
     this.addacademypayload.academyLocation = this.addacademyform.get('academyLocation').value;
     this.addacademypayload.academyDesc = this.addacademyform.get('academyDesc').value;
   }
-  addAcademy(){
-    console.log(this.institute);
-    this.saveInstitute();
-    console.log("success");
-  }
+  
 }
