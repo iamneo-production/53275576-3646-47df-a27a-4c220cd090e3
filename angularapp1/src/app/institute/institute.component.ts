@@ -26,12 +26,7 @@ export class InstituteComponent implements OnInit {
 
   updateInstitute(id: number){
     this.router.navigate(['updateacademy',id]);
-    this.instituteService.deleteInstitute(id).subscribe(data=>{
-      console.log(data);
-      this.getInsititute();
-      console.log("updated");
-      alert("Institute Updated Successfully!!!");
-    })
+    
   }
   opensweetalert(id:number){
     Swal.fire({
