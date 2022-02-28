@@ -75,8 +75,14 @@ public class AdminController {
 
         institute.setInstituteName(instituteDetails.getInstituteName());
         institute.setInstituteDescription(instituteDetails.getInstituteDescription());
-        institute.setInstituteAddress(instituteDetails.getInstituteDescription());
         institute.setInstituteAddress(instituteDetails.getInstituteAddress());
+        institute.setMobileNo(instituteDetails.getMobileNo());
+        institute.setInstituteId(instituteDetails.getInstituteId());
+        institute.setImgUrl(instituteDetails.getImgUrl());
+        institute.setEmail(instituteDetails.getEmail());
+
+
+
 
         InstituteModel updateInstitute = instituteRepository.save(institute);
         return ResponseEntity.ok(updateInstitute);
