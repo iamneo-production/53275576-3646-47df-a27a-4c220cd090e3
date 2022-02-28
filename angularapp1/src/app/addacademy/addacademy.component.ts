@@ -62,6 +62,7 @@ export class AddacademyComponent implements OnInit {
     console.log(this.institute);
     this.saveInstitute();
     console.log("success");
+    alert("Academy Added Successfully!!!");
   }
   saveInstitute(){
     this.instituteService.createInstitute(this.institute).subscribe(data => {

@@ -22,13 +22,13 @@ export class UpdatecourseComponent implements OnInit {
       this.course = data;
     }, error => console.log(error));
   }
-  update(){
+  updatecourse(){
     this.courseService.updateCourse(this.id, this.course).subscribe(data =>{
       this.goToCourse();
+      alert("Course Updated Successfully!!!");
     },
     error=>console.log("error"));
   }
-
   goToCourse(){
     this.router.navigate(['/course']);
   }
