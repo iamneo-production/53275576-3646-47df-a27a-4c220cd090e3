@@ -30,7 +30,7 @@ const routes: Routes = [
   {path:'addacademy' ,component:AddacademyComponent},
   {path:'updateacademy/:id' ,component:UpdateacademyComponent},
   {path:'addcourse' ,component:AddcourseComponent},
-  {path:'updatecourse/:id',component:UpdatecourseComponent},
+  {path:'updatecourse',component:UpdatecourseComponent},
   {path:'course',component:CourseComponent},
   {path:'addstudent',component:AddstudentComponent},
   {path:'updatestudent',component:UpdatestudentComponent},
