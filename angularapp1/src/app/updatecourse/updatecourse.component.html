@@ -1,106 +1,25 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
-<div id="courseHeader">
-    <h2>School Admission</h2>
-    <ul id="courseList">
-        <li id="adminAcademy">
-            <button (click)="viewAcademy()" id="adminAcademy">Academy</button>
-        </li>
-        <li id="adminCourse">
-            <button (click)="viewCourse()" id="adminCourse">Course</button>
-        </li>
-        <li id="adminStudents">
-            <button (click)="viewStudents()" id="adminStudents">Students</button>
-        </li>
-    </ul>
-    <div>
-
-    <button (click)="logout()" id="logout">Logout</button></div>
-</div>
-<div id="courseBackground">
-    <form [formGroup]="updatecourseform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)">
-    
-    <h5>Edit Course</h5><br>
-    <div id="courseLeft">
-    <div  id="editCourseName" >
-        <input formControlName="courseId" type="text" class="form-control" placeholder="Enter the course ID" 
-        [(ngModel)]="course.courseId" name="courseId"><br>
-        <small *ngIf="!updatecourseform.get('courseId').valid && updatecourseform.get('courseId').touched"
-        class="text-white">* Invalid Course ID</small>
-        <input formControlName="courseName" type="text" class="form-control" placeholder="Enter the course Name"
-        [(ngModel)]="course.courseName" name="courseName"><br>
-        <small *ngIf="!updatecourseform.get('courseName').valid && updatecourseform.get('courseName').touched"
-        class="text-white">* Invalid Course Name</small>
+<nav class="navbar" style="background-color:green; border-bottom: 1em solid white;">
+    <div class="container-fluid">
+        <h1 style="color:aliceblue;">School Admission</h1>
+        <h4 style="color:aliceblue;">Academy</h4>
+        <h4 style="color:aliceblue;">Course</h4>
+        <h4 style="color:aliceblue;">Students</h4>
+        <h4 style="color:aliceblue;" routerLink="/login">Logout</h4>
     </div>
-    <div  id="editCourseDuration" >
-        <p class="text-dark" style="font-size:large; ">COURSE DURATION</p>
-        <select style="width:170px; height:45px;" class="form-control"  name="fromduration" #courseduration>
-            <option value="3 Months">3 Months</option>
-            <option value="6 Months">6 Months</option>
-            <option value="12 Months">12 Months</option>
-        </select>
-       
-    </div><br>
-    <div  id="editCourseTiming" >
-        <p class="text-dark" style="font-size:large; ">COURSE TIMINGS</p>
-            <select style="display:inline;width: 100px;height: 45px;" class="form-control" id="fromduration" name="fromduration" #myNameElem>
-              <option value="MONDAY ">MONDAY</option>
-              <option value="MONDAY ">TUEDAY</option>
-              <option value="WEDNESDAY ">WEDNESDAY</option>
-              <option value="THURSDAY ">THURSDAY</option>
-              <option value="FRIDAY ">FRIDAY</option>
-              <option value="SATURDAY ">SATURDAY</option>
-            </select>
-            <p class="text-dark" style="display:inline; font-size:medium"> TO </p>
-            <select style="display:inline;width: 100px;height: 45px;" class="form-control" id="toduration" name="toduration" #myNameElemtoduration>
-              <option value="MONDAY ">MONDAY</option>
-              <option value="TUEDAY ">TUEDAY</option>
-              <option value="WEDNESDAY ">WEDNESDAY</option>
-              <option value="THURSDAY ">THURSDAY</option>
-              <option value="FRIDAY ">FRIDAY</option>
-              <option value="SATURDAY ">SATURDAY</option>
-            </select><br><br>
-
-            <select style="display:inline;width: 100px;height: 45px; padding: 1em;margin-top: 0;" class="form-control" id="fromtiming" name="fromtiming"  #myNameElemfromtiming>
-              <option value="8 am ">8 AM</option>
-              <option value="9 am ">9 AM</option>
-              <option value="10 am ">10 AM</option>
-            </select>
-            <p class="text-dark" style="display:inline; font-size:medium;"> TO </p>
-            <select style="display:inline;width: 100px;height: 45px; padding: 1em;margin-top: 0;" class="form-control" id="totiming" name="timing"  #myNameElemtotiming>
-              <option value="1 pm">1 PM</option>
-              <option value="2 pm">2 PM</option>
-              <option value="3 pm">3 PM</option>
-            </select><br>
-        
-        
-    </div><br><br>
-    
-    </div>
-    <div id="courseCenter">
-        <div id="editCourseEnrolled" >
-            <input formControlName="courseEnrolled" type="text" class="form-control"
-            placeholder="Enter no of student enrolled for the course" [(ngModel)]="course.courseEnrolled"
-            name="courseEnrolled"><br>
-          <small *ngIf="!updatecourseform.get('courseEnrolled').valid && updatecourseform.get('courseEnrolled').touched"
-            class="text-white">* Enter Valid no of student enrolled for the course</small>
-            
-        </div><br><br>
-        
-        <div  id="editCourseDescription" >
-            <textarea type="text" formControlName="courseDescription" rows="4" cols="30" class="form-control" 
-              id="courseDescription" [(ngModel)]="course.courseDescription" name="courseDescription"
-              placeholder="Enter course description" ></textarea><br>
-            <small *ngIf="!updatecourseform.get('courseDescription').valid && updatecourseform.get('courseDescription').touched"
-              class="text-white">* Invalid course description</small>
-
-           
-        </div><br><br>
-    </div>
-    <div id="courseRight">
-        <button (click)="updatecourse()" class="btn btn-success" id="updateCourse">Update Course</button>
-
-    </div>
+</nav>
+<div style="background-color: gray; height: 100vh;">
+<form action="" id="updateCourse" style="margin-top: 4em; ">
+  <div style="margin-bottom: 6em; margin-left: 2em;">
+  <input type="text" id="editCourseName" [(ngModel)]="course.courseName"  name="courseName" placeholder="Enter the course Name" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
+  <input type="text" id="editContactEnrolled" [(ngModel)]="course.courseEnrolled" name="courseEnrolled" placeholder="Enter no of student enrolled for the course" style="background-color: lightgrey; padding: 1em; width: 20em; margin-left: 40em;"><br>
+  </div>
+  <div style="margin-bottom: 6em; margin-left: 2em;">
+  <input type="text" id="editCourseDuration" [(ngModel)]="course.courseDuration" name="courseDuration" placeholder="Enter the course Duration" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em">
+  </div>
+  <div style="margin-left: 2em;">
+  <input type="text" id="editCourseTiming" [(ngModel)]="course.courseTiming" name="courseTiming" placeholder="Enter the course Timing" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 20em;">
+  <textarea rows="4" cols="30" form="updateCourse" id="editCourseDescription" [(ngModel)]="course.courseDescription" name="courseDescription" placeholder="Enter Academy description" style="margin-right: 8em; background-color: lightgrey; padding: 1em; width: 25em; margin-left: 40em;"></textarea>
+  <input type="button" (click)="updatecourse()"  id="updateCourse" value="Update Course" style="border-radius: 12px; background-color: forestgreen; padding: 0.5em; color: white;"   routerLink="/institute">
+  </div>
 </form>
-
 </div>
-
