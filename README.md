@@ -15,5 +15,3 @@
 #Project Name: School_Admission_Portal
 #Project Name: School_Admission_Portal
 #Project Name: School_Admission_Portal
-
-my name is shreeyas
