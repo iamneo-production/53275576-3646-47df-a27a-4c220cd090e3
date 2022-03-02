@@ -5,6 +5,4 @@
 
 #Project Name: School_Admission_Portal
 
-hello i'm bala
-
 
