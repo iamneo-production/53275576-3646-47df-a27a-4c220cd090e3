@@ -9,6 +9,7 @@ import { Institute } from './institute';
 export class InstituteService {
 
   private baseURL : "https://8080-bcdefdbbabbbeababfffcebfafdfadaefddc.examlyiopb.examly.io/api/v1/institute";
+  filter: string;
   constructor(private httpClient: HttpClient) { }
 
   getInstituteList(): Observable<Institute[]>{

@@ -7,6 +7,7 @@ import { Course } from './course';
   providedIn: 'root'
 })
 export class CourseService {
+  filter: any;
   addCourse(course: Course) {
     throw new Error('Method not implemented.');
   }

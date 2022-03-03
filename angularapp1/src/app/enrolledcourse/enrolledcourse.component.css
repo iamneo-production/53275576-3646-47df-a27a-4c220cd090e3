@@ -12,8 +12,8 @@ body
     align-items: center;
     width: 100%;
     height:50px;
-    background-color:green;
-    
+    background-color:rgb(173, 13, 173);
+    padding: 10px;
   
   }
   h2{
@@ -26,7 +26,7 @@ body
     
   }
   #academyBackground{
-    background-color: gray;
+    background-color: rgb(173, 172, 172);
     width: 100%;
     height:100%;
     justify-content:center;
@@ -49,8 +49,11 @@ body
   ul li button:hover{
     color: brown;
   }
-  #adminAcademy{
+  #adminCourse{
     font-size: 20px;
+  }
+  #adminAcademy{
+    font-size: 17px;
   }
   h5{
     display: flex;
@@ -128,20 +131,21 @@ body
   }
   .column2
 {
+
   position: absolute;
    width: 55em;
    background-color: lightgray;
    float: right;
-   bottom: -10px;
-   margin-left: 35%;
+   bottom: 5px;
+   margin-left: 45%;
+  
 }
 #enroll{
   position: absolute;
   right: 100px;
   margin-right: 10%;
   border-radius:5%;
-  top: 105%;
+  top: 100%;
+  margin-bottom: 100px;
   
-}
-  
-  
+} 

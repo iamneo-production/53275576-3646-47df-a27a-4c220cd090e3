@@ -17,6 +17,8 @@ export class CourseComponent implements OnInit {
 
   constructor(private courseService: CourseService, private router: Router) { }
 
+  searchKey: string;
+
   ngOnInit(): void {
     this.getCourse();
   }
@@ -58,5 +60,13 @@ export class CourseComponent implements OnInit {
         )
       }
     })
+  }
+  applyFilter()
+  {
+    this.courseService.filter = this.searchKey.trim().toLowerCase();
+  }
+  onSearchClear() {
+    this.searchKey = "";
+    this.applyFilter();
   }
 }

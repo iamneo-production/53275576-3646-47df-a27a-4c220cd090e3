@@ -15,6 +15,8 @@ export class InstituteComponent implements OnInit {
 
   constructor(private instituteService: InstituteService, private router: Router) { }
 
+  searchKey: string;
+
   ngOnInit(): void {
     this.getInsititute();
   }
@@ -62,5 +64,13 @@ export class InstituteComponent implements OnInit {
         )
       }
     })
+  }
+  applyFilter()
+  {
+    this.instituteService.filter = this.searchKey.trim().toLowerCase();
+  }
+  onSearchClear() {
+    this.searchKey = "";
+    this.applyFilter();
   }
 }
