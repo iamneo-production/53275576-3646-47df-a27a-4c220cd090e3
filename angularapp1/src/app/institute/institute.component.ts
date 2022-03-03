@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 export class InstituteComponent implements OnInit {
 
   institutes : Institute[];
+  instituteName: any;
 
   constructor(private instituteService: InstituteService, private router: Router) { }
 
@@ -65,12 +66,13 @@ export class InstituteComponent implements OnInit {
       }
     })
   }
-  applyFilter()
-  {
-    this.instituteService.filter = this.searchKey.trim().toLowerCase();
-  }
-  onSearchClear() {
-    this.searchKey = "";
-    this.applyFilter();
+  Search(){
+    if(this.instituteName == ""){
+      this.ngOnInit();
+    }else{
+      this.institutes = this.institutes.filter(res =>{
+        return res.instituteName.toLocaleLowerCase().match(this.instituteName.toLocaleLowerCase());
+      })
+    }
   }
 }

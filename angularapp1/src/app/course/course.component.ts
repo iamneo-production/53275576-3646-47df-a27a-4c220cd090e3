@@ -14,10 +14,10 @@ import Swal from 'sweetalert2';
 export class CourseComponent implements OnInit {
 
   courses : Course[];
+  courseName: any;
 
   constructor(private courseService: CourseService, private router: Router) { }
 
-  searchKey: string;
 
   ngOnInit(): void {
     this.getCourse();
@@ -61,12 +61,13 @@ export class CourseComponent implements OnInit {
       }
     })
   }
-  applyFilter()
-  {
-    this.courseService.filter = this.searchKey.trim().toLowerCase();
-  }
-  onSearchClear() {
-    this.searchKey = "";
-    this.applyFilter();
+  Search(){
+    if(this.courseName == ""){
+      this.ngOnInit();
+    }else{
+      this.courses = this.courses.filter(res =>{
+        return res.courseName.toLocaleLowerCase().match(this.courseName.toLocaleLowerCase());
+      })
+    }
   }
 }

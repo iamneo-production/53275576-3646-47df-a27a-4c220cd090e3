@@ -11,10 +11,8 @@
   <div style="height: 100vh; background-color: gray;"> 
   <div class="container">
   <div class="input-group">
-    <mat-form-field class="search-form-field" floatLabel="never">
-      <input  matInput [(ngModel)]="searchKey" class="form-control rounded" autocomplete="off"   placeholder="Type here to search course" aria-label="Search" aria-describedby="search-addon" style="margin-top:2em; margin-right: 1em; width:800%" (keyup)="applyFilter()"  />
-      <button type="button" id="searchCourse" class="btn btn-outline-primary btn btn-success" style="margin-top: 2em; color:white;  border-color:grey; text-align: end;" *ngIf="searchKey" (click)="onSearchClear()">Search</button>
-      </mat-form-field>
+      <input  class="form-control rounded" autocomplete="off"   placeholder="Type here to search course" aria-label="Search" aria-describedby="search-addon" style="margin-top:2em; margin-right: 1em; width:800%"  [(ngModel)]="courseName" (ngModelChange)="Search()"  />
+      <button type="button" id="searchCourse" class="btn btn-outline-primary btn btn-success" style="margin-top: 2em; color:white;  border-color:grey;" >Search</button>
     </div>
   </div>
   <br>
