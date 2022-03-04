@@ -13,11 +13,15 @@ import java.util.Objects;
 public class StudentModel {
 
     @Id
+    @Column(name = "studentId")
+    private int studentId;
+
+    
     @Column(name = "firstName")
     private String firstName;
 
     @Column(name = "lastName")
-    private Date lastName;
+    private String lastName;
 
     @Column(name = "fatherName")
     private String fatherName;
@@ -26,7 +30,7 @@ public class StudentModel {
     private String motherName;
 
     @Column(name = "maleOrFemale")
-    private int maleOrFemale;
+    private String maleOrFemale;
 
     @Column(name = "phoneNumber1")
     private int phoneNumber1;
@@ -35,34 +39,42 @@ public class StudentModel {
     private int phoneNumber2;
 
     @Column(name = "email")
-    private int email;
+    private String email;
 
     @Column(name = "age")
     private int age;
 
     @Column(name = "houseNo")
-    private int houseNo;
+    private String houseNo;
 
     @Column(name = "streetName")
-    private int streetName;
+    private String streetName;
 
     @Column(name = "areaName")
-    private int areaName;
+    private String areaName;
 
     @Column(name = "pincode")
     private int pincode;
 
     @Column(name = "state")
-    private int state;
+    private String state;
 
     @Column(name = "nationality")
-    private int nationality;
+    private String nationality;
 
     
 
     StudentModel(){
 
         
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
     }
 
     public String getFirstName() {
@@ -78,7 +90,7 @@ public class StudentModel {
     }
 
     public void setLastName(String lastName) {
-        this.lasttName = lastName;
+        this.lastName = lastName;
     }
 
     public String getFatherName() {
@@ -188,8 +200,10 @@ public class StudentModel {
 
 
 
-    public StudentModel(String firstName,String lastName,String fatherName,String motherName,String maleOrFemale, 
+    public StudentModel(int studentId,String firstName,String lastName,String fatherName,String motherName,String maleOrFemale, 
     int phoneNumber1,int phoneNumber2,String email,int age,String houseNo,String streetName,String areaName,String state,int pincode,String nationality) {
+
+        this.studentId =studentId;
        this.firstName=firstName;
        this.lastName=lastName;
        this.fatherName=fatherName;
@@ -204,7 +218,7 @@ public class StudentModel {
        this.state=state;
        this.areaName=areaName;
        this.pincode=pincode;
-       this.nationality=nationality
+       this.nationality=nationality;
     }
 
 

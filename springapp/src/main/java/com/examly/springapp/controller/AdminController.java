@@ -161,7 +161,7 @@ public class AdminController {
     }
 
     @GetMapping("/student/{id}")
-    public ResponseEntity<StudentModel> getInstituteById(@PathVariable Integer id){
+    public ResponseEntity<StudentModel> getStudentById(@PathVariable Integer id){
         StudentModel student = studentRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Student not exixts with this ID : "+id));
 
         return ResponseEntity.ok(student);
