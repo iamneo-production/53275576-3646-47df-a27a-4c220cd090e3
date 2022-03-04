@@ -81,7 +81,7 @@ export class UpdatestudentComponent implements OnInit {
     console.log("Button Click");
   }
   enrollnow(){
-    console.log("buttonclick");
+    console.log("Button clicked");
   }
   viewStudent(){
     console.log("button click");

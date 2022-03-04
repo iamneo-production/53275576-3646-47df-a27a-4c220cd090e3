@@ -15,4 +15,5 @@ export class UpdateStudentPayload{
     pincode!:string;
     state!:string;
     nationality!:string;
+    
 }
