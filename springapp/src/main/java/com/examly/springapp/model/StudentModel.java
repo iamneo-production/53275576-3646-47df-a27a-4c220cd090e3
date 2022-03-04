@@ -65,7 +65,7 @@ public class StudentModel {
         
     }
 
-    public int getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
@@ -77,11 +77,11 @@ public class StudentModel {
         return lastName;
     }
 
-    public void setLastName(String lasttName) {
+    public void setLastName(String lastName) {
         this.lasttName = lastName;
     }
 
-    public Date getFatherName() {
+    public String getFatherName() {
         return fatherName;
     }
 
@@ -105,7 +105,7 @@ public class StudentModel {
         this.maleOrFemale = maleOrFemale;
     }
 
-    public int getEmail() {
+    public String getEmail() {
         return email;
     }
 
@@ -137,7 +137,7 @@ public class StudentModel {
         this.phoneNumber2 = phoneNumber2;
     }
 
-     public int getHouseNo() {
+     public String getHouseNo() {
         return houseNo;
     }
 
@@ -145,7 +145,7 @@ public class StudentModel {
         this.houseNo = houseNo;
     }
 
-     public int getStreetName() {
+     public String getStreetName() {
         return streetName;
     }
 
@@ -153,7 +153,7 @@ public class StudentModel {
         this.streetName = streetName;
     }
 
-     public int getAreaName() {
+     public String getAreaName() {
         return areaName;
     }
 
@@ -162,7 +162,7 @@ public class StudentModel {
     }
 
 
-    public int getState() {
+    public String getState() {
         return state;
     }
 
@@ -178,7 +178,7 @@ public class StudentModel {
         this.pincode = pincode;
     }
 
-    public int getNationality() {
+    public String getNationality() {
         return nationality;
     }
 
