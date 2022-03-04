@@ -39,7 +39,7 @@ export class InstituteComponent implements OnInit {
   opensweetalert(id:number){
     Swal.fire({
       title: 'Are you sure?',
-      text: 'You will not be able to recover this imaginary file!',
+      text: 'You will not be able to recover this file!',
       icon: 'error',
       showCancelButton: true,
       confirmButtonText: 'Yes, delete it!',
@@ -54,13 +54,13 @@ export class InstituteComponent implements OnInit {
         })
         Swal.fire(
           'Deleted!',
-          'Your imaginary file has been deleted.',
+          'Your file has been deleted.',
           'success'
         )
       } else if (result.dismiss === Swal.DismissReason.cancel){
         Swal.fire(
           'Cancelled',
-          'Your imaginary file is safe :)',
+          'Your file is safe :)',
           'error'
         )
       }
