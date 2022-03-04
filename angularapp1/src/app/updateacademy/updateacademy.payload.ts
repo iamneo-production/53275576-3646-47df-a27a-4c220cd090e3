@@ -1,8 +1,9 @@
-export class UpdateacademyPayload{
+export class Updateacademypayload{
+    instituteId!:string;
     imageUrl!:string;
-    emailId!:string;
-    academyName!:string;
-    contactNumber!: string;
+    instituteName!:string;
+    instituteEmail!: string;
+    mobileNumber!: string;
     academyLocation!: string;
     academyDesc!: string;
 }
