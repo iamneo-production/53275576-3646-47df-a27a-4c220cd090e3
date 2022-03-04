@@ -13,86 +13,198 @@ import java.util.Objects;
 public class StudentModel {
 
     @Id
-    @Column(name = "studentId")
-    private Integer studentId;
+    @Column(name = "firstName")
+    private String firstName;
 
-    @Column(name = "studentName")
-    private String studentName;
+    @Column(name = "lastName")
+    private Date lastName;
 
-    @Column(name = "DOB")
-    private Date DOB;
+    @Column(name = "fatherName")
+    private String fatherName;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "motherName")
+    private String motherName;
 
-    @Column(name = "mobileNo")
-    private String mobileNo;
+    @Column(name = "maleOrFemale")
+    private int maleOrFemale;
 
-    @Column(name = "std")
-    private int std;
+    @Column(name = "phoneNumber1")
+    private int phoneNumber1;
+
+    @Column(name = "phoneNumber2")
+    private int phoneNumber2;
+
+    @Column(name = "email")
+    private int email;
+
+    @Column(name = "age")
+    private int age;
+
+    @Column(name = "houseNo")
+    private int houseNo;
+
+    @Column(name = "streetName")
+    private int streetName;
+
+    @Column(name = "areaName")
+    private int areaName;
+
+    @Column(name = "pincode")
+    private int pincode;
+
+    @Column(name = "state")
+    private int state;
+
+    @Column(name = "nationality")
+    private int nationality;
+
+    
 
     StudentModel(){
 
         
     }
 
-    public int getStudentId() {
-        return studentId;
+    public int getFirstName() {
+        return firstName;
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getStudentName() {
-        return studentName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
+    public void setLastName(String lasttName) {
+        this.lasttName = lastName;
     }
 
-    public Date getDOB() {
-        return DOB;
+    public Date getFatherName() {
+        return fatherName;
     }
 
-    public void setDOB(Date DOB) {
-        this.DOB = DOB;
+    public void setFatherName(String fatherName) {
+        this.fatherName = fatherName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getMotherName() {
+        return motherName;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setMotherName(String motherName) {
+        this.motherName = motherName;
     }
 
-    public String getMobileNo() {
-        return mobileNo;
+    public String getMaleOrFemale() {
+        return maleOrFemale;
     }
 
-    public void setMobileNo(String mobileNo) {
-        this.mobileNo = mobileNo;
+    public void setMaleOrFemale(String maleOrFemale) {
+        this.maleOrFemale = maleOrFemale;
     }
 
-    public int getStd() {
-        return std;
+    public int getEmail() {
+        return email;
     }
 
-    public void setStd(int std) {
-        this.std = std;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+     public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+     public int getPhoneNumber1() {
+        return phoneNumber1;
+    }
+
+    public void setPhoneNumber1(int phoneNumber1) {
+        this.phoneNumber1 = phoneNumber1;
+    }
+
+     public int getPhoneNumber2() {
+        return phoneNumber2;
+    }
+
+    public void setPhoneNumber2(int phoneNumber2) {
+        this.phoneNumber2 = phoneNumber2;
+    }
+
+     public int getHouseNo() {
+        return houseNo;
+    }
+
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
+
+     public int getStreetName() {
+        return streetName;
+    }
+
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
+    }
+
+     public int getAreaName() {
+        return areaName;
+    }
+
+    public void setAreaName(String areaName) {
+        this.areaName = areaName;
+    }
+
+
+    public int getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public int getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(int pincode) {
+        this.pincode = pincode;
+    }
+
+    public int getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
 
 
-    public StudentModel(int studentId, String studentName, Date DOB, String address, String mobileNo, int std) {
-        this.studentId = studentId;
-        this.studentName = studentName;
-        this.DOB = DOB;
-        this.address = address;
-        this.mobileNo = mobileNo;
-        this.std = std;
+    public StudentModel(String firstName,String lastName,String fatherName,String motherName,String maleOrFemale, 
+    int phoneNumber1,int phoneNumber2,String email,int age,String houseNo,String streetName,String areaName,String state,int pincode,String nationality) {
+       this.firstName=firstName;
+       this.lastName=lastName;
+       this.fatherName=fatherName;
+       this.motherName=motherName;
+       this.maleOrFemale=maleOrFemale;
+       this.phoneNumber1=phoneNumber1;
+       this.phoneNumber2=phoneNumber2;
+       this.email=email;
+       this.age=age;
+       this.houseNo=houseNo;
+       this.streetName=streetName;
+       this.state=state;
+       this.areaName=areaName;
+       this.pincode=pincode;
+       this.nationality=nationality
     }
 
 
