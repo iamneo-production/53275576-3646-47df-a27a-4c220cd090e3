@@ -1,13 +1,14 @@
 export class Student {
+    studentId:number;
     firstName:string;
+    lastName:string;
     fatherName:string;
     motherName:string;
-    emailId:string;
+    maleOrFemale:string;
+    email:string;
     age:number;
-    enterSSCHSCmarks:number;
-    lastName:string;
-    phoneNumber:number;
-    maleorfemale:string;
+    //enterSSCHSCmarks:number;
+    phoneNumber1:number;
     phoneNumber2:number;
     houseNo:string;
     streetName:string;
