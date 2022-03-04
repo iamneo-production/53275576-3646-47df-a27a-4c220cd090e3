@@ -1,58 +1,73 @@
 <div id="academyHeader">
-  <h2>School Admission</h2>
-  <ul id="academyList">
-      <li id="adminAcademy">
-          <button (click)="viewAcademy()" id="adminAcademy">Academy</button>
-      </li>
-      <li id="adminCourse">
-          <button (click)="viewCourse()" id="adminCourse">Course</button>
-      </li>
-      <li id="adminStudents">
-          <button (click)="viewStudents()" id="adminStudents">Students</button>
-      </li>
-      
-
-       
-  </ul>
-  <div>
-
-  <button (click)="logout()" id="logout">Logout</button></div>
-</div>
-<div id="academyBackground">
+    <h2>School Admission</h2>
+    <ul id="academyList">
+        <li id="adminAcademy">
+            <button (click)="viewAcademy()" id="adminAcademy">Academy</button>
+        </li>
+        <li id="adminCourse">
+            <button (click)="viewCourse()" id="adminCourse">Course</button>
+        </li>
+        <li id="adminStudents">
+            <button (click)="viewStudents()" id="adminStudents">Students</button>
+        </li>
+        
   
-  <h5>Edit Academy</h5><br>
-  <div id="academyLeft">
-  <div  id="editAcademyName" >
-      <input type="text" class="form-control" placeholder="Enter Academy name" 
-      id="instituteId" [(ngModel)]="institute.instituteId" name="instituteId"  ><br>
-  </div><br><br>
-  <div  id="editimageUrl" >
-      <input type="text" [(ngModel)]="institute.imgUrl" class="form-control" placeholder="Enter the academy Image url"><br>
-  </div><br><br>
-  <div  id="editAcademyLocation" >
-      <input type="text" class="form-control" placeholder="Enter Academy Location" 
-      [(ngModel)]="institute.instituteAddress" name="instituteAddress"><br>
-  </div><br><br>
+         
+    </ul>
+    <div>
+  
+    <button (click)="logout()" id="logout">Logout</button></div>
+  </div>
+  <div id="academyBackground">
+      <form [formGroup]="updateacademyform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)">        
+  
+    <h5>Update Academy</h5><br>
+    <div id="academyLeft">
+    <div  id="editAcademyName" >
+        <input formControlName="instituteId" type="text" class="form-control" placeholder="Enter Academy Id"
+        [(ngModel)]="institute.instituteId" name="instituteId"><br>
+        <small *ngIf="!updateacademyform.get('instituteId').valid && updateacademyform.get('instituteId').touched" class="text-white">* Invalid Academy ID</small>
+        <input formControlName="instituteName" type="text" id="instituteName" [(ngModel)]="institute.instituteName" name="instituteName" placeholder="Enter the Academy Name" class="form-control"><br>
+        <small *ngIf="!updateacademyform.get('instituteName').valid && updateacademyform.get('instituteName').touched" class="text-white">* Invalid Academy Name</small>
+      </div>
+    <div  id="editImageUrl" >
+        <input [(ngModel)]="institute.imgUrl" formControlName="imageUrl" type="text" class="form-control" placeholder="Enter the academy Image url"
+        ><br>
+        <small *ngIf="!updateacademyform.get('imageUrl').valid && updateacademyform.get('imageUrl').touched" class="text-white">* Invalid Image URL</small>
+    </div>
+    <div  id="editAcademyLocation" >
+        <input formControlName="academyLocation" type="text" class="form-control" placeholder="Enter Academy Location"
+        [(ngModel)]="institute.instituteAddress" name="instituteAddress"><br>
+        <small *ngIf="!updateacademyform.get('academyLocation').valid && updateacademyform.get('academyLocation').touched" class="text-white">
+            * Invalid Academy Location
+        </small> 
+    </div>
+    </div>
+    <div id="academyCenter">
+        <div id="editContactNumber" >
+            <input formControlName="mobileNumber" type="text" class="form-control"  placeholder="Enter the contact number"
+            [(ngModel)]="institute.mobileNo" name="mobileNo"><br>
+            <small *ngIf="!updateacademyform.get('mobileNumber').valid && updateacademyform.get('mobileNumber').touched" class="text-white">* Invalid Mobile Number</small>
+        </div><br> 
+        <div  id="editEmailId" >
+            <input  formControlName="instituteEmail" type="email" class="form-control" placeholder="Enter the academy email"
+            [(ngModel)]="institute.email" name="email" ><br>
+            <small *ngIf="!updateacademyform.get('instituteEmail').valid && updateacademyform.get('instituteEmail').touched" class="text-white">* Invalid Academy Email ID</small>   
+  
+  
+        </div><br>
+
+        <div  id="editAcademyDescription" >
+            <input formControlName="academyDesc" type="text" class="form-control"  placeholder="Enter Academy description"
+            [(ngModel)]="institute.instituteDescription" name="instituteDescription"><br><br>
+            <small *ngIf="!updateacademyform.get('academyDesc').valid && updateacademyform.get('academyDesc').touched" class="text-white">* Invalid Academy Description</small>
+  
+        </div><br><br>
+    </div>
+    <div id="academyRight">
+        <button (click)="updateacademy()" class="btn btn-success" id="updateacademy">update Academy</button>
+    </div>
+  </form>
   
   </div>
-
-  <form>
-  <div id="academyCenter">
-      <div id="editContactNumber" >
-          <input type="text " class="form-control"  placeholder="Enter the contact number"
-          [(ngModel)]="institute.mobileNo" name="mobileNo"><br>
-      </div><br><br>
-      <div  id="editEmailId" >
-          <input type="text" class="form-control" placeholder="Enter the academy email"
-          [(ngModel)]="institute.email" name="email" ><br>
-      </div><br><br>
-      <div  id="editAcademyDescription" >
-          <input type="text" class="form-control"  placeholder="Enter Academy description"
-          [(ngModel)]="institute.instituteDescription" name="instituteDescription"><br><br>
-      </div><br><br>
-  </div>
-  <div id="academyRight">
-      <input type="button" (click)="updateAcademy()" class="btn btn-success" id="updateAcademy" name="update academy" value="update academy">
-
-  </div>
-</form>
+  
