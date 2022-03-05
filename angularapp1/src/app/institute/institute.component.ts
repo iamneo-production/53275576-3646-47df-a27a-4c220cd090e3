@@ -54,7 +54,7 @@ export class InstituteComponent implements OnInit {
         })
         Swal.fire(
           'Deleted!',
-          'Your file has been deleted.',
+          'Your file has been deleted successfully.',
           'success'
         )
       } else if (result.dismiss === Swal.DismissReason.cancel){
