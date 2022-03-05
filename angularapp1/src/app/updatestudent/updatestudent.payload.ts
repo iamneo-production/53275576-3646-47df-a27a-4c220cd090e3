@@ -7,7 +7,7 @@ export class UpdateStudentPayload{
     emailId!:string;
     age!:string;
     phoneNumber2!:string;
-    SSLCorHSCMarks!:string;
+    //SSLCorHSCMarks!:string;
     maleorfemale!:string;
     houseNo!:string;
     streetName!:string;

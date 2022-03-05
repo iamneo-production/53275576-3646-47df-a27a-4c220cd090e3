@@ -14,7 +14,7 @@ export class AddstudentComponent implements OnInit {
   addstudentpayload:AddstudentPayload;
   student: Student = new Student();
 
-  constructor(private StudentService: StudentService) { 
+  constructor(private studentService: StudentService) { 
     this.addstudentpayload={
       firstName:'',
     fatherName:'',
@@ -37,6 +37,8 @@ export class AddstudentComponent implements OnInit {
 
 ngOnInit(): void {
   this.addstudentform = new FormGroup({
+    studentId: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
+
     firstName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     fatherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     motherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
@@ -59,7 +61,10 @@ ngOnInit(): void {
 saveStudent(){
   
     console.log(this.student);
-  
+  this.studentService.createStudent(this.student).subscribe(data=>{
+    console.log(this.student);
+  },
+    error => console.log(this.student));
 }
   addstudent(){
     console.log(this.student);
@@ -75,7 +80,7 @@ saveStudent(){
     this.addstudentpayload.motherName = this.addstudentform.get('motherName').value;
     this.addstudentpayload.emailId = this.addstudentform.get('emailId').value;
     this.addstudentpayload.age = this.addstudentform.get('age').value;
-    this.addstudentpayload.enterSSCHSCmarks = this.addstudentform.get('enterSSCHSCmarks').value;
+    // this.addstudentpayload.enterSSCHSCmarks = this.addstudentform.get('enterSSCHSCmarks').value;
     this.addstudentpayload.lastName = this.addstudentform.get('lastName').value;
     this.addstudentpayload.phoneNumber = this.addstudentform.get('phoneNumber').value;
     this.addstudentpayload.maleorfemale = this.addstudentform.get('maleorfemale').value;

@@ -33,7 +33,7 @@ const routes: Routes = [
   {path:'updatecourse/:id',component:UpdatecourseComponent},
   {path:'course',component:CourseComponent},
   {path:'addstudent',component:AddstudentComponent},
-  {path:'updatestudent',component:UpdatestudentComponent},
+  {path:'updatestudent/:id',component:UpdatestudentComponent},
   {path:'student',component:StudentComponent},
   {path:'viewinstitute',component:ViewinstituteComponent},
   {path:'institute-enroll',component:IntituteEnrolledComponent},

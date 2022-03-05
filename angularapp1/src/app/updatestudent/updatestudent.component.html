@@ -29,6 +29,8 @@
           formControlName="firstName"
           type="text"
           class="form-control"
+          [(ngModel)]="student.firstName" 
+          name="firstName"
           placeholder="Enter Your first name"
         /><br />
         <small
@@ -49,6 +51,8 @@
           type="text"
           class="form-control"
           placeholder="Enter Your father name"
+          [(ngModel)]="student.fatherName" 
+          name="fatherName"
         /><br />
         <small
           *ngIf="
@@ -68,6 +72,8 @@
           type="text"
           class="form-control"
           placeholder="Enter Your mother name"
+          [(ngModel)]="student.motherName" 
+          name="motherName"
         /><br />
         <small
           *ngIf="
@@ -87,6 +93,8 @@
           type="email"
           class="form-control"
           placeholder="Enter Your email id"
+          [(ngModel)]="student.email" 
+          name="email"
         /><br />
         <small
           *ngIf="
@@ -105,6 +113,8 @@
           formControlName="age"
           type="text"
           placeholder="Enter Your age"
+          [(ngModel)]="student.age" 
+          name="age"
         /><br />
         <small
           *ngIf="
@@ -116,7 +126,7 @@
         >
       </div>
       <br /><br />
-      <div id="enterSSLC/HSCMarks">
+      <!-- <div id="enterSSLC/HSCMarks">
         <input
           formControlName="SSLCorHSCMarks"
           type="text"
@@ -132,7 +142,7 @@
         >
           Invalid SSLC and HSC marks
         </small>
-      </div>
+      </div> -->
       <br />
     </div>
 
@@ -143,6 +153,8 @@
           type="text"
           class="form-control"
           placeholder="Enter Your Last Name"
+          [(ngModel)]="student.lastName" 
+          name="lastName"
         /><br />
         <small
           *ngIf="
@@ -161,6 +173,8 @@
           type="number"
           class="form-control"
           placeholder="Enter Your Phone Number"
+          [(ngModel)]="student.phoneNumber1" 
+          name="phoneNumber1"
         /><br />
         <small
           *ngIf="
@@ -194,6 +208,8 @@
           formControlName="phoneNumber2"
           type="number"
           class="form-control"
+          [(ngModel)]="student.phoneNumber2" 
+          name="phoneNumber2"
           placeholder="Enter alternate number"
         /><br />
         <small
@@ -217,6 +233,8 @@
           formControlName="houseNo"
           type="text"
           id="houseNo"
+          [(ngModel)]="student.houseNo" 
+          name="houseNo"
           style="
             background-color: white;
             padding: 0.5em;
@@ -240,6 +258,8 @@
           formControlName="streetName"
           type="text"
           id="streetName"
+          [(ngModel)]="student.streetName" 
+          name="streetName"
           style="
             background-color: white;
             padding: 0.5em;
@@ -263,6 +283,8 @@
           formControlName="areaName"
           type="text"
           id="areaName"
+          [(ngModel)]="student.areaName" 
+          name="areaName"
           style="
             background-color: white;
             padding: 0.5em;
@@ -284,6 +306,8 @@
           formControlName="pincode"
           type="number"
           id="pincode"
+          [(ngModel)]="student.pincode" 
+          name="pincode"
           style="background-color: white; padding: 0.5em; margin-left: 4em"
         />
         <small
@@ -302,6 +326,8 @@
           formControlName="state"
           type="text"
           id="state"
+          [(ngModel)]="student.state" 
+          name="state"
           style="background-color: white; padding: 0.5em; margin-left: 5.5em"
         />
         <small
@@ -318,6 +344,8 @@
           formControlName="nationality"
           type="text"
           id="nationality"
+          [(ngModel)]="student.nationality" 
+          name="nationality"
           style="background-color: white; padding: 0.5em; margin-left: 3em"
         />
         <small

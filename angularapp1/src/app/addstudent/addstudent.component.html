@@ -16,6 +16,11 @@
     <div id="academyLeft">
    
         <div  id="firstName" >
+            <input formControlName="studentId" type="text" class="form-control" placeholder="Enter Your id"
+            [(ngModel)]="student.studentId" name="studentId"><br>
+            
+        </div>
+        <div  id="firstName" >
             <input formControlName="firstName" type="text" class="form-control" placeholder="Enter Your first name"
             [(ngModel)]="student.firstName" name="firstName"><br>
             <small *ngIf="!addstudentform.get('firstName').valid && addstudentform.get('firstName').touched"
@@ -35,7 +40,7 @@
         </div><br>
         <div  id="emailId" >
             <input formControlName="emailId" type="email" class="form-control" placeholder="Enter Your email id"
-            [(ngModel)]="student.emailId" name="emailId"><br>
+            [(ngModel)]="student.email" name="email"><br>
             <small *ngIf="!addstudentform.get('emailId').valid && addstudentform.get('emailId').touched"
             style="color:red;">* Invalid Email Id</small>
         </div><br>
@@ -45,12 +50,13 @@
             <small *ngIf="!addstudentform.get('age').valid && addstudentform.get('age').touched"
             style="color:red;">* Invalid Age</small>
         </div><br>
-        <div  id="enterSSCHSCmarks" >
+        <!-- <div  id="enterSSCHSCmarks" >
             <input formControlName="enterSSCHSCmarks" type="text" class="form-control" placeholder="Enter Your SSC/HSC marks"
             [(ngModel)]="student.enterSSCHSCmarks" name="enterSSCHSCmarks"><br>
             <small *ngIf="!addstudentform.get('enterSSCHSCmarks').valid && addstudentform.get('enterSSCHSCmarks').touched"
             style="color:red;">* Invalid Marks</small>
-        </div><br>
+        </div><br> -->
+        <br>
     </div>
 
     <div id="academyCenter" >
@@ -62,7 +68,7 @@
         </div><br>
         <div id="phoneNumber" >
             <input formControlName="phoneNumber" type="text" class="form-control" placeholder="Enter Your Phone Number"
-            [(ngModel)]="student.phoneNumber" name="phoneNumber"><br>
+            [(ngModel)]="student.phoneNumber1" name="phoneNumber1"><br>
             <small *ngIf="!addstudentform.get('phoneNumber').valid && addstudentform.get('phoneNumber').touched"
             style="color:red;">* Invalid Phone Number</small>
         </div><br>
@@ -71,7 +77,7 @@
     <div id="academyRight">
         <div id="maleorfemale">
             <input formControlName="maleorfemale" type="text" class="form-control" placeholder="Enter male or female"
-            [(ngModel)]="student.maleorfemale" name="maleorfemale"><br>
+            [(ngModel)]="student.maleOrFemale" name="maleOrFemale"><br>
             <small *ngIf="!addstudentform.get('maleorfemale').valid && addstudentform.get('maleorfemale').touched"
             style="color:red;">* Invalid </small>
         </div><br>
