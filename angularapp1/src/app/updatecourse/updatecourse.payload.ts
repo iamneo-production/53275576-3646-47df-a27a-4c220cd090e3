@@ -4,5 +4,5 @@ export class UpdatecoursePayload{
     courseEnrolled!:string;
     courseDescription!: string;
   courseDuration: any;
-   courseTiming: any;
+  courseTiming: any;
 }
