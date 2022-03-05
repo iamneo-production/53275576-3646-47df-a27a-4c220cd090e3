@@ -1,5 +1,136 @@
+#courseBackground{
+
+    background-color: grey; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:fixed;
+}
+#courseHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:50px;
+    background-color: green;
+
+
+}
+h2{
+    margin-left: 20px;
+}
+#courseList{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+
+}
+#courseBackground{
+    background-color:rgb(177, 169, 169) ;
+    width: 100%;
+    height:600px;
+    position: fixed;
+    justify-content:center;
+
+}
+
+ul li{
+    padding: 55px;
+    list-style: none;
+
+
+}
+ul li button{
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: medium;
+
+}
+ul li button:hover{
+    color: brown;
+}
+#adminCourse{
+    /* font-size: 20px; */
+    transform: scale(1.5) perspective(1px); 
+}
+h5{
+    display: flex;
+    align-items: center;
+    margin-top:30px ;
+    margin-left: 50%;
+    margin-bottom: 1%;
+    font-size: medium;
+    font-weight: bold;
+}
+select{
+    width:100px;
+    height:54px;
+}
+
+
+#logout{
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-right:20px ;
+
+}
+
+#logout:hover{
+    color: brown;
+}
+#courseLeft{
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 30px;
+    float: left;
+    size: 10%;
+
+}
+#courseLeft input{
+    width:330px;
+    height:50px;
+}
+#courseCenter input{
+    width:330px;
+    height:50px;
+}
+#courseCenter {
+    /* justify-content: center; */
+    float: right;
+    margin-right:35%;
+
+}
+#editCourseDescription input{
+    width:400px;
+    height:300px;
+    /* inline-size: 330px; */
+    /* word-wrap: normal; */
+    overflow-wrap: break-word; 
+    flex-wrap: wrap;
+}
+#editCourseDescription{
+    overflow-wrap: break-word;
+    word-wrap:break-word;
+    width: 330px;
+
+}
+#courseRight{
+    position: absolute;
+    bottom: 100px;
+    right: 16px;
+    margin-right: 2%;
+    border-radius:5%;
+    display: flex;
+}
+#updateCourse{
+    border-radius: 9px;
+}
+
 ::placeholder{
     color: black;
     font-weight: 600;
     text-align: center;
-}
+    font-size: medium;
+} 
