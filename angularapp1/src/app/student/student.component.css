@@ -1,41 +1,46 @@
 table {
-    width: 100%;
-  }
-  .mat-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  .search-bar{
-    font-family: courier;
-    font-size: 180%;
-    padding: 15px;
-    color: whitesmoke;
-  }
-  .container-fluid{
-    color: grey;
-  font-family: verdana;
-  font-size: 500%;
-  text-align: center;
-  padding-top: 25px;
-  }
-  .navbar{
-      background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
-  color: #f1f1f1; /* Grey text */
-  width: 100%; /* Full width */
-  padding: 20px; /* Some padding */
-   font-family: verdana;
-  }
+  width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.search-bar{
+  font-family: courier;
+  font-size: 180%;
+  padding: 15px;
+  color: whitesmoke;
+}
+.container-fluid{
+  color: grey;
+font-family: verdana;
+font-size: 500%;
+text-align: center;
+padding-top: 25px;
+}
+.navbar{
+    background: rgb(0, 0, 0); /* Fallback color */
+background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+color: #f1f1f1; /* Grey text */
+width: 100%; /* Full width */
+padding: 20px; /* Some padding */
+ font-family: verdana;
+}
 .d-flex{
-  text-align: right;
-  font-size: 16px;
-  padding: 14px 40px;
-  
+text-align: right;
+font-size: 16px;
+padding: 14px 40px;
+
 }
 .button3 {padding: 14px 35px;}
-#studentID{
-    background-color: rgb(14, 131, 14);
-    color:aliceblue;
-
+.complete{
+/* background-image:url(background.jpg); */
+background-color: red;
+}
+#studentid{
+  background-color: green;
+  color: aliceblue;
+  font-size: large;
+  height:50px;
 
 }
