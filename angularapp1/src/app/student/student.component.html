@@ -1,83 +1,52 @@
 <nav class="navbar" style="background-color:green; border-bottom: 1em solid white;">
-    <div class="container-fluid">
-        <h1 style="color:aliceblue;">School Admission</h1>
-        <h4 style="color:aliceblue;">Academy</h4>
-        <h4 style="color:aliceblue;">Course</h4>
-        <h4 style="color:aliceblue;">Students</h4>
-        <h4 style="color:aliceblue;" routerLink="/login">Logout</h4>
-    </div>
+  <div class="container-fluid">
+      <h1 style="color:aliceblue;">School Admission</h1>
+      <h4 style="color:aliceblue;">Academy</h4>
+      <h4 style="color:aliceblue;">Course</h4>
+      <h4 style="color:aliceblue;">Students</h4>
+      <h4 style="color:aliceblue;" routerLink="/login">Logout</h4>
+  </div>
 </nav>
- 
-<div style="height: 100vh; background-color: white;"> 
-    <div class="container">
-    <div class="input-group">
-        <input type="search" class="form-control rounded" (keyup)="applyFilter($event)" placeholder="Type here student id to search" aria-label="Search" aria-describedby="search-addon" style="margin-top:2em; margin-right: 1em;" />
-        <button type="button" class="btn btn-outline-primary btn btn-success" style="margin-top: 2em; color:white;  border-color:grey;"  >Search</button>
-      </div>
-    </div>  
-<br><br>
 
-    <!-- <nav class="navbar" style="background-color:green;">
-        <div class="container-fluid">
-            <h4 style="color:aliceblue;">Student ID</h4>
-            <h4 style="color:aliceblue;">Student name</h4>
-            <h4 style="color:aliceblue;">Enrolled Course</h4>
-            <h4 style="color:aliceblue">Mobile number</h4>
-            <h4 style="color:aliceblue;">Actions</h4>
-        </div>
-    </nav> -->
-    
-     <div class="complete">
+<div style="height: 100vh; background-color: white;"> 
+  <div class="container">
+  <div class="input-group">
+      <input type="search" class="form-control rounded"  placeholder="Type here student id to search"  aria-label="Search" aria-describedby="search-addon" style="margin-top:2em; margin-right: 1em;" [(ngModel)]="firstName" (ngModelChange)="Search()" />
+      <button type="button" class="btn btn-outline-primary btn btn-success" style="margin-top: 2em; color:white;  border-color:grey;"  >Search</button>
+    </div>
+  </div>  
+<br>
+<div>
         
-        
-        <table mat-table [dataSource]="data" class="mat-elevation-z8">
-        
-          <!--- Note that these columns can be defined in any order.
-                The actual rendered columns are set as a property on the row definition" -->
-        
-          <!-- Position Column -->
-          <ng-container matColumnDef="position" >
-            <th mat-header-cell *matHeaderCellDef id="studentID"> Student ID </th>
-            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-          </ng-container>
-        
-          <!-- Name Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef id="studentID"> Student Name </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-          </ng-container>
-        
-          <!-- git Column -->
-          <ng-container matColumnDef="Email">
-            <th mat-header-cell *matHeaderCellDef id="studentID">Enrolled course </th>
-            <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
-          </ng-container>
-        
-          <!-- phone Column -->
-          <ng-container matColumnDef="phone">
-            <th mat-header-cell *matHeaderCellDef id="studentID"> Mobile number </th>
-            <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
-          </ng-container>
-        
-          <!-- language Column -->
-        
-          <!-- action Column -->
-          <ng-container matColumnDef="actions">
-            <th mat-header-cell  *matHeaderCellDef id="studentID" > Actions </th>
-            <td mat-cell *matCellDef="let row" >
-              <button mat-button ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-              </svg></button>
-              <button mat-button ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" style="margin-right:1em;">
-                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-              </svg></button>
-            </td>
-          </ng-container>
-        
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <table>
+          <thead>
+            <tr>
+              <th id="studentid">StudentID</th>
+              <th id="studentid">StudentName</th>
+              <th id="studentid">Email</th>
+              <th id="studentid">Mobile number</th>
+              <!-- <th id="studentid">Address</th> -->
+              <th id="studentid">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let stud of students;  let i=index;">
+              <th>{{stud.studentId}}</th>
+              <td>{{stud.firstName + stud.lastName}}</td>
+              <td>{{stud.email}}</td>
+              <td>{{stud.phoneNumber1}}</td>
+              <!-- <td>{{stud.studentId}}</td> -->
+              <td>
+                <button type="button" (click) = "updateStudent(stud.studentId)">Edit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                </svg></button>
+                <button type="button" (click) = "deleteStudent(stud.studentId)">Delete<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" style="margin-right:1em;">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                </svg></button>
+              </td>
+            </tr>
+          </tbody>
         </table>
-        </div>
-        
+      </div>
