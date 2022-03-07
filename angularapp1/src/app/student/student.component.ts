@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource,MatTableModule} from '@angular/material/table';
+import { CrudService } from './crud.service';
+import { Router } from '@angular/router';
+import { Student } from '../service/student';
+import { StudentService } from '../service/student.service';
 
 export interface PeriodicElement {
   name: string;
@@ -7,24 +11,7 @@ export interface PeriodicElement {
   position: number;
   phone: number;
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'A V Sasidhar ',Email: 'CSE', phone: 4839474839 },
-  {position: 2, name: 'Bala Subramaniyan S',Email: 'ECE', phone: 4838483959 },
-  {position: 3, name: 'Subhash R',Email: 'EEE', phone: 9364737847},
-  {position: 4, name: 'Senthilkumar',Email: 'MECH', phone: 3347843794},
-  {position: 5, name: 'Parthasarathy S',Email: 'CIVIL', phone: 9473858930},
-  {position: 6, name: 'Mohan Prasath N',Email: 'BIO-TECH', phone: 1234674570},
-  {position: 1, name: 'A V Sasidhar ',Email: 'CSE', phone: 4839474839 },
-  {position: 2, name: 'Bala Subramaniyan S',Email: 'ECE', phone: 4838483959 },
-  {position: 3, name: 'Subhash R',Email: 'EEE', phone: 9364737847},
-  {position: 4, name: 'Senthilkumar',Email: 'MECH', phone: 3347843794},
-  {position: 5, name: 'Parthasarathy S',Email: 'CIVIL', phone: 9473858930},
-  {position: 6, name: 'Mohan Prasath N',Email: 'BIO-TECH', phone: 1234674570},
-  {position: 1, name: 'A V Sasidhar ',Email: 'CSE', phone: 4839474839 },
-  {position: 2, name: 'Bala Subramaniyan S',Email: 'ECE', phone: 4838483959 },
-  {position: 3, name: 'Subhash R',Email: 'EEE', phone: 9364737847},
-  
-];
+
 
 @Component({
   selector: 'app-Student',
@@ -32,14 +19,42 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./Student.component.css']
 })
 
-export class StudentComponent {
-  displayedColumns: string[] = ['position', 'name','Email', 'phone','actions'];
-  data = new MatTableDataSource(ELEMENT_DATA);
+export class StudentComponent implements OnInit {
+  students: Student[];
+  firstName: any;
+  constructor(private studentService:StudentService, private router: Router) { }
+  ngOnInit(): void {
+    this.getStudent();
+  }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.data.filter = filterValue.trim().toLowerCase();
+  private getStudent(){
+    this.studentService.getStudentList().subscribe(data=>{
+      this.students=data;
+    });
+  }
 
-}
+  updateStudent(id: number){
+    this.router.navigate(['updatestudent',id]);
+  }
+  deleteStudent(id:number){
+    this.studentService.deleteStudent(id).subscribe(data=>{
+      console.log(data);
+      this.getStudent();
+      console.log("deleted");
+    })
+  }
+  // displayedColumns: string[] = ['position', 'name','Email', 'phone','actions'];
+  
 
-}
+  Search(){
+    if(this.firstName == ""){
+      this.ngOnInit();
+    }else{
+      this.students = this.students.filter(res =>{
+        return res.firstName.toLocaleLowerCase().match(this.firstName.toLocaleLowerCase());
+      })
+    }
+  }
+
+  
+  }
