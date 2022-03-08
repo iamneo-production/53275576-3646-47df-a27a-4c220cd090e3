@@ -33,10 +33,10 @@ public class StudentModel {
     private String maleOrFemale;
 
     @Column(name = "phoneNumber1")
-    private int phoneNumber1;
+    private String phoneNumber1;
 
     @Column(name = "phoneNumber2")
-    private int phoneNumber2;
+    private String phoneNumber2;
 
     @Column(name = "email")
     private String email;
@@ -54,7 +54,7 @@ public class StudentModel {
     private String areaName;
 
     @Column(name = "pincode")
-    private int pincode;
+    private String pincode;
 
     @Column(name = "state")
     private String state;
@@ -133,19 +133,19 @@ public class StudentModel {
         this.age = age;
     }
 
-     public int getPhoneNumber1() {
+     public String getPhoneNumber1() {
         return phoneNumber1;
     }
 
-    public void setPhoneNumber1(int phoneNumber1) {
+    public void setPhoneNumber1(String phoneNumber1) {
         this.phoneNumber1 = phoneNumber1;
     }
 
-     public int getPhoneNumber2() {
+     public String getPhoneNumber2() {
         return phoneNumber2;
     }
 
-    public void setPhoneNumber2(int phoneNumber2) {
+    public void setPhoneNumber2(String phoneNumber2) {
         this.phoneNumber2 = phoneNumber2;
     }
 
@@ -182,11 +182,11 @@ public class StudentModel {
         this.state = state;
     }
 
-    public int getPincode() {
+    public String getPincode() {
         return pincode;
     }
 
-    public void setPincode(int pincode) {
+    public void setPincode(String pincode) {
         this.pincode = pincode;
     }
 
@@ -201,7 +201,7 @@ public class StudentModel {
 
 
     public StudentModel(int studentId,String firstName,String lastName,String fatherName,String motherName,String maleOrFemale, 
-    int phoneNumber1,int phoneNumber2,String email,int age,String houseNo,String streetName,String areaName,String state,int pincode,String nationality) {
+    String phoneNumber1,String phoneNumber2,String email,int age,String houseNo,String streetName,String areaName,String state,String pincode,String nationality) {
 
         this.studentId =studentId;
        this.firstName=firstName;

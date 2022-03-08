@@ -8,12 +8,12 @@ export class Student {
     email:string;
     age:number;
     //enterSSCHSCmarks:number;
-    phoneNumber1:number;
-    phoneNumber2:number;
+    phoneNumber1:string;
+    phoneNumber2:string;
     houseNo:string;
     streetName:string;
     areaName:string;
-    pincode:number;
+    pincode:string;
     state:string;
     nationality:string;
 }
