@@ -32,7 +32,7 @@ export class StudentService {
   }
 
   updateStudent(id:number, student:Student): Observable<Object>{
-    return this.httpClient.put(`https://8080-bcdefdbbabbbeababfffcebfafdfadaefddc.examlyiopb.examly.io/api/v1/updatestudent/${id}`,student);
+    return this.httpClient.put(`https://8080-bcdefdbbabbbeababfffcebfafdfadaefddc.examlyiopb.examly.io/api/v1/student/${id}`,student);
   }
   
   deleteStudent(id:number):Observable<Object>{

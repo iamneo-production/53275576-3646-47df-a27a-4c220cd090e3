@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource,MatTableModule} from '@angular/material/table';
-import { CrudService } from './crud.service';
+// import { CrudService } from './crud.service';
 import { Router } from '@angular/router';
 import { Student } from '../service/student';
 import { StudentService } from '../service/student.service';
@@ -15,8 +15,8 @@ export interface PeriodicElement {
 
 @Component({
   selector: 'app-Student',
-  templateUrl: './Student.component.html',
-  styleUrls: ['./Student.component.css']
+  templateUrl: './student.component.html',
+  styleUrls: ['./student.component.css']
 })
 
 export class StudentComponent implements OnInit {
