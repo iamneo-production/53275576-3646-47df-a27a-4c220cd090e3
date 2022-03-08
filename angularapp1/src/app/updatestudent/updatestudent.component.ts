@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
-import { UpdateStudentPayload } from './updatestudent.payload';
-import { StudentService } from '../service/student.service';
-import { Student } from '../service/student';
+import  { Component, OnInit } from '@angular/core';
+import  { ActivatedRoute, Router } from '@angular/router';
+import  { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
+import  { UpdateStudentPayload } from './updatestudent.payload';
+import  { StudentService } from '../service/student.service';
+import  { Student } from '../service/student';
 
 @Component({
   selector: 'app-updatestudent',
   templateUrl: './updatestudent.component.html',
   styleUrls: ['./updatestudent.component.css']
 })
-export class UpdatestudentComponent implements OnInit {
+export class UpdatestudentComponent implements OnInit  {
  enrolledform:FormGroup;
   updatestudentpayload:UpdateStudentPayload;
 
-  id: number;
+  id: number ;
   student: Student= new Student();
   constructor(private formbuilder:FormBuilder,private router:Router, private studentService: StudentService, private route:ActivatedRoute) 
   {
@@ -37,13 +37,13 @@ export class UpdatestudentComponent implements OnInit {
       nationality:''
     }
 
-   }
+    }
 
-  ngOnInit(): void {
-    this.id =this.route.snapshot.params['id'];
+  ngOnInit(): void  {
+    this.id =this.route.snapshot.params['id'] ;
     this.studentService.getStudentById(this.id).subscribe(data=>{
       this.student = data;
-    }, error => console.log(error));
+    }, error => console.log(error)) ;
 
     this.enrolledform=new FormGroup({ 
       firstName:new FormControl('', [Validators.required]),
@@ -64,7 +64,7 @@ export class UpdatestudentComponent implements OnInit {
       nationality:new FormControl('', [Validators.required])
     })
   }
-  onSubmit(e){
+  onSubmit(e) {
     this.updatestudentpayload.firstName = this.enrolledform.get('firstname').value;
     this.updatestudentpayload.lastName = this.enrolledform.get('lastname').value;
     this.updatestudentpayload.fatherName = this.enrolledform.get('fathername').value;
@@ -82,22 +82,22 @@ export class UpdatestudentComponent implements OnInit {
     this.updatestudentpayload.state = this.enrolledform.get('state').value;
     this.updatestudentpayload.nationality= this.enrolledform.get('nationality').value;    
   }
-  viewAcademy(){
-    console.log("Button Click");
+  viewAcademy() {
+     console.log("Button Click");
 
   }
-  viewCourse(){
-    console.log("Button Click");
+  viewCourse() {
+     console.log("Button Click");
   }
-  enrollnow(){
+  enrollnow() {
     this.studentService.updateStudent(this.id,this.student).subscribe(data=>{});
     alert("student Updated Successfully!!!");  }
-  viewStudent(){
-    console.log("button click");
+  viewStudent() {
+     console.log("button click");
   }
-  logout(){
-    console.log("buttonclick");
-    this.router.navigate(["/login"]);
+  logout() {
+     console.log("buttonclick");
+     this.router.navigate(["/login"]);
   }
 
 }
