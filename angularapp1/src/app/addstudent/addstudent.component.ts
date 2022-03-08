@@ -50,10 +50,10 @@ ngOnInit(): void {
     maleorfemale: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     phoneNumber2: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
     houseNo: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
-    streetName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z+0-9_-]{2,40}$')]),
-    areaName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z+0-9_-]{2,40}$')]),
-    pincode: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
-    state: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
+    streetName: new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){0,40}$')]),
+    areaName: new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){0,40}$')]),
+    pincode: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{0,40}$')]),
+    state: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{0,40}$')]),
     nationality: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')])
 
   });

@@ -76,10 +76,22 @@
 
     <div id="academyRight">
         <div id="maleorfemale">
-            <input formControlName="maleorfemale" type="text" class="form-control" placeholder="Enter male or female"
-            [(ngModel)]="student.maleOrFemale" name="maleOrFemale"><br>
-            <small *ngIf="!addstudentform.get('maleorfemale').valid && addstudentform.get('maleorfemale').touched"
-            style="color:red;">* Invalid </small>
+            <!-- <input formControlName="maleorfemale" type="text" class="form-control" placeholder="Enter male or female"
+            [(ngModel)]="student.maleOrFemale" name="maleOrFemale"><br> -->
+                <p><b>Select Gender</b></p>
+            <select 
+          style="display: inline"
+          class="form-control"
+          id="maleorfemale"
+          name="maleorfemale"
+          #myNameElemtoduration
+          [(ngModel)]="student.maleOrFemale"
+        >
+          <option value="Male ">Male</option>
+          <option value="Female ">Female</option></select
+        >
+            <!-- <small *ngIf="!addstudentform.get('maleorfemale').valid && addstudentform.get('maleorfemale').touched"
+            style="color:red;">* Invalid </small> -->
         </div><br>
         <div id="phoneNumber2">
             <input formControlName="phoneNumber2" type="text" class="form-control" placeholder="Enter alternate number"
