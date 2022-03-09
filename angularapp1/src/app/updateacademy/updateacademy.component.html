@@ -2,13 +2,13 @@
     <h2>School Admission</h2>
     <ul id="academyList">
         <li id="adminAcademy">
-            <button (click)="viewAcademy()" id="adminAcademy">Academy</button>
+            <a href="/institute"><button (click)="viewAcademy()" id="adminAcademy">Academy</button></a>
         </li>
         <li id="adminCourse">
-            <button (click)="viewCourse()" id="adminCourse">Course</button>
+            <a href="/course"><button (click)="viewCourse()" id="adminCourse">Course</button></a>
         </li>
         <li id="adminStudents">
-            <button (click)="viewStudents()" id="adminStudents">Students</button>
+            <a href="/student"><button (click)="viewStudents()" id="adminStudents">Students</button></a>
         </li>
         
   
@@ -65,7 +65,7 @@
         </div><br><br>
     </div>
     <div id="academyRight">
-        <button (click)="updateacademy()" class="btn btn-success" id="updateacademy">update Academy</button>
+        <button [disabled]="!updateacademyform.valid" (click)="updateacademy()" class="btn btn-success" id="updateacademy">update Academy</button>
     </div>
   </form>
   

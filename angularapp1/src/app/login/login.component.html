@@ -36,7 +36,7 @@
         </div>
       </div>
       <div class="login1">
-        <form [formGroup]="loginform">
+        <form [formGroup]="loginform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)" >
           <h1>Login</h1>
 
           <div class="content">
@@ -54,7 +54,7 @@
           </div>
 
           <div class="cred">
-            <button (click)="loginfunc()" type="button" class="btn btn-success">
+            <button [disabled]="!loginform.valid" (click)="loginfunc()" type="button" class="btn btn-success">
               Sign In
             </button>
           </div>

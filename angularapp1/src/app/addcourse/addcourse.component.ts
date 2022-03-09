@@ -3,7 +3,7 @@ import { Course } from '../service/course';
 import { CourseService } from '../service/course.service';
 import { FormControl,FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AddcoursePayload } from './addcourse.payload';
-
+import {Router } from '@angular/router';
 @Component({
   selector: 'app-addcourse',
   templateUrl: './addcourse.component.html',
@@ -16,7 +16,7 @@ export class AddcourseComponent implements OnInit {
 
   coursetime: string;
   cousedue : string;
-  constructor(private courseService: CourseService) { 
+  constructor(private router: Router, private courseService: CourseService) { 
     this.addcoursepayload={
       courseId:'',
       courseName:'',
@@ -53,6 +53,7 @@ export class AddcourseComponent implements OnInit {
     this.saveCourse();
     console.log("success");
     alert("Course Added Successfully!!!");
+    this.router.navigate(["/course"])
   }
   onSubmit(e){
     this.addcoursepayload.courseId= this.addcourseform.get('courseId').value;
@@ -60,4 +61,5 @@ export class AddcourseComponent implements OnInit {
     this.addcoursepayload.courseEnrolled = this.addcourseform.get('courseEnrolled').value;
     this.addcoursepayload.courseDescription = this.addcourseform.get('courseDescription').value;
   }
+  
 }

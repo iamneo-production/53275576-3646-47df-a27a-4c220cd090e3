@@ -46,7 +46,6 @@ export class EnrolledcourseComponent implements OnInit {
       age:new FormControl('', [Validators.required]),
       phoneNumber2:new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
       SSLCorHSCMarks:new FormControl('', [Validators.required]),
-      maleorfemale:new FormControl('', [Validators.required]),
       houseNo:new FormControl('', [Validators.required]),
       streetName:new FormControl('', [Validators.required]),
       areaName:new FormControl('', [Validators.required]),

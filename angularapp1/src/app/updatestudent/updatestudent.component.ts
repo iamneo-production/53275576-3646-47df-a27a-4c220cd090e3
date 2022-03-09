@@ -53,7 +53,7 @@ export class UpdatestudentComponent implements OnInit  {
       phoneNumber1:new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
       emailId : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^([a-zA-Z]+.*?)+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
       age:new FormControl('', [Validators.required]),
-      phoneNumber2:new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
+      phoneNumber2:new FormControl('', [Validators.maxLength(10),Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
      // SSLCorHSCMarks:new FormControl('', [Validators.required]),
       maleorfemale:new FormControl('', [Validators.required]),
       houseNo:new FormControl('', [Validators.required]),
@@ -91,7 +91,9 @@ export class UpdatestudentComponent implements OnInit  {
   }
   enrollnow() {
     this.studentService.updateStudent(this.id,this.student).subscribe(data=>{});
-    alert("student Updated Successfully!!!");  }
+    alert("student Updated Successfully!!!");  
+    this.router.navigate(["/student"])
+  }
   viewStudent() {
      console.log("button click");
   }

@@ -2,9 +2,9 @@
   <body>
 <div class="navbar1">
     <a>School Admission  </a>
-  <a id="userInstitute" >  Institute   </a>
-  <a id="userEnrolledCourse">   Enrolled Courses   </a>
-  <a href="" class="logout" id="logout">   Logout  </a>
+  <a href="/viewacademy" id="userInstitute" >  Institute   </a>
+  <a href="/institute-enroll" id="userEnrolledCourse">   Enrolled Courses   </a>
+  <a href="/login" class="logout" id="logout">   Logout  </a>
 </div>
 
 <div class="search"  id="searchButton">
@@ -12,22 +12,24 @@
       <input type="submit" class="search-txt" value="Search" /><br />
     
 </div>
+
 <div class="basic-2">
 
 
 <div class="team-member" id="userInstituteGrid1" *ngFor="let ins of institutes;  let i=index;">
   <div class="image-wrapper">
-      <img class="img-fluid" src="https://static.wixstatic.com/media/e86a17_3824e91988d94def9292e660ba9010fd~mv2.jpg/v1/fill/w_1150,h_500,al_c,q_85,usm_0.66_1.00_0.01/2.webp" alt="alternative">
+    <img class="img-fluid" src="https://static.wixstatic.com/media/e86a17_3824e91988d94def9292e660ba9010fd~mv2.jpg/v1/fill/w_1150,h_500,al_c,q_85,usm_0.66_1.00_0.01/2.webp" alt="alternative">
   </div> 
   <p class="p-large">{{ins.instituteName}}</p>
   
   <p class="p-large">{{ins.mobileNumber}}</p>
   <p class="p-large">{{ins.email}}</p>
   <p class="job-title">{{ins.instituteAddress}}</p>
+  <button (click)="institueEnroll()" type="button" class="btn btn-success"> View</button>
 </div>
 
 </div>
-  
+
 
 </body>
 </html>
