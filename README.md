@@ -7,8 +7,3 @@
 
 #Project Name: School_Admission_Portal #Project Name: School_Admission_Portal #Project Name: School_Admission_Portal #Project Name: School_Admission_Portal #Project Name: School_Admission_Portal #Project Name: School_Admission_Portal
 
-my name is subhash
-hello
-hai senthil
-hai
-
