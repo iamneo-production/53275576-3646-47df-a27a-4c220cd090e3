@@ -63,7 +63,7 @@
       </div><br><br>
   </div>
   <div id="academyRight">
-      <button (click)="addAcademy()" class="btn btn-success" id="addAcademy">Add Academy</button>
+      <button [disabled]="!addacademyform.valid" (click)="addAcademy()" class="btn btn-success" id="addAcademy">Add Academy</button>
   </div>
 </form>
 

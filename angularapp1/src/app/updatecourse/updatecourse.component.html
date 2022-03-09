@@ -97,7 +97,7 @@
       </div><br><br>
   </div>
   <div id="courseRight">
-      <button (click)="updatecourse()" class="btn btn-success" id="updateCourse">Update Course</button>
+      <button [disabled]="!updatecourseform.valid" (click)="updatecourse()" class="btn btn-success" id="updateCourse">Update Course</button>
 
   </div>
 </form>

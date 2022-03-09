@@ -74,16 +74,17 @@
           <div id="confirmPassword">
             <input formControlName="confirmPassword" type="password" class="form-control" placeholder="Confirm Password"/>
             <small *ngIf="!signupform.get('confirmPassword').valid && signupform.get('confirmPassword').touched" class="text-danger">Password doesn't match</small> 
+            <!-- <div *ngIf="signupform.confirmPassword.errors.confirmedValidator">Password and Confirm Password must be match.</div> -->
           </div>
 
           <div id="submitButton">
-            <button  (click)="signupfunc()" type="submit" id="submit">
+            <button [disabled]="!signupform.valid" (click)="signupfunc()" type="submit" id="submit">
               submit
             </button>
           </div>
 
           <span id="already">
-            Already a user? <a href="#" id="signinLink">Login</a></span>
+            Already a user? <a href="/login" id="signinLink">Login</a></span>
         </form>
       </div>
     </div>

@@ -36,9 +36,7 @@ export class UpdatecourseComponent implements OnInit {
       courseId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,40}$')]),
       courseName : new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z+0-9_-]{2,40}$')]),
       courseEnrolled : new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
-      courseDescription : new FormControl('', [Validators.required]),
-      courseDuration:new FormControl('',[Validators.required]),
-      courseTiming:new FormControl('',[Validators.required])
+      courseDescription : new FormControl('')
     });
     this.id = this.route.snapshot.params['id'];
     this.courseService.getCourseById(this.id).subscribe(data => {
@@ -83,10 +81,10 @@ export class UpdatecourseComponent implements OnInit {
     // alert("Course Updated Successfully!!!");
   updatecourse(){
     this.courseService.updateCourse(this.id, this.course).subscribe(data =>{
-      this.goToCourse();
       alert("Course Updated Successfully!!!");
     },
     error=>console.log("error"));
+    this.router.navigate(["/course"])
   }
   onSubmit(e){
     this.updatecoursepayload.courseId= this.updatecourseform.get('courseId').value;
@@ -96,9 +94,6 @@ export class UpdatecourseComponent implements OnInit {
 
     this.updatecoursepayload.courseDuration=this.updatecourseform.get('courseDuration').value;
     this.updatecoursepayload.courseTiming=this.updatecourseform.get('courseTiming').value;
-  }
-  goToCourse(){
-    this.router.navigate(['/course']);
   }
 } 
 

@@ -36,12 +36,15 @@ export class LoginComponent implements OnInit {
     console.log("Button Click");
     this.router.navigate(["/homepage"]);
   }
-  loginfunc() {
+  onSubmit(e){
     this.loginpayload.email = this.loginform.get('email').value;
     this.loginpayload.email = this.loginform.get('password').value;
+  }
+  loginfunc() {
+    
     this.saveLogin();
 
     console.log("login successful");
-    // this.router.navigate{["/institute"]};
+    this.router.navigate(["/viewacademy"]);
   }
 }

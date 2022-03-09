@@ -4,10 +4,10 @@
   <h2>School Admission</h2>
   <ul id="academyList">
       <li id="adminAcademy">
-          <button (click)="viewAcademy()" id="adminAcademy">Institute</button>
+          <a href="/viewacademy"><button (click)="viewAcademy()" id="adminAcademy">Institute</button></a>
       </li>
       <li id="adminCourse">
-          <button (click)="viewCourse()" id="adminCourse">Enrolled course</button>
+          <a href="/institute-enroll"><button (click)="viewCourse()" id="adminCourse">Enrolled course</button></a>
       </li>
   </ul>
   <div>
@@ -61,7 +61,7 @@
 
     </div><br>
     <div id="phoneNumber1" >
-      <input formControlName="phoneNumber1"type="number" class="form-control" placeholder="Enter Your Phone Number"
+      <input formControlName="phoneNumber1"type="tel" class="form-control" placeholder="Enter Your Phone Number"
       ><br>
       <small *ngIf="!enrolledform.get('phoneNumber1').valid && enrolledform.get('phoneNumber1').touched" class="text-danger"> Invalid phoneNumber </small>
     </div><br><br>
@@ -79,7 +79,7 @@
 
     
 <div id="phoneNumber2">
-<input formControlName="phoneNumber2" type="number" class="form-control" placeholder="Enter alternate number"
+<input formControlName="phoneNumber2" type="tel" class="form-control" placeholder="Enter alternate number"
       ><br>
       <small *ngIf="!enrolledform.get('phoneNumber2').valid && enrolledform.get('phoneNumber2').touched" class="text-danger"> Invalid phoneNumber2 </small>
     </div><br><br>
@@ -117,6 +117,6 @@
   </div>
 </div> 
 <div id="enroll">
-  <button (click)="enrollnow()"  type="submit" class="btn btn-success" id="enrollNowButton">Enroll now</button>
+  <button [disabled]="!enrolledform.valid" (click)="enrollnow()"  type="submit" class="btn btn-success" id="enrollNowButton">Enroll now</button>
 </div>
 </form>
