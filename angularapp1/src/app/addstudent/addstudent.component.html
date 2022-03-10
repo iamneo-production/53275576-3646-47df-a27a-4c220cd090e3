@@ -17,14 +17,19 @@
    
         <div  id="firstName" >
             <input formControlName="studentId" type="text" class="form-control" placeholder="Enter Your id"
-            [(ngModel)]="student.studentId" name="studentId"><br>
+            [(ngModel)]="student.studentId" name="studentId" ><br>
             
         </div>
         <div  id="firstName" >
             <input formControlName="firstName" type="text" class="form-control" placeholder="Enter Your first name"
-            [(ngModel)]="student.firstName" name="firstName"><br>
-            <small *ngIf="!addstudentform.get('firstName').valid && addstudentform.get('firstName').touched"
-            style="color:red;">* Invalid First Name</small>
+            [(ngModel)]="student.firstName" name="firstName" required><br>
+            
+      
+            <small *ngIf="!addstudentform.get('firstName').valid && addstudentform.get('firstName').touched && addstudentform.controls['firstName'].errors.required"
+            style="color:red;" >
+                * Invalid First Name
+            </small>
+           
         </div><br>
         <div  id="fatherName" > 
             <input formControlName="fatherName" type="text" class="form-control" placeholder="Enter Your father name"
@@ -76,22 +81,19 @@
 
     <div id="academyRight">
         <div id="maleorfemale">
-            <!-- <input formControlName="maleorfemale" type="text" class="form-control" placeholder="Enter male or female"
-            [(ngModel)]="student.maleOrFemale" name="maleOrFemale"><br> -->
-                <p><b>Select Gender</b></p>
-            <select 
-          style="display: inline"
-          class="form-control"
-          id="maleorfemale"
-          name="maleorfemale"
-          #myNameElemtoduration
-          [(ngModel)]="student.maleOrFemale"
-        >
-          <option value="Male ">Male</option>
-          <option value="Female ">Female</option></select
-        >
-            <!-- <small *ngIf="!addstudentform.get('maleorfemale').valid && addstudentform.get('maleorfemale').touched"
-            style="color:red;">* Invalid </small> -->
+            
+                <input formControlName="maleorfemale" type="text" [(ngModel)]="student.maleOrFemale" id="t1" name="maleOrFemale" list="l1" placeholder="Enter male or female" required
+                     >
+               <datalist id="l1">
+                 <option>Male</option>
+                 <option>Female</option>
+               </datalist>
+            
+            
+         
+        
+            <small *ngIf="!addstudentform.get('maleorfemale').valid && addstudentform.get('maleorfemale').touched"
+            style="color:red;">* Invalid </small> 
         </div><br>
         <div id="phoneNumber2">
             <input formControlName="phoneNumber2" type="text" class="form-control" placeholder="Enter alternate number"
