@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Institute } from '../service/institute';
 import { InstituteService } from '../service/institute.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl,FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Updateacademypayload } from './updateacademy.payload';
 
@@ -15,10 +15,10 @@ export class UpdateacademyComponent implements OnInit {
   institute: Institute = new Institute();
   updateacademyform: FormGroup;
   updateacademypayload:Updateacademypayload;
-  
+  id:number;
 
   
-  constructor(private formBuilder : FormBuilder,private router:Router,private instituteService: InstituteService) { 
+  constructor(private formBuilder : FormBuilder,private router:Router,private instituteService: InstituteService, private route:ActivatedRoute) { 
   this.updateacademypayload={
     instituteId:'',
     imageUrl:'',
@@ -33,13 +33,16 @@ export class UpdateacademyComponent implements OnInit {
     this.updateacademyform = new FormGroup({
       instituteId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,15}$')]),
       imageUrl : new FormControl('', [Validators.required]),
-      instituteName : new FormControl('', [Validators.required,Validators.minLength(3),Validators.pattern('^[A-Za-z0-9_-]{3,40}$')]),
+      instituteName : new FormControl('', [Validators.required,Validators.minLength(3),Validators.pattern('^([A-Za-z0-9_-]+.*?){3,40}$')]),
       instituteEmail : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^([a-zA-Z]+.*?)+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
       mobileNumber : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{10}$')]),
-      academyLocation : new FormControl('', [Validators.required,Validators.minLength(0),Validators.pattern('^[a-z0-9_-]{2,40}$')]),  
-      academyDesc : new FormControl('', [Validators.required,Validators.minLength(0),Validators.pattern('^[A-Za-z0-9_-]{0,100}$')]),
+      academyLocation : new FormControl('', [Validators.required,Validators.minLength(0),Validators.pattern('^([a-z0-9_-]+.*?){2,40}$')]),  
+      academyDesc : new FormControl('', [Validators.required,Validators.minLength(0),Validators.pattern('^([A-Za-z0-9_-]+.*?){0,100}$')]),
     });
-
+    this.id = this.route.snapshot.params['id'];
+    this.instituteService.getInstituteById(this.id).subscribe(data=>{
+      this.institute = data;
+    },error=>console.log(error));
   }
   viewAcademy(){
     console.log("Button Click");
@@ -59,18 +62,20 @@ export class UpdateacademyComponent implements OnInit {
 
   updateacademy(){
     console.log(this.institute);
-    this.saveInstitute();
+    this.instituteService.updateInstitute(this.id,this.institute).subscribe(data=>{
+      alert("institute updated successfully");
+    })
+    //this.saveInstitute();
     console.log("success");
-    alert("Academy Added Successfully!!!");
   }
-  saveInstitute(){
-    this.instituteService.createInstitute(this.institute).subscribe(data => {
-      console.log(data);
-      console.log("mobile")
-      console.log(data["mobileNo"])
-    },
-    error => console.log("error"));
-  }
+  // saveInstitute(){
+  //   this.instituteService.createInstitute(this.institute).subscribe(data => {
+  //     console.log(data);
+  //     console.log("mobile")
+  //     console.log(data["mobileNo"])
+  //   },
+  //   error => console.log("error"));
+  // }
  
   onSubmit(e){
     this.updateacademypayload.instituteId = this.updateacademyform.get('instituteId').value;

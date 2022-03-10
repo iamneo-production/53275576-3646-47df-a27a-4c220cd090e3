@@ -34,7 +34,7 @@ export class UpdatecourseComponent implements OnInit {
   ngOnInit(): void {
     this.updatecourseform = new FormGroup({
       courseId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,40}$')]),
-      courseName : new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z+0-9_-]{2,40}$')]),
+      courseName : new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){2,40}$')]),
       courseEnrolled : new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
       courseDescription : new FormControl('')
     });
@@ -80,6 +80,9 @@ export class UpdatecourseComponent implements OnInit {
     // console.log("success");
     // alert("Course Updated Successfully!!!");
   updatecourse(){
+    
+    this.course.courseTiming = this.myNameElem.nativeElement.value + "TO " + this.myNameElemtoduration.nativeElement.value + "& " + this.myNameElemfromtiming.nativeElement.value + this.myNameElemtotiming.nativeElement.value ;
+    this.course.courseDuration = this.courseduration.nativeElement.value;
     this.courseService.updateCourse(this.id, this.course).subscribe(data =>{
       alert("Course Updated Successfully!!!");
     },

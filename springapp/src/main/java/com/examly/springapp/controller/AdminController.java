@@ -78,9 +78,11 @@ public class AdminController {
 
         institute.setInstituteName(instituteDetails.getInstituteName());
         institute.setInstituteDescription(instituteDetails.getInstituteDescription());
-        institute.setInstituteAddress(instituteDetails.getInstituteDescription());
+        // institute.setInstituteAddress(instituteDetails.getInstituteDescription());
         institute.setInstituteAddress(instituteDetails.getInstituteAddress());
-
+        institute.setEmail(instituteDetails.getEmail());
+        institute.setMobileNo(instituteDetails.getMobileNo());
+        institute.setImgUrl(instituteDetails.getImgUrl());
         InstituteModel updateInstitute = instituteRepository.save(institute);
         return ResponseEntity.ok(updateInstitute);
     }
@@ -131,6 +133,8 @@ public class AdminController {
         course.setCourseName(courseDetails.getCourseName());
         course.setCourseDescription(courseDetails.getCourseDescription());
         course.setCourseDuration(courseDetails.getCourseDuration());
+        course.setCourseTiming(courseDetails.getCourseTiming());
+        course.setCourseEnrolled(courseDetails.getCourseEnrolled());
         //course.setCourseAddress(courseDetails.getCoureAddress());
 
         CourseModel updateCourse = courseRepository.save(course);
