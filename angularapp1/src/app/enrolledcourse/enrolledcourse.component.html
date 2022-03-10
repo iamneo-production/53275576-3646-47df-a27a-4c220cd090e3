@@ -44,6 +44,7 @@
   ><br>
   <small *ngIf="!enrolledform.get('age').valid && enrolledform.get('age').touched" class="text-danger"> Invalid age</small>
 </div><br><br>
+
 <div  id="enterSSLC/HSCMarks" >
   <input formControlName="SSLCorHSCMarks" type="text" class="form-control" placeholder="Enter Your SSLC/HSC marks"
   ><br>
@@ -64,7 +65,8 @@
       <input formControlName="phoneNumber1"type="tel" class="form-control" placeholder="Enter Your Phone Number"
       ><br>
       <small *ngIf="!enrolledform.get('phoneNumber1').valid && enrolledform.get('phoneNumber1').touched" class="text-danger"> Invalid phoneNumber </small>
-    </div><br><br>
+    </div><br>
+    <br>
     
 </div>
 
@@ -88,35 +90,54 @@
 
 
 <div class="column2">
-  <p style="margin-top: 1em; margin-left: 1em;"> Address Information </p>
+  <p style="margin-top: 1em; margin-left: 1em;"> Address Information 
+  </p>
   <div style="padding : 1em">
   <label for="houseNo">House No :</label>
   <input  formControlName="houseNo" type="text" id="houseNo" style="background-color: white; padding: 0.5em; width: 20em; margin-left: 3em;">
-  <small *ngIf="!enrolledform.get('houseNo').valid && enrolledform.get('houseNo').touched" class="text-danger"> Invalid houseNo </small>
+  <small *ngIf="!enrolledform.get('houseNo').valid && enrolledform.get('houseNo').touched" class="text-danger"> Invalid houseNo 
+
+  </small>
   </div>
+
   <div style="padding : 1em">
   <label for="streetName">Street Name :</label>
   <input formControlName="streetName" type="text" id="streetName" style="background-color: white; padding: 0.5em; width: 20em; margin-left: 2em;">
-  <small *ngIf="!enrolledform.get('streetName').valid && enrolledform.get('streetName').touched" class="text-danger"> Invalid streetName </small>
+  <small *ngIf="!enrolledform.get('streetName').valid && enrolledform.get('streetName').touched" class="text-danger"> Invalid streetName 
+
+  </small>
   </div>
+
   <div style="padding : 1em">
   <label for="areaName">Area Name :</label>
   <input formControlName="areaName" type="text" id="areaName" style="background-color: white; padding: 0.5em; width: 15em; margin-left: 2.5em;">
-  <small *ngIf="!enrolledform.get('areaName').valid && enrolledform.get('areaName').touched" class="text-danger"> Invalid areaName </small><br><br>
+  <small *ngIf="!enrolledform.get('areaName').valid && enrolledform.get('areaName').touched" class="text-danger"> Invalid areaName 
+
+  </small><br><br>
   <label for="pincode">Pincode :</label>
   <input formControlName="pincode" type="number" id="pincode" style="background-color: white; padding: 0.5em; margin-left: 4em;">
-  <small *ngIf="!enrolledform.get('pincode').valid && enrolledform.get('pincode').touched" class="text-danger"> Invalid pincode </small>  
+  <small *ngIf="!enrolledform.get('pincode').valid && enrolledform.get('pincode').touched" class="text-danger"> Invalid pincode
+     </small>  
   </div>
+
   <div style="padding : 1em">
   <label for="state">State :</label>
   <input formControlName="state" type="text" id="state" style="background-color: white; padding: 0.5em;  margin-left: 5.5em;">
-  <small  *ngIf="!enrolledform.get('state').valid && enrolledform.get('state').touched" class="text-danger"> Invalid state </small><br><br>
+  <small  *ngIf="!enrolledform.get('state').valid && enrolledform.get('state').touched" class="text-danger"> Invalid state 
+
+  </small><br><br>
   <label for="nationality">Nationality :</label>
   <input formControlName="nationality" type="text" id="nationality" style="background-color: white; padding: 0.5em; margin-left: 3em;">
-  <small *ngIf="!enrolledform.get('nationality').valid && enrolledform.get('nationality').touched" class="text-danger"> Nationality  required</small> <br>
+  <small *ngIf="!enrolledform.get('nationality').valid && enrolledform.get('nationality').touched" class="text-danger"> Nationality  required
+
+  </small> <br>
   </div>
+
 </div> 
 <div id="enroll">
-  <button [disabled]="!enrolledform.valid" (click)="enrollnow()"  type="submit" class="btn btn-success" id="enrollNowButton">Enroll now</button>
+  <button [disabled]="!enrolledform.valid" (click)="enrollnow()"  type="submit" class="btn btn-success" id="enrollNowButton">Enroll now
+    
+  </button>
 </div>
+
 </form>
