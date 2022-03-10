@@ -8,7 +8,7 @@
 </div>
 
 <div class="search"  id="searchButton">
-      <input type="text" name="search" class='search-box' placeholder="Type here to search academy"/>
+      <input type="text" name="search" class='search-box' placeholder="Type here to search academy" [(ngModel)]="instituteName" (ngModelChange)="Search()"/>
       <input type="submit" class="search-txt" value="Search" /><br />
     
 </div>
