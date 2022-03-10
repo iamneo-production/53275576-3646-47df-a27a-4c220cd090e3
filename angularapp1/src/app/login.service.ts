@@ -12,6 +12,18 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   loginUser(login: Login):Observable<Object>{
+    sessionStorage.setItem('email',login.email);
     return this.httpClient.post(`${this.baseURL}`,login)
   }
+
+  isUserLoggedIn(){
+    let user = sessionStorage.getItem('email')
+    console.log(!(user===null))
+    return !(user===null)
+    }
+    logOut(){
+      sessionStorage.removeItem('email');
+    }
 }
+
+ 
