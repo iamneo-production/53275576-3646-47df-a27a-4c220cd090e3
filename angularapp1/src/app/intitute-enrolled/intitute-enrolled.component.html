@@ -10,7 +10,7 @@
 </nav>
     <div class="instsearch">
         <br>
-    <input type="text" id="course-name" name="course-name" placeholder="Type here to search course">&nbsp;<button class="submit">Search</button>
+    <input type="text" style="width: 80%;" id="course-name" name="course-name" placeholder="Type here to search course" [(ngModel)]="courseName"  (ngModelChange)="Search()">
     </div>
     <br>
     <div>

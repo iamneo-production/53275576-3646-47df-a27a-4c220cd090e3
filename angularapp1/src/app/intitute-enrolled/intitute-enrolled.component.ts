@@ -9,6 +9,8 @@ import { CourseService } from '../service/course.service';
 })
 export class IntituteEnrolledComponent implements OnInit {
   courses : Course[];
+  courseName: any;
+
   constructor(private router: Router, private courseService:CourseService) { }
 
   ngOnInit(): void {
@@ -23,5 +25,15 @@ export class IntituteEnrolledComponent implements OnInit {
 
   enrolledCourse(){
     this.router.navigate(["/enrolledcourse"])
+  }
+
+  Search(){
+    if(this.courseName == ""){
+      this.ngOnInit();
+    }else{
+      this.courses = this.courses.filter(res =>{
+        return res.courseName.toLocaleLowerCase().match(this.courseName.toLocaleLowerCase());
+      })
+    }
   }
 }
