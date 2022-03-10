@@ -33,7 +33,7 @@ export class UpdatecourseComponent implements OnInit {
 
   ngOnInit(): void {
     this.updatecourseform = new FormGroup({
-      courseId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,40}$')]),
+     // courseId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,40}$')]),
       courseName : new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){2,40}$')]),
       courseEnrolled : new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
       courseDescription : new FormControl('')
@@ -90,7 +90,7 @@ export class UpdatecourseComponent implements OnInit {
     this.router.navigate(["/course"])
   }
   onSubmit(e){
-    this.updatecoursepayload.courseId= this.updatecourseform.get('courseId').value;
+    //this.updatecoursepayload.courseId= this.updatecourseform.get('courseId').value;
     this.updatecoursepayload.courseName = this.updatecourseform.get('courseName').value;
     this.updatecoursepayload.courseEnrolled = this.updatecourseform.get('courseEnrolled').value;
     this.updatecoursepayload.courseDescription = this.updatecourseform.get('courseDescription').value;

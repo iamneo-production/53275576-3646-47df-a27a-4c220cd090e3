@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../user';
 
@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit {
   user: User = new User();
   signupform: FormGroup;
   signuppayload:SignupPayload;
+  usertype:string;
   
   constructor(private formBuilder : FormBuilder , private router:Router, private userService: UserService) { 
     this.signuppayload={
@@ -50,8 +51,22 @@ export class SignupComponent implements OnInit {
           Validators.pattern('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$')])
     });
   }
+
+  @ViewChild("myNameAdmin") myNameAdmin: ElementRef;
+  @ViewChild("myNameUser") myNameUser: ElementRef;
+  
+
+  @ViewChild("myNameElem") myNameElem: ElementRef;
+
   // ^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$ [a-z0-9._%+-]
   saveUser(){
+    this.user.userRole =  this.myNameElem.nativeElement.value;
+    // if(this.myNameAdmin.nativeElement.value){
+    //   this.user.userRole =  this.myNameAdmin.nativeElement.value;
+    // }else{
+    //   this.user.userRole =  "User";
+    // }
+
     this.userService.createUser(this.user).subscribe(data=>{
       console.log(data)
     }, error=>console.error());
@@ -65,6 +80,7 @@ export class SignupComponent implements OnInit {
       
      
     }
+    
     signupfunc(){
       this.saveUser();
       console.log(this.user)

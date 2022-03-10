@@ -35,16 +35,22 @@
       </div>
       <div id="registerbox">
         <h1>Register</h1>
-        <form [formGroup]="signupform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)">        
-          <label>
-            <input type="radio" [(ngModel)]="user.userRole" name="userRole" value="admin">
+        <form [formGroup]="signupform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)" >        
+          <!-- <label>
+            <input type="radio" [(ngModel)]="user.userRole" (click)="usertypedeclaration()" id="gender_Male" name="userRole" value="admin" #myNameAdmin>
             Admin
           </label>
           
           <label>
-            <input type="radio" [(ngModel)]="user.userRole" name="userRole" value="User">
+            <input type="radio" [(ngModel)]="user.userRole" name="userRole" value="User" id="gender_Male" (click)="usertypedeclaration()" #myNameUser>
             User
-          </label><br/>
+          </label><br/> -->
+
+          <select #myNameElem>
+            <option value="User ">User</option>
+            <option value="Admin ">Admin</option>
+            
+          </select>
 
           <div id="email">
             <input formControlName="email" type="email" placeholder="Enter Mail ID" class="form-control" name = "email" 
