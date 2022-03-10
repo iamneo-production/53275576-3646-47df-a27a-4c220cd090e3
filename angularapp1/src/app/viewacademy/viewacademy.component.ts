@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Institute } from '../service/institute';
 import { InstituteService } from '../service/institute.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-viewacademy',
   templateUrl: './viewacademy.component.html',
@@ -11,7 +11,7 @@ export class ViewacademyComponent implements OnInit {
 
   institutes : Institute[];
 
-  constructor(private instituteService: InstituteService) { }
+  constructor(private router: Router, private instituteService: InstituteService) { }
 
   ngOnInit(): void {
     this.getInsititute();
@@ -24,4 +24,7 @@ export class ViewacademyComponent implements OnInit {
     });
   }
 
+  institueEnroll(){
+    this.router.navigate(["/institute-enroll"])
+  }
 }

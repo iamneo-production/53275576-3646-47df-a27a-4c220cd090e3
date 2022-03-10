@@ -153,9 +153,8 @@
     </div> 
 
     <div id="addStudent">
-        <input type="button" (click)="addstudent()" id="addStu" value="Add Student"
-        style="border-radius: 12px; background-color: forestgreen; padding: 0.5em; color: white;" routerLink="/student">
-    
+        <button [disabled]="!addstudentform.valid" (click)="addstudent()" id="addStu" value="Add Student" class="btn btn-success">
+        Add Student</button>
     </div>
 
     </form>

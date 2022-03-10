@@ -362,6 +362,7 @@
     </div>
     <div id ="enroll">
       <button
+        [disabled]="!enrolledform.valid"  
         (click) ="enrollnow()"
         type ="submit"
         class ="btn btn-success"
