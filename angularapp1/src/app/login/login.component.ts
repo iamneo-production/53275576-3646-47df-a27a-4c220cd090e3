@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   login: Login = new Login();
   loginform: FormGroup;
   loginpayload: LoginPayload;
+  invaliduser = false;
   constructor(private router: Router, private loginService:LoginService) { }
 
   ngOnInit(): void {
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
     this.saveLogin();
   }
   saveLogin(){
-    this.loginService.loginUser(this.login).subscribe(data=>{console.log(data)}, error=>console.error())
+     this.loginService.loginUser(this.login).subscribe(data=>{
+      console.log(data)}, error=>console.error())
   }
   signuppage(){
     console.log("Button Click");
@@ -44,7 +46,7 @@ export class LoginComponent implements OnInit {
     
     this.saveLogin();
 
-    console.log("login successful");
+    // console.log("login successful");
     this.router.navigate(["/viewacademy"]);
   }
 }
