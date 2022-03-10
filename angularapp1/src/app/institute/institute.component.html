@@ -27,7 +27,7 @@
 
 
   <div class="card" style="width: 18rem;" *ngFor="let ins of institutes;  let i=index;">
-    <img class="card-img-top" src={{ins.imgUrl}} alt="Card image cap">
+    <img class="card-img-top" src={{ins.imgUrl}} alt={{ins.imgUrl}}>
     <div class="card-body"    >
       <h5 class="card-title">{{ins.instituteId}}</h5>
       <p class="card-text">{{ins.instituteAddress}}</p>

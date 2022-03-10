@@ -18,7 +18,7 @@
 
 <div class="team-member" id="userInstituteGrid1" *ngFor="let ins of institutes;  let i=index;">
   <div class="image-wrapper">
-    <img class="img-fluid" src="https://static.wixstatic.com/media/e86a17_3824e91988d94def9292e660ba9010fd~mv2.jpg/v1/fill/w_1150,h_500,al_c,q_85,usm_0.66_1.00_0.01/2.webp" alt="alternative">
+    <img class="img-fluid" src={{ins.imgUrl}} alt="alternative">
   </div> 
   <p class="p-large">{{ins.instituteName}}</p>
   
