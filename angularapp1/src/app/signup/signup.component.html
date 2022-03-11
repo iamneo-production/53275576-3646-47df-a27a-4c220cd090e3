@@ -78,9 +78,10 @@
           </div>            
 
           <div id="confirmPassword">
-            <input formControlName="confirmPassword" type="password" class="form-control" placeholder="Confirm Password"/>
-            <small *ngIf="!signupform.get('confirmPassword').valid && signupform.get('confirmPassword').touched" class="text-danger">Password doesn't match</small> 
-            <!-- <div *ngIf="signupform.confirmPassword.errors.confirmedValidator">Password and Confirm Password must be match.</div> -->
+            <input formControlName="confirmPassword" type="password" class="form-control" name="confirmPassword" 
+            [(ngModel)]="user.confirmPassword" placeholder="Confirm Password"/>
+            <small *ngIf="signupform.get('confirmPassword').touched && user.password!==user.confirmPassword " class="text-danger">Invalid Password</small> 
+
           </div>
 
           <div id="submitButton">
