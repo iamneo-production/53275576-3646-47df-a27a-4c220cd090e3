@@ -12,17 +12,20 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   loginUser(login: Login):Observable<Object>{
-    sessionStorage.setItem('email',login.email);
-    return this.httpClient.post(`${this.baseURL}`,login)
-  }
+    localStorage.setItem('email',login.email);
 
+    return this.httpClient.post(`${this.baseURL}`,login)
+
+  }
+  
   isUserLoggedIn(){
-    let user = sessionStorage.getItem('email')
-    console.log(!(user===null))
-    return !(user===null)
+    let user = localStorage.getItem('email')
+    console.log(!(user==="undefined"))
+    // if(user.includes("user")){}
+    return (!(user==="undefined")&& !(user===null))
     }
     logOut(){
-      sessionStorage.removeItem('email');
+      localStorage.removeItem('email');
     }
 }
 

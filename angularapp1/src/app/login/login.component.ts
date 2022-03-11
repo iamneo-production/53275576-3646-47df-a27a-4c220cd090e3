@@ -45,8 +45,16 @@ export class LoginComponent implements OnInit {
   loginfunc() {
     
     this.saveLogin();
+    let user = localStorage.getItem('email')
+
+       if(user.includes("admin")){
+        this.router.navigate(["/institute"]);
+       }
+       else{
+        this.router.navigate(["/viewacademy"]);
+       }
 
     // console.log("login successful");
-    this.router.navigate(["/viewacademy"]);
+    //this.router.navigate(["/viewacademy"]);
   }
 }

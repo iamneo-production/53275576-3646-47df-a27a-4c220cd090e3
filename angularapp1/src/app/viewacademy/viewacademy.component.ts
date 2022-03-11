@@ -20,12 +20,16 @@ export class ViewacademyComponent implements OnInit {
 
   }
 
+  
   private getInsititute(){
     this.instituteService.getInstituteList().subscribe(data=>{
       this.institutes=data;
     });
   }
-
+  public logout(){
+    this.loginService.logOut();
+    //this.router.navigate[('/login')]
+  }
   institueEnroll(){
     this.router.navigate(["/institute-enroll"])
   }

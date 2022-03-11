@@ -18,19 +18,20 @@ import { StudentComponent } from './student/student.component';
 import { ViewinstituteComponent } from './viewinstitute/viewinstitute.component';
 import { IntituteEnrolledComponent } from './intitute-enrolled/intitute-enrolled.component';
 import { EnrolledcourseComponent } from './enrolledcourse/enrolledcourse.component';
+import { AuthguardService } from './authguard.service';
 const routes: Routes = [
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'adminacademy',component:AdminacademyComponent},
   {path:'homepage',component:HomepageComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
-  {path:'viewacademy', component:ViewacademyComponent},
+  {path:'viewacademy', component:ViewacademyComponent,canActivate:[AuthguardService]},
   {path:'displayuser',component:DisplayuserComponent},
   {path:'institute' ,component:InstituteComponent},
-  {path:'addacademy' ,component:AddacademyComponent},
-  {path:'updateacademy/:id' ,component:UpdateacademyComponent},
-  {path:'addcourse' ,component:AddcourseComponent},
-  {path:'updatecourse/:id',component:UpdatecourseComponent},
+  {path:'addacademy' ,component:AddacademyComponent,canActivate:[AuthguardService]},
+  {path:'updateacademy/:id' ,component:UpdateacademyComponent,canActivate:[AuthguardService]},
+  {path:'addcourse' ,component:AddcourseComponent,canActivate:[AuthguardService]},
+  {path:'updatecourse/:id',component:UpdatecourseComponent,canActivate:[AuthguardService]},
   {path:'course',component:CourseComponent},
   {path:'addstudent',component:AddstudentComponent},
   {path:'updatestudent/:id',component:UpdatestudentComponent},

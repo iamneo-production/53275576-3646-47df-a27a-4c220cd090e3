@@ -14,4 +14,8 @@ export class UserService {
   createUser(user:User):Observable<Object>{
     return this.httpClient.post(`${this.baseURL}`,user);
   }
+
+  getUsereById(id: number):Observable<User>{
+    return this.httpClient.get<User>(`https://8080-bcdefdbbabbbeababfffcebfafdfadaefddc.examlyiopb.examly.io/api/v1/course/${id}`);
+  }
 }
