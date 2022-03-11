@@ -11,10 +11,10 @@
 <div style="height: 100vh; background-color: white;"> 
   <div class="container">
   <div class="input-group">
-      <input type="search" class="form-control rounded"  
+      <input type="search" [(ngModel)]="firstName" (ngModelChange)="Search()" class="form-control rounded"  
              placeholder="Type here student id to search"  
              aria-label="Search" aria-describedby="search-addon" 
-             style="margin-top:2em; margin-right: 1em;" [(ngModel)]="firstName" (ngModelChange)="Search()" />
+             style="margin-top:2em; margin-right: 1em;"  />
       <button type="button" class="btn btn-outline-primary btn btn-success" 
               style="margin-top: 2em; color:white;  border-color:grey;"  >Search</button>
     </div>

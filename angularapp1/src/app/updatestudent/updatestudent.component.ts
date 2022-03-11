@@ -55,7 +55,7 @@ export class UpdatestudentComponent implements OnInit  {
       age:new FormControl('', [Validators.required]),
       phoneNumber2:new FormControl('', [Validators.maxLength(10),Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
      // SSLCorHSCMarks:new FormControl('', [Validators.required]),
-      maleorfemale:new FormControl('', [Validators.required]),
+     // maleorfemale:new FormControl('', [Validators.required]),
       houseNo:new FormControl('', [Validators.required]),
       streetName:new FormControl('', [Validators.required]),
       areaName:new FormControl('', [Validators.required]),
@@ -73,7 +73,7 @@ export class UpdatestudentComponent implements OnInit  {
     this.updatestudentpayload.phoneNumber2 = this.enrolledform.get('phonenumber2').value;
     //this.updatestudentpayload.SSLCorHSCMarks = this.enrolledform.get('SSLCorHSCMarks').value;
     this.updatestudentpayload.age = this.enrolledform.get('age').value;
-    this.updatestudentpayload.maleorfemale = this.enrolledform.get('maleorfemale').value;
+    //this.updatestudentpayload.maleorfemale = this.enrolledform.get('maleorfemale').value;
     this.updatestudentpayload.emailId = this.enrolledform.get('email').value;
     this.updatestudentpayload.houseNo= this.enrolledform.get('houseNo').value;
     this.updatestudentpayload.streetName = this.enrolledform.get('streetName').value;

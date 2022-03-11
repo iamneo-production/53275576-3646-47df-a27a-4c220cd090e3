@@ -16,6 +16,7 @@ export class AddstudentComponent implements OnInit {
 
   constructor(private studentService: StudentService) { 
     this.addstudentpayload={
+      studentId:'',
       firstName:'',
     fatherName:'',
     motherName:'',
@@ -37,14 +38,14 @@ export class AddstudentComponent implements OnInit {
 
 ngOnInit(): void {
   this.addstudentform = new FormGroup({
-    studentId: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
+    studentId: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{2,40}$')]),
 
     firstName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     fatherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     motherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     emailId:new FormControl('', [Validators.required,Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,30}$')]),
     age: new FormControl('', [Validators.required,Validators.pattern('^([5-9]|[2-5][0-9]|6[0-5])$')]),
-    enterSSCHSCmarks: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
+    // enterSSCHSCmarks: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
     lastName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     phoneNumber: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
     phoneNumber2: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
@@ -75,7 +76,8 @@ saveStudent(){
 
   onSubmit(e){
     this.addstudentpayload.firstName= this.addstudentform.get('firstName').value;
-   
+    this.addstudentpayload.studentId= this.addstudentform.get('studentId').value;
+
     this.addstudentpayload.fatherName = this.addstudentform.get('fatherName').value;
     this.addstudentpayload.motherName = this.addstudentform.get('motherName').value;
     this.addstudentpayload.emailId = this.addstudentform.get('emailId').value;
@@ -83,7 +85,7 @@ saveStudent(){
     // this.addstudentpayload.enterSSCHSCmarks = this.addstudentform.get('enterSSCHSCmarks').value;
     this.addstudentpayload.lastName = this.addstudentform.get('lastName').value;
     this.addstudentpayload.phoneNumber = this.addstudentform.get('phoneNumber').value;
-    this.addstudentpayload.maleorfemale = this.addstudentform.get('maleorfemale').value;
+    // this.addstudentpayload.maleorfemale = this.addstudentform.get('maleorfemale').value;
     this.addstudentpayload.phoneNumber2 = this.addstudentform.get('phoneNumber2').value;
     this.addstudentpayload.houseNo = this.addstudentform.get('houseNo').value;
     this.addstudentpayload.streetName = this.addstudentform.get('streetName').value;

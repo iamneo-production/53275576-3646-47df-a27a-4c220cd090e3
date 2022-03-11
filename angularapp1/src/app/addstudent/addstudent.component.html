@@ -15,7 +15,7 @@
   
     <div id="academyLeft">
    
-        <div  id="firstName" >
+        <div  id="studentId" >
             <input formControlName="studentId" type="text" class="form-control" placeholder="Enter Your id"
             [(ngModel)]="student.studentId" name="studentId" ><br>
             
@@ -82,7 +82,7 @@
     <div id="academyRight">
         <div id="maleorfemale">
             
-                <input formControlName="maleorfemale" type="text" [(ngModel)]="student.maleOrFemale" id="t1" name="maleOrFemale" list="l1" placeholder="Enter male or female" required
+                <input formControlName="" type="text" [(ngModel)]="student.maleOrFemale" id="t1" name="maleOrFemale" list="l1" placeholder="Enter male or female" required
                      >
                <datalist id="l1">
                  <option>Male</option>
@@ -92,8 +92,8 @@
             
          
         
-            <small *ngIf="!addstudentform.get('maleorfemale').valid && addstudentform.get('maleorfemale').touched"
-            style="color:red;">* Invalid </small> 
+            <!-- <small *ngIf="!addstudentform.get('maleorfemale').valid && addstudentform.get('maleorfemale').touched"
+            style="color:red;">* Invalid </small>  -->
         </div><br>
         <div id="phoneNumber2">
             <input formControlName="phoneNumber2" type="text" class="form-control" placeholder="Enter alternate number"
