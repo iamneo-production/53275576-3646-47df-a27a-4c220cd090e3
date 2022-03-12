@@ -22,6 +22,21 @@ export class IntituteEnrolledComponent implements OnInit {
       this.courses=data;
     });
   }
+  viewAcademy(){
+    console.log("Button Click");
+    this.router.navigate(["/viewacademy"]);
+
+  }
+  viewCourse(){
+    console.log("Button Click");
+    
+  }
+  
+  logout(){
+    this.router.navigate(["/homepage"]);
+
+
+  }
 
   enrolledCourse(){
     this.router.navigate(["/enrolledcourse"])
