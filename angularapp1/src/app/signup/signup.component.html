@@ -14,7 +14,7 @@
     crossorigin="anonymous"
   />
   <link rel="stylesheet" href="./signup.component.css" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <body>
     <div class="main">
       <div class="navbar">
@@ -71,15 +71,23 @@
           </div>
 
           <div id="password" class="form-group">
-            <input formControlName="password" type="password" class="form-control" placeholder="Enter Password"
+            <input formControlName="password" [type]="password" type="password" class="form-control" placeholder="Enter Password"
             [(ngModel)] = "user.password" name="password" />
+            <button (click)="onClick()" style="float: right">
+              <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+              <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+            </button>
             <small *ngIf="!signupform.get('password').valid && signupform.get('password').touched" class="text-danger">Invalid Password</small> 
             
           </div>            
 
           <div id="confirmPassword">
-            <input formControlName="confirmPassword" type="password" class="form-control" name="confirmPassword" 
+            <input formControlName="confirmPassword" [type]="password" type="password" class="form-control" name="confirmPassword" 
             [(ngModel)]="user.confirmPassword" placeholder="Confirm Password"/>
+            <button (click)="onClick()" style="float: right">
+              <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+              <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+            </button>
             <small *ngIf="signupform.get('confirmPassword').touched && user.password!==user.confirmPassword " class="text-danger">Invalid Password</small> 
 
           </div>
