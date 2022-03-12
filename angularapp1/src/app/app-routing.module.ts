@@ -19,6 +19,7 @@ import { ViewinstituteComponent } from './viewinstitute/viewinstitute.component'
 import { IntituteEnrolledComponent } from './intitute-enrolled/intitute-enrolled.component';
 import { EnrolledcourseComponent } from './enrolledcourse/enrolledcourse.component';
 import { AuthguardService } from './authguard.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 const routes: Routes = [
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'adminacademy',component:AdminacademyComponent},
@@ -38,7 +39,8 @@ const routes: Routes = [
   {path:'student',component:StudentComponent},
   {path:'viewinstitute',component:ViewinstituteComponent},
   {path:'institute-enroll',component:IntituteEnrolledComponent},
-  {path:'enrolledcourse',component:EnrolledcourseComponent}
+  {path:'enrolledcourse',component:EnrolledcourseComponent},
+  { path: '**', pathMatch: 'full', component: PagenotfoundComponent }
 ];
 
 @NgModule({
