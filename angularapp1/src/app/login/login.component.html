@@ -50,7 +50,7 @@
             <div class="cred">
               <input formControlName="password" [type]="password" type="password" placeholder="Password" class="form-control"
               [(ngModel)] = "login.password" name="password" />
-              <button (click)="onClick()" style="float: right">
+              <button (click)="onClick()" class="btn btn-dark" style="float: right">
                 <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
                 <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
               </button>

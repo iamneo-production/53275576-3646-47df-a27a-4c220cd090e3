@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit {
   signuppayload:SignupPayload;
   usertype:string;
   password;
+  hide=true;
   show = false;
   constructor(private formBuilder : FormBuilder , private router:Router, private userService: UserService) { 
     this.signuppayload={
