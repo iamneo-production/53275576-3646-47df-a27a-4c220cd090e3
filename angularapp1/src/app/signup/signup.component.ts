@@ -18,7 +18,8 @@ export class SignupComponent implements OnInit {
   signupform: FormGroup;
   signuppayload:SignupPayload;
   usertype:string;
-  
+  password;
+  show = false;
   constructor(private formBuilder : FormBuilder , private router:Router, private userService: UserService) { 
     this.signuppayload={
       username:'',
@@ -50,6 +51,7 @@ export class SignupComponent implements OnInit {
         confirmPassword : new FormControl('', [Validators.required, Validators.minLength(8),Validators.maxLength(16),
           Validators.pattern('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$')])
     });
+    this.password='password';
   }
 
   @ViewChild("myNameAdmin") myNameAdmin: ElementRef;
@@ -81,6 +83,16 @@ export class SignupComponent implements OnInit {
      
     }
     
+    onClick() {
+      if (this.password === 'password') {
+        this.password = 'text';
+        this.show = true;
+      } 
+      else {
+        this.password = 'password';
+        this.show = false;
+      }
+    }
     signupfunc(){
       this.saveUser();
       console.log(this.user)
@@ -88,18 +100,3 @@ export class SignupComponent implements OnInit {
       this.router.navigate(["/login"])
     }
 }
-
-// export function ConfirmedValidator(controlName: string, matchingControlName: string){
-//     return (formGroup: FormGroup) => {
-//         const control = formGroup.controls[controlName];
-//         const matchingControl = formGroup.controls[matchingControlName];
-//         if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
-//             return;
-//         }
-//         if (control.value !== matchingControl.value) {
-//             matchingControl.setErrors({ confirmedValidator: true });
-//         } else {
-//             matchingControl.setErrors(null);
-//         }
-//     }
-// }
