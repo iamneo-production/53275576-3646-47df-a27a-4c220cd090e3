@@ -1,13 +1,17 @@
-<nav class="navbar">
-    <div class="instcontainer-fluid">
-     <h1>INSTITUTE</h1>
-    <div class="instEnroll">
-        <h3> Enrolled course
-            <button class="logout">Logout</button>
-        </h3>    
-    </div>
-    </div>
-</nav>
+<div id="academyHeader">
+    <h2>School Admission</h2>
+    <ul id="academyList">
+        <li id="adminAcademy">
+            <button (click)="viewAcademy()" id="adminAcademy">Institute</button>
+        </li>
+        <li id="adminCourse">
+            <button (click)="viewCourse()" id="adminCourse">Enrolled Course</button>
+        </li>
+    </ul>
+    <div>
+  
+    <button (click)="logout()" id="logout">Logout</button></div>
+  </div>
     <div class="instsearch">
         <br>
     <input type="text" style="width: 80%;" id="course-name" name="course-name" placeholder="Type here to search course" [(ngModel)]="courseName"  (ngModelChange)="Search()">
