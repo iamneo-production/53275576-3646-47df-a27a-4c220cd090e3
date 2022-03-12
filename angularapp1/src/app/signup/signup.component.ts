@@ -20,6 +20,7 @@ export class SignupComponent implements OnInit {
   usertype:string;
   password;
   show = false;
+  hide=true;
   constructor(private formBuilder : FormBuilder , private router:Router, private userService: UserService) { 
     this.signuppayload={
       username:'',
