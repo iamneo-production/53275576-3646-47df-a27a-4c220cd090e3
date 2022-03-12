@@ -5,16 +5,21 @@ import { LoginService } from '../login.service';
 import {LoginPayload} from './login.payload';
 import { FormGroup,FormControl,Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
   login: Login = new Login();
   loginform: FormGroup;
+  public showPassword: boolean;
   loginpayload: LoginPayload;
   invaliduser = false;
+  password;
+  show = false;
   constructor(private router: Router, private loginService:LoginService) { }
 
   ngOnInit(): void {
@@ -24,6 +29,7 @@ export class LoginComponent implements OnInit {
       password : new FormControl('', [Validators.required,
         Validators.pattern('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+*!=]).*$') ]),
     });
+    this.password='password';
     this.saveLogin();
   }
   saveLogin(){
@@ -41,6 +47,16 @@ export class LoginComponent implements OnInit {
   onSubmit(e){
     this.loginpayload.email = this.loginform.get('email').value;
     this.loginpayload.email = this.loginform.get('password').value;
+  }
+  onClick() {
+    if (this.password === 'password') {
+      this.password = 'text';
+      this.show = true;
+    } 
+    else {
+      this.password = 'password';
+      this.show = false;
+    }
   }
   loginfunc() {
     
