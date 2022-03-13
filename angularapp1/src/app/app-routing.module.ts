@@ -20,6 +20,7 @@ import { IntituteEnrolledComponent } from './intitute-enrolled/intitute-enrolled
 import { EnrolledcourseComponent } from './enrolledcourse/enrolledcourse.component';
 import { ReviewComponent } from './review/review.component';
 import { AuthguardService } from './authguard.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 const routes: Routes = [
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'adminacademy',component:AdminacademyComponent},
