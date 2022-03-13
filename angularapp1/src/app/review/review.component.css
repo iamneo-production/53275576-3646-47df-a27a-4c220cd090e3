@@ -1,0 +1,84 @@
+
+#academyHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:50px;
+    background-color:darkmagenta;
+   
+    
+  
+  }
+.Fullnoworking
+    
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url(img.jpg);
+    background-size: cover;
+    background-position: center ;
+    filter: blur(2px);
+
+}
+body
+{
+    background:url(img.jpg);
+    background-size: cover;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.Header
+{
+width: 360px;
+background-color: lightgoldenrodyellow;    
+box-shadow: 0 0 8px red;
+
+}
+.Header form
+{
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    
+}
+.form h1
+{
+    padding: 10px 0;
+}
+form.id
+{
+    position: relative;
+}
+form input
+{
+    width: 100%;
+    height: 50px;
+    margin: 4px 0   ;
+    border: 1px solid greenyellow;
+    border-radius: 3px;
+    background: 181717;
+    padding: 0 15px;
+    font-size: 15px;
+}
+form textarea
+{
+    padding: 5px 15px;
+    border: 1px solid greenyellow;
+    border-radius: 3px;
+    background: 181717;
+    padding: 0 15px;
+    font-size: 15px;
+    width: 100%;
+
+}
+
+button
+{
+    width: 100%;
+
+    color: red;
+}
