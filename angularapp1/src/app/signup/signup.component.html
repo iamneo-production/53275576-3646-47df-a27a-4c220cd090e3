@@ -1,1 +1,107 @@
-<p>signup works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>School Admission</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Rubik:400,700"
+  />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="./signup.component.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <div class="icon">
+          <h2 class="logo">School Admission</h2>
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li>
+              <button (click)="homepage()" id="redirectHome">HOME</button>
+            </li>
+            <li>
+              <button (click)="loginpage()" id="redirectLogin">LOGIN</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="registerbox">
+        <h1>Register</h1>
+        <form [formGroup]="signupform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)" >        
+          <!-- <label>
+            <input type="radio" [(ngModel)]="user.userRole" (click)="usertypedeclaration()" id="gender_Male" name="userRole" value="admin" #myNameAdmin>
+            Admin
+          </label>
+          
+          <label>
+            <input type="radio" [(ngModel)]="user.userRole" name="userRole" value="User" id="gender_Male" (click)="usertypedeclaration()" #myNameUser>
+            User
+          </label><br/> -->
+
+          <select #myNameElem>
+            <option value="User ">User</option>
+            <option value="Admin ">Admin</option>
+            
+          </select>
+
+          <div id="email">
+            <input formControlName="email" type="email" placeholder="Enter Mail ID" class="form-control" name = "email" 
+            [(ngModel)] = "user.email"  name = "email" />
+            <small *ngIf="!signupform.get('email').valid && signupform.get('email').touched" class="text-danger">Invalid Email ID</small> 
+          </div>
+
+          <div id="username">
+            <input formControlName="username" type="text" class="form-control" placeholder="Username"
+            [(ngModel)] = "user.username" name = "username" />
+            <small *ngIf="!signupform.get('username').valid && signupform.get('username').touched" class="text-danger">Invalid Username</small> 
+          </div>
+
+          <div id="mobileNumber">
+            <input formControlName="mobileNumber" type="number" placeholder="Enter Mobile Number" class="form-control"
+            [(ngModel)] = "user.mobileNumber" name = "mobileNumber" />
+            <small *ngIf="!signupform.get('mobileNumber').valid && signupform.get('mobileNumber').touched" class="text-danger">Invalid Mobile Number</small> 
+          </div>
+
+          <div id="password" class="form-group">
+            <input formControlName="password" [type]="password" type="password" class="form-control" placeholder="Enter Password"
+            [(ngModel)] = "user.password" name="password" />
+            <button (click)="onClick()" class="btn btn-dark" style="float: right">
+              <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+              <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+            </button>
+            <small *ngIf="!signupform.get('password').valid && signupform.get('password').touched" class="text-danger">Invalid Password</small> 
+            
+          </div>            
+
+          <div id="confirmPassword">
+            <input formControlName="confirmPassword" [type]="hide ? 'password' : 'text'" type="password" class="form-control" name="confirmPassword" 
+            [(ngModel)]="user.confirmPassword" placeholder="Confirm Password"/>
+            <button (click)="hide = !hide" class="btn btn-dark" style="float: right">
+              <ng-container *ngIf="hide"> <i class="fa fa-eye"></i></ng-container>
+              <ng-container *ngIf="!hide"> <i class="fa fa-eye-slash"></i></ng-container>
+            </button>
+            <small *ngIf="signupform.get('confirmPassword').touched && user.password!==user.confirmPassword " class="text-danger">Invalid Password</small> 
+
+          </div>
+
+          <div id="submitButton">
+            <button [disabled]="!signupform.valid" (click)="signupfunc()" type="submit" id="submit">
+              submit
+            </button>
+          </div>
+
+          <span id="already">
+            Already a user? <a href="/login" id="signinLink">Login</a></span>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

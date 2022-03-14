@@ -1,7 +1,8 @@
 package com.examly.springapp.service;
 
 import com.examly.springapp.model.UserModel;
-import repository.UserRepository;
+// import repository.UserRepository;
+import com.examly.springapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,8 @@ import java.util.List;
 
 @Service
 public class UserService {
+
+
     @Autowired
     private UserRepository userRepository;
 

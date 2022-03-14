@@ -1,0 +1,284 @@
+body {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.5) 50%
+    );
+    font-family: "Rubik", sans-serif;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main {
+    width: 100%;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.5) 50%
+      ),
+      url(https://images.unsplash.com/photo-1617721926586-4eecce739745?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGNsYXNzcm9vbXxlbnwwfHwwfHw%3D&w=1000&q=80);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+  }
+  
+  .navbar {
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+  }
+  
+  .icon {
+    width: 200px;
+    float: left;
+    height: 70px;
+  }
+  
+  .logo {
+    color: whitesmoke;
+    font-size: 25px;
+    font-family: Arial;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+    margin-top: 5px;
+    font-weight: bolder;
+  }
+  
+  .logo:hover {
+    color: #ff7200;
+  }
+  .menu {
+    width: 250px;
+    float: right;
+    height: 70px;
+  }
+  
+  ul {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ul li {
+    list-style: none;
+    margin-left: 72px;
+    margin-top: 27px;
+    font-size: 14px;
+  }
+  
+  ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+  }
+  
+  ul li a:hover {
+    color: #ff7200;
+  }
+  
+  #redirectHome {
+    color: white;
+    width: 100%;
+    border: none;
+    height: 35px;
+    font-size: 17px;
+    font-weight: bold;
+    background: none;
+    outline: none;
+    cursor: pointer;
+  }
+  #redirectHome:hover {
+    color: orangered;
+  }
+  
+  #redirectLogin {
+    color: white;
+    width: 100%;
+    border: none;
+    height: 37px;
+    font-size: 18px;
+    font-weight: bold;
+    background: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  #redirectLogin:hover {
+    color: orangered;
+  }
+  
+  #home {
+    width: 98%;
+    height: 98%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+  
+  #registerbox {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 575px;
+    width: 450px;
+    background: white;
+    border-radius: 15px;
+  }
+  
+  #registerbox h1 {
+    font-family: "Rubik", sans-serif;
+    text-align: center;
+    padding: 0 0 10px 0;
+    border-bottom: 2px solid silver;
+    background-color: white;
+  }
+  
+  #registerbox form {
+    padding: 20px 40px;
+    box-sizing: border-box;
+  }
+  
+  form #adminoruser {
+    position: relative;
+    margin: 30ox 0;
+  }
+  
+  #adminoruser input {
+    width: 100%;
+    padding: 10px 5px;
+    height: 50px;
+    font-size: 25px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  #select {
+    text-align: left;
+    width: 100%;
+  }
+  
+  form #email {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30ox 0;
+  }
+  
+  #email input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 17px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
+  form #username {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30ox 0;
+  }
+  
+  #username input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 17px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
+  form #mobileNumber {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30ox 0;
+  }
+  
+  #mobileNumber input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 17px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
+  form #password {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30ox 0;
+  }
+  
+  #password input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 17px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
+  form #confirmPassword {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30ox 0;
+  }
+  
+  #confirmPassword input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 17px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  
+  form #submitButton {
+    padding-left: 5px;
+    position: relative;
+    margin: 20px 25px;
+  }
+  
+  #submitButton button {
+    width: 80%;
+    padding: 0 10px;
+    height: 35px;
+    font-size: 20px;
+    font-weight: bold;
+    background: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  #already {
+    padding-left: 5px;
+  }
+  #signinLink:hover {
+    color: darkblue;
+  }
+  #adminoruser {
+    width: 230px;
+  }
+  
+  ul {
+    float: right;
+  }

@@ -12,7 +12,7 @@ public class InstituteModel {
 
     @Id
     @Column(name="instituteId")
-    private int instituteId;
+    private Integer instituteId;
 
     @Column(name = "instituteName")
     private String instituteName;
@@ -29,15 +29,21 @@ public class InstituteModel {
     @Column(name="email")
     private String email;
 
-    InstituteModel(){}
+    @Column(name="imgUrl")
+    private String imgUrl;
 
-    public InstituteModel(int instituteId, String instituteName, String instituteDescription, String instituteAddress, String mobileNo, String email) {
+    InstituteModel(){
+        
+    }
+
+    public InstituteModel(int instituteId, String instituteName, String instituteDescription, String instituteAddress, String mobileNo, String email, String imgUrl) {
         this.instituteId = instituteId;
         this.instituteName = instituteName;
         this.instituteDescription = instituteDescription;
         this.instituteAddress = instituteAddress;
         this.mobileNo = mobileNo;
         this.email = email;
+        this.imgUrl = imgUrl;
     }
 
 
@@ -50,6 +56,14 @@ public class InstituteModel {
 
     public void setInstituteId(int instituteId) {
         this.instituteId = instituteId;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     public String getInstituteName() {

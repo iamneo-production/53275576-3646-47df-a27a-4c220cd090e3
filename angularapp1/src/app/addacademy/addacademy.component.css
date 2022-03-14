@@ -1,0 +1,121 @@
+#academyBackground{
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #academyHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:50px;
+    background-color:green;
+    
+  
+  }
+  h2{
+    margin-left: 20px;
+  }
+  #academyList{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    
+  }
+  #academyBackground{
+    background-color: gray;
+    position: fixed;
+    width: 100%;
+    height:600px;
+    justify-content:center;
+  }
+  
+  ul li{
+    padding: 55px;
+    list-style: none;
+    
+    
+  }
+  ul li button{
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: medium;
+    
+  }
+  ul li button:hover{
+    color: brown;
+  }
+  #adminAcademy{
+    font-size: 20px;
+  }
+  h5{
+    display: flex;
+    align-items: center;
+    margin-top:50px ;
+    margin-left: 50%;
+    margin-bottom: 5%;
+    font-size: medium;
+    font-weight: bold;
+  }
+  
+  
+  #logout{
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-right:20px ;
+    
+  }
+  
+  #logout:hover{
+    color: brown;
+  }
+  #academyLeft{
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 30px;
+    float: left;
+    size: 10%;
+    
+  }
+  #academyLeft input{
+    width:330px;
+    height:50px;
+  }
+  #academyCenter input{
+    width:330px;
+    height:50px;
+  }
+  #academyCenter {
+    justify-content: center;
+    float: right;
+    margin-right:35%;
+  
+  
+    
+  
+  }
+  #academyDescription input{
+    width:330px;
+    height:100px;
+  }
+  #academyRight{
+    position: absolute;
+    bottom: 100px;
+    right: 16px;
+    margin-right: 2%;
+    border-radius:5%;
+  }
+  #addAcademy{
+    border-radius: 9px;
+  }
+  
+  ::placeholder{
+  
+    font-size: medium;
+  }
+  
+  
+  

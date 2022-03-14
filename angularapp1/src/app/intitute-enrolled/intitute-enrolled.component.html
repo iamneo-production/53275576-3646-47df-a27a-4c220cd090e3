@@ -1,0 +1,43 @@
+<div id="academyHeader">
+    <h2>School Admission</h2>
+    <ul id="academyList">
+        <li id="adminAcademy">
+            <button (click)="viewAcademy()" id="adminAcademy">Institute</button>
+        </li>
+        <li id="adminCourse">
+            <button (click)="viewCourse()" id="adminCourse">Enrolled Course</button>
+        </li>
+    </ul>
+    <div>
+  
+    <button (click)="logout()" id="logout">Logout</button></div>
+  </div>
+    <div class="instsearch">
+        <br>
+    <input type="text" style="width: 80%;" id="course-name" name="course-name" placeholder="Type here to search course" [(ngModel)]="courseName"  (ngModelChange)="Search()">
+    </div>
+    <br>
+    <div>
+    <div class="instcourse-block" *ngFor="let cou of courses;  let i=index;">
+        <br>
+        <label for="course-name">Course Name:-</label>
+        <label for="course-name-value">{{cou.courseName}}</label>
+        <div class="instright-col">
+        <label for="no-of-students">Number of students:-</label> 
+        <label for="no-of-students-value">{{cou.courseEnrolled}}</label>
+        </div>
+        <br>
+        <label for="course-duration">Course-Duration:-</label> 
+        <label for="course-name-value">{{cou.courseDuration}}</label>
+        <div class="instright-col">
+        <label for="course-description">Course-Description:-</label> 
+        <label for="course-description-value">{{cou.courseDescription}}</label>
+        </div>
+        <br>
+        <label for="course-avail">Course availble timings:-</label>
+        <label for="course-avail-value">{{cou.courseTiming}}</label>
+        <button class="instbtn1" (click)="enrolledCourse()">Enroll Now</button>
+        <br>
+    </div>
+    <br>
+</div>

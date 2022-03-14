@@ -6,36 +6,43 @@ import java.util.Objects;
 public class CourseModel {
 
     @Id
-    @Column(name="courseid")
-    private int courseId;
+    @Column(name="courseId")
+    private Integer courseId;
 
 
     CourseModel(){
     }
-    public CourseModel(int courseId, String courseName, String courseDescription, int courseDuration) {
+    public CourseModel(int courseId, String courseTiming, String courseEnrolled, String courseName, String courseDescription, String courseDuration) {
         this.courseId = courseId;
         this.courseName = courseName;
+        this.courseEnrolled = courseEnrolled;
         this.courseDescription = courseDescription;
         this.courseDuration = courseDuration;
+        this.courseTiming = courseTiming;
     }
 
-    @Column(name="coursename")
+    @Column(name="courseEnrolled")
+    private String courseEnrolled;
+
+    @Column(name="courseName")
     private String courseName;
 
-    @Column(name="coursedescription")
+    @Column(name="courseDescription")
     private String courseDescription;
 
-    @Column(name="courseduration")
-    private int courseDuration;
+    @Column(name="courseDuration")
+    private String courseDuration;
 
+    @Column(name="courseTiming")
+    private String courseTiming;
 
-    public int getCourseId() {
+    public int getCourseId(){
         return courseId;
     }
-
-    public void setCourseId(int courseId) {
+    public void setCourseId(int courseId){
         this.courseId = courseId;
     }
+
 
     public String getCourseName() {
         return courseName;
@@ -43,6 +50,14 @@ public class CourseModel {
 
     public void setCourseName(String courseName) {
         this.courseName = courseName;
+    }
+
+    public String getCourseEnrolled() {
+        return courseEnrolled;
+    }
+
+    public void setCourseEnrolled(String courseEnrolled) {
+        this.courseEnrolled = courseEnrolled;
     }
 
     public String getCourseDescription() {
@@ -53,12 +68,19 @@ public class CourseModel {
         this.courseDescription = courseDescription;
     }
 
-    public int getCourseDuration() {
+    public String getCourseDuration() {
         return courseDuration;
     }
 
-    public void setCourseDuration(int courseDuration) {
+    public void setCourseDuration(String courseDuration) {
         this.courseDuration = courseDuration;
+    }
+
+    public String getCourseTiming(){
+        return courseTiming;
+    }
+    public void setCourseTiming(String courseTiming) {
+        this.courseTiming = courseTiming;
     }
 
 

@@ -1,0 +1,21 @@
+::placeholder{
+    color: black;
+    /* font-weight: 600; */
+    text-align: center;
+}
+input{
+    width:330px;
+    height:54px;
+}
+select{
+    width:100px;
+    height:54px;
+}
+#courseRight{
+    position: absolute;
+    bottom: 100px;
+    right: 16px;
+    margin-right: 2%;
+    border-radius:5%;
+    display: flex;
+}

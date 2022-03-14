@@ -1,0 +1,19 @@
+export class Student {
+    studentId:number;
+    firstName:string;
+    lastName:string;
+    fatherName:string;
+    motherName:string;
+    maleOrFemale:string;
+    email:string;
+    age:number;
+    //enterSSCHSCmarks:number;
+    phoneNumber1:string;
+    phoneNumber2:string;
+    houseNo:string;
+    streetName:string;
+    areaName:string;
+    pincode:string;
+    state:string;
+    nationality:string;
+}

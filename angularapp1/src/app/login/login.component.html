@@ -1,1 +1,70 @@
-<p>login works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>School Admission</title>
+  </head>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Rubik:400,700"
+  />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="./login.component.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <div class="icon">
+          <h2 class="logo">School Admission</h2>
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li>
+              <button (click)="homepage()" id="redirectHome">HOME</button>
+            </li>
+            <li>
+              <button (click)="signuppage()" id="redirectSignup">
+                REGISTER
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="login1">
+        <form [formGroup]="loginform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)" >
+          <h1>Login</h1>
+
+          <div class="content">
+            <div class="cred">
+              <input formControlName="email" type="email" placeholder="Email ID" class="form-control"
+              [(ngModel)]="login.email" name = "email" />
+              <small *ngIf="!loginform.get('email').valid && loginform.get('email').touched" class="text-danger">Invalid Email ID</small> 
+            </div>
+
+            <div class="cred">
+              <input formControlName="password" [type]="password" type="password" placeholder="Password" class="form-control"
+              [(ngModel)] = "login.password" name="password" />
+              <button (click)="onClick()" class="btn btn-dark" style="float: right">
+                <i class="fa fa-eye" aria-hidden="true" *ngIf="!show"></i>
+                <i class="fa fa-eye-slash" aria-hidden="true" *ngIf="show"></i>
+              </button>
+              <small *ngIf="!loginform.get('password').valid && loginform.get('password').touched" class="text-danger">Invalid Password</small> 
+            </div>
+          </div>
+
+          <div class="cred">
+            <button [disabled]="!loginform.valid" (click)="loginfunc()" type="button" class="btn btn-success">
+              Sign In
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
