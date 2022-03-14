@@ -7,12 +7,13 @@ export class Enrolledcoursepayload{
     emailId!:string;
     age!:string;
     phoneNumber2!:string;
-    SSLCorHSCMarks!:string;
-    maleorfemale!:string;
+    //SSLCorHSCMarks!:string;
+    //maleorfemale!:string;
     houseNo!:string;
     streetName!:string;
     areaName!:string;
     pincode!:string;
     state!:string;
     nationality!:string;
+    id: any;
 }

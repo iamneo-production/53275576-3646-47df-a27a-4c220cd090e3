@@ -67,7 +67,7 @@ public class UserController {
         ecourse.setECourseAreaName(ecourseDetails.getECourseAreaName());
         ecourse.setECoursePincode(ecourseDetails.getECoursePincode());
         ecourse.setECourseState(ecourseDetails.getECourseState());
-	  ecourse.setECourseNationality(ecourseDetails.getECourseNationality());
+	    ecourse.setECourseNationality(ecourseDetails.getECourseNationality());
         ecourse.setECourseHouseNo(ecourseDetails.getECourseHouseNo());
         ecourse.setECourseAge(ecourseDetails.getECourseAge());
         ecourse.setECourseEmailId(ecourseDetails.getECourseEmailId());

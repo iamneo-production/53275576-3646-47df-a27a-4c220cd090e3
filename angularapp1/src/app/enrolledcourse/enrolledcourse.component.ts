@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Enrolledcoursepayload } from './enrolledcourse.payload';
 import { Router } from '@angular/router';
 import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
+import { Enrolledcourse } from '../service/enrolledcourse';
+import { EnrolledcourseService } from '../service/enrolledcourse.service';
+import { StudentService } from '../service/student.service';
+import { Student } from '../service/student';
 @Component
 (
   {
@@ -17,12 +21,15 @@ export class EnrolledcourseComponent implements OnInit
 
   enrolledform:FormGroup;
   enrolledcoursepayload:Enrolledcoursepayload;
+ // enrolledcourse1: Enrolledcourse = new Enrolledcourse();
+ student: Student = new Student();
 
-  constructor(private formbuilder:FormBuilder,private router:Router) 
+  constructor(private formbuilder:FormBuilder,private router:Router,private enrolledcourseservice:EnrolledcourseService,private studentService:StudentService) 
   
   
   {
     this.enrolledcoursepayload={
+      id:'',
       firstName:'',
       lastName:'',
       fatherName:'',
@@ -31,8 +38,8 @@ export class EnrolledcourseComponent implements OnInit
       emailId:'',
       age:'',
       phoneNumber2:'',
-      SSLCorHSCMarks:'',
-      maleorfemale:'',
+      //SSLCorHSCMarks:'',
+      //maleorfemale:'',
       houseNo:'',
       streetName:'',
       areaName:'',
@@ -49,6 +56,10 @@ export class EnrolledcourseComponent implements OnInit
     (
 
       { 
+
+      id:new FormControl('', [Validators.required,Validators.maxLength(30),
+          Validators.pattern('[0-9]*')]),
+  
       firstName:new FormControl('', [Validators.required,Validators.maxLength(30),
         Validators.pattern('[a-zA-Z ]*')]),
 
@@ -69,7 +80,7 @@ export class EnrolledcourseComponent implements OnInit
 
       phoneNumber2:new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
 
-      SSLCorHSCMarks:new FormControl('', [Validators.required,Validators.pattern("^[0-9]*$")]),
+      //SSLCorHSCMarks:new FormControl('', [Validators.required,Validators.pattern("^[0-9]*$")]),
 
       houseNo:new FormControl('', [Validators.required]),
 
@@ -92,17 +103,18 @@ export class EnrolledcourseComponent implements OnInit
   }
   onSubmit(e)
   {
-    this.enrolledcoursepayload.firstName = this.enrolledform.get('firstname').value;
-    this.enrolledcoursepayload.lastName = this.enrolledform.get('lastname').value;
-    this.enrolledcoursepayload.fatherName = this.enrolledform.get('fathername').value;
-    this.enrolledcoursepayload.motherName = this.enrolledform.get('mothername').value;
-    this.enrolledcoursepayload.phoneNumber1 = this.enrolledform.get('phonenumber1').value;
-    this.enrolledcoursepayload.phoneNumber2 = this.enrolledform.get('phonenumber2').value;
-    this.enrolledcoursepayload.SSLCorHSCMarks = this.enrolledform.get('SSLCorHSCMarks').value;
+    this.enrolledcoursepayload.id = this.enrolledform.get('id').value;
+    this.enrolledcoursepayload.firstName = this.enrolledform.get('firstName').value;
+    this.enrolledcoursepayload.lastName = this.enrolledform.get('lastName').value;
+    this.enrolledcoursepayload.fatherName = this.enrolledform.get('fatherName').value;
+    this.enrolledcoursepayload.motherName = this.enrolledform.get('motherName').value;
+    this.enrolledcoursepayload.phoneNumber1 = this.enrolledform.get('phoneNumber1').value;
+    this.enrolledcoursepayload.phoneNumber2 = this.enrolledform.get('phoneNumber2').value;
+    //this.enrolledcoursepayload.SSLCorHSCMarks = this.enrolledform.get('SSLCorHSCMarks').value;
 
     this.enrolledcoursepayload.age = this.enrolledform.get('age').value;
-    this.enrolledcoursepayload.maleorfemale = this.enrolledform.get('maleorfemale').value;
-    this.enrolledcoursepayload.emailId = this.enrolledform.get('email').value;
+    // this.enrolledcoursepayload.maleorfemale = this.enrolledform.get('maleorfemale').value;
+    this.enrolledcoursepayload.emailId = this.enrolledform.get('emailId').value;
     this.enrolledcoursepayload.houseNo= this.enrolledform.get('houseNo').value;
     this.enrolledcoursepayload.streetName = this.enrolledform.get('streetName').value;
     this.enrolledcoursepayload.areaName = this.enrolledform.get('areaName').value;
@@ -131,6 +143,19 @@ export class EnrolledcourseComponent implements OnInit
   {
     console.log("buttonclick");
     this.router.navigate(["/login"]);
+  }
+  saveEnrolledcourse(){
+    console.log(this.student);
+    this.studentService.createStudent(this.student).subscribe(data=>{
+      console.log(this.student);
+    },
+    error => console.log(this.student));
+  }
+  addenrolledcourse(){
+    console.log(this.student);
+    this.saveEnrolledcourse();
+    console.log("success");
+    alert("Enrolled Course Added Successfully!!!");
   }
 
 }
