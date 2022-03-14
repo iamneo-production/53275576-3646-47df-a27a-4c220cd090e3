@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Enrolledcoursepayload } from './enrolledcourse.payload';
 import { Router } from '@angular/router';
 import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
+import { Enrolledcourse } from '../service/enrolledcourse';
+import { EnrolledcourseService } from '../service/enrolledcourse.service';
 @Component
 (
   {
@@ -17,12 +19,15 @@ export class EnrolledcourseComponent implements OnInit
 
   enrolledform:FormGroup;
   enrolledcoursepayload:Enrolledcoursepayload;
+  enrolledcourse: Enrolledcourse = new Enrolledcourse();
+  enrolledcourseService: any;
 
-  constructor(private formbuilder:FormBuilder,private router:Router) 
+  constructor(private formbuilder:FormBuilder,private router:Router,private enrolledcourseservice:EnrolledcourseService) 
   
   
   {
     this.enrolledcoursepayload={
+      id:'',
       firstName:'',
       lastName:'',
       fatherName:'',
@@ -49,6 +54,10 @@ export class EnrolledcourseComponent implements OnInit
     (
 
       { 
+
+      id:new FormControl('', [Validators.required,Validators.maxLength(30),
+          Validators.pattern('[0-9]*')]),
+  
       firstName:new FormControl('', [Validators.required,Validators.maxLength(30),
         Validators.pattern('[a-zA-Z ]*')]),
 
@@ -92,6 +101,7 @@ export class EnrolledcourseComponent implements OnInit
   }
   onSubmit(e)
   {
+    this.enrolledcoursepayload.id = this.enrolledform.get('id').value;
     this.enrolledcoursepayload.firstName = this.enrolledform.get('firstname').value;
     this.enrolledcoursepayload.lastName = this.enrolledform.get('lastname').value;
     this.enrolledcoursepayload.fatherName = this.enrolledform.get('fathername').value;
@@ -131,6 +141,19 @@ export class EnrolledcourseComponent implements OnInit
   {
     console.log("buttonclick");
     this.router.navigate(["/login"]);
+  }
+  saveEnrolledcourse(){
+    console.log(this.enrolledcourse);
+    this.enrolledcourseservice.createEnrolledcourse(this.enrolledcourse).subscribe(data=>{
+      console.log(this.enrolledcourse);
+    },
+    error => console.log(this.enrolledcourse));
+  }
+  addenrolledcourse(){
+    console.log(this.enrolledcourse);
+    this.saveEnrolledcourse();
+    console.log("success");
+    alert("Enrolled Course Added Successfully!!!");
   }
 
 }
