@@ -1,89 +1,108 @@
-
 #academyHeader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height:50px;
-    background-color:darkmagenta;
-   
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height:550px;
+  background-color:darkmagenta;
+ 
   
-  }
+
+}
 .Fullnoworking
-    
+  
 {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: url(img.jpg);
-    background-size: cover;
-    background-position: center ;
-    filter: blur(2px);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* background: url(img.jpg); */
+  background-color: black;
+  background-size: cover;
+  background-position: center ;
+  filter: blur(2px);
 
 }
 body
 {
-    background:url(img.jpg);
-    background-size: cover;
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
+  background:url(img.jpg);
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 .Header
 {
-width: 360px;
+width: 550px;
 background-color: lightgoldenrodyellow;    
 box-shadow: 0 0 8px red;
 
 }
 .Header form
 {
-    width: 100%;
-    padding: 25px;
-    text-align: center;
-    
+  width: 100%;
+  padding: 25px;
+  text-align: center;
+  
 }
 .form h1
 {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 form.id
 {
-    position: relative;
+  position: relative;
 }
 form input
 {
-    width: 100%;
-    height: 50px;
-    margin: 4px 0   ;
-    border: 1px solid greenyellow;
-    border-radius: 3px;
-    background: 181717;
-    padding: 0 15px;
-    font-size: 15px;
+  width: 100%;
+  height: 50px;
+  margin: 4px 0   ;
+  border: 1px solid rgb(6, 70, 129);
+  border-radius: 3px;
+  background: 181717;
+  padding: 0 15px;
+  font-size: 15px;
 }
 form textarea
 {
-    padding: 5px 15px;
-    border: 1px solid greenyellow;
-    border-radius: 3px;
-    background: 181717;
-    padding: 0 15px;
-    font-size: 15px;
-    width: 100%;
+  padding: 5px 15px;
+  border: 1px solid rgb(6, 70, 129);
+  border-radius: 3px;
+  background: 181717;
+  padding: 0 15px;
+  font-size: 15px;
+  width: 100%;
 
 }
 
-button
-{
-    width: 100%;
-
-    color: red;
+.star-icon{
+  padding-top:0px;
 }
-.top{
-    display: flex;
-    align-items: right;
-    color: aquamarine;
+.star-icon input{
+  display: none;
+}
+.star-icon label{
+  font-size: 30px;
+color: yellow;
+padding: 10px;
+float: center;
+transition: all 0.2s ease;
+}
+h2{
+  padding-top: 10px;
+  font-size:30px;
+  color: black;
+  font-family:fantasy;
+}
+.Header input:checked + label ~ label {
+  color: #838383;
+
+}
+.Header label:active {
+  transform: scale(0.8);
+  transition: 0.3s ease;
+  color:goldenrod;
+  text-shadow: 0 0 20px #952;
+
 }
