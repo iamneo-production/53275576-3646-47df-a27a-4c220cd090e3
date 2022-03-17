@@ -1,9 +1,12 @@
-#courseBackground{
-
-    background-color: grey; 
+ #courseBackground{
+    width: 100%;
+    height:100%;
+    position: fixed;
+    justify-content:center;
     background-repeat: no-repeat;
     background-size: cover;
     position:fixed;
+    background-image:url('https://preview.pixlr.com/images/800wm/1151/2/1151114477.jpg');
 }
 #courseHeader{
     display: flex;
@@ -15,6 +18,11 @@
 
 
 }
+
+#courseDescription{
+    width:600px;
+    height:300px;
+}
 h2{
     margin-left: 20px;
 }
@@ -22,14 +30,6 @@ h2{
     display: flex;
     flex: 1;
     justify-content: center;
-
-}
-#courseBackground{
-    background-color:rgb(177, 169, 169) ;
-    width: 100%;
-    height:600px;
-    position: fixed;
-    justify-content:center;
 
 }
 
@@ -91,6 +91,7 @@ select{
 #courseLeft input{
     width:330px;
     height:50px;
+    margin-left:10px;
 }
 #courseCenter input{
     width:330px;
@@ -113,14 +114,14 @@ select{
 #editCourseDescription{
     overflow-wrap: break-word;
     word-wrap:break-word;
-    width: 330px;
+    width: 400px;
 
 }
 #courseRight{
     position: absolute;
-    bottom: 100px;
-    right: 16px;
-    margin-right: 2%;
+    bottom: 250px;
+    right: 0px;
+    margin-right: 25%;
     border-radius:5%;
     display: flex;
 }
