@@ -82,3 +82,8 @@ button
 
     color: red;
 }
+.top{
+    display: flex;
+    align-items: right;
+    color: aquamarine;
+}
