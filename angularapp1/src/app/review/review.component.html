@@ -1,33 +1,62 @@
 <html> 
-     
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <body>
+        
+ 
+       
 
-
-      
-<div class="Full">
-            
+       <div class="Full">
 
        </div>
         <div class="Header">
-            <form>
+            <form [formGroup]="reviewform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)" > 
 
                 <h1>GIVE YOUR REVIEW</h1>
-                <div class="id">
+                    
+                <div id="name">
                     
                     
-                <input type="text" placeholder="FullName">
-                
-                </div>
-                <div class="id">
+                <input formControlName="name" type="text" placeholder="Enter Your Name" class="form-control">
+                <small *ngIf="!reviewform.get('name').valid && reviewform.get('name').touched" class="text-danger" >Name is required* </small>
+                </div><br><br>
+                <!-- <div class="id">
 
                 <input type="email" placeholder="Email Address">
                
-                </div>
-                <textarea cols="10" rows="3" placeholder="Enter Your Review"></textarea>
-
-                <button (click)="submit()" id="submit">SUBMIT</button>
+                </div><br> -->
                 
-                    
+                <div id="comments">
+                <textarea cols="10" rows="3"  formControlName="comments" class="form-control" placeholder="Enter Your Review"></textarea>
+                <small *ngIf="!reviewform.get('comments').valid && reviewform.get('comments').touched" class="text-danger" > Required* </small>
+                </div>
+                <h2> Star-Rating</h2>
+                <div class="star-icon">
+                  <input type="radio" name="rating1" id="rating1">
+                  
+                  <label for="rating1" class="fa fa-star"></label>
+                  
+                  <input type="radio" name="rating1" id="rating2">
+                  
+                  <label for="rating2" class="fa fa-star"></label>
+                  
+                  <input type="radio" name="rating1" id="rating3">
+                  
+                  <label for="rating3" class="fa fa-star"></label>
+                  
+                  <input type="radio" name="rating1" id="rating4">
+                  
+                  <label for="rating4" class="fa fa-star"></label>
+                  
+                  <input type="radio" name="rating1" id="rating5">
+                  
+                  <label for="rating5" class="fa fa-star"></label>
+                  
+                </div>
+
+                <br>
+                <button [disabled]="!reviewform.valid" (click)="login()" id="redirectHome" class="btn btn-success">SUBMIT</button>
+
             </form>
         </div> 
         
