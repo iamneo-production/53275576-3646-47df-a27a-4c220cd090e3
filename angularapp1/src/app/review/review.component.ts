@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Router } from '@angular/router';
-
+import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
+import { ReviewPayload } from './review.payload';
 @Component({
   selector: 'app-review',
   templateUrl: './review.component.html',
@@ -9,19 +9,33 @@ import { Router } from '@angular/router';
 })
 export class ReviewComponent implements OnInit
  {
+   reviewform:FormGroup;
+   reviewpayload:ReviewPayload;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private formbuilder:FormBuilder ) {
+    this.reviewpayload={
+      name:'',
+      comments:''
+    }
+   }
+  login(){
+    console.log("Button Click");
+    this.router.navigate(["/login"]);
+    alert("thanks for your review");
+  }
 
   ngOnInit(): void 
   {
-    
-  }
+    this.reviewform=new FormGroup({
+      name:new FormControl('',[Validators.required,Validators.minLength(4)]),
+      comments:new FormControl('',[Validators.required])
+    })
   
-  submit()
-  {console.log("buttonclick");
-    this.router.navigate(["/login"]);
-    console.log("hi");
-    alert("THANKS FOR YOUR REVIEW,YOU WILL BE LOGGED OUT NOW!!)");
   }
+  onSubmit(e){
+    this.reviewpayload.name=this.reviewform.get('name').value,
+    this.reviewpayload.comments=this.reviewform.get('comments').value
+
+    }
 
 }
