@@ -1,10 +1,13 @@
-<nav class="navbar" style="background-color:green; border-bottom: 1em solid white;">
+<head> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script></head>
+<nav class="navbar" style="background-color:rgb(0, 0, 0); border-bottom: 1em solid white;">
   <div class="container-fluid">
-      <h1 style="color:aliceblue;">School Admission</h1>
-      <h4 style="color:aliceblue;" routerLink="/institute">Academy</h4>
-      <h4 style="color:aliceblue;" routerLink="/course">Course</h4>
-      <h4 style="color:aliceblue;" routerLink="/student">Students</h4>
-      <h4 style="color:aliceblue;" routerLink="/login">Logout</h4>
+      <h1 style="color:aliceblue; font-size:30px; font-family:initial;">School Admission</h1>
+      <h4 style="color:aliceblue; font-size: 20px; cursor: pointer;" routerLink="/institute"><u> Academy </u></h4>
+      <h4 style="color:aliceblue; font-size: 20px; cursor: pointer;" routerLink="/course"><u> Course</u></h4>
+      <h4 style="color:aliceblue; font-size: 20px; cursor: pointer;" routerLink="/student"><u> Students</u></h4>
+      <h4 style="color:aliceblue; font-size: 20px; cursor: pointer;" routerLink="/login"><b>Logout</b></h4>
   </div>
 </nav>
 
@@ -15,8 +18,7 @@
              placeholder="Type here student id to search"  
              aria-label="Search" aria-describedby="search-addon" 
              style="margin-top:2em; margin-right: 1em;"  />
-      <button type="button" class="btn btn-outline-primary btn btn-success" 
-              style="margin-top: 2em; color:white;  border-color:grey;"  >Search</button>
+      
     </div>
   </div>  
 <br>
@@ -26,12 +28,13 @@
         <table>
           <thead>
             <tr>
-              <th id="studentid">StudentID</th>
-              <th id="studentid">StudentName</th>
-              <th id="studentid">Email</th>
-              <th id="studentid">Mobile number</th>
+              <th id="studentid">Student ID</th>
+              <th id="studentid">Student Name</th>
+              <th id="studentid">Email ID</th>
+              <th id="studentid">Mobile Number</th>
               <!-- <th id="studentid">Address</th> -->
-              <th id="studentid">Action</th>
+              <th id="studentid">Update</th>
+              <th id="studentid">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -43,7 +46,7 @@
               <!-- <td>{{stud.studentId}}</td> -->
               <td>
                 
-                <button type="button" (click) = "updateStudent(stud.studentId)">Edit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
+                <button type="button" style="padding: 4px; margin: 2px;" class="btn btn-info" (click) = "updateStudent(stud.studentId)">Edit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
                                                                                           fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                   
@@ -52,16 +55,17 @@
                 </svg>
                 </button>
                 
-                <button type="button" (click) = "deleteStudent(stud.studentId)">Delete<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
-                                                                                           fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" style="margin-right:1em;">
-                  
-                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                  
-                  <path fill-rule="evenodd" 
-                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                </svg>
-                </button>
+                
               </td>
+              <td><button type="button" style="padding: 4px; margin: 2px;" class="btn btn-danger" (click) = "deleteStudent(stud.studentId)">Delete<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
+                fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" style="margin-right:1em;">
+
+<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+
+<path fill-rule="evenodd" 
+d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+</svg>
+</button></td>
             </tr>
           </tbody>
         </table>
