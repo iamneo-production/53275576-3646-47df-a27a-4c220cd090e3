@@ -18,10 +18,10 @@ export class ReviewComponent implements OnInit
       comments:''
     }
    }
-  login(){
+  userreview(){
     console.log("Button Click");
-    this.router.navigate(["/login"]);
-    alert("thanks for your review,you will be logged out");
+    this.router.navigate(["/userreview"]);
+    alert("thanks for your review,no you can view other's reviews");
   }
 
   ngOnInit(): void 
