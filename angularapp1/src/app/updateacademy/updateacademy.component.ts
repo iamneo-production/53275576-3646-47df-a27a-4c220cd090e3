@@ -29,6 +29,20 @@ export class UpdateacademyComponent implements OnInit {
     academyDesc:''
   } 
 }
+viewAcademy(){
+    this.router.navigate(["/institute"]);
+}
+viewCourse(){
+  this.router.navigate(["/course"]);
+}
+viewStudents(){
+  this.router.navigate(["/student"]);
+}
+logout(){
+  this.router.navigate(["/homepage"]);
+
+
+}
   ngOnInit(): void {
     this.updateacademyform = new FormGroup({
       instituteId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,15}$')]),
@@ -44,21 +58,7 @@ export class UpdateacademyComponent implements OnInit {
       this.institute = data;
     },error=>console.log(error));
   }
-  viewAcademy(){
-    console.log("Button Click");
-
-  }
-  viewCourse(){
-    console.log("Button Click");
-  }
-  viewStudents(){
-    console.log("Button Click");
-  }
-  logout(){
-    this.router.navigate(["/homepage"]);
-
-
-  }
+  
 
   updateacademy(){
     console.log(this.institute);
