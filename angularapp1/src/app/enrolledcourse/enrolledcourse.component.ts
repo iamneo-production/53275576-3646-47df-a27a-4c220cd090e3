@@ -60,33 +60,33 @@ export class EnrolledcourseComponent implements OnInit
       id:new FormControl('', [Validators.required,Validators.maxLength(30),
           Validators.pattern('[0-9]*')]),
   
-      firstName:new FormControl('', [Validators.required,Validators.maxLength(30),
-        Validators.pattern('[a-zA-Z ]*')]),
-
-      lastName:new FormControl('',  [Validators.required,Validators.maxLength(30),
-        Validators.pattern('[a-zA-Z ]*')]),
-
-      fatherName:new FormControl('',  [Validators.required,Validators.maxLength(30),
-        Validators.pattern('[a-zA-Z ]*')]),
-
-      motherName:new FormControl('',  [Validators.required,Validators.maxLength(30),
-        Validators.pattern('[a-zA-Z ]*')]),
-
-      phoneNumber1:new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
-
-      emailId : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^([a-zA-Z]+.*?)+@[a-z0-9.-]+\.[a-z]{2,4}$'),Validators.minLength(2)]),
-      
-      age:new FormControl('', [Validators.required,Validators.pattern("^(?:1[4-9]|[2-5][0-9]|60)$"),Validators.minLength(2)]),
-
-      phoneNumber2:new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
-
-      //SSLCorHSCMarks:new FormControl('', [Validators.required,Validators.pattern("^[0-9]*$")]),
-
-      houseNo:new FormControl('', [Validators.required]),
-
-      streetName:new FormControl('', [Validators.required,Validators.maxLength(30),
-        Validators.pattern('[a-zA-Z ]*')]),
-
+          firstName:new FormControl('', [Validators.required,Validators.maxLength(30),
+            Validators.pattern('[a-zA-Z ]*')]),
+    
+          lastName:new FormControl('',  [Validators.required,Validators.maxLength(30),
+            Validators.pattern('[a-zA-Z ]*')]),
+    
+          fatherName:new FormControl('',  [Validators.required,Validators.maxLength(30),
+            Validators.pattern('[a-zA-Z ]*')]),
+    
+          motherName:new FormControl('',  [Validators.required,Validators.maxLength(30),
+            Validators.pattern('[a-zA-Z ]*')]),
+    
+          phoneNumber1:new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
+    
+          emailId : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^([a-zA-Z]+.*?)+@[a-z0-9.-]+\.[a-z]{2,4}$'),Validators.minLength(2)]),
+          
+          age:new FormControl('', [Validators.required,Validators.pattern("^(?:1[4-9]|[2-5][0-9]|60)$"),Validators.minLength(2)]),
+    
+          phoneNumber2:new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
+    
+          //SSLCorHSCMarks:new FormControl('', [Validators.required,Validators.pattern("^[0-9]*$")]),
+    
+          houseNo:new FormControl('', [Validators.required]),
+    
+          streetName:new FormControl('', [Validators.required,Validators.maxLength(30),
+            Validators.pattern('[a-zA-Z ]*')]),
+    
       areaName:new FormControl('', [Validators.required,Validators.maxLength(30),
         Validators.pattern('[a-zA-Z ]*')]),
 
