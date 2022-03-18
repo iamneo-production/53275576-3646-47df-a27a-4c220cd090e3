@@ -33,6 +33,7 @@ import { ReviewComponent } from './review/review.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AdminreviewComponent } from './adminreview/adminreview.component';
 import { DisplaycourseComponent } from './displaycourse/displaycourse.component';
+import { UserreviewComponent } from './userreview/userreview.component';
 
 const MATERIAL_MODULES = [
   MatFormFieldModule,
@@ -64,7 +65,8 @@ const MATERIAL_MODULES = [
     ReviewComponent,
     PagenotfoundComponent,
     AdminreviewComponent,
-    DisplaycourseComponent
+    DisplaycourseComponent,
+    UserreviewComponent
   ],
   imports: [
     BrowserModule,
