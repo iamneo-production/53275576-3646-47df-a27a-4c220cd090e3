@@ -5,6 +5,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <nav class="navbar navbar-inverse">
@@ -13,14 +15,65 @@
             <a class="navbar-brand" routerLink="/homepage">School Admission</a>
           </div>
           <div class="nav navbar-nav flex-container">
-            <li ><a routerLink="/addstudent">Addstudent</a></li>
-            <li><a routerLink="/institute">Academy</a></li>
-            <li><a routerLink="/course">Enrolled Course</a></li>
-            <li ><a routerLink="/review">Review</a></li>
+            <li ><a routerLink="/addstudent">ADDSTUDENT</a></li>
+            <li><a routerLink="/institute">ACADEMY</a></li>
+            <li><a routerLink="/course">ENROLLED COURSE</a></li>
+            <li ><a routerLink="/review">REVIEW</a></li>
             <li ><a routerLink="/login" style="float:right;"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
         </div>  
         </div>
       </nav>
+      <body><section id="testimonials">
+        
+        <!-- <div class="testimonial-heading">
+            <span>Comments</span>
+            <h4>Clients Says</h4>
+        </div> -->
+        
+        <div class="testimonial-box-container">
+            
+            <div class="testimonial-box">
+                
+                <div class="box-top">
+                    
+                    <div class="profile">
+                        
+                        <div class="profile-img">
+                            <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
+                        </div>
+                        
+                        <div class="name-user">
+                            <strong>Liam mendes</strong>
+                            <!-- <span>@liammendes</span> -->
+                        </div>
+                    </div>
+                    
+                    <div class="star-icon">
+                      <input type="radio" name="rating1" id="rating1">
+                      <label for="rating1" class="fa fa-star"></label>
+                      <input type="radio" name="rating1" id="rating2">
+                      <label for="rating2" class="fa fa-star"></label>
+                      <input type="radio" name="rating1" id="rating3">
+                      <label for="rating3" class="fa fa-star"></label>
+                      <input type="radio" name="rating1" id="rating4">
+                      <label for="rating4" class="fa fa-star"></label>
+                      <input type="radio" name="rating1" id="rating5">
+                      <label for="rating5" class="fa fa-star"></label>
+                    </div>
+                </div>
+                
+                <div class="client-comment">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+                </div>
+                
+                <button id="delete" (click)="delete()" ><i class='fas fa-trash'></i></button> 
+
+            </div>
+            
+            
+        </div>
+      </section></body>
+
       
     
       </body>
