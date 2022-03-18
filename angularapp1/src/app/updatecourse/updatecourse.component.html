@@ -81,7 +81,7 @@
 
       <div  id="editCourseDescription" >
         <p class="text-dark" style="font-size:large; font-weight: bold;">COURSE DESCRIPTION</p>
-          <textarea type="text" formControlName="courseDescription" rows="4" cols="30" class="form-control" 
+          <textarea type="text" formControlName="courseDescription" rows="4" cols="20" class="form-control" 
             id="courseDescription" [(ngModel)]="course.courseDescription" name="courseDescription"
             placeholder="Enter course description" ></textarea><br>
           <small style="color:red;" *ngIf="!updatecourseform.get('courseDescription').valid && updatecourseform.get('courseDescription').touched">* Invalid course description</small>

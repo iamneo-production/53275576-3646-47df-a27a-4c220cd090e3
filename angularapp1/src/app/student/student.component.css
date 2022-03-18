@@ -1,12 +1,28 @@
 table {
   width: 100%;
+  
 }
-
+body{
+ background-image: url("https://images.pexels.com/photos/6373289/pexels-photo-6373289.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"); 
+}
 .mat-form-field {
   font-size: 14px;
   width: 100%;
 }
 
+td, th {
+  border: 1px solid #c7b9b9;
+  text-align: left;
+  padding: 8px;
+  border-color: #66350d;
+  border-style: double;
+  color: rgb(15, 1, 24);
+  font-size: large;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 .search-bar{
   font-family: courier;
   font-size: 180%;
@@ -27,7 +43,7 @@ padding-top: 25px;
 background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
 color: #f1f1f1; /* Grey text */
 width: 100%; /* Full width */
-padding: 20px; /* Some padding */
+padding: 0px; /* Some padding */
  font-family: verdana;
 }
 
@@ -46,8 +62,8 @@ background-color: red;
 }
 
 #studentid{
-  background-color: green;
-  color: aliceblue;
+  background-color: rgba(9, 35, 184, 0.431);
+  color: rgb(12, 43, 70);
   font-size: large;
   height:50px;
 

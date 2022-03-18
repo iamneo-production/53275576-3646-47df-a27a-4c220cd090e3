@@ -113,12 +113,12 @@ select{
 #addCourseDescription{
     overflow-wrap: break-word;
     word-wrap:break-word;
-    width: 400px;
+    width: 300px;
 
 }
 #courseRight{
     position: absolute;
-    bottom: 250px;
+    bottom: 15%;
     right: 0px;
     margin-right: 25%;
     border-radius:5%;

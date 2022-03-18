@@ -1,20 +1,20 @@
 <meta name  = "viewport" content="width=device-width, initial-scale=1.0" />
 
 <div id  = "academyHeader">
-  <h2 >School Admission</h2>
+  <h1 style="font-family:initial; color: gainsboro; padding-top: 1%;" ><b>School Admission Portal</b></h1>
   <ul id = "academyList">
     <li id = "adminAcademy">
-      <button (click) = "viewAcademy()" id="adminAcademy">Academy</button>
+      <button (click) = "viewAcademy()" id="adminAcademy"><u> Academy</u></button>
     </li >
     <li id = "adminCourse">
-      <button (click) = "viewCourse()" id="adminCourse">Course</button>
+      <button (click) = "viewCourse()" id="adminCourse"><u> Course</u></button>
     </li >
     <li id = "adminStudent">
-      <button (click) = "viewStudent()" id="adminStudent">Student</button>
+      <button (click) = "viewStudent()" style="font-size: 20px;" id="adminStudent"><u> Student</u></button>
     </li >
   </ul >
   <div >
-    <button (click) = "logout()" id="logout">Logout</button>
+    <button (click) = "logout()" style="font-size: 20px;" id="logout"><b>Logout</b></button>
   </div>
 </div>
 <div id = "academyBackground">
@@ -24,6 +24,8 @@
     (ngSubmit) = "onSubmit($event)"
   >
     <div id="academyLeft" style ="margin-top: 1em">
+      <label for="firstName" style="font-size: medium;"><b>First Name</b></label>
+
       <div id ="firstName">
         <input
           formControlName ="firstName"
@@ -46,6 +48,8 @@
       <br />
 
       <div id ="fatherName">
+        <label for="fatherName" style="font-size: medium;"><b>Father Name</b></label>
+
         <input
           formControlName ="fatherName"
           type ="text"
@@ -67,6 +71,8 @@
       <br />
 
       <div id ="motherName">
+        <label for="motherName" style="font-size: medium;"><b>Mother Name</b></label>
+
         <input
           formControlName ="motherName"
           type ="text"
@@ -88,6 +94,8 @@
       <br />
 
       <div id ="emailId">
+        <label for="emailId" style="font-size: medium;"><b>Email-ID</b></label>
+
         <input
           formControlName ="emailId"
           type ="email"
@@ -109,6 +117,8 @@
       <br />
 
       <div id ="age">
+        <label for="emailId" style="font-size: medium;"><b>Age</b></label>
+<br>
         <input
           formControlName ="age"
           type="text"
@@ -147,6 +157,8 @@
     </div >
 
     <div id ="academyCenter" style="margin-top: 1em">
+      <label for="emailId" style="font-size: medium;"><b>Last Name</b></label>
+
       <div id ="lastName">
         <input
           formControlName ="lastName"
@@ -168,6 +180,8 @@
       </div>
       <br />
       <div id ="phoneNumber1">
+        <label for="emailId" style="font-size: medium;"><b>Phone Number 1</b></label>
+
         <input
           formControlName ="phoneNumber1"
           type ="number"
@@ -191,6 +205,8 @@
 
     <div id="academyRight">
       <div id="maleorfemale">
+        <label for="emailId" style="font-size: medium;"><b>Select Gender</b></label>
+
         <select
           style="display: inline"
           class="form-control"
@@ -204,6 +220,8 @@
       </div>
 
       <div id="phoneNumber2">
+        <label for="emailId" style="font-size: medium;"><b>Phone Number 2</b></label>
+
         <input
           formControlName ="phoneNumber2"
           type="number"
@@ -226,9 +244,9 @@
     </div >
 
     <div class ="column2">
-      <p style ="margin-top: 1em; margin-left: 1em">Address Information</p>
+      <p style ="margin-top: 1em; margin-left: 1em ; font-size: large;"> <u> Address Information</u></p>
       <div style ="padding: 1em">
-        <label for="houseNo">House No :</label>
+        <label for="houseNo" style="font-size: medium;"><b>House No :</b></label>
         <input
           formControlName ="houseNo"
           type="text"
@@ -253,7 +271,7 @@
         </small>
       </div>
       <div style ="padding: 1em">
-        <label for="streetName">Street Name :</label>
+        <label for="streetName" style="font-size: medium;"><b>Street Name :</b> </label>
         <input
           formControlName ="streetName"
           type ="text"
@@ -278,7 +296,7 @@
         </small >
       </div >
       <div style ="padding: 1em">
-        <label for ="areaName">Area Name :</label>
+        <label for ="areaName" style="font-size: medium;"><b>Area Name :</b></label>
         <input
           formControlName ="areaName"
           type ="text"
@@ -301,7 +319,7 @@
         >
           Invalid areaName </small
         ><br /><br />
-        <label for="pincode">Pincode :</label>
+        <label for="pincode" style="font-size: medium;"><b>Pincode :</b></label>
         <input
           formControlName ="pincode"
           type ="number"
@@ -321,7 +339,7 @@
         </small>
       </div>
       <div style ="padding: 1em">
-        <label for ="state">State :</label>
+        <label for ="state" style="font-size: medium;"><b>State :</b></label>
         <input
           formControlName ="state"
           type ="text"
@@ -339,7 +357,7 @@
         >
           Invalid state </small
         ><br /><br />
-        <label for ="nationality">Nationality :</label>
+        <label for ="nationality"style="font-size: medium;"><b>Nationality :</b></label>
         <input
           formControlName ="nationality"
           type ="text"
@@ -367,6 +385,7 @@
         type ="submit"
         class ="btn btn-success"
         id ="enrollNowButton"
+        style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"
       >
         Update Student
       </button>
