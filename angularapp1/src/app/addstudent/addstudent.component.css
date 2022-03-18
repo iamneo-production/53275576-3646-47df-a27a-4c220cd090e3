@@ -1,12 +1,17 @@
-body 
-{
-  background-color: gray;
-}
-#academyBackground{
-  background-repeat: no-repeat;
-  background-size: cover;
-    background-color: gray;
+  *{
+    font-family: 'Roboto', sans-serif;
+    
   }
+  body 
+  {
+    background-color: white;
+  }
+  #academyBackground{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("pexels-.jpg");
+  }
+
   #academyHeader{
     display: flex;
     justify-content: center;
@@ -14,8 +19,7 @@ body
     width: 100%;
     height:50px;
     background-color:green;
-    
-  
+
   }
   h2{
     margin-left: 20px;
@@ -27,29 +31,12 @@ body
     
   }
   #academyBackground{
-    background-color: gray;
+    background-color: white;
     width: 100%;
     height:100%;
     justify-content:center;
     margin-top: 0em;
     position: absolute;
-  }
-  
-  ul li{
-    padding: 55px;
-    list-style: none;
-    
-    
-  }
-  ul li button{
-    cursor: pointer;
-    border: none;
-    background: none;
-    font-size: medium;
-    
-  }
-  ul li button:hover{
-    color: brown;
   }
   #adminAcademy{
     font-size: 20px;
@@ -64,27 +51,15 @@ body
     font-weight: bold;
   }
   
-  
-  #logout{
-    cursor: pointer;
-    border: none;
-    background: none;
-    margin-right:20px ;
-    
-  }
-  
-  #logout:hover{
-    color: brown;
-  }
   #academyLeft{
-    
     flex-direction: column;
     justify-content: space-around;
-    margin-left: 30px;
+    margin-left: 40px;
     float: left;
     size: 10%;
     height: 10%;
   }
+
   #academyLeft input{
     width:330px;
     height:50px;
@@ -96,21 +71,15 @@ body
   #academyCenter {
     justify-content: center;
     float: right;
-    margin-right:35%;
-  
-  
-    
-  
+    margin-right:52%;
   }
  
   #academyRight{
     
     right: 16px; 
-    margin-right: 2%;
-      border-radius:5%; 
-      position: absolute;
-    
-        
+    margin-right: 27%;
+    border-radius:5%; 
+    position: absolute;
   }
 
   #academyRight input{
@@ -119,22 +88,25 @@ body
   }
   #addStudent{
     border-radius: 9px;
+    
   }
   
   ::placeholder{
   
-    font-size: medium;
+    font-size: small;
   }
-  .column2
+.column2
 {
   position: absolute;
-   width: 55em;
+   width: 29em;
    background-color: lightgray;
+   border-radius: 8px;
    float: right;
-   top: 40%;
-   margin-left: 35%;
+   top: 9%;
+   margin-left: 54%;
    font-size:105%;
 }
+
 .academyr{
   right: 16px; 
   margin-right: 2%;
@@ -143,15 +115,35 @@ body
 }
 #addStu{
   position: absolute;
-  right: 100px;
-  margin-right: 10%;
-  border-radius:5%;
-  top: 100%;
+  margin-top: 27%;
+  margin-left:43%;
   font-size: large;
+  width: 15%;
   
 }
 #small{
  font-size: xx-large; color: blue;
+}  
+button:hover{
+  transition: all 0.3s ease;
+  background:white;
+  color:green;
+  font-weight: 470;
+}  
+li { cursor: pointer; }
+a { cursor: pointer; }
+
+#navli a:hover{
+  transition: all 0.3s ease;
+  color:green;
 }
-  
-  
+#logouticon button:hover{
+  transition: all 0.3s ease;
+  background:white;
+  color:green;
+  font-weight: 470;
+  font-family: 'Roboto', sans-serif ;
+}  
+.flex-container{
+  display: inline;
+}
