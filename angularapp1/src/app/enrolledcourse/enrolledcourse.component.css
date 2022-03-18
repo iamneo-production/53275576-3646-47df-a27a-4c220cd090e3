@@ -1,174 +1,160 @@
+*{
+  font-family: 'Roboto', sans-serif;
+  
+}
 body 
 {
-  background-color: gray;
+  background-color: white;
+}
+#academyBackground{
+  width: 100%;
+  height:100%;
+  position: fixed;
+  justify-content:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:fixed;
+  background-image:url('https://cdn.wallpapersafari.com/92/76/Wb3tue.jpg');
 }
 
-#academyBackground
-{
-    
-    background-color: gray;
-  }
-  #academyHeader
-  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height:50px;
-    background-color:rgb(173, 13, 173);
-    padding: 10px;
-  
-  }
-  h2
-  {
-    margin-left: 20px;
-  }
-  #academyList
-  {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    
-  }
-  #academyBackground
-  {
-    background-color: rgb(173, 172, 172);
-    width: 100%;
-    height:100%;
-    justify-content:center;
-    margin-top: 0em;
-  }
-  
-  ul li
-  {
-    padding: 55px;
-    list-style: none;
-    
-    
-  }
-  ul li button
-  {
-    cursor: pointer;
-    border: none;
-    background: none;
-    font-size: medium;
-    
-  }
-  ul li button:hover
-  {
-    color: brown;
-  }
-  #adminCourse{
-    font-size: 20px;
-  }
-  #adminAcademy
-  {
-    font-size: 17px;
-  }
-  h5
-  {
-    display: flex;
-    align-items: center;
-    margin-top:50px ;
-    margin-left: 50%;
-    margin-bottom: 5%;
-    font-size: medium;
-    font-weight: bold;
-  }
-  
-  
-  #logout
-  {
-    cursor: pointer;
-    border: none;
-    background: none;
-    margin-right:20px ;
-    
-  }
-  
-  #logout:hover
-  {
-    color: brown;
-  }
-  #academyLeft
-  {
-    
-    flex-direction: column;
-    justify-content: space-around;
-    margin-left: 30px;
-    float: left;
-    size: 10%;
-    height: 10%;
-  }
-  #academyLeft input
-  {
-    width:330px;
-    height:50px;
-  }
-  #academyCenter input
-  {
-    width:330px;
-    height:50px;
-  }
-  #academyCenter
-   {
-    justify-content: center;
-    float: right;
-    margin-right:35%;
-  
-  
-    
-  
-  }
-  #academyDescription input
-  {
-    width:330px;
-    height:100px;
-  }
-  #academyRight
-  {
-    margin-top: 1em; 
-    right: 16px; 
-    margin-right: 2%;
-      border-radius:5%; 
-      position: absolute;
-    
-        
-  }
+#academyHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height:50px;
+  background-color:green;
 
-  #academyRight input
-  {
-    width:330px;
-    height:50px;
-  }
-  #addAcademy
-  {
-    border-radius: 9px;
-  }
-  
-  ::placeholder
-  {
-  
-    font-size: medium;
-  }
-  .column2
-{
-
-  position: absolute;
-   width: 55em;
-   background-color: lightgray;
-   float: right;
-   bottom: 5px;
-   margin-left: 45%;
+}
+h2{
+  margin-left: 20px;
+}
+#academyList{
+  display: flex;
+  flex: 1;
+  justify-content: center;
   
 }
-#enroll
-{
+#academyBackground{
+  background-color: white;
+  width: 100%;
+  height:100%;
+  justify-content:center;
+  margin-top: 0em;
   position: absolute;
-  right: 100px;
-  margin-right: 10%;
-  border-radius:5%;
-  top: 100%;
-  margin-bottom: 100px;
+}
+#adminAcademy{
+  font-size: 20px;
+}
+h5{
+  display: flex;
+  align-items: center;
+  margin-top:50px ;
+  margin-left: 50%;
+  margin-bottom: 5%;
+  font-size: medium;
+  font-weight: bold;
+}
+
+#academyLeft{
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 80px;
+  float: left;
+  size: 10%;
+  height: 10%;
+}
+
+#academyLeft input{
+  width:330px;
+  height:50px;
+}
+#academyCenter input{
+  width:330px;
+  height:50px;
+}
+#academyCenter {
+  justify-content: center;
+  float: right;
+  margin-right:45%;
+}
+
+#academyRight{
   
+  right: 16px; 
+  margin-right: 27%;
+  border-radius:5%; 
+  position: absolute;
+}
+
+#academyRight input{
+  width:330px;
+  height:50px;
+}
+#addStudent{
+  border-radius: 9px;
+  
+}
+
+::placeholder{
+
+  font-size: small;
+}
+.column2
+{
+position: absolute;
+ width: 29em;
+ background-color: lightgray;
+ border-radius: 8px;
+ float: right;
+ top: 9%;
+ margin-left: 70%;
+ font-size:105%;
+}
+
+.academyr{
+right: 16px; 
+margin-right: 2%;
+  border-radius:5%; 
+  position: absolute;
+}
+#enrolNowButton{
+position: absolute;
+margin-top: 22%;
+margin-left:60%;
+font-size: large;
+
+}
+#small{
+font-size: xx-large; color: blue;
+}  
+button:hover{
+transition: all 0.3s ease;
+background:white;
+color:green;
+font-weight: 470;
+}  
+li { cursor: pointer; }
+a { cursor: pointer; }
+
+#navli a:hover{
+transition: all 0.3s ease;
+color:green;
+}
+#logouticon button:hover{
+transition: all 0.3s ease;
+background:white;
+color:green;
+font-weight: 470;
+font-family: 'Roboto', sans-serif ;
+}  
+.flex-container{
+display: inline;
+}
+::placeholder{
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    font-size: medium;
 } 
+

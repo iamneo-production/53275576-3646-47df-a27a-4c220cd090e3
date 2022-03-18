@@ -122,27 +122,9 @@ export class EnrolledcourseComponent implements OnInit
     this.enrolledcoursepayload.state = this.enrolledform.get('state').value;
     this.enrolledcoursepayload.nationality= this.enrolledform.get('nationality').value;    
   }
-
-  viewAcademy()
-  {
-    console.log("Button Click");
-
-  }
-  
-  viewCourse()
-  {
-    console.log("Button Click");
-  }
-
   enrollnow()
   {
     console.log("buttonclick");
-  }
-
-  logout()
-  {
-    console.log("buttonclick");
-    this.router.navigate(["/login"]);
   }
   saveEnrolledcourse(){
     console.log(this.student);
