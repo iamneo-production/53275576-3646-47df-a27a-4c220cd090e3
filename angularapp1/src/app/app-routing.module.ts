@@ -22,6 +22,7 @@ import { ReviewComponent } from './review/review.component';
 import { AuthguardService } from './authguard.service';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AdminreviewComponent } from './adminreview/adminreview.component';
+import { DisplaycourseComponent } from './displaycourse/displaycourse.component';
 const routes: Routes = [
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'adminacademy',component:AdminacademyComponent},
@@ -43,7 +44,8 @@ const routes: Routes = [
   {path:'institute-enroll',component:IntituteEnrolledComponent},
   {path:'enrolledcourse',component:EnrolledcourseComponent},
   {path:'review',component:ReviewComponent},
-  {path:'adminreview',component:AdminreviewComponent}
+  {path:'adminreview',component:AdminreviewComponent},
+  {path:'displaycourse',component:DisplaycourseComponent}
 ];
 
 @NgModule({
