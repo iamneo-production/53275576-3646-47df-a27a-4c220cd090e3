@@ -1,29 +1,37 @@
-
-
-<nav class="navbar" style="background-color:green; ">
-  <div class="container-fluid">
-      <h1 style="color:aliceblue;">School Admission</h1>
-      <h4 style="color:aliceblue;">Academy</h4>
-      <h4 style="color:aliceblue;">Enrolled Course</h4>
-      <h4 style="color:aliceblue;" routerLink="/login">Logout</h4>
-  </div>
-</nav>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/homepage">School Admission</a>
+      </div>
+      <div class="nav navbar-nav flex-container">
+        <li class="active"><a routerLink="/addstudent">Add Student</a></li>
+        <li><a routerLink="/institute">Academy</a></li>
+        <li><a routerLink="/course">Enrolled Course</a></li>
+        <li><a routerLink="/login" style="float:right;"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </div>  
+    </div>
+  </nav>
 <div id="academyBackground">
     <h1 style="padding-top: 0em; text-align: center; color: white;">Add Student</h1>
-    <form [formGroup]="addstudentform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)" id="addStudent"
-    >
+    <form [formGroup]="addstudentform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)" id="addStudent">
   
-    <div id="academyLeft">
-   
+    <div id="academyLeft" class="form-group">
         <div  id="studentId" >
+            <label for="studentId">Student ID</label>
             <input formControlName="studentId" type="text" class="form-control" placeholder="Enter Your id"
-            [(ngModel)]="student.studentId" name="studentId" ><br>
+            [(ngModel)]="student.studentId" name="studentId" ID="studentId">
             
-        </div>
-        <div  id="firstName" >
-            <input formControlName="firstName" type="text" class="form-control" placeholder="Enter Your first name"
-            [(ngModel)]="student.firstName" name="firstName" required><br>
-            
+        </div><br>
+        <div  id="firstName" class="form-group">
+            <label for="firstName">First Name</label>
+            <input formControlName="firstName" type="text" class="form-control input-sm" placeholder="Enter Your first name"
+            [(ngModel)]="student.firstName" name="firstName" id="firstName" required>
       
             <small *ngIf="!addstudentform.get('firstName').valid && addstudentform.get('firstName').touched && addstudentform.controls['firstName'].errors.required"
             style="color:red;" >
@@ -31,132 +39,125 @@
             </small>
            
         </div><br>
-        <div  id="fatherName" > 
-            <input formControlName="fatherName" type="text" class="form-control" placeholder="Enter Your father name"
-            [(ngModel)]="student.fatherName" name="fatherName"><br>
-            <small *ngIf="!addstudentform.get('fatherName').valid && addstudentform.get('fatherName').touched"
-            style="color:red;">* Invalid Father Name</small>
-        </div><br>
-        <div  id="motherName" >
-            <input formControlName="motherName" type="text" class="form-control" placeholder="Enter Your mother name"
-            [(ngModel)]="student.motherName" name="motherName"><br>
-            <small *ngIf="!addstudentform.get('motherName').valid && addstudentform.get('motherName').touched"
-            style="color:red;">* Invalid Mother Name</small>
-        </div><br>
-        <div  id="emailId" >
-            <input formControlName="emailId" type="email" class="form-control" placeholder="Enter Your email id"
-            [(ngModel)]="student.email" name="email"><br>
-            <small *ngIf="!addstudentform.get('emailId').valid && addstudentform.get('emailId').touched"
-            style="color:red;">* Invalid Email Id</small>
-        </div><br>
-        <div  id="age" >
-            <input formControlName="age" type="text"  class="form-control" placeholder="Enter Your age"
-            [(ngModel)]="student.age" name="age"><br>
-            <small *ngIf="!addstudentform.get('age').valid && addstudentform.get('age').touched"
-            style="color:red;">* Invalid Age</small>
-        </div><br>
-        <!-- <div  id="enterSSCHSCmarks" >
-            <input formControlName="enterSSCHSCmarks" type="text" class="form-control" placeholder="Enter Your SSC/HSC marks"
-            [(ngModel)]="student.enterSSCHSCmarks" name="enterSSCHSCmarks"><br>
-            <small *ngIf="!addstudentform.get('enterSSCHSCmarks').valid && addstudentform.get('enterSSCHSCmarks').touched"
-            style="color:red;">* Invalid Marks</small>
-        </div><br> -->
-        <br>
-    </div>
-
-    <div id="academyCenter" >
-         <div id="lastName" >
+        <div id="lastName" class="form-group">
+            <label for="lastName">Last Name</label>
             <input formControlName="lastName" type="text" class="form-control" placeholder="Enter Your Last Name"
-            [(ngModel)]="student.lastName" name="lastName"><br>
+            [(ngModel)]="student.lastName" name="lastName" id="lastName">
             <small *ngIf="!addstudentform.get('lastName').valid && addstudentform.get('lastName').touched"
             style="color:red;">* Invalid Last Name</small>
         </div><br>
-        <div id="phoneNumber" >
+        <div  id="fatherName" class="form-group"> 
+            <label for="fatherName">Father Name</label>
+            <input formControlName="fatherName" type="text" class="form-control" placeholder="Enter Your father name"
+            [(ngModel)]="student.fatherName" name="fatherName" id="fatherName">
+            <small *ngIf="!addstudentform.get('fatherName').valid && addstudentform.get('fatherName').touched"
+            style="color:red;">* Invalid Father Name</small>
+        </div><br>
+        <div  id="motherName" class="form-group" >
+            <label for="motherName">Mother Name</label>
+            <input formControlName="motherName" type="text" class="form-control" placeholder="Enter Your mother name"
+            [(ngModel)]="student.motherName" name="motherName" id="motherName">
+            <small *ngIf="!addstudentform.get('motherName').valid && addstudentform.get('motherName').touched"
+            style="color:red;">* Invalid Mother Name</small>
+        </div><br>
+        
+    </div>
+    
+    <div id="academyCenter" >
+        <div  id="age" class="form-group" style="padding-bottom:6px">
+            <label for="age">Age</label>
+            <input formControlName="age" type="text" id="age" class="form-control" placeholder="Enter Your age"
+            [(ngModel)]="student.age" name="age">
+            <small *ngIf="!addstudentform.get('age').valid && addstudentform.get('age').touched"
+            style="color:red;">* Invalid Age</small>
+        </div>
+        <div  id="emailId" class="form-group">
+            <label for="emailId">Email ID</label>
+            <input formControlName="emailId" type="email" id="emailId" class="form-control" placeholder="Enter Your email id"
+            [(ngModel)]="student.email" name="email">
+            <small *ngIf="!addstudentform.get('emailId').valid && addstudentform.get('emailId').touched"
+            style="color:red;">* Invalid Email Id</small>
+        </div><br>
+        <div id="phoneNumber" class="form-group">
+            <label for="phoneNumber1">Phone Number</label>
             <input formControlName="phoneNumber" type="text" class="form-control" placeholder="Enter Your Phone Number"
-            [(ngModel)]="student.phoneNumber1" name="phoneNumber1"><br>
+            [(ngModel)]="student.phoneNumber1" name="phoneNumber1" id="phoneNumber1">
             <small *ngIf="!addstudentform.get('phoneNumber').valid && addstudentform.get('phoneNumber').touched"
             style="color:red;">* Invalid Phone Number</small>
         </div><br>
-    </div>
-
-    <div id="academyRight">
-        <div id="maleorfemale">
-            
-                <input formControlName="" type="text" [(ngModel)]="student.maleOrFemale" id="t1" name="maleOrFemale" list="l1" placeholder="Enter male or female" required
-                     >
-               <datalist id="l1">
-                 <option>Male</option>
-                 <option>Female</option>
-               </datalist>
-            
-            
-         
-        
-            <!-- <small *ngIf="!addstudentform.get('maleorfemale').valid && addstudentform.get('maleorfemale').touched"
-            style="color:red;">* Invalid </small>  -->
+        <div id="maleorfemale" class="form-group">
+            <label for="maleOrFemale">Gender</label>
+            <input formControlName="" type="text" [(ngModel)]="student.maleOrFemale" id="t1" name="maleOrFemale" id="maleOrFemale" list="l1" class="form-control" placeholder="Enter male or female" required>
+           <datalist id="l1">
+             <option>Male</option>
+             <option>Female</option>
+           </datalist>
         </div><br>
-        <div id="phoneNumber2">
+        <div id="phoneNumber2" class="form-group">
+            <label for="phoneNumber2">Alternate Phone Number</label>
             <input formControlName="phoneNumber2" type="text" class="form-control" placeholder="Enter alternate number"
-            [(ngModel)]="student.phoneNumber2" name="phoneNumber2"><br>
+            [(ngModel)]="student.phoneNumber2" name="phoneNumber2" id="phoneNumber2">
             <small *ngIf="!addstudentform.get('phoneNumber2').valid && addstudentform.get('phoneNumber2').touched"
             style="color:red;">* Invalid Phone Number</small>
-        </div><br>
-   
-    </div>
+        </div>
+            
+    </div><br>
 
     <div class="column2">
-            <p style="margin-top: 1em; margin-left: 1em;"> Address Information </p>
+            <p style="margin-top: 1em; margin-left: 1em; font-weight: bold; font-size:17px;"> Address Information </p>
+        <table>
+            <tr>
+                <td>
         <div style="padding : 1em">
-            
             <label for="houseNo">House No :</label>
-            <input formControlName="houseNo" type="text" id="houseNo" style="background-color: white; padding: 0.5em; width: 20em; margin-left: 3em;"
-            [(ngModel)]="student.houseNo" name="houseNo"><br>
+            <input formControlName="houseNo" type="text" id="houseNo" class="form-control"
+            [(ngModel)]="student.houseNo" name="houseNo">
             <small *ngIf="!addstudentform.get('houseNo').valid && addstudentform.get('houseNo').touched"
             style="color:red;">* Invalid House No</small>
         </div>
-
         <div style="padding : 1em">
             <label for="streetName">Street Name :</label>
-            <input formControlName="streetName" type="text" id="streetName" style="background-color: white; padding: 0.5em; width: 20em; margin-left: 2em;"
-            [(ngModel)]="student.streetName" name="streetName"><br>
+            <input formControlName="streetName" type="text" id="streetName"  class="form-control"
+            [(ngModel)]="student.streetName" name="streetName">
             <small *ngIf="!addstudentform.get('streetName').valid && addstudentform.get('streetName').touched"
             style="color:red;">* Invalid Street Name</small>
         </div>
-        
         <div style="padding : 1em">
             <label for="areaName">Area Name :</label>
-            <input formControlName="areaName" type="text" id="areaName" style="background-color: white; padding: 0.5em; margin-right: 5em; width: 15em; margin-left: 2.5em;"
-            [(ngModel)]="student.areaName" name="areaName" class="academyLeft"><br>
+            <input formControlName="areaName" type="text" id="areaName"
+            [(ngModel)]="student.areaName" name="areaName" class="academyLeft form-control">
             <small *ngIf="!addstudentform.get('areaName').valid && addstudentform.get('areaName').touched"
-               style="color:red;">* Invalid Area Name</small><br>
+               style="color:red;">* Invalid Area Name</small>
+        </div>   
+        </td>
+        <div style="padding : 1em">       
             <label for="pincode">Pincode :</label>
-            <input formControlName="pincode" type="text" id="pincode" style="background-color: white; padding: 0.5em; margin-right: 5em; width: 15em; margin-left: 4em;"
-            [(ngModel)]="student.pincode" name="pincode"><br>
+            <input formControlName="pincode" type="text" id="pincode"  class="form-control"
+            [(ngModel)]="student.pincode" name="pincode">
             <small *ngIf="!addstudentform.get('pincode').valid && addstudentform.get('pincode').touched"
             style="color:red;">* Invalid Pincode</small>
         </div>
-  
-        <div style="padding : 1em">
+        <div style="padding : 1em"> 
             <label for="state" >State :</label>
-            <input formControlName="state" type="text" id="state" style="background-color: white; padding: 0.5em; margin-right: 0em; width: 15em; margin-left: 5em;"
-            [(ngModel)]="student.state" name="state"><br>
+            <input formControlName="state" type="text" id="state"  class="form-control"
+            [(ngModel)]="student.state" name="state">
             <small *ngIf="!addstudentform.get('state').valid && addstudentform.get('state').touched"
-            style="color:red;">* Invalid State</small><br>
+            style="color:red;">* Invalid State</small>
+        </div>
+        <div style="padding : 1em">
             <label for="nationality">Nationality :</label>
-            <input formControlName="nationality" type="text" id="nationality" style="background-color: white; padding: 0.5em;width: 15em;  margin-left: 3em;"
-            [(ngModel)]="student.nationality" name="nationality"><br>
+            <input formControlName="nationality" type="text" id="nationality"  class="form-control"
+            [(ngModel)]="student.nationality" name="nationality">
             <small *ngIf="!addstudentform.get('nationality').valid && addstudentform.get('nationality').touched"
             style="color:red;">* Invalid Nationality</small>
-  
         </div>
-
-    </div> 
-
-    <div id="addStudent">
-        <button [disabled]="!addstudentform.valid" (click)="addstudent()" id="addStu" value="Add Student" class="btn btn-success">
-        Add Student</button>
+    </tr>
+    </table>
     </div>
-
+    <div>
+        <button [disabled]="!addstudentform.valid" (click)="addstudent()" id="addStu" value="Add Student" class="btn btn-success">
+            Add Student</button>
+    </div>
     </form>
 </div>
         
