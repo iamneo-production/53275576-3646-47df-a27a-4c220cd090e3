@@ -21,7 +21,7 @@ export class ReviewComponent implements OnInit
   login(){
     console.log("Button Click");
     this.router.navigate(["/login"]);
-    alert("thanks for your review");
+    alert("thanks for your review,you will be logged out");
   }
 
   ngOnInit(): void 

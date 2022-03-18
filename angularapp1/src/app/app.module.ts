@@ -31,6 +31,8 @@ import { ViewinstituteComponent } from './viewinstitute/viewinstitute.component'
 import { IntituteEnrolledComponent } from './intitute-enrolled/intitute-enrolled.component';
 import { ReviewComponent } from './review/review.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { AdminreviewComponent } from './adminreview/adminreview.component';
+
 const MATERIAL_MODULES = [
   MatFormFieldModule,
   ];
@@ -59,7 +61,8 @@ const MATERIAL_MODULES = [
     ViewinstituteComponent,
     IntituteEnrolledComponent,
     ReviewComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    AdminreviewComponent
   ],
   imports: [
     BrowserModule,
