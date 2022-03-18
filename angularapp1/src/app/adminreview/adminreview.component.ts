@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adminreview',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminreviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(Router:Router) { }
+  delete(){
+    alert("This response is deleted");
+  }
 
   ngOnInit(): void {
   }
