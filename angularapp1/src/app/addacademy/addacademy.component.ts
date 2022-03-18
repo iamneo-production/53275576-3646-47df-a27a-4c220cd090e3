@@ -44,13 +44,18 @@ export class AddacademyComponent implements OnInit {
   }
   viewAcademy(){
     console.log("Button Click");
+    this.router.navigate(['/institute']);
 
   }
   viewCourse(){
     console.log("Button Click");
+    this.router.navigate(['/course']);
+
   }
   viewStudents(){
     console.log("Button Click");
+    this.router.navigate(['/student']);
+
   }
   logout(){
     this.router.navigate(["/homepage"]);
@@ -62,6 +67,7 @@ export class AddacademyComponent implements OnInit {
     console.log(this.institute);
     this.saveInstitute();
     console.log("success");
+
     alert("Academy Added Successfully!!!");
   }
   saveInstitute(){
@@ -69,6 +75,8 @@ export class AddacademyComponent implements OnInit {
       console.log(data);
       console.log("mobile")
       console.log(data["mobileNo"])
+      this.router.navigate(["/updateacademy"]);
+
     },
     error => console.log("error"));
   }
