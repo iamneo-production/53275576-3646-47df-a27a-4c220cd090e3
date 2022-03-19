@@ -1,6 +1,6 @@
 package com.examly.springapp.controller;
 import com.examly.springapp.exception.ResourceNotFound;
-
+import com.examly.springapp.model.ReviewModel;
 import com.examly.springapp.model.EnrolledCourseModel;
 //import com.examly.springapp.service.EnrolledCourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.apache.catalina.User;
 import com.examly.springapp.repository.EnrolledCourseRepository;
+import com.examly.springapp.repository.ReviewRepository;
+
 
 import java.lang.*;
 import java.util.HashMap;
@@ -30,6 +32,8 @@ public class UserController {
 
     @Autowired
     private EnrolledCourseRepository ecourseRepository;
+    @Autowired
+    private ReviewRepository reviewRepository;
 
     // @GetMapping("/ecourses")
     // public List<ECourseModel> getAllECourse(){ return ecourseService.getAllECourses(); }
@@ -86,5 +90,21 @@ public class UserController {
         Map<String, Boolean> response = new HashMap<>();
         response.put("Deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
+    }
+     @GetMapping("/review")
+    public List<RevieweModel> getAllReview(){
+        return reviewRepository.findAll();
+    }
+    @DeleteMapping("/review/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteReview(@PathVariable Integer id){
+        ReviewModel review = reviewRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Employee not exists with id : "+id));
+        reviewRepository.delete(review);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("Deleted", Boolean.TRUE);
+        return ResponseEntity.ok(response);
+    }
+    @PostMapping("/addreview")
+    public ReviewModel createReview(@RequestBody ReviewModel review){
+        return reviewRepository.save(review);
     }
 }
