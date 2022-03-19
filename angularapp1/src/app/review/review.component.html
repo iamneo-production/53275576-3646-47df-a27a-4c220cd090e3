@@ -17,7 +17,7 @@
                 <div id="name">
                     
                     
-                <input formControlName="name" type="text" placeholder="Enter Your Name" class="form-control">
+                <input formControlName="name" type="text" placeholder="Enter Your Name" class="form-control" [(ngModel)]="review.reviewName" name="reviewName" >
                 <small *ngIf="!reviewform.get('name').valid && reviewform.get('name').touched" class="text-danger" >Name is required* </small>
                 </div><br><br>
                 <!-- <div class="id">
@@ -27,11 +27,11 @@
                 </div><br> -->
                 
                 <div id="comments">
-                <textarea cols="10" rows="3"  formControlName="comments" class="form-control" placeholder="Enter Your Review"></textarea>
+                <textarea cols="10" rows="3"  formControlName="comments" class="form-control" placeholder="Enter Your Review" [(ngModel)]="review.reviewComments" name="reviewComments" ></textarea>
                 <small *ngIf="!reviewform.get('comments').valid && reviewform.get('comments').touched" class="text-danger" > Required* </small>
                 </div>
                 <h2> Star-Rating</h2>
-                <div class="star-icon">
+                <div class="star-icon" >
                   <input type="radio" name="rating1" id="rating1">
                   
                   <label for="rating1" class="fa fa-star"></label>
