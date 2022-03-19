@@ -27,7 +27,7 @@
                 </div><br> -->
                 
                 <div id="comments">
-                <textarea cols="10" rows="3"  formControlName="comments" class="form-control" placeholder="Enter Your Review" [(ngModel)]="review.reviewComments" name="reviewComments" ></textarea>
+                <textarea cols="10" rows="3"  formControlName="comments" class="form-control" placeholder="Enter Your Review" [(ngModel)]="review.reviewComments" name="reviewComment" ></textarea>
                 <small *ngIf="!reviewform.get('comments').valid && reviewform.get('comments').touched" class="text-danger" > Required* </small>
                 </div>
                 <h2> Star-Rating</h2>
