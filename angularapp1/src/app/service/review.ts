@@ -1,7 +1,7 @@
 export class Review {
     reviewId:number;
     reviewName:string;
-    reviewComment:string;
+    reviewComments:string;
     reviewStar:number;
 
 

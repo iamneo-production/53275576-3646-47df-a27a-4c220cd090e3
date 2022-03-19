@@ -92,7 +92,7 @@ public class UserController {
         return ResponseEntity.ok(response);
     }
      @GetMapping("/review")
-    public List<RevieweModel> getAllReview(){
+    public List<ReviewModel> getAllReview(){
         return reviewRepository.findAll();
     }
     @DeleteMapping("/review/{id}")

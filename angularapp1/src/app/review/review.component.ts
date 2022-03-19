@@ -40,6 +40,7 @@ export class ReviewComponent implements OnInit
     console.log(this.review);
   this.reviewService.createReview(this.review).subscribe(data=>{
     console.log(this.review);
+
   },
     error => console.log(this.review));
 }
@@ -48,7 +49,8 @@ export class ReviewComponent implements OnInit
     
     this.saveReview();
     console.log("success");
-    alert("Student Added Successfully!!!");
+    this.router.navigate(["/userreview"]);
+    alert("review Added Successfully!!!");
   }
   onSubmit(e){
     this.reviewpayload.name=this.reviewform.get('name').value,

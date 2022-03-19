@@ -13,10 +13,11 @@ public class ReviewModel {
     ReviewModel(){
     }
 
-    public ReviewModel( String reviewName, String reviewComments, Integer reviewStars) {
+    public ReviewModel( String reviewName, String reviewComments) {
+        // this.reviewId = reviewId;
         this.reviewName = reviewName;
         this.reviewComments = reviewComments;
-        this.reviewStars = reviewStars;
+      //  this.reviewStars = reviewStars;
         
     }
 
@@ -26,8 +27,8 @@ public class ReviewModel {
     @Column(name="reviewComments")
     private String reviewComments;
 
-    @Column(name="reviewStars")
-    private Integer reviewStars;
+    // @Column(name="reviewStars")
+    // private Integer reviewStars;
 
     public String getReviewName() {
         return reviewName;
@@ -44,11 +45,16 @@ public class ReviewModel {
         this.reviewComments = reviewComments;
     }
 
-    public int getReviewStars(){
-        return reviewStars;
-    }
-    public void setReviewStars(int reviewStars){
-        this.reviewStars = reviewStars;
-    }
-
+    // public int getReviewStars(){
+    //     return reviewStars;
+    // }
+    // public void setReviewStars(int reviewStars){
+    //     this.reviewStars = reviewStars;
+    // }
+    // public int getReviewId(){
+    //     return reviewId;
+    // }
+    // public void setReviewId(int reviewId){
+    //     this.reviewId = reviewId;
+    // }
 }
