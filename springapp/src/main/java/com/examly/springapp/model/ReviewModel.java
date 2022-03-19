@@ -51,9 +51,9 @@ public class ReviewModel {
     // public void setReviewStars(int reviewStars){
     //     this.reviewStars = reviewStars;
     // }
-    // public int getReviewId(){
-    //     return reviewId;
-    // }
+    public int getReviewId(){
+        return reviewId;
+    }
     // public void setReviewId(int reviewId){
     //     this.reviewId = reviewId;
     // }

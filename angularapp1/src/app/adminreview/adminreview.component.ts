@@ -15,6 +15,8 @@ export class AdminreviewComponent implements OnInit {
 
   constructor(Router:Router , private reviewService:ReviewService) { }
   ngOnInit(): void {
+    this.getReview();
+
   }
   private getReview(){
     this.reviewService.getReviewList().subscribe(data=>{
