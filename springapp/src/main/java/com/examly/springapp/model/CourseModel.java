@@ -1,13 +1,16 @@
 package com.examly.springapp.model;
 import javax.persistence.*;
 import java.util.Objects;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 @Entity
 @Table(name="course")
 public class CourseModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="courseId")
-    private Integer courseId;
+    private int courseId;
 
 
     CourseModel(){
@@ -39,9 +42,9 @@ public class CourseModel {
     public int getCourseId(){
         return courseId;
     }
-    public void setCourseId(int courseId){
-        this.courseId = courseId;
-    }
+    // public void setCourseId(int courseId){
+    //     this.courseId = courseId;
+    // }
 
 
     public String getCourseName() {

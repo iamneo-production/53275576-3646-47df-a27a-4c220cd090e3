@@ -5,7 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
 import javax.persistence.Id;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import java.util.Objects;
 
 @Entity
@@ -13,6 +14,7 @@ import java.util.Objects;
 public class StudentModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "studentId")
     private int studentId;
 
@@ -73,9 +75,9 @@ public class StudentModel {
         return studentId;
     }
 
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
-    }
+    // public void setStudentId(int studentId) {
+    //     this.studentId = studentId;
+    // }
 
     public String getFirstName() {
         return firstName;

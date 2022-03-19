@@ -1,5 +1,6 @@
 package com.examly.springapp.model;
-
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,8 +12,9 @@ import java.util.Objects;
 public class InstituteModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="instituteId")
-    private Integer instituteId;
+    private int instituteId;
 
     @Column(name = "instituteName")
     private String instituteName;
@@ -54,9 +56,9 @@ public class InstituteModel {
         return instituteId;
     }
 
-    public void setInstituteId(int instituteId) {
-        this.instituteId = instituteId;
-    }
+    // public void setInstituteId(int instituteId) {
+    //     this.instituteId = instituteId;
+    // }
 
     public String getImgUrl() {
         return imgUrl;
