@@ -16,7 +16,7 @@ export class AddstudentComponent implements OnInit {
 
   constructor(private studentService: StudentService) { 
     this.addstudentpayload={
-      studentId:'',
+     // studentId:'',
       firstName:'',
     fatherName:'',
     motherName:'',
@@ -38,7 +38,7 @@ export class AddstudentComponent implements OnInit {
 
 ngOnInit(): void {
   this.addstudentform = new FormGroup({
-    studentId: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{2,40}$')]),
+    // studentId: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{2,40}$')]),
 
     firstName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     fatherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
@@ -76,7 +76,7 @@ saveStudent(){
 
   onSubmit(e){
     this.addstudentpayload.firstName= this.addstudentform.get('firstName').value;
-    this.addstudentpayload.studentId= this.addstudentform.get('studentId').value;
+    // this.addstudentpayload.studentId= this.addstudentform.get('studentId').value;
 
     this.addstudentpayload.fatherName = this.addstudentform.get('fatherName').value;
     this.addstudentpayload.motherName = this.addstudentform.get('motherName').value;

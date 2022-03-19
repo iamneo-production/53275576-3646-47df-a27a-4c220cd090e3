@@ -26,7 +26,7 @@
     <div  id="editAcademyName" >
         <label>Enter Academy Id</label><br>
         <input formControlName="instituteId" type="text" class="form-control" placeholder="Enter Academy Id"
-        [(ngModel)]="institute.instituteId" name="instituteId"><br>
+        [(ngModel)]="institute.instituteId" name="instituteId" disabled><br>
         <small *ngIf="!updateacademyform.get('instituteId').valid && updateacademyform.get('instituteId').touched" class="text-white">* Invalid Academy ID</small>
         <br>
         <label>Enter Academy Name</label><br>

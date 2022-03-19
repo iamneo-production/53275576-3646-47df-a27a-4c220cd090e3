@@ -32,7 +32,7 @@ export class AddacademyComponent implements OnInit {
 }
   ngOnInit(): void {
     this.addacademyform = new FormGroup({
-      instituteId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,15}$')]),
+      //instituteId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,15}$')]),
       imageUrl : new FormControl('', [Validators.required]),
       instituteName : new FormControl('', [Validators.required,Validators.minLength(3),Validators.pattern('^([A-Za-z0-9_-]+.*?){3,40}$')]),
       instituteEmail : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^([a-zA-Z]+.*?)+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
@@ -82,7 +82,7 @@ export class AddacademyComponent implements OnInit {
   }
  
   onSubmit(e){
-    this.addacademypayload.instituteId = this.addacademyform.get('instituteId').value;
+   // this.addacademypayload.instituteId = this.addacademyform.get('instituteId').value;
     this.addacademypayload.imageUrl = this.addacademyform.get('imageUrl').value;
     this.addacademypayload.instituteName = this.addacademyform.get('instituteName').value;
     this.addacademypayload.instituteEmail = this.addacademyform.get('instituteEmail').value;

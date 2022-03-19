@@ -22,12 +22,13 @@
     <form [formGroup]="addstudentform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)" id="addStudent">
   
     <div id="academyLeft" class="form-group">
-        <div  id="studentId" >
+        <!-- <div  id="studentId" >
             <label for="studentId">Student ID</label>
             <input formControlName="studentId" type="text" class="form-control" placeholder="Enter Your id"
             [(ngModel)]="student.studentId" name="studentId" ID="studentId">
             
-        </div><br>
+        </div> -->
+        <br>
         <div  id="firstName" class="form-group">
             <label for="firstName">First Name</label>
             <input formControlName="firstName" type="text" class="form-control input-sm" placeholder="Enter Your first name"

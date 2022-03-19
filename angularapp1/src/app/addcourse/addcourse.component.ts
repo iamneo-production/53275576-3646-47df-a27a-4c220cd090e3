@@ -18,7 +18,7 @@ export class AddcourseComponent implements OnInit {
   cousedue : string;
   constructor(private router: Router, private courseService: CourseService) { 
     this.addcoursepayload={
-      courseId:'',
+     // courseId:'',
       courseName:'',
       courseEnrolled:'',
       courseDescription:''
@@ -26,7 +26,7 @@ export class AddcourseComponent implements OnInit {
 
   ngOnInit(): void {
     this.addcourseform = new FormGroup({
-      courseId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,40}$')]),
+     // courseId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,40}$')]),
       courseName : new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){2,40}$')]),
       courseEnrolled : new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
       courseDescription : new FormControl('', [Validators.pattern('^([A-Z+a-z+0-9]+.*?){0,40}$')])
@@ -56,7 +56,7 @@ export class AddcourseComponent implements OnInit {
     this.router.navigate(["/course"])
   }
   onSubmit(e){
-    this.addcoursepayload.courseId= this.addcourseform.get('courseId').value;
+   // this.addcoursepayload.courseId= this.addcourseform.get('courseId').value;
     this.addcoursepayload.courseName = this.addcourseform.get('courseName').value;
     this.addcoursepayload.courseEnrolled = this.addcourseform.get('courseEnrolled').value;
     this.addcoursepayload.courseDescription = this.addcourseform.get('courseDescription').value;

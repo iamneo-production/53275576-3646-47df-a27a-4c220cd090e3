@@ -1,5 +1,5 @@
 export class AddstudentPayload{
-    studentId!:string;
+    // studentId!:string;
     firstName!:string;
     fatherName!:string;
     motherName!:string;

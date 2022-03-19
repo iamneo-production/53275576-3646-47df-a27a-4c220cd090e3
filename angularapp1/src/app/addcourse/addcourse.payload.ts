@@ -1,5 +1,5 @@
 export class AddcoursePayload{
-    courseId!:string;
+  //  courseId!:string;
     courseName!:string;
     courseEnrolled!:string;
     courseDescription!: string;
