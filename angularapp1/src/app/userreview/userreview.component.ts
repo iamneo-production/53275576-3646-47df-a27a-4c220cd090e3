@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Review } from '../service/review';
+import { ReviewService } from '../service/review.service';
 
 @Component({
   selector: 'app-userreview',
@@ -8,10 +10,19 @@ import { Router } from '@angular/router';
 })
 export class UserreviewComponent implements OnInit {
 
-  constructor(Router:Router) { }
+  reviews:Review[];
+  
+
+  constructor(private reviewService:ReviewService, Router:Router) { }
   
 
   ngOnInit(): void {
+    this.getReview();
+  }
+  private getReview(){
+    this.reviewService.getReviewList().subscribe(data=>{
+      this.reviews=data;
+    });
   }
 
 }
