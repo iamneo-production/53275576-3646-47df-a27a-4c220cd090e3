@@ -22,7 +22,7 @@
         </div>  
         </div>
       </nav>
-      <body><section id="testimonials">
+      <body><section id="testimonials" *ngFor="let rev of reviews;  let i=index;">
         
         <!-- <div class="testimonial-heading">
             <span>Comments</span>
@@ -42,7 +42,7 @@
                         </div>
                         
                         <div class="name-user">
-                            <strong>Liam mendes</strong>
+                            <strong>{{rev.reviewName}}</strong>
                             <!-- <span>@liammendes</span> -->
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                 </div>
                 
                 <div class="client-comment">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+                    <p>{{rev.reviewComment}}</p>
                 </div>
                 
                 <!-- <button id="delete" (click)="edit()" ><i class='fas fa-edit'></i></button>  -->
