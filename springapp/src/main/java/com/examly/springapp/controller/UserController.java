@@ -59,7 +59,7 @@ public class UserController {
     @PutMapping("/ecourse/{id}")
     public ResponseEntity<EnrolledCourseModel> updateECourse(@PathVariable Integer id, @RequestBody EnrolledCourseModel ecourseDetails){
         EnrolledCourseModel ecourse = ecourseRepository.findById(id).orElseThrow(()-> new ResourceNotFound("ecourse not found with id :"+id));
-
+        ecourse.setECourseName(ecourseDetails.getECourseName());
         ecourse.setECourseFirstName(ecourseDetails.getECourseFirstName());
         ecourse.setECourseLastName(ecourseDetails.getECourseLastName());
         ecourse.setECoursePhoneNumber(ecourseDetails.getECoursePhoneNumber());

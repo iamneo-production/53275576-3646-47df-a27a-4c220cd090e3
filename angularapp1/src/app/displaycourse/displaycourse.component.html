@@ -6,16 +6,16 @@
     </div>
     <br>
     <div class="display">
-    <div class="course-block">
-        <label for="course-name">Course Name:-</label>
-        <label for="course-name-value">M.E(VLSI)</label>
+    <div class="course-block" *ngFor="let ecou of ecourse;  let i=index;">
+        <label for="course-name" style="font-size: larger;">Course Name:-</label>
+        <label for="course-name-value" style="font-size: large;"> {{ecou.ecourseName}}</label>
         <br><br>
-        <label for="joined date">Joined Date:-</label> 
+        <!-- <label for="joined date">Joined Date:-</label> 
         <label for="joined date-value">dd/mm/yyyy</label>
         <br><br>
         <label for="course-end">Course end date:-</label> 
-        <label for="course-end-value">dd/mm/yyyy</label>
-        <button class="btn1">My Learning</button>
+        <label for="course-end-value">dd/mm/yyyy</label> -->
+        <button class="btn1">View All Courses</button>
     </div>
   </div>
   </nav>

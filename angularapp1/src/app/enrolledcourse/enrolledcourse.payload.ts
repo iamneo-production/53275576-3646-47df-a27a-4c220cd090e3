@@ -3,7 +3,7 @@ export class Enrolledcoursepayload{
     lastName!:string;
     fatherName!:string;
     motherName!:string;
-    phoneNumber1!:string;
+   // phoneNumber1!:string;
     emailId!:string;
     age!:string;
     phoneNumber2!:string;

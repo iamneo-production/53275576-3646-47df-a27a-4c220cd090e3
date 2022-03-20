@@ -6,15 +6,16 @@ import java.util.Objects;
 public class EnrolledCourseModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="ecourseId")
     private Integer ecourseId;
 
 
     EnrolledCourseModel(){
     }
-    public EnrolledCourseModel(String ecourseNationality, String ecoursePincode, String ecourseState, String ecourseAreaName, String ecourseSrtreetName, String ecourseHouseNo, String ecourseMarks, String ecourseAge, String ecourseEmailId, String ecourseAlternateNumber, String ecoursePhoneNumber, String ecourseMotherName, String ecourseFatherName, int ecourseId, String ecourseFirstName, String ecourseLastName, String ecourseMaleorFemale, String ecourseStreetName) {
+    public EnrolledCourseModel(String ecoursename, String ecourseNationality, String ecoursePincode, String ecourseState, String ecourseAreaName, String ecourseSrtreetName, String ecourseHouseNo, String ecourseMarks, String ecourseAge, String ecourseEmailId, String ecourseAlternateNumber, String ecoursePhoneNumber, String ecourseMotherName, String ecourseFatherName, int ecourseId, String ecourseFirstName, String ecourseLastName, String ecourseMaleorFemale, String ecourseStreetName) {
         this.ecourseId = ecourseId;
-	  this.ecourseFirstName = ecourseFirstName;
+	    this.ecourseFirstName = ecourseFirstName;
         this.ecourseLastName = ecourseLastName;
         this.ecourseFatherName = ecourseFatherName;
         this.ecourseMotherName = ecourseMotherName;
@@ -30,9 +31,13 @@ public class EnrolledCourseModel {
         this.ecoursePincode = ecoursePincode;
         this.ecourseState = ecourseState;
         this.ecourseNationality = ecourseNationality;
+        this.ecoursename = ecoursename;
     }
     @Column(name="ecourseFirstName")
     private String ecourseFirstName;
+
+    @Column(name="ecoursename")
+    private String ecoursename;
 
     @Column(name="ecourseLastName")
     private String ecourseLastName;
@@ -84,6 +89,14 @@ public class EnrolledCourseModel {
     }
     public void setECourseId(int ecourseId){
         this.ecourseId = ecourseId;
+    }
+
+    public String getECourseName() {
+        return ecoursename;
+    }
+
+    public void setECourseName(String ecoursename) {
+        this.ecoursename = ecoursename;
     }
 
 

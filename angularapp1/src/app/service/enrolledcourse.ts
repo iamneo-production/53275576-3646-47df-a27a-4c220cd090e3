@@ -17,4 +17,5 @@ export class Enrolledcourse {
     ecourseState: string;
     ecourseNationality: string;
     ecourseMarks:string;
+    ecourseName:string;
 }
