@@ -1,11 +1,48 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    
+}
 input[type="text"]
 {
     background: transparent;
     border: none;
 }
-.button{
+/* .button{
     text-align: end;
+} */
+#sbox{
+    margin-left: 20%;
+    margin-top: 2%;
+    width:50%;
+    display:inline;
+    border-radius: 6px;
 }
-/* wyjevbjrjwredgbx
-sdshfncvxsfrthf
-jgnvc */
+.flex-container{
+    display: inline;
+}
+#searchCourse{
+    transition: all 0.3s ease;
+    background:green;
+    color:white;
+    font-weight: 470;
+    display: inline;
+    size:2px;
+}
+#searchCourse:hover{
+    transition: all 0.3s ease;
+    background:white;
+    color:green;
+    font-weight: 470;
+}
+#addc:hover{
+    background:white;
+    color:green;
+}
+#back{
+    background-image: url("bckimage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+  
