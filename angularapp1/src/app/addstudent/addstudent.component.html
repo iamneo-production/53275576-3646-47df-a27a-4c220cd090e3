@@ -20,25 +20,15 @@
 <div id="academyBackground">
     <h1 style="padding-top: 0em; text-align: center; color: white;">Add Student</h1>
     <form [formGroup]="addstudentform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)" id="addStudent">
-  
     <div id="academyLeft" class="form-group">
-        <!-- <div  id="studentId" >
-            <label for="studentId">Student ID</label>
-            <input formControlName="studentId" type="text" class="form-control" placeholder="Enter Your id"
-            [(ngModel)]="student.studentId" name="studentId" ID="studentId">
-            
-        </div> -->
-        <br>
         <div  id="firstName" class="form-group">
             <label for="firstName">First Name</label>
             <input formControlName="firstName" type="text" class="form-control input-sm" placeholder="Enter Your first name"
             [(ngModel)]="student.firstName" name="firstName" id="firstName" required>
-      
             <small *ngIf="!addstudentform.get('firstName').valid && addstudentform.get('firstName').touched && addstudentform.controls['firstName'].errors.required"
             style="color:red;" >
                 * Invalid First Name
             </small>
-           
         </div><br>
         <div id="lastName" class="form-group">
             <label for="lastName">Last Name</label>
@@ -61,7 +51,14 @@
             <small *ngIf="!addstudentform.get('motherName').valid && addstudentform.get('motherName').touched"
             style="color:red;">* Invalid Mother Name</small>
         </div><br>
-        
+        <div id="maleorfemale" class="form-group">
+            <label for="maleOrFemale">Gender</label>
+            <input formControlName="" type="text" [(ngModel)]="student.maleOrFemale" id="t1" name="maleOrFemale" id="maleOrFemale" list="l1" class="form-control" placeholder="Enter male or female" required>
+           <datalist id="l1">
+             <option>Male</option>
+             <option>Female</option>
+           </datalist>
+        </div><br>
     </div>
     
     <div id="academyCenter" >
@@ -71,7 +68,7 @@
             [(ngModel)]="student.age" name="age">
             <small *ngIf="!addstudentform.get('age').valid && addstudentform.get('age').touched"
             style="color:red;">* Invalid Age</small>
-        </div>
+        </div><br>
         <div  id="emailId" class="form-group">
             <label for="emailId">Email ID</label>
             <input formControlName="emailId" type="email" id="emailId" class="form-control" placeholder="Enter Your email id"
@@ -85,14 +82,6 @@
             [(ngModel)]="student.phoneNumber1" name="phoneNumber1" id="phoneNumber1">
             <small *ngIf="!addstudentform.get('phoneNumber').valid && addstudentform.get('phoneNumber').touched"
             style="color:red;">* Invalid Phone Number</small>
-        </div><br>
-        <div id="maleorfemale" class="form-group">
-            <label for="maleOrFemale">Gender</label>
-            <input formControlName="" type="text" [(ngModel)]="student.maleOrFemale" id="t1" name="maleOrFemale" id="maleOrFemale" list="l1" class="form-control" placeholder="Enter male or female" required>
-           <datalist id="l1">
-             <option>Male</option>
-             <option>Female</option>
-           </datalist>
         </div><br>
         <div id="phoneNumber2" class="form-group">
             <label for="phoneNumber2">Alternate Phone Number</label>
