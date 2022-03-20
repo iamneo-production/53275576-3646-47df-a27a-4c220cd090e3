@@ -1,28 +1,35 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-inverse" style="padding: 0;">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#" style="font-size:24px">School Admission Portal</a>
+      </div>
+  </nav>
 <body>
-
-    <img src="https://images.pexels.com/photos/8363561/pexels-photo-8363561.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" height="735px" width="1510px">
-    <header>
-		<div class="main">
-			
-			<nav>
-				<ul>
-					<h2>School Admission</h2>
-				</ul>
-			</nav>
+<br><br><br><br><br>
+<div id="img">
+<div class="container" id="container">
+  <br>
+	<div class="divimage">
+    
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right" style="background-color: #2a8d9a">
+				<h1>New to this page?</h1>
+				<p>Enter your personal details and start journey with us !</p>
+				<button class="ghost" id="signUp" (click)="signup()" routerLink="/signup">Sign Up</button><br>
+        <hr style="color:white;width:100%;border:2px solid;">
+        <h1>Already a user?</h1>
+        <p>Enter your credentials to start using your account.</p>
+        <button class="ghost" id="signUp"  (click)="login()" routerLink="/login">Login</button>
+			</div>
 		</div>
-	</header>
-    <div class="border">
-        <div class="signupimage">
-            <img src="https://i7.uihere.com/icons/583/29/127/sign-up-and-add-friends-82adf982a734c971a8834e1fee79685c.png" height="121.91px" width="118px">
-        </div>
-        <div class="signup">
-	        <button (click)="signup()" type="signup">Sign UP</button>
-        </div>
-        <div class="loginimage">
-            <img src="https://freepikpsd.com/file/2019/10/login-png-icon-1.png" height="112px" width="108.14">
-        </div>
-        <div class="login">
-            <button (click)="login()" type="login">Login</button>
-        </div>
-    </div>
+	</div>
+</div>
+</div>
 </body>
