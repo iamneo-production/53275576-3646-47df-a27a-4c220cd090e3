@@ -1,27 +1,25 @@
- #courseBackground{
+*{
+    font-family: 'Roboto', sans-serif;
+}
+#courseBackground{
     width: 100%;
     height:100%;
-    position: fixed;
-    justify-content:center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position:fixed;
-    background-image:url('https://preview.pixlr.com/images/800wm/1151/2/1151114477.jpg');
-}
-#courseHeader{
+    /* margin-top: 5%; */
+} 
+/* #courseHeader{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height:50px;
     background-color: green;
-
-
+} */
+.flex-container{
+    display: inline;
 }
-
 #courseDescription{
-    width:600px;
-    height:300px;
+    width:500px;
+    height:200px;
 }
 h2{
     margin-left: 20px;
@@ -33,7 +31,7 @@ h2{
 
 }
 
-ul li{
+/* ul li{
     padding: 55px;
     list-style: none;
 
@@ -48,12 +46,12 @@ ul li button{
 }
 ul li button:hover{
     color: brown;
-}
-#adminCourse{
+} */
+/* #adminCourse{
     /* font-size: 20px; */
-    transform: scale(1.5) perspective(1px); 
-}
-h5{
+    /* transform: scale(1.5) perspective(1px);  */
+/* }  */
+/* h5{
     display: flex;
     align-items: center;
     margin-top:30px ;
@@ -61,14 +59,14 @@ h5{
     margin-bottom: 1%;
     font-size: medium;
     font-weight: bold;
-}
+} */
 select{
     width:100px;
     height:54px;
 }
 
 
-#logout{
+/* #logout{
     cursor: pointer;
     border: none;
     background: none;
@@ -78,7 +76,7 @@ select{
 
 #logout:hover{
     color: brown;
-}
+} */
 #courseLeft{
     display: flex ;
     flex-direction: column;
@@ -116,21 +114,30 @@ select{
     width: 200px;
 
 }
+body{
+    background-image: url("pexels-ti.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
 #courseRight{
     position: absolute;
-    bottom: 15%;
+    bottom: 22%;
     right: 0px;
-    margin-right: 20%;
+    margin-right: 24%;
     border-radius:5%;
     display: flex;
 }
 #updateCourse{
     border-radius: 9px;
+    width:250px;
 }
-
+#updateCourse:hover{
+    background-color: white;
+    color: green;
+}
 ::placeholder{
     color: black;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     font-size: medium;
 } 

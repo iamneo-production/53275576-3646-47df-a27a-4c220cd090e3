@@ -1,39 +1,43 @@
-#courseBackground{
+/* #courseBackground{
     width: 100%;
     height:100%;
-    position: fixed;
-    justify-content:center;
+} */
+*{
+    font-family: 'Roboto', sans-serif;
+}
+p{
+    color: white;
+}
+body{
+    background-image: url("pexels-ti.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    position:fixed;
-    background-image:url('https://preview.pixlr.com/images/800wm/1151/2/1151114477.jpg');
 }
-#courseHeader{
+/* #courseHeader{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height:50px;
     background-color: green;
-
-
+} */
+.flex-container{
+    display: inline;
 }
-
 #courseDescription{
-    width:600px;
-    height:300px;
+    width:500px;
+    height:200px;
 }
 h2{
     margin-left: 20px;
 }
-#courseList{
+/* #courseList{
     display: flex;
     flex: 1;
     justify-content: center;
+} */
 
-}
-
-ul li{
+/* ul li{
     padding: 55px;
     list-style: none;
 
@@ -48,20 +52,20 @@ ul li button{
 }
 ul li button:hover{
     color: brown;
-}
-#adminCourse{
+} */
+/* #adminCourse{
     /* font-size: 20px; */
-    transform: scale(1.5) perspective(1px); 
-}
-h5{
+    /* transform: scale(1.5) perspective(1px);  */
+/* }  */
+/* h5{
     display: flex;
     align-items: center;
-    margin-top:30px ;
-    margin-left: 50%;
-    margin-bottom: 1%;
-    font-size: medium;
-    font-weight: bold;
-}
+    /* margin-top:30px ; */
+    /* margin-left: 50%; */
+    /* margin-bottom: 1%; */
+    /* font-size: medium; */
+    /* font-weight: bold; */
+/* }  */
 select{
     width:100px;
     height:54px;
@@ -118,7 +122,7 @@ select{
 }
 #courseRight{
     position: absolute;
-    bottom: 15%;
+    bottom: 19%;
     right: 0px;
     margin-right: 25%;
     border-radius:5%;
@@ -126,11 +130,16 @@ select{
 }
 #addCourse{
     border-radius: 9px;
+    width:210px;
+}
+#addCourse:hover{
+    background-color:white;
+    color:green;    
 }
 
 ::placeholder{
     color: black;
-    font-weight: 600;
+    font-weight: 300;
     text-align: center;
     font-size: medium;
 } 
