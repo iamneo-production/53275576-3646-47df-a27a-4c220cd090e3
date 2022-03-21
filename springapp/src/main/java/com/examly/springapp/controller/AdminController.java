@@ -60,8 +60,22 @@ public class AdminController {
     }
 
     @PostMapping("/addinstitute")
-    public InstituteModel createInstitute(@RequestBody InstituteModel institute){
-        return instituteRepository.save(institute);
+    public Boolean createInstitute(@RequestBody InstituteModel institute){
+        // return instituteRepository.save(institute);
+
+        //if(instituteRepository.findById(institute.getInstituteName()).isEmpty()){
+            instituteRepository.save(institute);
+            return true;
+        //}
+        //else{
+          //  return false;
+        //}
+
+        // if(userRepository.findById(user.getEmail()).isEmpty()){
+        //     userRepository.save(user);
+        //     return true;
+        // }
+        // return instituteRepository.save(institute);
     }
 
     @GetMapping("/institute/{id}")

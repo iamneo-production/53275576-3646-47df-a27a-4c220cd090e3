@@ -12,11 +12,12 @@ import java.util.Objects;
 public class InstituteModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name="instituteId")
     private int instituteId;
 
-    @Column(name = "instituteName")
+
+    @Column(name = "instituteName",unique=true)
     private String instituteName;
 
     @Column(name = "instituteDescription")
