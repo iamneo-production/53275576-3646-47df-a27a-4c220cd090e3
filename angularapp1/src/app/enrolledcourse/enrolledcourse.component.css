@@ -1,6 +1,5 @@
 *{
-  font-family: 'Roboto', sans-serif;
-  
+  font-family: 'Roboto', sans-serif; 
 }
 body 
 {
@@ -66,17 +65,17 @@ h5{
 }
 
 #academyLeft input{
-  width:330px;
+  width:270px;
   height:50px;
 }
 #academyCenter input{
-  width:330px;
+  width:270px;
   height:50px;
 }
 #academyCenter {
   justify-content: center;
   float: right;
-  margin-right:45%;
+  margin-right:55%;
 }
 
 #academyRight{
@@ -108,7 +107,7 @@ position: absolute;
  border-radius: 8px;
  float: right;
  top: 9%;
- margin-left: 70%;
+ margin-left: 54%;
  font-size:105%;
 }
 
@@ -121,7 +120,7 @@ margin-right: 2%;
 #enrolNowButton{
 position: absolute;
 margin-top: 22%;
-margin-left:60%;
+margin-left:47%;
 font-size: large;
 
 }
@@ -153,7 +152,7 @@ display: inline;
 }
 ::placeholder{
     color: black;
-    font-weight: 600;
+    font-weight: 300;
     text-align: center;
     font-size: medium;
 } 
