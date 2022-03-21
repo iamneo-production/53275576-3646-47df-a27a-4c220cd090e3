@@ -47,7 +47,8 @@ const routes: Routes = [
   {path:'review',component:ReviewComponent},
   {path:'adminreview',component:AdminreviewComponent},
   {path:'displaycourse',component:DisplaycourseComponent},
-  {path:'userreview',component:UserreviewComponent}
+  {path:'userreview',component:UserreviewComponent},
+  { path: '**', pathMatch: 'full', component: PagenotfoundComponent },
 ];
 
 @NgModule({
