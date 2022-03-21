@@ -1,11 +1,11 @@
 <div class="container">
 <nav class="navbar" style="background-color:rgb(10, 10, 10); ">
     <div class="container-fluid">
-        <h2  style="color:rgb(255, 255, 255);">School Admission</h2>
-        <h2 style="color:rgb(247, 247, 247);" routerLink="/viewAcademy">Institute</h2>
-        <h2 style="color:rgb(253, 253, 253);" routerLink="/viewCourse">Enrolled Course</h2>
+        <h2  style="color:rgb(255, 255, 255);cursor: pointer;" routerLink="/homepage" >School Admission</h2>
+        <h2 style="color:rgb(247, 247, 247); cursor: pointer;" routerLink="/viewacademy">Institute</h2>
+        <h2 style="color:rgb(253, 253, 253); cursor: pointer;" routerLink="/displaycourse">Enrolled Course</h2>
 
-        <h2 style="color:rgb(255, 255, 255);" routerLink="/login">Logout</h2>
+        <h2 style="color:rgb(255, 255, 255); cursor: pointer;" routerLink="/login">Logout</h2>
     </div>
   </nav>
 
@@ -35,7 +35,7 @@
         <br>
         <label for="course-avail">Course availble timings:-</label>
         <label for="course-avail-value">{{cou.courseTiming}}</label>
-        <a (click)="enrolledCourse()" class="button primary enroll">Enroll Now</a>
+        <a (click)="enrolledCourse()" style="cursor: pointer;" class="button primary enroll">Enroll Now</a>
       
         <br>
     </div>

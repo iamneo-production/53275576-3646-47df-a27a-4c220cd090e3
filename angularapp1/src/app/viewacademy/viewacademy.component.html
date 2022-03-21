@@ -3,7 +3,7 @@
 <div class="navbar1">
     <a>School Admission  </a>
   <a *ngIf="loginService.isUserLoggedIn()" href="/viewacademy" id="userInstitute" >  Institute   </a>
-  <a href="/institute-enroll" id="userEnrolledCourse">   Enrolled Courses   </a>
+  <a href="/displaycourse" id="userEnrolledCourse">   Enrolled Courses   </a>
   <a  *ngIf="loginService.isUserLoggedIn()" (click)="logout()" href="" class="logout" id="logout">   Logout  </a>
 </div>
 

@@ -75,7 +75,7 @@ export class AddacademyComponent implements OnInit {
       console.log(data);
       console.log("mobile")
       console.log(data["mobileNo"])
-      this.router.navigate(["/updateacademy"]);
+      this.router.navigate(["/institute"]);
 
     },
     error => console.log("error"));
