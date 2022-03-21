@@ -1,17 +1,18 @@
-<nav class="navbar" style="background-color:green; border-bottom: 1em solid white;">
+<body>
+  <nav class="navbar" style="background-color:rgb(10, 10, 10); ">
     <div class="container-fluid">
-        <h1 style="color:aliceblue;">School Admission</h1>
-        <h4 style="color:aliceblue;" routerLink="/institute">Academy</h4>
-        <h4 style="color:aliceblue;" routerLink="/course">Course</h4>
-        <h4 style="color:aliceblue;" routerLink="/student">Students</h4>
-        <h4 style="color:aliceblue;" routerLink="/login">Logout</h4>
+        <h2  style="color:rgb(255, 255, 255);">School Admission</h2>
+        <h2 style="color:rgb(247, 247, 247);" routerLink="/institute">Academy</h2>
+        <h2 style="color:rgb(253, 253, 253);" routerLink="/course">Course</h2>
+        <h2 style="color:rgb(253, 253, 253);" routerLink="/student">Students</h2>
+        <h2 style="color:rgb(255, 255, 255);" routerLink="/login">Logout</h2>
     </div>
   </nav>
   
-  <div style="height: 100vh; background-color: gray;"> 
-  <div class="container">
+  <div class="container" style="margin-left:0;"> 
+  <div  >
   <div class="input-group">
-      <input  class="form-control rounded" autocomplete="off"  placeholder="Type here to search academy" aria-label="Search" aria-describedby="search-addon" style="margin-top:2em; margin-right: 1em; width: 800%;"  [(ngModel)]="instituteName" (ngModelChange)="Search()" />
+      <input  class="form-control rounded" autocomplete="off"  placeholder="Type here to search academy" aria-label="Search" aria-describedby="search-addon" style="margin-top:2em; margin-right: 2em; width: 50%;"  [(ngModel)]="instituteName" (ngModelChange)="Search()" />
       <button type="button" class="btn btn-outline-primary btn btn-success" style="margin-top: 2em; color:white;  border-color:grey;">Search</button>
     </div>
   </div>  
@@ -23,10 +24,10 @@
     </li>
   </ng-container> -->
 
-  <div class="college">
+  <div class="college ">
+    
 
-
-  <div class="card" style="width: 18rem;" *ngFor="let ins of institutes;  let i=index;">
+  <div class="card" style="width: 18rem;margin-top: 2ex;" *ngFor="let ins of institutes;  let i=index;">
     <img class="card-img-top" src={{ins.imgUrl}} alt={{ins.imgUrl}}>
     <div class="card-body"    >
       <h5 class="card-title">{{ins.instituteId}}</h5>
@@ -34,23 +35,14 @@
       <p class="card-text">{{ins.email}}</p>
       <p class="card-text">{{ins.instituteName}}</p>
       <p class="card-text">{{ins.mobileNumber}}</p>
-      <div class="checked">
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span>
-        <span class="fa fa-star"></span>
-        </div>
-        <div class="button">
-         <button (click)="opensweetalert(ins.instituteId)"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" style="margin-right:1em;">
-            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-          </svg></button>
-          <button (click)="updateInstitute(ins.instituteId)"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-          </svg></button>
-        </div>
+     
+       
+    </div>
+    <div class="button">
+      <a (click)="opensweetalert(ins.instituteId)" class="button primary delete">Delete</a>
+      <a (click)="updateInstitute(ins.instituteId)" class="button primary edit" style="margin-left: 1ex;">Edit</a>
+      
+     
     </div>
     <br>
   </div>
@@ -64,8 +56,8 @@
  
   <br>
   <br>
-  <div class="button">
-  <button class="glyphicon glyphicon-plus-sign btn btn-success"   style="border-radius: 12px; background-color: green;" routerLink="/addacademy">Add Institute</button>
+  <div class="but">
+  <button class="glyphicon glyphicon-plus-sign btn btn-success"   style="border-radius: 12px; background-color: green; margin-left: 90ex;" routerLink="/addacademy">Add Institute</button>
   </div>
   </div>
-  
+</body>

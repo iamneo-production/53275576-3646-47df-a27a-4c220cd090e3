@@ -1,20 +1,103 @@
-
+body{
+  background-color: #e1e2e4;
+  height: 100%;
+  width: 100%;
+}
+.container{
+  
+  height: 100%;
+  width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://images.unsplash.com/photo-1501349800519-48093d60bde0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGVkdWNhdGlvbnxlbnwwfHwwfHw%3D&w=1000&q=80");
+   
+}
+.card{
+    background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
 .college{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+  
 }
 .input-group{
     flex-direction: row;
-
+    width: 60%;
+    margin-left: 25%;
 }
-.checked{
-    color:orange;
-}
-.button{
-    text-align: center;
+.but{
+    margin-right: 5%;
     
 }
-input{
-    width:85%;  
+a{
+    font-size: large;
 }
+
+
+
+
+.button {
+    font-family:'Open Sans';
+    font-size: 16px;
+    font-weight:400;
+    display:inline-block;
+    color:#FFF;
+    border-radius: .25em;
+    text-shadow: -1px -1px 0px rgba(0,0,0,0.4);
+    text-align: center;
+  }
+  .inlineIcon {}
+  .edit:before, .delete:before {
+    font-family: FontAwesome;
+    display: inline-block;
+    font-size:1rem;
+    padding-right:12px;
+    background:none;
+    color:#FFF;
+  }
+
+  .inlineIcon.edit,  .inlineIcon.delete {
+    background: transparent;
+  }
+
+  .inlineIcon.edit:before, .inlineIcon.delete:before {
+    line-height:32px;
+    font-size:32px;
+    padding:4px 0px;
+  } 
+  
+.edit {
+    background: rgb(52, 152, 219);
+    
+   
+  }
+  
+  .inlineIcon.edit:before {
+      color: rgb(52, 152, 219);
+  }
+  
+  .primary:hover{
+    transform:scale(1.02);
+    box-shadow:2px 2px 5px rgba(0,0,0,0.20), inset 0 0 0 99999px rgba(0,0,0,0.2);
+  }
+.primary {
+    line-height:40px;
+    transition:ease-in-out .2s;
+    padding: 0 16px;
+  }
+.delete {
+    background: rgb(192, 57, 43);
+    
+
+  }
+  
+  .inlineIcon.delete:before {
+      color:rgb(192, 57, 43);
+  }
+  

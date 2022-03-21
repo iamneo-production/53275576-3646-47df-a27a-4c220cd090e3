@@ -1,26 +1,25 @@
-<div id="academyHeader">
-    <h2>School Admission</h2>
-    <ul id="academyList">
-        <li id="adminAcademy">
-            <button (click)="viewAcademy()" id="adminAcademy">Institute</button>
-        </li>
-        <li id="adminCourse">
-            <button (click)="viewCourse()" id="adminCourse">Enrolled Course</button>
-        </li>
-    </ul>
-    <div>
-  
-    <button (click)="logout()" id="logout">Logout</button></div>
-  </div>
-    <div class="instsearch">
-        <br>
-    <input type="text" style="width: 80%;" id="course-name" name="course-name" placeholder="Type here to search course" [(ngModel)]="courseName"  (ngModelChange)="Search()">
+<div class="container">
+<nav class="navbar" style="background-color:rgb(10, 10, 10); ">
+    <div class="container-fluid">
+        <h2  style="color:rgb(255, 255, 255);">School Admission</h2>
+        <h2 style="color:rgb(247, 247, 247);" routerLink="/viewAcademy">Institute</h2>
+        <h2 style="color:rgb(253, 253, 253);" routerLink="/viewCourse">Enrolled Course</h2>
+
+        <h2 style="color:rgb(255, 255, 255);" routerLink="/login">Logout</h2>
+    </div>
+  </nav>
+
+  <div >
+    <div class="input-group">
+        <input  type="text" class="form-control rounded" autocomplete="off"  id="course-name" name="course-name" placeholder="Type here to search academy" aria-label="Search" aria-describedby="search-addon" style="margin-top:2em; margin-right: 2em; width: 50%;" [(ngModel)]="courseName"  (ngModelChange)="Search()" />
+        <button type="button" class="btn btn-outline-primary btn btn-success" style="margin-top: 2em; color:white;  border-color:grey;">Search</button>
+      </div>
     </div>
     <br>
-    <div>
+    <div >
     <div class="instcourse-block" *ngFor="let cou of courses;  let i=index;">
         <br>
-        <label for="course-name">Course Name:-</label>
+        <label for="course-name">Course Name :- </label>
         <label for="course-name-value">{{cou.courseName}}</label>
         <div class="instright-col">
         <label for="no-of-students">Number of students:-</label> 
@@ -36,8 +35,10 @@
         <br>
         <label for="course-avail">Course availble timings:-</label>
         <label for="course-avail-value">{{cou.courseTiming}}</label>
-        <button class="instbtn1" (click)="enrolledCourse()">Enroll Now</button>
+        <a (click)="enrolledCourse()" class="button primary enroll">Enroll Now</a>
+      
         <br>
     </div>
     <br>
+</div>
 </div>
