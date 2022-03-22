@@ -10,3 +10,13 @@ input[type="text"]
 /* .button{
     text-align: end;
 } */
+#sbox{
+    margin-left: 20%;
+    margin-top: 2%;
+    width:50%;
+    display:inline;
+    border-radius: 6px;
+}
+.flex-container{
+    display: inline;
+}
