@@ -28,3 +28,9 @@ input[type="text"]
     display: inline;
     size:2px;
 }
+#searchCourse:hover{
+    transition: all 0.3s ease;
+    background:white;
+    color:green;
+    font-weight: 470;
+}
