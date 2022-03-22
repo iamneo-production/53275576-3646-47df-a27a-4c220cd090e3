@@ -38,3 +38,10 @@ input[type="text"]
     background:white;
     color:green;
 }
+#back{
+    background-image: url("bckimage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
