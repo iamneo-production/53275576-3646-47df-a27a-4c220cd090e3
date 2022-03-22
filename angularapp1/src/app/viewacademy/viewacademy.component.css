@@ -75,7 +75,6 @@ body{
 .basic-2 .image-wrapper {
 	overflow: hidden;
 	margin-bottom: 1.5rem;
-	@include bottom();
 	bottom: 0;
 	
 }
