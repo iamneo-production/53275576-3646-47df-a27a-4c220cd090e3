@@ -1,124 +1,48 @@
-body{
-	background-color: rgb(226, 200, 236);
+*{
+    font-family: 'Roboto', sans-serif;
+    
 }
-.navbar1{
-	overflow: hidden;
-	background-color: rgb(137, 7, 189);
-	opacity: 85%;
-	width: 100%;
-  border:2px solid black;
+input[type="text"]
+{
+    background: transparent;
+    border: none;
 }
-.navbar1 a{
-	float: left;
-	color: rgb(248, 246, 246);
-	text-align: right;
-	padding: 12px 60px;
-	text-decoration: none;
-	font-size: 25px;
-	transition: 0.8s;
+/* .button{
+    text-align: end;
+} */
+#sbox{
+    margin-left: 20%;
+    margin-top: 2%;
+    width:50%;
+    display:inline;
+    border-radius: 6px;
 }
-.navbar1 a:hover{
-	background-color: white;
-	color: red;
-	text-decoration: underline;
+.flex-container{
+    display: inline;
 }
-.search{
-	margin:20px auto; 
-	text-align: center; 
-	margin-top: 4%;
+#searchCourse{
+    transition: all 0.3s ease;
+    background:green;
+    color:white;
+    font-weight: 470;
+    display: inline;
+    size:2px;
 }
-.search > .search-txt{
-	background-color: rgb(173, 14, 236);
-	color: white;
-	font-size: 16px;
-	width: 240px;
-   padding: 10px;
-   margin: 5px auto; 
-   text-align: center; 
-   border:2px solid black;
-   opacity: 85%;
-	
+#searchCourse:hover{
+    transition: all 0.3s ease;
+    background:white;
+    color:green;
+    font-weight: 470;
 }
+#addc:hover{
+    background:white;
+    color:green;
+}
+#back{
+    background-image: url("bckimage.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
-.search > .search-box{
-   
-  width: 240px;
- padding: 10px;
- border:2px solid black;
- margin:10px auto; 
- text-align: center; 
- margin-top: 0%;
 }
-.navbar1 .a .logout{
-  text-align: right;
   
-}
-.basic-2 {
-	padding-top: 1rem;
-	padding-bottom: 2rem;
-	background-color: rgb(226, 200, 236);
-	text-align: center;
-	
-}
-
-.basic-2 .team-member {
-	display: inline-block;
-	max-width: 20rem;
-	margin-right: 1.5rem;
-	margin-bottom: 3.5rem;
-	margin-left: 1.5rem;
-	box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
-	background-color: #ffffff;
-	border-radius: 30px;
-}
-
-.basic-2 .image-wrapper {
-	overflow: hidden;
-	margin-bottom: 1.5rem;
-	bottom: 0;
-	
-}
-
-.basic-2 .image-wrapper img {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 160px;
-	margin: 0;
-	transition: all 0.3s;
-	border-radius: 30px;
-}
-
-.basic-2 .image-wrapper:hover img {
-	-moz-transform: scale(1.15);
-	-webkit-transform: scale(1.15);
-	transform: scale(1.15);
-
-} 
-
-
-.basic-2 .team-member .p-large {
-	margin-bottom: 0.25rem;
-
-}
-
-.basic-2 .team-member .job-title {
-	margin-bottom: 0.75rem;
-	color: #484a46;
-	font: 700 1rem/1.375rem "Montserrat", sans-serif;
-	
-}
-span.stars, span.stars span {
-    display: block;
-    background: url('https://apppresser.com/wp-content/uploads/2015/11/stars.png') 0 -16px repeat-x;
-    width: 80px;
-    height: 16px;
-}
-
-span.stars span {
-    background-position: 0 0;
-}
-
-.alignright {
-  float:right;
-}
