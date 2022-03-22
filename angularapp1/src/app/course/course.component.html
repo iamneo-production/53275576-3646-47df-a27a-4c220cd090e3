@@ -17,6 +17,8 @@
       <li class="active"><a routerLink="/course">Course</a></li>
       <li><a routerLink="/institute">Academy</a></li>
       <li><a routerLink="/student">Student</a></li>
+      <li><a routerLink="/userreview">Review</a></li>
+
       <li><a routerLink="/login" style="float:right;"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
   </div>  
   </div>
@@ -41,8 +43,8 @@
 <br>
 <form action="" id="addCourse" style="margin-top: 4em; display: inline;" *ngFor="let cou of courses;  let i=index;">
   <div style="display:inline-block;vertical-align:middle;">  
-    <div style="margin-bottom: 2em; margin-left: 2em;background:#2a8d9a;border-radius:10px;padding: 2em; width: 35em;">
-    <label style="padding: 4px;" for="CourseName"><span style="font-size:medium;font-weight:bold;color:#fcf6f5ff;">Course Name : </span><span style="font-size:medium;font-weight:bold;color:crimson;">{{cou.courseName}}</span><hr></label>
+    <div style="margin-bottom: 2em; margin-left: 2em;background:#2a9a6b;border-radius:10px;padding: 2em; width: 35em;">
+    <label style="padding: 4px;" for="CourseName"><span style="font-size:medium;font-weight:bold;color:#fcf6f5ff;">Course Name : </span><span style="font-size:medium;font-weight:bold;color:rgba(237, 245, 131, 0.993);">{{cou.courseName}}</span><hr></label>
     <br>
     <label style="padding: 4px;color:#fcf6f5ff;font-weight:400;" for="courseEnrolled">Number of Students : {{cou.courseEnrolled}}</label>
     <br>

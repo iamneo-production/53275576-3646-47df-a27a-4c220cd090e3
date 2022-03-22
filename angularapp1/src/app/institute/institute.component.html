@@ -5,6 +5,8 @@
         <h2 style="color:rgb(247, 247, 247); cursor: pointer;" routerLink="/institute" >Academy</h2>
         <h2 style="color:rgb(253, 253, 253); cursor: pointer;" routerLink="/course">Course</h2>
         <h2 style="color:rgb(253, 253, 253); cursor: pointer;" routerLink="/student">Students</h2>
+        <h2 style="color:rgb(253, 253, 253); cursor: pointer;" routerLink="/userreview">Review</h2>
+
         <h2 style="color:rgb(255, 255, 255); cursor: pointer;" routerLink="/login">Logout</h2>
     </div>
   </nav>
@@ -24,13 +26,13 @@
     </li>
   </ng-container> -->
 
-  <div class="college ">
+  <div class="college">
     
 
   <div class="card" style="width: 18rem;margin-top: 2ex;" *ngFor="let ins of institutes;  let i=index;">
     <img class="card-img-top" src={{ins.imgUrl}} alt={{ins.imgUrl}}>
     <div class="card-body"    >
-      <h5 class="card-title">{{ins.instituteId}}</h5>
+      <h5 class="card-title">ID {{ins.instituteId}}</h5>
       <p class="card-text">{{ins.instituteAddress}}</p>
       <p class="card-text">{{ins.email}}</p>
       <p class="card-text">{{ins.instituteName}}</p>
