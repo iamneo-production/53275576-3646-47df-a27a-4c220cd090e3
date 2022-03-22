@@ -34,6 +34,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AdminreviewComponent } from './adminreview/adminreview.component';
 import { DisplaycourseComponent } from './displaycourse/displaycourse.component';
 import { UserreviewComponent } from './userreview/userreview.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ViewpaymentComponent } from './viewpayment/viewpayment.component';
 
 const MATERIAL_MODULES = [
   MatFormFieldModule,
@@ -66,7 +68,9 @@ const MATERIAL_MODULES = [
     PagenotfoundComponent,
     AdminreviewComponent,
     DisplaycourseComponent,
-    UserreviewComponent
+    UserreviewComponent,
+    PaymentComponent,
+    ViewpaymentComponent
   ],
   imports: [
     BrowserModule,

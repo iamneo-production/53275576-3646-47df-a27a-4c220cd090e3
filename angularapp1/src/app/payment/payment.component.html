@@ -1,0 +1,264 @@
+<header>
+  <div class="container">
+    <div class="left">
+      <h3>PAYMENT DETAILS</h3>
+      <form
+        [formGroup]="detailsform"
+        #ngForm="ngForm"
+        (ngSubmit)="onSubmit($event)"
+      >
+        <div id="name">
+          Full Name
+          <input formControlName="name" type="text" placeholder="Enter name" />
+          <small
+            *ngIf="
+              !detailsform.get('name').valid && detailsform.get('name').touched
+            "
+            style="color: red; font-size: small"
+            >Invalid Name</small
+          >
+        </div>
+        <div id="email">
+          Email
+          <input
+            formControlName="email"
+            type="text"
+            name=""
+            placeholder="Enter email"
+          />
+          <small
+            *ngIf="
+              !detailsform.get('email').valid &&
+              detailsform.get('email').touched
+            "
+            style="color: red; font-size: small"
+            >Invalid Mail-Id</small
+          >
+        </div>
+        <div id="address">
+          Address
+          <input
+            formControlName="address"
+            type="text"
+            name=""
+            placeholder="Enter address"
+          />
+          <small
+            *ngIf="
+              !detailsform.get('address').valid &&
+              detailsform.get('address').touched
+            "
+            style="color: red; font-size: small"
+            >Invalid Address</small
+          >
+        </div>
+        <div id="city">
+          City
+          <input
+            formControlName="city"
+            type="text"
+            name=""
+            placeholder="Enter City"
+          />
+          <small
+            *ngIf="
+              !detailsform.get('city').valid && detailsform.get('city').touched
+            "
+            style="color: red; font-size: small"
+            >Invalid City</small
+          >
+        </div>
+        <div id="state">
+          <label>
+            State
+            <br />
+            <select>
+              <option>Choose State..</option>
+              <option>Rajasthan</option>
+              <option>Hariyana</option>
+              <option>Uttar Pradesh</option>
+              <option>Madhya Pradesh</option>
+              <option>Andaman and Nicobar Islands</option>
+              <option>Andhra Pradesh</option>
+              <option>Arunachal Pradesh</option>
+              <option>Assam</option>
+              <option>Bihar</option>
+              <option>Chandigarh</option>
+              <option>Chhattisgarh</option>
+              <option>Dadra and Nagar Haveli</option>
+              <option>Daman and Diu</option>
+              <option>Delhi</option>
+              <option>Goa</option>
+              <option>Gujarat</option>
+              <option>Haryana</option>
+              <option>Himachal Pradesh</option>
+              <option>Jammu and Kashmir</option>
+              <option>Jharkhand</option>
+              <option>Karnataka</option>
+              <option>Kerala</option>
+              <option>Ladakh</option>
+              <option>Lakshadweep</option>
+              <option>Madhya Pradesh</option>
+              <option>Maharashtra</option>
+              <option>Manipur</option>
+              <option>Meghalaya</option>
+              <option>Mizoram</option>
+              <option>Nagaland</option>
+              <option>Odisha</option>
+              <option>Puducherry</option>
+              <option>Punjab</option>
+              <option>Rajasthan</option>
+              <option>Sikkim</option>
+              <option>Tamil Nadu</option>
+              <option>Telangana</option>
+              <option>Tripura</option>
+              <option>Uttar Pradesh</option>
+              <option>Uttarakhand</option>
+              <option>West Bengal</option>
+            </select>
+          </label>
+        </div>
+        <div id="zipcode">
+          <label>
+            <br />
+            Zip code
+            <input
+              formControlName="zipcode"
+              type="number"
+              name=""
+              placeholder="Zip code"
+            />
+          </label>
+          <small
+            *ngIf="
+              !detailsform.get('zipcode').valid &&
+              detailsform.get('city').touched
+            "
+            style="color: red; font-size: small"
+            >Invalid Zipcode</small
+          >
+        </div>
+      </form>
+    </div>
+    <div class="right">
+      <form
+        [formGroup]="detailsform"
+        #ngForm="ngForm"
+        (ngSubmit)="onSubmit($event)"
+      >
+        <div id="card">
+          Credit / Debit Card number
+          <input
+            formControlName="card"
+            type="number"
+            number=""
+            placeholder="Enter card number"
+          />
+          <small
+            *ngIf="
+              !detailsform.get('card').valid && detailsform.get('card').touched
+            "
+            style="color: red; font-size: small"
+            >Enter Valid Card Number</small
+          >
+        </div>
+        <div id="expirymonth">
+          Expiry Month
+          <input
+            formControlName="expirymonth"
+            type="text"
+            name=""
+            placeholder="Enter Month"
+          />
+          <small
+            *ngIf="
+              !detailsform.get('expirymonth').valid &&
+              detailsform.get('expirymonth').touched
+            "
+            style="color: red; font-size: small"
+            >Enter Valid Month</small
+          >
+        </div>
+        <div id="expiryyear">
+          Expiry Year
+          <br />
+          <input
+            formControlName="expiryyear"
+            type="text"
+            name=""
+            placeholder="Enter Year"
+          />
+          <small
+            *ngIf="
+              !detailsform.get('expiryyear').valid &&
+              detailsform.get('expiryyear').touched
+            "
+            style="color: red; font-size: small"
+            >Enter Valid Year</small
+          >
+        </div>
+        <div id="cvvnum">
+          <label>
+            <br />
+            CVV
+            <input
+              formControlName="cvvnum"
+              type="number"
+              name=""
+              placeholder="CVV"
+            />
+          </label>
+          <small
+            *ngIf="
+              !detailsform.get('cvvnum').valid &&
+              detailsform.get('cvvnum').touched
+            "
+            style="color: red; font-size: small"
+            >CVV - 3 Digit Number</small
+          >
+        </div>
+        <div id="amount">
+          <label>
+            Amount
+            <input
+              formControlName="amount"
+              type="number"
+              name=""
+              placeholder="Enter Amount To Be Paid"
+            />
+          </label>
+          <small
+            *ngIf="
+              !detailsform.get('amount').valid &&
+              detailsform.get('amount').touched
+            "
+            style="color: red; font-size: small"
+            >Enter Valid Amount</small
+          >
+        </div>
+        <div id="mobilenumber">
+          <label>
+            <br />
+            Mobile Number
+            <input
+              formControlName="mobilenumber"
+              type="number"
+              placeholder="Enter Mobile Number"
+              class="form-control"
+            />
+          </label>
+          <small
+            *ngIf="
+              !detailsform.get('mobilenumber').valid &&
+              detailsform.get('mobilenumber').touched
+            "
+            style="color: red; font-size: small"
+            >Enter Valid Mobile Number</small
+          >
+        </div>
+      </form>
+
+      <button (click)="success()" id="submit">Proceed to Checkout</button>
+    </div>
+  </div>
+</header>
