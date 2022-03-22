@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto");
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+.filter {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  background: url(https://blog.2checkout.com/wp-content/uploads/2020/04/What-Does-Payment-Processing-Mean-Definition-and-Important-Terms-to-Know.png);
+  opacity: 0.7;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+table {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 2px 15px rgba(64, 64, 64, 0.7);
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+td,
+th {
+  padding: 15px 20px;
+  text-align: center;
+}
+th {
+  background-color: #ba68c8;
+  color: #fafafa;
+  font-family: "Open Sans", Sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+tr {
+  width: 100%;
+  background-color: #fafafa;
+  font-family: "Montserrat", sans-serif;
+}
+tr:nth-child(even) {
+  background-color: #eeeeee;
+}

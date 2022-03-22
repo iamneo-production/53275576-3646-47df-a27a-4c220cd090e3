@@ -24,6 +24,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AdminreviewComponent } from './adminreview/adminreview.component';
 import { DisplaycourseComponent } from './displaycourse/displaycourse.component';
 import { UserreviewComponent } from './userreview/userreview.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ViewpaymentComponent } from './viewpayment/viewpayment.component';
+
 const routes: Routes = [
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'adminacademy',component:AdminacademyComponent},
@@ -48,6 +51,9 @@ const routes: Routes = [
   {path:'adminreview',component:AdminreviewComponent},
   {path:'displaycourse',component:DisplaycourseComponent},
   {path:'userreview',component:UserreviewComponent},
+  {path:'payment',component:PaymentComponent},
+  {path:'viewpayment',component:ViewpaymentComponent},  
+
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent },
 ];
 
