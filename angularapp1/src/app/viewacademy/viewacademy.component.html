@@ -14,8 +14,8 @@
       <a class="navbar-brand" routerLink="/homepage">School Admission</a>
     </div>
     <div class="nav navbar-nav flex-container">
-      <li class="active"><a href="/viewacademy">Institute</a></li>
-      <li><a href="/institute-enroll">Enrolled Course</a></li>
+      <li class="active"><a *ngIf="loginService.isUserLoggedIn()" href="/viewacademy" id="userInstitute">Institute</a></li>
+      <li><a href="/institute-enroll" id="userEnrolledCourse">Enrolled Course</a></li>
       <li><a  *ngIf="loginService.isUserLoggedIn()" (click)="logout()" href="" style="float:right;"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
   </div>  
   </div>
@@ -41,7 +41,7 @@
       <p class="p-large">{{ins.mobileNumber}}</p>
       <p class="p-large">{{ins.email}}</p>
       <p class="job-title">{{ins.instituteAddress}}</p>
-      <button (click)="institueEnroll()" type="button" class="btn btn-success"> View</button>
+      <button (click)="institueEnroll()" type="button" class="btn btn-success">View</button>
     </div>
     
     </div>
