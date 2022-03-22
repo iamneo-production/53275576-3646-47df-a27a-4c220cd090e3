@@ -20,3 +20,11 @@ input[type="text"]
 .flex-container{
     display: inline;
 }
+#searchCourse{
+    transition: all 0.3s ease;
+    background:green;
+    color:white;
+    font-weight: 470;
+    display: inline;
+    size:2px;
+}
