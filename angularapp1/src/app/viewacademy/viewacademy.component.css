@@ -34,3 +34,7 @@ input[type="text"]
     color:green;
     font-weight: 470;
 }
+#addc:hover{
+    background:white;
+    color:green;
+}
