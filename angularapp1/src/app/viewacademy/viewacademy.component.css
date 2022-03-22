@@ -39,9 +39,7 @@ input[type="text"]
     color:green;
 }
 #back{
-    background-image: url("bckimage.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
 }
