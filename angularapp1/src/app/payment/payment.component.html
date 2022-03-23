@@ -257,8 +257,9 @@
           >
         </div>
       </form>
+      <button [disabled]="!detailsform.valid" (click)="success()" id="submit" >Proceed to Checkout</button>
 
-      <button (click)="success()" id="submit">Proceed to Checkout</button>
+<!--       <button (click)="success()" id="submit">Proceed to Checkout</button> -->
     </div>
   </div>
 </header>
