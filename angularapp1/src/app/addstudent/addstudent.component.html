@@ -53,11 +53,12 @@
         </div><br>
         <div id="maleorfemale" class="form-group">
             <label for="maleOrFemale">Gender</label>
-            <input formControlName="" type="text" [(ngModel)]="student.maleOrFemale" id="t1" name="maleOrFemale" id="maleOrFemale" list="l1" class="form-control" placeholder="Enter male or female" required>
-           <datalist id="l1">
-             <option>Male</option>
-             <option>Female</option>
-           </datalist>
+            <!-- <input formControlName="" [(ngModel)]="student.maleOrFemale" id="t1" name="maleOrFemale" id="maleOrFemale" list="l1" class="form-control" placeholder="Enter male or female" required> -->
+           <select [(ngModel)]="student.maleOrFemale" id="t1" name="maleOrFemale" id="maleOrFemale" list="l1" class="form-control" placeholder="Enter male or female" required>
+            <option value="" selected hidden>Enter Gender</option> 
+                <option>Male</option>
+                <option>Female</option>
+           </select>
         </div><br>
     </div>
     

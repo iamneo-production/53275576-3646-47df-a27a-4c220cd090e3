@@ -28,7 +28,7 @@ export class AddcourseComponent implements OnInit {
     this.addcourseform = new FormGroup({
      // courseId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,40}$')]),
       courseName : new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){2,40}$')]),
-      courseEnrolled : new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
+      courseEnrolled : new FormControl('', [Validators.required,Validators.min(1),Validators.max(250)]),
       courseDescription : new FormControl('', [Validators.pattern('^([A-Z+a-z+0-9]+.*?){0,40}$')])
     });
   }

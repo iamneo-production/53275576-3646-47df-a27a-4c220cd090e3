@@ -16,7 +16,6 @@ export class AddstudentComponent implements OnInit {
 
   constructor(private studentService: StudentService) { 
     this.addstudentpayload={
-     // studentId:'',
       firstName:'',
     fatherName:'',
     motherName:'',
@@ -39,16 +38,14 @@ export class AddstudentComponent implements OnInit {
 ngOnInit(): void {
   this.addstudentform = new FormGroup({
     // studentId: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{2,40}$')]),
-
     firstName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     fatherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     motherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     emailId:new FormControl('', [Validators.required,Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,30}$')]),
-    age: new FormControl('', [Validators.required,Validators.pattern('^([5-9]|[2-5][0-9]|6[0-5])$')]),
-    // enterSSCHSCmarks: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
-    lastName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
-    phoneNumber: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
-    phoneNumber2: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
+    age: new FormControl('', [Validators.required,Validators.min(10),Validators.max(110)]),
+    lastName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{1,40}$')]),
+    phoneNumber: new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
+    phoneNumber2: new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
     houseNo: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
     streetName: new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){0,40}$')]),
     areaName: new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){0,40}$')]),
@@ -77,7 +74,6 @@ saveStudent(){
   onSubmit(e){
     this.addstudentpayload.firstName= this.addstudentform.get('firstName').value;
     // this.addstudentpayload.studentId= this.addstudentform.get('studentId').value;
-
     this.addstudentpayload.fatherName = this.addstudentform.get('fatherName').value;
     this.addstudentpayload.motherName = this.addstudentform.get('motherName').value;
     this.addstudentpayload.emailId = this.addstudentform.get('emailId').value;

@@ -1,80 +1,96 @@
 <div class="main">
-<div id="academyHeader">
-  <h2>School Admission</h2>
-  <ul id="academyList">
-      <li id="adminAcademy">
-          <button (click)="viewAcademy()" id="adminAcademy">Academy</button>
-      </li>
-      <li id="adminCourse">
-          <button (click)="viewCourse()" id="adminCourse">Course</button>
-      </li>
-      <li id="adminStudents">
-          <button (click)="viewStudents()" id="adminStudents">Students</button>
-      </li>
-      
+    <div id="academyHeader">
+        <h2>School Admission</h2>
+        <ul id="academyList">
+            <li id="adminAcademy">
+                <button (click)="viewAcademy()" id="adminAcademy">Academy</button>
+            </li>
+            <li id="adminCourse">
+                <button (click)="viewCourse()" id="adminCourse">Course</button>
+            </li>
+            <li id="adminStudents">
+                <button (click)="viewStudents()" id="adminStudents">Students</button>
+            </li>
 
-       
-  </ul>
-  <div>
 
-  <button (click)="logout()" id="logout">Logout</button></div>
-</div>
-<div id="academyBackground">
-    <form [formGroup]="addacademyform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)">        
 
-  <h5>Add Academy</h5><br>
-  <div id="academyLeft">
-  <div  id="academyName" >
-      <!-- <label>Enter Academy Id</label>
+        </ul>
+        <div>
+
+            <button (click)="logout()" id="logout">Logout</button>
+        </div>
+    </div>
+    <div id="academyBackground">
+        <form [formGroup]="addacademyform" #ngForm="ngForm" (ngSubmit)="onSubmit($event)">
+
+            <h5>Add Academy</h5><br>
+            <div id="academyLeft">
+                <div id="academyName">
+                    <!-- <label>Enter Academy Id</label>
       <input formControlName="instituteId" type="text" class="form-control" placeholder="Enter Academy Id"
       [(ngModel)]="institute.instituteId" name="instituteId"><br>
       <small *ngIf="!addacademyform.get('instituteId').valid && addacademyform.get('instituteId').touched" class="text-danger">* Invalid Academy ID</small> -->
-      <br>
-      <label>Enter Academy Name</label>
-      <input formControlName="instituteName" type="text" id="instituteName" [(ngModel)]="institute.instituteName" name="instituteName" placeholder="Enter the Academy Name" class="form-control"><br>
-      <small *ngIf="!addacademyform.get('instituteName').valid && addacademyform.get('instituteName').touched" class="text-danger">* Invalid Academy Name</small><br>
+                    <br>
+                    <label>Enter Academy Name</label>
+                    <input formControlName="instituteName" type="text" id="instituteName"
+                        [(ngModel)]="institute.instituteName" name="instituteName" placeholder="Enter the Academy Name"
+                        class="form-control">
+                    <small
+                        *ngIf="!addacademyform.get('instituteName').valid && addacademyform.get('instituteName').touched"
+                        class="text-danger">* Invalid Academy Name</small><br><br>
+                </div>
+                <div id="imageUrl">
+                    <label>Enter Image url</label>
+                    <input [(ngModel)]="institute.imgUrl" formControlName="imageUrl" type="text" class="form-control"
+                        placeholder="Enter the academy Image url">
+                    <small *ngIf="!addacademyform.get('imageUrl').valid && addacademyform.get('imageUrl').touched"
+                        class="text-danger">* Invalid Image URL</small><br>
+                </div><br>
+                <div id="academyLocation">
+                    <label>Enter Academy Location</label>
+                    <input formControlName="academyLocation" type="text" class="form-control"
+                        placeholder="Enter Academy Location" [(ngModel)]="institute.instituteAddress"
+                        name="instituteAddress">
+                    <small
+                        *ngIf="!addacademyform.get('academyLocation').valid && addacademyform.get('academyLocation').touched"
+                        class="text-danger">
+                        * Invalid Academy Loacation</small><br>
+                </div><br>
+            </div>
+            <div id="academyCenter">
+                <div id="contactNumber">
+                    <label>Enter Contact Number</label>
+                    <input formControlName="mobileNumber" type="text" class="form-control"
+                        placeholder="Enter the contact number" [(ngModel)]="institute.mobileNo" name="mobileNo">
+                    <small
+                        *ngIf="!addacademyform.get('mobileNumber').valid && addacademyform.get('mobileNumber').touched"
+                        class="text-danger">* Invalid Mobile Number</small><br>
+                </div><br>
+                <div id="emailId">
+                    <label>Enter Email Id</label>
+                    <input formControlName="instituteEmail" type="email" class="form-control"
+                        placeholder="Enter the email-id" [(ngModel)]="institute.email" name="email">
+                    <small
+                        *ngIf="!addacademyform.get('instituteEmail').valid && addacademyform.get('instituteEmail').touched"
+                        class="text-danger">* Invalid Academy Email ID</small><br>
+
+
+                </div><br>
+                <div id="academyDescription">
+                    <label>Enter Academy description</label>
+                    <input formControlName="academyDesc" type="text" class="form-control"
+                        placeholder="Enter Academy description" [(ngModel)]="institute.instituteDescription"
+                        name="instituteDescription"><br><br>
+                    <small *ngIf="!addacademyform.get('academyDesc').valid && addacademyform.get('academyDesc').touched"
+                        class="text-danger">* Invalid Academy Description</small>
+
+                </div><br><br>
+            </div>
+            <div id="academyRight">
+                <button [disabled]="!addacademyform.valid" (click)="addAcademy()" class="btn btn-success"
+                    id="addAcademy">Add Academy</button>
+            </div>
+        </form>
+
     </div>
-  <div  id="imageUrl" >
-      <label>Enter Image url</label>
-      <input [(ngModel)]="institute.imgUrl" formControlName="imageUrl" type="text" class="form-control" placeholder="Enter the academy Image url"
-      >
-      <small *ngIf="!addacademyform.get('imageUrl').valid && addacademyform.get('imageUrl').touched" class="text-danger">* Invalid Image URL</small><br>
-  </div><br>
-  <div  id="academyLocation" >
-      <label>Enter Academy Location</label>
-      <input formControlName="academyLocation" type="text" class="form-control" placeholder="Enter Academy Location"
-      [(ngModel)]="institute.instituteAddress" name="instituteAddress">
-      <small *ngIf="!addacademyform.get('academyLocation').valid && addacademyform.get('academyLocation').touched" class="text-danger">
-          * Invalid Academy Loacation</small><br> 
-  </div><br>
-  </div>
-  <div id="academyCenter">
-      <div id="contactNumber" >
-          <label>Enter Contact Number</label>
-          <input formControlName="mobileNumber" type="text" class="form-control"  placeholder="Enter the contact number"
-          [(ngModel)]="institute.mobileNo" name="mobileNo">
-          <small *ngIf="!addacademyform.get('mobileNumber').valid && addacademyform.get('mobileNumber').touched" class="text-danger">* Invalid Mobile Number</small><br>
-      </div>
-      <div  id="emailId" >
-          <label>Enter Email Id</label>
-          <input  formControlName="instituteEmail" type="email" class="form-control" placeholder="Enter the email-id"
-          [(ngModel)]="institute.email" name="email" >
-          <small *ngIf="!addacademyform.get('instituteEmail').valid && addacademyform.get('instituteEmail').touched" class="text-danger">* Invalid Academy Email ID</small><br>
-
-
-      </div><br>
-      <div  id="academyDescription" >
-          <label>Enter Academy description</label>
-          <input formControlName="academyDesc" type="text" class="form-control"  placeholder="Enter Academy description"
-          [(ngModel)]="institute.instituteDescription" name="instituteDescription"><br><br>
-          <small *ngIf="!addacademyform.get('academyDesc').valid && addacademyform.get('academyDesc').touched" class="text-danger">* Invalid Academy Description</small>
-
-      </div><br><br>
-  </div>
-  <div id="academyRight">
-      <button [disabled]="!addacademyform.valid" (click)="addAcademy()" class="btn btn-success" id="addAcademy">Add Academy</button>
-  </div>
-</form>
-
-</div>
 </div>
