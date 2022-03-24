@@ -37,7 +37,7 @@ export class AddcourseComponent implements OnInit {
     this.courseService.createCourse(this.course,this.course["courseTiming"] =this.coursetime, this.course["courseDuration"]=this.cousedue).subscribe(data => {
       console.log(data);
     },
-    error => console.log(this.course));
+    error => console.log(error, alert("Error - Course Not Added !!")));
   }
   
   @ViewChild("myNameElem") myNameElem: ElementRef;
@@ -52,7 +52,7 @@ export class AddcourseComponent implements OnInit {
     this.cousedue = this.courseduration.nativeElement.value;
     this.saveCourse();
     console.log("success");
-    alert("Course Added Successfully!!!");
+    // alert("Course Added Successfully!!!");
     this.router.navigate(["/course"])
   }
   onSubmit(e){

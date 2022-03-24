@@ -64,9 +64,9 @@ logout(){
     console.log(this.institute);
     this.instituteService.updateInstitute(this.id,this.institute).subscribe(data=>{
       alert("institute updated successfully");
-    })
+    }, 
+    error => console.log(error,alert("Error - Institute Data Not Updated!! (Institute with same name already exists)")))
     //this.saveInstitute();
-    console.log("success");
   }
   // saveInstitute(){
   //   this.instituteService.createInstitute(this.institute).subscribe(data => {

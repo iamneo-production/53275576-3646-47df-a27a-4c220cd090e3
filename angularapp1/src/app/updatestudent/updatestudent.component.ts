@@ -90,8 +90,11 @@ export class UpdatestudentComponent implements OnInit  {
      console.log("Button Click");
   }
   enrollnow() {
-    this.studentService.updateStudent(this.id,this.student).subscribe(data=>{});
-    alert("student Updated Successfully!!!");  
+    this.studentService.updateStudent(this.id,this.student).subscribe(data=>{
+      alert("student Updated Successfully!!!");  
+
+    },
+    error => console.log(error,alert("Error - Student Details Not Updated!! (Student with same email already exists.)")));
     this.router.navigate(["/student"])
   }
   viewStudent() {
