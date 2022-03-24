@@ -86,7 +86,7 @@ export class UpdatecourseComponent implements OnInit {
     this.courseService.updateCourse(this.id, this.course).subscribe(data =>{
       alert("Course Updated Successfully!!!");
     },
-    error=>console.log("error"));
+    error=>console.log(error, alert("Error - Course Details Not Updated!!")));
     this.router.navigate(["/course"])
   }
   onSubmit(e){

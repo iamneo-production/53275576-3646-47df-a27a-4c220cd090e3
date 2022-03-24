@@ -61,11 +61,11 @@
   }
 
   #academyLeft input{
-    width:270px;
+    width:250px;
     height:50px;
   }
   #academyCenter input{
-    width:270px;
+    width:250px;
     height:50px;
   }
   #academyCenter {
@@ -78,13 +78,13 @@
   #academyRight{
     
     right: 10px; 
-    margin-right: 27%;
+    margin-right: 25%;
     border-radius:5%; 
     position: absolute;
   }
 
   #academyRight input{
-    width:330px;
+    width:270px;
     height:50px;
   }
   #addStudent{

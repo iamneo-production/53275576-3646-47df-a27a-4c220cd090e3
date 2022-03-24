@@ -68,7 +68,7 @@ export class AddacademyComponent implements OnInit {
     this.saveInstitute();
     console.log("success");
 
-    alert("Academy Added Successfully!!!");
+    // alert("Academy Added Successfully!!!");
   }
   saveInstitute(){
     this.instituteService.createInstitute(this.institute).subscribe(data => {
@@ -76,9 +76,10 @@ export class AddacademyComponent implements OnInit {
       console.log("mobile")
       console.log(data["mobileNo"])
       this.router.navigate(["/institute"]);
+      alert("Academy Added Successfully!!!");
 
     },
-    error => console.log("error"));
+    error => console.log(error, alert("Error - Data Not Added (Academy with same name already exist!!)")));
   }
  
   onSubmit(e){

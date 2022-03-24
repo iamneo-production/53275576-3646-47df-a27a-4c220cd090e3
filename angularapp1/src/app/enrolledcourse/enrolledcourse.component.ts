@@ -89,14 +89,16 @@ export class EnrolledcourseComponent implements OnInit
     console.log(this.enrolledcourse1);
     this.enrolledcourseService.createEnrolledcourse(this.enrolledcourse1).subscribe(data=>{
       console.log(this.enrolledcourse1);
+      alert("Enrolled Course Added Successfully!!!");
+
     },
-    error => console.log(this.enrolledcourse1));
+    error => console.log(error, alert("Error - Not enrolled into the course!!")));
   }
   addenrolledcourse(){
     console.log(this.enrolledcourse1);
     this.saveEnrolledcourse();
     console.log("success");
-    alert("Enrolled Course Added Successfully!!!");
+    // alert("Enrolled Course Added Successfully!!!");
   }
 
 }

@@ -21,7 +21,6 @@ export class SignupComponent implements OnInit {
   password;
   hide=true;
   show = false;
-  hide=true;
   constructor(private formBuilder : FormBuilder , private router:Router, private userService: UserService) { 
     this.signuppayload={
       username:'',
@@ -73,7 +72,12 @@ export class SignupComponent implements OnInit {
 
     this.userService.createUser(this.user).subscribe(data=>{
       console.log(data)
-    }, error=>console.error());
+      if(data)
+      alert("User account created!!");
+      else{
+        alert("Error - User Not Created (user with same UserID or Email already Exists!!)");
+      }
+    }, error=>console.log(error));
   }
     onSubmit(e){
       this.signuppayload.email = this.signupform.get('email').value;
@@ -100,6 +104,6 @@ export class SignupComponent implements OnInit {
       console.log(this.user)
       console.log("working")
       this.router.navigate(["/login"])
-      alert("User account created");
+      // alert("User account created");
     }
 }

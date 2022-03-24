@@ -60,15 +60,17 @@ saveStudent(){
     console.log(this.student);
   this.studentService.createStudent(this.student).subscribe(data=>{
     console.log(this.student);
+    alert("Student Added Successfully!!!");
+
   },
-    error => console.log(this.student));
+    error => console.log(error,alert("Error - Student Not added!!")));
 }
   addstudent(){
     console.log(this.student);
     
     this.saveStudent();
     console.log("success");
-    alert("Student Added Successfully!!!");
+    // alert("Student Added Successfully!!!");
   }
 
   onSubmit(e){
