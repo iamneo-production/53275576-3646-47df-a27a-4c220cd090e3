@@ -169,13 +169,9 @@
           [(ngModel)]="enrolledcourse1.ecourseNationality" name="ecourseNationality">
           <small *ngIf="!enrolledform.get('nationality').valid && enrolledform.get('nationality').touched"
           style="color:red;">* Invalid Nationality</small>
-        
       </div>
   </tr>
   </table>
   </div>
-  <div>
-      <button  [disabled]="!enrolledform.valid" (click)="addenrolledcourse()" id="enrolNowButton" value="Add Enrolled Course" class="btn btn-success">
-          Add Enrolled Course</button>
-  </div>
+      <button  [disabled]="!enrolledform.valid" (click)="addenrolledcourse()" id="enrolNowButton" value="Add Enrolled Course" class="btn btn-success" routerLink="/viewacademy">Enroll Course</button>
   </form>

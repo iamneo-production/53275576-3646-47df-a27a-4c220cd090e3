@@ -65,9 +65,11 @@ export class LoginComponent implements OnInit {
 
        if(user.includes("admin")){
         this.router.navigate(["/institute"]);
+        alert("Admin login Successfully!!!");
        }
        else{
         this.router.navigate(["/viewacademy"]);
+        alert("Login Successfull to user");
        }
 
     // console.log("login successful");

@@ -99,5 +99,6 @@ export class SignupComponent implements OnInit {
       console.log(this.user)
       console.log("working")
       this.router.navigate(["/login"])
+      alert("User account created");
     }
 }

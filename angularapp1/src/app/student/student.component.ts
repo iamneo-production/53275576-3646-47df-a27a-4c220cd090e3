@@ -4,6 +4,7 @@ import {MatTableDataSource,MatTableModule} from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Student } from '../service/student';
 import { StudentService } from '../service/student.service';
+import Swal from 'sweetalert2';
 
 export interface PeriodicElement {
   name: string;
@@ -23,6 +24,7 @@ export class StudentComponent implements OnInit {
   students: Student[];
   firstName: any;
   constructor(private studentService:StudentService, private router: Router) { }
+  searchKey : string;
   ngOnInit(): void {
     this.getStudent();
   }
@@ -36,15 +38,36 @@ export class StudentComponent implements OnInit {
   updateStudent(id: number){
     this.router.navigate(['updatestudent',id]);
   }
-  deleteStudent(id:number){
-    this.studentService.deleteStudent(id).subscribe(data=>{
-      console.log(data);
-      this.getStudent();
-      console.log("deleted");
+  opensweetalert(id:number){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this file!',
+      icon: 'error',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No keep it'
+    }).then((result) => {
+      if(result.value) {
+        this.studentService.deleteStudent(id).subscribe(data=>{
+          console.log(data);
+          this.getStudent(); 
+          console.log("deleted");
+          alert("Institute Deleted Successfully!!!");
+        })
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted successfully.',
+          'success'
+        )
+      } else if (result.dismiss === Swal.DismissReason.cancel){
+        Swal.fire(
+          'Cancelled',
+          'Your file is safe :)',
+          'error'
+        )
+      }
     })
   }
-  // displayedColumns: string[] = ['position', 'name','Email', 'phone','actions'];
-  
 
   Search(){
     if(this.firstName == ""){
