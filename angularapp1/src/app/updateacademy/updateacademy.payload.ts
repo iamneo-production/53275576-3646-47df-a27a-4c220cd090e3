@@ -5,5 +5,5 @@ export class Updateacademypayload{
     instituteEmail!: string;
     mobileNumber!: string;
     academyLocation!: string;
-    academyDesc!: string;
+    // academyDesc!: string;
 }

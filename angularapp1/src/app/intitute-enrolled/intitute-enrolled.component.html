@@ -20,7 +20,7 @@
     
   </div><br>
   
-
+  <button (click)="enrolledCourse()"  class="button primary enroll">Enroll course</button>
 
       <div class="card-category-1" *ngFor="let cou of courses;  let i=index;">
         <br>
@@ -37,7 +37,7 @@
             <label class="card-text" for="course-description-value">{{cou.courseDescription}}</label><br>
             <label  for="course-avail">Course availble timings :</label>
             <label class="card-text" for="course-avail-value">{{cou.courseTiming}}</label><br>
-            <button (click)="enrolledCourse()"  class="button primary enroll">Enroll Now</button>
+            <!-- <button (click)="enrolledCourse()"  class="button primary enroll">Enroll Now</button> -->
             <br>
           </div>
           </div>

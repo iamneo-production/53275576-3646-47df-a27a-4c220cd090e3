@@ -38,7 +38,7 @@ export class AddacademyComponent implements OnInit {
       instituteEmail : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^([a-zA-Z]+.*?)+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
       mobileNumber : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{10}$')]),
       academyLocation : new FormControl('', [Validators.required,Validators.minLength(0),Validators.pattern('^[A-Za-z0-9_-]{2,40}$')]),  
-      academyDesc : new FormControl('', [Validators.maxLength(100),])
+      academyDesc : new FormControl('', [Validators.maxLength(100)])
     });
 
   }

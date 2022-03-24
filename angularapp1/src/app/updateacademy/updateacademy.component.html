@@ -27,17 +27,17 @@
         <label>Enter Academy Id</label><br>
         <input formControlName="instituteId" type="text" class="form-control" placeholder="Enter Academy Id"
         [(ngModel)]="institute.instituteId" name="instituteId" disabled><br>
-        <small *ngIf="!updateacademyform.get('instituteId').valid && updateacademyform.get('instituteId').touched" class="text-white">* Invalid Academy ID</small>
+        <small *ngIf="!updateacademyform.get('instituteId').valid && updateacademyform.get('instituteId').touched" class="text-danger">* Invalid Academy ID</small>
         <br>
         <label>Enter Academy Name</label><br>
         <input formControlName="instituteName" type="text" id="instituteName" [(ngModel)]="institute.instituteName" name="instituteName" placeholder="Enter Academy Name" class="form-control"><br>
-        <small *ngIf="!updateacademyform.get('instituteName').valid && updateacademyform.get('instituteName').touched" class="text-white">* Invalid Academy Name</small>
+        <small *ngIf="!updateacademyform.get('instituteName').valid && updateacademyform.get('instituteName').touched" class="text-danger">* Invalid Academy Name</small>
       </div>
     <div  id="editImageUrl" >
         <label>Enter Image URL</label><br>
         <input [(ngModel)]="institute.imgUrl" name="imgUrl" formControlName="imageUrl" type="text" class="form-control" placeholder="Enter Academy Image url"
         ><br>
-        <small *ngIf="!updateacademyform.get('imageUrl').valid && updateacademyform.get('imageUrl').touched" class="text-white">* Invalid Image URL</small>
+        <small *ngIf="!updateacademyform.get('imageUrl').valid && updateacademyform.get('imageUrl').touched" class="text-danger">* Invalid Image URL</small>
     </div>
     <div  id="editAcademyLocation" >
         <label>
@@ -45,7 +45,7 @@
         </label>
         <input formControlName="academyLocation" type="text" class="form-control" placeholder="Enter Academy Location"
         [(ngModel)]="institute.instituteAddress" name="instituteAddress"><br>
-        <small *ngIf="!updateacademyform.get('academyLocation').valid && updateacademyform.get('academyLocation').touched" class="text-white">
+        <small *ngIf="!updateacademyform.get('academyLocation').valid && updateacademyform.get('academyLocation').touched" class="text-danger">
             * Invalid Academy Location
         </small> <br>
     </div>
@@ -55,13 +55,13 @@
             <label>Enter Contact Number</label><br>
             <input formControlName="mobileNumber" type="text" class="form-control"  placeholder="Enter Contact number"
             [(ngModel)]="institute.mobileNo" name="mobileNo"><br>
-            <small *ngIf="!updateacademyform.get('mobileNumber').valid && updateacademyform.get('mobileNumber').touched" class="text-white">* Invalid Mobile Number</small>
+            <small *ngIf="!updateacademyform.get('mobileNumber').valid && updateacademyform.get('mobileNumber').touched" class="text-danger">* Invalid Mobile Number</small>
         </div><br> 
         <div  id="editEmailId" >
             <label>Enter Email ID</label>
             <input  formControlName="instituteEmail" type="email" class="form-control" placeholder="Enter the academy email"
             [(ngModel)]="institute.email" name="email" ><br>
-            <small *ngIf="!updateacademyform.get('instituteEmail').valid && updateacademyform.get('instituteEmail').touched" class="text-white">* Invalid Academy Email ID</small>   
+            <small *ngIf="!updateacademyform.get('instituteEmail').valid && updateacademyform.get('instituteEmail').touched" class="text-danger">* Invalid Academy Email ID</small>   
   
   
         </div><br>
@@ -70,7 +70,7 @@
             <label>Enter Academy Description</label>
             <input formControlName="academyDesc" type="text" class="form-control"  placeholder="Enter Academy description"
             [(ngModel)]="institute.instituteDescription" name="instituteDescription"><br><br>
-            <small *ngIf="!updateacademyform.get('academyDesc').valid && updateacademyform.get('academyDesc').touched" class="text-white">* Invalid Academy Description</small>
+            <!-- <small *ngIf="!updateacademyform.get('academyDesc').valid && updateacademyform.get('academyDesc').touched" class="text-danger">* Invalid Academy Description</small> -->
   
         </div><br><br>
     </div>
