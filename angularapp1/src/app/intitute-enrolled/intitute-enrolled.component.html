@@ -20,7 +20,9 @@
     
   </div><br>
   
-  <button (click)="enrolledCourse()"  class="button primary enroll">Enroll course</button>
+  <button (click)="enrolledCourse()"  class="button primary enroll"><b>Enroll course</b></button>
+
+  <br><br>
 
       <div class="card-category-1" *ngFor="let cou of courses;  let i=index;">
         <br>
@@ -28,13 +30,13 @@
           <div class="card-content">
             <div >
             <label  for="course-name">Course Name : </label>
-            <label  class="card-text" for="course-name-value">{{cou.courseName}}</label><br>
+            <label  class="card-text" for="course-name-value">{{cou.courseName | uppercase}}</label><br>
             <label for="no-of-students">Number of Students :</label> 
-            <label class="card-text" for="no-of-students-value">{{cou.courseEnrolled}}</label><br>
+            <label class="card-text" for="no-of-students-value">{{cou.courseEnrolled | uppercase}}</label><br>
             <label for="course-duration">Course Duration :</label> 
-            <label class="card-text" for="course-name-value">{{cou.courseDuration}}</label><br>
+            <label class="card-text" for="course-name-value">{{cou.courseDuration | uppercase}}</label><br>
             <label  for="course-description">Course Description :</label> 
-            <label class="card-text" for="course-description-value">{{cou.courseDescription}}</label><br>
+            <label class="card-text" for="course-description-value">{{cou.courseDescription | uppercase}}</label><br>
             <label  for="course-avail">Course availble timings :</label>
             <label class="card-text" for="course-avail-value">{{cou.courseTiming}}</label><br>
             <!-- <button (click)="enrolledCourse()"  class="button primary enroll">Enroll Now</button> -->

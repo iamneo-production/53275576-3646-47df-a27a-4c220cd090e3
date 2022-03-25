@@ -6,6 +6,8 @@ import { Enrolledcourse } from '../service/enrolledcourse';
 import { EnrolledcourseService } from '../service/enrolledcourse.service';
 import { StudentService } from '../service/student.service';
 import { Student } from '../service/student';
+import { CourseService } from '../service/course.service';
+import { Course } from '../service/course';
 @Component
 (
   {
@@ -22,8 +24,8 @@ export class EnrolledcourseComponent implements OnInit
   enrolledform:FormGroup;
   enrolledcoursepayload:Enrolledcoursepayload;
  enrolledcourse1: Enrolledcourse = new Enrolledcourse();
-
-  constructor(private formbuilder:FormBuilder,private router:Router,private enrolledcourseService:EnrolledcourseService,private studentService:StudentService) 
+courses:Course[];
+  constructor(private formbuilder:FormBuilder,private router:Router,private enrolledcourseService:EnrolledcourseService,private studentService:StudentService,private courseService:CourseService) 
   {
     this.enrolledcoursepayload={
       firstName:'',
@@ -46,6 +48,8 @@ export class EnrolledcourseComponent implements OnInit
 
   ngOnInit(): void
    {
+    this.getCourse();
+
     this.enrolledform = new FormGroup({
       firstName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
       fatherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
@@ -80,6 +84,12 @@ export class EnrolledcourseComponent implements OnInit
     this.enrolledcoursepayload.pincode = this.enrolledform.get('pincode').value;
     this.enrolledcoursepayload.state = this.enrolledform.get('state').value;
     this.enrolledcoursepayload.nationality = this.enrolledform.get('nationality').value;
+  }
+
+  getCourse(){
+    this.courseService.getCourseList().subscribe(data=>{
+      this.courses=data;
+    });
   }
   enrollnow()
   {

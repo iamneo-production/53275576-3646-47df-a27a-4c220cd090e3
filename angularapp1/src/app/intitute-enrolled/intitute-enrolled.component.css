@@ -25,7 +25,6 @@ body{
   font-family: sans-serif;
     margin-bottom: 10px;
     text-align: left;
-   
     display: grid;
    
 }
@@ -85,7 +84,8 @@ body{
       padding: 0 16px;
     }
   .enroll {
-      background: rgb(142, 67, 241);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      background: rgb(0, 161, 73);
       
   
     }
