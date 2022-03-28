@@ -4,32 +4,16 @@
   <tr>
     <th>Name</th>
 
-    <th>Institution Name</th>
+    <th>Email ID</th>
 
     <th>Amount Paid</th>
   </tr>
 
-  <tr>
-    <td>Vasanth</td>
+  <tr *ngFor="let payment of payments; let i = index">
+    <td>{{ payment.name }}</td>
 
-    <td>Vel Tech University</td>
+    <td>{{ payment.email }}</td>
 
-    <td>52500</td>
-  </tr>
-
-  <tr>
-    <td>Sindhuja</td>
-
-    <td>Vel Tech Multi Tech</td>
-
-    <td>52500</td>
-  </tr>
-
-  <tr>
-    <td>Harish</td>
-
-    <td>DG Vaishnav</td>
-
-    <td>28000</td>
+    <td>{{ payment.amount }}</td>
   </tr>
 </table>

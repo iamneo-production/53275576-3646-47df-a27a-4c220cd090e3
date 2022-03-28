@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import {PaymentPayload} from './payment.payload';
 import { FormGroup,FormControl,Validators,FormBuilder } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaymentService } from '../service/payment.service';
+import { Payment } from '../service/payment';
+
 
 
 @Component({
@@ -13,8 +16,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 export class PaymentComponent implements OnInit {
   detailsform: FormGroup;
   paymentpayload:PaymentPayload;
-  
-  constructor(private formBuilder : FormBuilder , private router: Router) { 
+  payment: Payment = new Payment();
+
+  constructor(private paymentService: PaymentService,private formBuilder : FormBuilder , private router: Router) { 
     this.paymentpayload={
       name:'',
       email:'',
@@ -52,6 +56,15 @@ export class PaymentComponent implements OnInit {
   success(){
     window.alert("Payment Success");
   }
+
+  savePayment(){
+    this.paymentService.createPayment(this.payment).subscribe(data => {
+      console.log(data);
+      alert("Payment Successful!");
+    },
+    error => console.log(error, alert("Error - Payment Unsuccessful !!")));
+  }
+
   onSubmit(e){
     this.paymentpayload.name = this.detailsform.get('name').value;
     this.paymentpayload.email = this.detailsform.get('email').value;
