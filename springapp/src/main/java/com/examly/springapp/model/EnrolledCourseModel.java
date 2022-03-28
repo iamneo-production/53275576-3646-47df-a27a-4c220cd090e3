@@ -1,6 +1,15 @@
 package com.examly.springapp.model;
 import javax.persistence.*;
 import java.util.Objects;
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.Valid;
+
 @Entity
 @Table(name="ecourse")
 public class EnrolledCourseModel {
@@ -33,53 +42,70 @@ public class EnrolledCourseModel {
         this.ecourseNationality = ecourseNationality;
         this.ecoursename = ecoursename;
     }
+    @NotNull
     @Column(name="ecourseFirstName")
     private String ecourseFirstName;
+    @NotNull
 
     @Column(name="ecoursename")
     private String ecoursename;
+    @NotNull
 
     @Column(name="ecourseLastName")
     private String ecourseLastName;
+    @NotNull
 
     @Column(name="ecourseFatherName")
     private String ecourseFatherName;
+    @NotNull
 
     @Column(name="ecourseMaleorFemale")
     private String ecourseMaleorFemale;
+    @NotNull
 
     @Column(name="ecoursePhoneNumber")
     private String ecoursePhoneNumber;
+    @NotNull
 
     @Column(name="ecourseAlternateNumber")
     private String ecourseAlternateNumber;
+    @NotNull
 
     @Column(name="ecourseEmailId")
     private String ecourseEmailId;
+    @NotNull
 
     @Column(name="ecourseAge")
     private String ecourseAge;
+    @NotNull
 
     @Column(name="ecourseMarks")
     private String ecourseMarks;
+    @NotNull
 
     @Column(name="ecourseHouseNo")
     private String ecourseHouseNo;
+    @NotNull
 
     @Column(name="ecourseStreetName")
     private String ecourseStreetName;
+    @NotNull
 
     @Column(name="ecourseAreaName")
     private String ecourseAreaName;
+    @NotNull
 
     @Column(name="ecoursePincode")
     private String ecoursePincode;
+    @NotNull
 
     @Column(name="ecourseState")
     private String ecourseState;
+    @NotNull
 
     @Column(name="ecourseNationality")
     private String ecourseNationality;
+    @NotNull
 
     @Column(name="ecourseMotherName")
     private String ecourseMotherName;

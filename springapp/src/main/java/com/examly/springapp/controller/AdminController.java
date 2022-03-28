@@ -9,6 +9,8 @@ import com.examly.springapp.repository.CourseRepository;
 import com.examly.springapp.repository.StudentRepository;
 import com.examly.springapp.model.StudentModel;
 import com.examly.springapp.model.CourseModel;
+import org.springframework.validation.Errors;
+import javax.validation.Valid;
 
 
 // import org.springframework.web.bind.annotation.DeletedMapping;
@@ -60,8 +62,12 @@ public class AdminController {
     }
 
     @PostMapping("/addinstitute")
-    public InstituteModel createInstitute(@RequestBody InstituteModel institute){
-        return instituteRepository.save(institute);
+    public Boolean createInstitute(@Valid  @RequestBody InstituteModel course,Errors erros){
+        if(erros.hasErrors()){
+            return false;
+        }
+         instituteRepository.save(institute);
+         return true;
     }
 
     @GetMapping("/institute/{id}")
@@ -114,8 +120,12 @@ public class AdminController {
     }
 
     @PostMapping("/addcourse")
-    public CourseModel createCourse(@RequestBody CourseModel course){
-        return courseRepository.save(course);
+    public Boolean createCourse(@Valid  @RequestBody CourseModel course,Errors erros){
+        if(erros.hasErrors()){
+            return false;
+        }
+         courseRepository.save(course);
+         return true;
     }
 
     @GetMapping("/course/{id}")
@@ -160,8 +170,12 @@ public class AdminController {
     }
 
     @PostMapping("/addstudent")
-    public StudentModel createStudent(@RequestBody StudentModel student){
-        return studentRepository.save(student);
+    public Boolean createStudent(@Valid  @RequestBody StudentModel student,Errors erros){
+        if(erros.hasErrors()){
+            return false;
+        }
+         studentRepository.save(student);
+         return true;
     }
 
     @GetMapping("/student/{id}")

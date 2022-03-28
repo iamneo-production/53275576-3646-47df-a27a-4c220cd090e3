@@ -3,6 +3,16 @@ import javax.persistence.*;
 import java.util.Objects;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.Valid;
+
+import javax.validation.constraints.NotBlank
 @Entity
 @Table(name="course")
 public class CourseModel {
@@ -27,15 +37,20 @@ public class CourseModel {
     @Column(name="courseEnrolled")
     private String courseEnrolled;
 
+    @NotNull(message = "courseName may not be null")
     @Column(name="courseName")
     private String courseName;
 
+    @NotNull(message = "courseDescription can not be null")
+    @Size(min=10, max=100)
     @Column(name="courseDescription")
     private String courseDescription;
 
+    @NotNull(message = "courseDuration can not be null")
     @Column(name="courseDuration")
     private String courseDuration;
 
+    @NotNull(message = "courseTiming can not be null")
     @Column(name="courseTiming")
     private String courseTiming;
 

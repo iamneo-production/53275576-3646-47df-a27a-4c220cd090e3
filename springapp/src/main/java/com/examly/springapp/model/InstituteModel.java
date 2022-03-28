@@ -6,6 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Objects;
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.Valid;
 
 @Entity
 @Table(name="institute")
@@ -16,20 +24,26 @@ public class InstituteModel {
     @Column(name="instituteId")
     private int instituteId;
 
+    @NotNull(message="instituteName may not be null")
     @Column(name = "instituteName")
     private String instituteName;
-
+    @NotNull(message="instituteDescription may not be null")
+    @Size(min=10,max=100)
     @Column(name = "instituteDescription")
     private  String instituteDescription;
+    @NotNull(message="instituteAddress may not be null")
 
     @Column(name = "instituteAddress")
     private String instituteAddress;
-
+    @NotNull(message="mobileNumber may not be null")
+    @Size(max=10)
     @Column(name = "mobileNumber")
     private String mobileNo;
-
+    @NotNull(message="email may not be null")
+    @Email
     @Column(name="email")
     private String email;
+    @NotNull(message="imgUrl may not be null")
 
     @Column(name="imgUrl")
     private String imgUrl;
