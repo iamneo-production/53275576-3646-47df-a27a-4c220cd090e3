@@ -1,6 +1,6 @@
 package com.examly.springapp.controller;
-import com.examly.springapp.exception.ResourceNotFound;
 
+import com.examly.springapp.exception.ResourceNotFound;
 import com.examly.springapp.model.InstituteModel;
 import com.examly.springapp.service.InstituteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,13 +9,11 @@ import com.examly.springapp.repository.CourseRepository;
 import com.examly.springapp.repository.StudentRepository;
 import com.examly.springapp.model.StudentModel;
 import com.examly.springapp.model.CourseModel;
-
-
+import com.examly.springapp.model.PaymentModel;
+import com.examly.springapp.repository.PaymentRepository;
 // import org.springframework.web.bind.annotation.DeletedMapping;
-
 import org.apache.catalina.User;
 import com.examly.springapp.repository.InstituteRepository;
-
 import java.lang.*;
 import java.util.HashMap;
 import java.util.List;
@@ -24,9 +22,6 @@ import java.util.Map;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.Map;
-
-
-
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -45,17 +40,30 @@ public class AdminController {
     @Autowired
     private StudentRepository studentRepository;
 
-    
+    @Autowired
+    private PaymentRepository paymentRepository;
+
+    @GetMapping("/payment")
+    public List<PaymentModel> getAllPayment() {
+        return paymentRepository.findAll();
+    }
+
+    @PostMapping("/addpayment")
+    public PaymentModel createPayment(@RequestBody PaymentModel payment) {
+        return paymentRepository.save(payment);
+    }
 
     // @GetMapping("/institutes")
-    // public List<InstituteModel> getAllInstitute(){ return instituteService.getAllInstitutes(); }
+    // public List<InstituteModel> getAllInstitute(){ return
+    // instituteService.getAllInstitutes(); }
 
     @GetMapping("/institute")
-    public List<InstituteModel> getAllInstitute(){
+    public List<InstituteModel> getAllInstitute() {
         return instituteRepository.findAll();
     }
+
     @GetMapping("/allinstitute")
-    public List<InstituteModel> getInstitute(){
+    public List<InstituteModel> getInstitute() {
         return instituteRepository.findAll();
     }
 
@@ -79,16 +87,19 @@ public class AdminController {
     }
 
     @GetMapping("/institute/{id}")
-    public ResponseEntity<InstituteModel> getInstituteById(@PathVariable Integer id){
-        InstituteModel institute = instituteRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Institute not exixts with this ID : "+id));
+    public ResponseEntity<InstituteModel> getInstituteById(@PathVariable Integer id) {
+        InstituteModel institute = instituteRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("Institute not exixts with this ID : " + id));
 
         return ResponseEntity.ok(institute);
-        
+
     }
 
     @PutMapping("/institute/{id}")
-    public ResponseEntity<InstituteModel> updateInstitute(@PathVariable Integer id, @RequestBody InstituteModel instituteDetails){
-        InstituteModel institute = instituteRepository.findById(id).orElseThrow(()-> new ResourceNotFound("institute not found with id :"+id));
+    public ResponseEntity<InstituteModel> updateInstitute(@PathVariable Integer id,
+            @RequestBody InstituteModel instituteDetails) {
+        InstituteModel institute = instituteRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("institute not found with id :" + id));
 
         institute.setInstituteName(instituteDetails.getInstituteName());
         institute.setInstituteDescription(instituteDetails.getInstituteDescription());
@@ -102,62 +113,65 @@ public class AdminController {
     }
 
     @DeleteMapping("/institute/{id}")
-    public ResponseEntity<Map<String, Boolean>> deleteInstitute(@PathVariable Integer id){
-        InstituteModel institute = instituteRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Employee not exists with id : "+id));
+    public ResponseEntity<Map<String, Boolean>> deleteInstitute(@PathVariable Integer id) {
+        InstituteModel institute = instituteRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("Employee not exists with id : " + id));
         instituteRepository.delete(institute);
         Map<String, Boolean> response = new HashMap<>();
         response.put("Deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
-      // @Autowired
+    // @Autowired
     // private CourseService courseService;
 
-    
-
     // @GetMapping("/courses")
-    // public List<CourseModel> getAllCourse(){ return courseService.getAllCourses(); }
+    // public List<CourseModel> getAllCourse(){ return
+    // courseService.getAllCourses(); }
 
     @GetMapping("/allcourse")
-    public List<CourseModel> getCourse(){
+    public List<CourseModel> getCourse() {
         return courseRepository.findAll();
     }
 
     @GetMapping("/course")
-    public List<CourseModel> getAllCourse(){
+    public List<CourseModel> getAllCourse() {
         return courseRepository.findAll();
     }
 
     @PostMapping("/addcourse")
-    public CourseModel createCourse(@RequestBody CourseModel course){
+    public CourseModel createCourse(@RequestBody CourseModel course) {
         return courseRepository.save(course);
     }
 
     @GetMapping("/course/{id}")
-    public ResponseEntity<CourseModel> getCourseById(@PathVariable Integer id){
-        CourseModel course = courseRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Course not exixts with this ID : "+id));
+    public ResponseEntity<CourseModel> getCourseById(@PathVariable Integer id) {
+        CourseModel course = courseRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("Course not exixts with this ID : " + id));
 
         return ResponseEntity.ok(course);
-        
+
     }
 
     @PutMapping("/course/{id}")
-    public ResponseEntity<CourseModel> updateCourse(@PathVariable Integer id, @RequestBody CourseModel courseDetails){
-        CourseModel course = courseRepository.findById(id).orElseThrow(()-> new ResourceNotFound("course not found with id :"+id));
+    public ResponseEntity<CourseModel> updateCourse(@PathVariable Integer id, @RequestBody CourseModel courseDetails) {
+        CourseModel course = courseRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("course not found with id :" + id));
 
         course.setCourseName(courseDetails.getCourseName());
         course.setCourseDescription(courseDetails.getCourseDescription());
         course.setCourseDuration(courseDetails.getCourseDuration());
         course.setCourseTiming(courseDetails.getCourseTiming());
         course.setCourseEnrolled(courseDetails.getCourseEnrolled());
-        //course.setCourseAddress(courseDetails.getCoureAddress());
+        // course.setCourseAddress(courseDetails.getCoureAddress());
 
         CourseModel updateCourse = courseRepository.save(course);
         return ResponseEntity.ok(updateCourse);
     }
 
     @DeleteMapping("/course/{id}")
-    public ResponseEntity<Map<String, Boolean>> deleteCourse(@PathVariable Integer id){
-        CourseModel course = courseRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Employee not exists with id : "+id));
+    public ResponseEntity<Map<String, Boolean>> deleteCourse(@PathVariable Integer id) {
+        CourseModel course = courseRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("Employee not exists with id : " + id));
         courseRepository.delete(course);
         Map<String, Boolean> response = new HashMap<>();
         response.put("Deleted", Boolean.TRUE);
@@ -165,30 +179,34 @@ public class AdminController {
     }
 
     @GetMapping("/student")
-    public List<StudentModel> getAllStudent(){
+    public List<StudentModel> getAllStudent() {
         return studentRepository.findAll();
     }
+
     @GetMapping("/allstudent")
-    public List<StudentModel> getStudent(){
+    public List<StudentModel> getStudent() {
         return studentRepository.findAll();
     }
 
     @PostMapping("/addstudent")
-    public StudentModel createStudent(@RequestBody StudentModel student){
+    public StudentModel createStudent(@RequestBody StudentModel student) {
         return studentRepository.save(student);
     }
 
     @GetMapping("/student/{id}")
-    public ResponseEntity<StudentModel> getStudentById(@PathVariable Integer id){
-        StudentModel student = studentRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Student not exixts with this ID : "+id));
+    public ResponseEntity<StudentModel> getStudentById(@PathVariable Integer id) {
+        StudentModel student = studentRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("Student not exixts with this ID : " + id));
 
         return ResponseEntity.ok(student);
-        
+
     }
 
     @PutMapping("/student/{id}")
-    public ResponseEntity<StudentModel> updateStudent(@PathVariable Integer id, @RequestBody StudentModel studentDetails){
-        StudentModel student = studentRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Student not found with id :"+id));
+    public ResponseEntity<StudentModel> updateStudent(@PathVariable Integer id,
+            @RequestBody StudentModel studentDetails) {
+        StudentModel student = studentRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("Student not found with id :" + id));
 
         student.setFirstName(studentDetails.getFirstName());
         student.setLastName(studentDetails.getLastName());
@@ -205,19 +223,17 @@ public class AdminController {
         student.setState(studentDetails.getState());
         student.setPincode(studentDetails.getPincode());
         student.setNationality(studentDetails.getNationality());
-
         StudentModel updateStudent = studentRepository.save(student);
         return ResponseEntity.ok(updateStudent);
     }
 
     @DeleteMapping("/student/{id}")
-    public ResponseEntity<Map<String, Boolean>> deleteStudent(@PathVariable Integer id){
-        StudentModel student = studentRepository.findById(id).orElseThrow(()-> new ResourceNotFound("Student not exists with id : "+id));
+    public ResponseEntity<Map<String, Boolean>> deleteStudent(@PathVariable Integer id) {
+        StudentModel student = studentRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound("Student not exists with id : " + id));
         studentRepository.delete(student);
         Map<String, Boolean> response = new HashMap<>();
         response.put("Deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
-
 }
-

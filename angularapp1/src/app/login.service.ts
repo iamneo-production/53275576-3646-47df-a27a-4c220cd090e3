@@ -24,6 +24,16 @@ export class LoginService {
     // if(user.includes("user")){}
     return (!(user==="undefined")&& !(user===null))
     }
+
+    isAdmin(){
+      let user =localStorage.getItem('email')
+      return (user.includes('admin'))
+    }
+    isUser(){
+      let user =localStorage.getItem('email')
+      return (!(user==="undefined")&& !(user===null) && !user.includes('admin'))
+      
+    }
     logOut(){
       localStorage.removeItem('email');
     }

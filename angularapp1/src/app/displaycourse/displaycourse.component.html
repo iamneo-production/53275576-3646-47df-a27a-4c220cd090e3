@@ -1,32 +1,38 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" routerLink="/homepage">School Admission</a>
-      </div>
-      <div class="nav navbar-nav flex-container">
-        <li class="active"><a routerLink="/displaycourse">Course</a></li>
-        <li><a routerLink="/institute">Academy</a></li>
-        <li><a routerLink="/addstudent">Add Student</a></li>
-        <li><a routerLink="/login" style="float:right;"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-    </div>  
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/homepage">School Admission</a>
     </div>
-  </nav>
-    <br>
-<body>    
-<h2 style="text-align:center;">All Courses</h2>
-<div style="display:inline-block;vertical-align:middle;padding-top:3%">  
-    <div style="margin-bottom: 2em; margin-left: 2em;background:rgba(96, 141, 209,0.9);border-radius:10px;padding: 2em; width: 22em;" class="course-block" *ngFor="let ecou of ecourse;  let i=index;">
-    <label style="padding: 4px;" for="CourseName"><span style="font-size:medium;font-weight:bold;color:#fcf6f5ff;">Course Name : </span><span style="font-size:medium;font-weight:bold;color:crimson">{{ecou.ecourseName}}</span><hr></label>
-    <br>
-    <button id="btn1" class="btn btn-success" routerLink="/institute-enroll">View All Courses</button>
-    <br>
+    <div class="nav navbar-nav flex-container">
+      <li class="active"><a routerLink="/displaycourse">Course</a></li>
+      <li><a routerLink="/viewacademy">Academy</a></li>
+      <!-- <li><a routerLink="/addstudent">Add Student</a></li> -->
+      <li><a routerLink="/login" style="float:right;"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </div>
-</div> 
+  </div>
+</nav>
+<br>
+
+<body>
+  <h2 style="text-align:center;">All Courses</h2>
+  <div style="display:inline-block;vertical-align:middle;padding-top:3%">
+    <div
+      style="margin-bottom: 2em; margin-left: 2em;background:rgba(96, 141, 209,0.9);border-radius:10px;padding: 2em; width: 22em;"
+      class="course-block" *ngFor="let ecou of ecourse;  let i=index;">
+      <label style="padding: 4px;" for="CourseName"><span
+          style="font-size:medium;font-weight:bold;color:#fcf6f5ff;">Course Name : </span><span
+          style="font-size:medium;font-weight:bold;color:crimson">{{ecou.ecourseName}}</span>
+        <hr>
+      </label>
+      <br>
+      <button id="btn1" class="btn btn-success" routerLink="/institute-enroll">View All Courses</button>
+      <br>
+    </div>
+  </div>
 </body>
- 

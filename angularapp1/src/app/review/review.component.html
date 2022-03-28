@@ -30,8 +30,8 @@
                 <textarea cols="10" rows="3"  formControlName="comments" class="form-control" placeholder="Enter Your Review" [(ngModel)]="review.reviewComments" name="reviewComments" ></textarea>
                 <small *ngIf="!reviewform.get('comments').valid && reviewform.get('comments').touched" class="text-danger" > Required* </small>
                 </div>
-                <h2> Star-Rating</h2>
-                <div class="star-icon" >
+                <!-- <h2> Star-Rating</h2> -->
+                <!-- <div class="star-icon" >
                   <input type="radio" name="rating1" id="rating1">
                   
                   <label for="rating1" class="fa fa-star"></label>
@@ -52,7 +52,7 @@
                   
                   <label for="rating5" class="fa fa-star"></label>
                   
-                </div>
+                </div> -->
 
                 <br>
                 <button [disabled]="!reviewform.valid" (click)="addreview()" id="redirectHome" class="btn btn-success">SUBMIT</button>

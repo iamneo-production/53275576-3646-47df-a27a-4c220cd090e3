@@ -35,7 +35,7 @@ export class UpdatecourseComponent implements OnInit {
     this.updatecourseform = new FormGroup({
      // courseId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,40}$')]),
       courseName : new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){2,40}$')]),
-      courseEnrolled : new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
+      courseEnrolled : new FormControl('', [Validators.required,Validators.min(1),Validators.max(250)]),
       courseDescription : new FormControl('')
     });
     this.id = this.route.snapshot.params['id'];
@@ -86,7 +86,7 @@ export class UpdatecourseComponent implements OnInit {
     this.courseService.updateCourse(this.id, this.course).subscribe(data =>{
       alert("Course Updated Successfully!!!");
     },
-    error=>console.log("error"));
+    error=>console.log(error, alert("Error - Course Details Not Updated!!")));
     this.router.navigate(["/course"])
   }
   onSubmit(e){

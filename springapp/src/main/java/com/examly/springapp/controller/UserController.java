@@ -75,7 +75,7 @@ public class UserController {
         ecourse.setECourseHouseNo(ecourseDetails.getECourseHouseNo());
         ecourse.setECourseAge(ecourseDetails.getECourseAge());
         ecourse.setECourseEmailId(ecourseDetails.getECourseEmailId());
-        ecourse.setECourseMarks(ecourseDetails.getECourseMarks());
+     //   ecourse.setECourseMarks(ecourseDetails.getECourseMarks());
         
     
 

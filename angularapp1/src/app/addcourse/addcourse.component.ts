@@ -28,7 +28,7 @@ export class AddcourseComponent implements OnInit {
     this.addcourseform = new FormGroup({
      // courseId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,40}$')]),
       courseName : new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){2,40}$')]),
-      courseEnrolled : new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
+      courseEnrolled : new FormControl('', [Validators.required,Validators.min(1),Validators.max(250)]),
       courseDescription : new FormControl('', [Validators.pattern('^([A-Z+a-z+0-9]+.*?){0,40}$')])
     });
   }
@@ -37,7 +37,7 @@ export class AddcourseComponent implements OnInit {
     this.courseService.createCourse(this.course,this.course["courseTiming"] =this.coursetime, this.course["courseDuration"]=this.cousedue).subscribe(data => {
       console.log(data);
     },
-    error => console.log(this.course));
+    error => console.log(error, alert("Error - Course Not Added !!")));
   }
   
   @ViewChild("myNameElem") myNameElem: ElementRef;
@@ -52,7 +52,7 @@ export class AddcourseComponent implements OnInit {
     this.cousedue = this.courseduration.nativeElement.value;
     this.saveCourse();
     console.log("success");
-    alert("Course Added Successfully!!!");
+    // alert("Course Added Successfully!!!");
     this.router.navigate(["/course"])
   }
   onSubmit(e){

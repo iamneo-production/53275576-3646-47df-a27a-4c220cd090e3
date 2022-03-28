@@ -1,44 +1,51 @@
 <div class="container">
-<nav class="navbar" style="background-color:rgb(10, 10, 10); ">
+  <nav class="navbar" style="background-color:rgb(10, 10, 10); ">
     <div class="container-fluid">
-        <h2  style="color:rgb(255, 255, 255);">School Admission</h2>
-        <h2 style="color:rgb(247, 247, 247);" routerLink="/viewAcademy">Institute</h2>
-        <h2 style="color:rgb(253, 253, 253);" routerLink="/viewCourse">Enrolled Course</h2>
+        <h2  style="color:rgb(255, 255, 255); cursor: pointer;">School Admission</h2>
+        <h2 style="color:rgb(247, 247, 247); cursor: pointer;" routerLink="/viewacademy">Institute</h2>
+        <h2 style="color:rgb(253, 253, 253); cursor: pointer;" routerLink="/displaycourse">Enrolled Course</h2>
+        <h2 style="color:rgb(253, 253, 253); cursor: pointer;" routerLink="/review">review</h2>
 
-        <h2 style="color:rgb(255, 255, 255);" routerLink="/login">Logout</h2>
+        <h2 style="color:rgb(255, 242, 242); cursor: pointer;" routerLink="/login">Logout</h2>
     </div>
   </nav>
 
-  <div >
+
+
+  <div>
     <div class="input-group">
-        <input  type="text" class="form-control rounded" autocomplete="off"  id="course-name" name="course-name" placeholder="Type here to search academy" aria-label="Search" aria-describedby="search-addon" style="margin-top:2em; margin-right: 2em; width: 50%;" [(ngModel)]="courseName"  (ngModelChange)="Search()" />
-        <button type="button" class="btn btn-outline-primary btn btn-success" style="margin-top: 2em; color:white;  border-color:grey;">Search</button>
+      <input  class="form-control rounded" autocomplete="off"  placeholder="Type here to search academy" aria-label="Search" aria-describedby="search-addon" style="margin-top:2em; margin-right: 2em; width: 50%;"  [(ngModel)]="courseName"  (ngModelChange)="Search()" />
+      <button type="button" class="btn btn-outline-primary btn btn-success" style="margin-top: 2em; color:white;  border-color:grey;">Search</button>
+    </div>
+    
+  </div><br>
+  
+  <button (click)="enrolledCourse()"  class="button primary enroll"><b>Enroll course</b></button>
+
+  <br><br>
+
+      <div class="card-category-1" *ngFor="let cou of courses;  let i=index;">
+        <br>
+        <div class="basic-card basic-card-aqua">
+          <div class="card-content">
+            <div >
+            <label  for="course-name">Course Name : </label>
+            <label  class="card-text" for="course-name-value">{{cou.courseName | uppercase}}</label><br>
+            <label for="no-of-students">Number of Students :</label> 
+            <label class="card-text" for="no-of-students-value">{{cou.courseEnrolled | uppercase}}</label><br>
+            <label for="course-duration">Course Duration :</label> 
+            <label class="card-text" for="course-name-value">{{cou.courseDuration | uppercase}}</label><br>
+            <label  for="course-description">Course Description :</label> 
+            <label class="card-text" for="course-description-value">{{cou.courseDescription | uppercase}}</label><br>
+            <label  for="course-avail">Course availble timings :</label>
+            <label class="card-text" for="course-avail-value">{{cou.courseTiming}}</label><br>
+            <!-- <button (click)="enrolledCourse()"  class="button primary enroll">Enroll Now</button> -->
+            <br>
+          </div>
+          </div>
+          <br>
+        </div>
       </div>
-    </div>
-    <br>
-    <div >
-    <div class="instcourse-block" *ngFor="let cou of courses;  let i=index;">
-        <br>
-        <label for="course-name">Course Name :- </label>
-        <label for="course-name-value">{{cou.courseName}}</label>
-        <div class="instright-col">
-        <label for="no-of-students">Number of students:-</label> 
-        <label for="no-of-students-value">{{cou.courseEnrolled}}</label>
-        </div>
-        <br>
-        <label for="course-duration">Course-Duration:-</label> 
-        <label for="course-name-value">{{cou.courseDuration}}</label>
-        <div class="instright-col">
-        <label for="course-description">Course-Description:-</label> 
-        <label for="course-description-value">{{cou.courseDescription}}</label>
-        </div>
-        <br>
-        <label for="course-avail">Course availble timings:-</label>
-        <label for="course-avail-value">{{cou.courseTiming}}</label>
-        <a (click)="enrolledCourse()" class="button primary enroll">Enroll Now</a>
-      
-        <br>
-    </div>
-    <br>
-</div>
+
+  
 </div>

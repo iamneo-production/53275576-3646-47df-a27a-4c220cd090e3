@@ -24,6 +24,10 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AdminreviewComponent } from './adminreview/adminreview.component';
 import { DisplaycourseComponent } from './displaycourse/displaycourse.component';
 import { UserreviewComponent } from './userreview/userreview.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ViewpaymentComponent } from './viewpayment/viewpayment.component';
+import { AdminguardService } from './adminguard.service';
+
 const routes: Routes = [
   {path:'',redirectTo:'homepage',pathMatch:'full'},
   {path:'adminacademy',component:AdminacademyComponent},
@@ -31,23 +35,27 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'viewacademy', component:ViewacademyComponent,canActivate:[AuthguardService]},
-  {path:'displayuser',component:DisplayuserComponent},
-  {path:'institute' ,component:InstituteComponent},
-  {path:'addacademy' ,component:AddacademyComponent,canActivate:[AuthguardService]},
-  {path:'updateacademy/:id' ,component:UpdateacademyComponent,canActivate:[AuthguardService]},
-  {path:'addcourse' ,component:AddcourseComponent,canActivate:[AuthguardService]},
-  {path:'updatecourse/:id',component:UpdatecourseComponent,canActivate:[AuthguardService]},
-  {path:'course',component:CourseComponent},
-  {path:'addstudent',component:AddstudentComponent},
-  {path:'updatestudent/:id',component:UpdatestudentComponent},
-  {path:'student',component:StudentComponent},
-  {path:'viewinstitute',component:ViewinstituteComponent},
-  {path:'institute-enroll',component:IntituteEnrolledComponent},
-  {path:'enrolledcourse',component:EnrolledcourseComponent},
-  {path:'review',component:ReviewComponent},
-  {path:'adminreview',component:AdminreviewComponent},
-  {path:'displaycourse',component:DisplaycourseComponent},
-  {path:'userreview',component:UserreviewComponent},
+  {path:'displayuser',component:DisplayuserComponent, canActivate:[AuthguardService]},
+  {path:'institute' ,component:InstituteComponent,canActivate:[AdminguardService]},
+  {path:'addacademy' ,component:AddacademyComponent,canActivate:[AdminguardService]},
+  {path:'updateacademy/:id' ,component:UpdateacademyComponent,canActivate:[AdminguardService]},
+  {path:'addcourse' ,component:AddcourseComponent,canActivate:[AdminguardService]},
+  {path:'updatecourse/:id',component:UpdatecourseComponent,canActivate:[AdminguardService]},
+  {path:'course',component:CourseComponent,canActivate:[AdminguardService]},
+  {path:'addstudent',component:AddstudentComponent,canActivate:[AdminguardService]},
+  {path:'updatestudent/:id',component:UpdatestudentComponent,canActivate:[AdminguardService]},
+  {path:'student',component:StudentComponent,canActivate:[AdminguardService]},
+  {path:'viewinstitute',component:ViewinstituteComponent,canActivate:[AuthguardService]},
+  {path:'institute-enroll',component:IntituteEnrolledComponent,canActivate:[AuthguardService]},
+  {path:'enrolledcourse',component:EnrolledcourseComponent,canActivate:[AuthguardService]},
+  {path:'review',component:ReviewComponent,canActivate:[AuthguardService]},
+  {path:'adminreview',component:AdminreviewComponent,canActivate:[AdminguardService]},
+  {path:'displaycourse',component:DisplaycourseComponent,canActivate:[AuthguardService]},
+  {path:'userreview',component:UserreviewComponent,canActivate:[AuthguardService]},
+  {path:'payment',component:PaymentComponent},
+  {path:'viewpayment',component:ViewpaymentComponent},  
+  {path:'error', component:PagenotfoundComponent},
+
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent },
 ];
 

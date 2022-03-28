@@ -1,133 +1,93 @@
-
+body{
+  background-color: #e1e2e4;
+  height: 100%;
+  width: 100%;
+}
 .container{
-    height: auto;
-    width: 10000%;
+  
+  height: 100%;
+  width: 100%;
+    background-size: cover;
+    background-position: center;
     background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/11/Education-hd-backgrounds.jpg");
    
 }
-.instcontainer-fluid{
-    text-align: center;
-    background-color:rgb(3, 3, 3);
-    color: white;
-    width: 100%;
-    
-}
-  h2{
-    margin-left: 20px;
-  }
-  #academyList{
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    
-  }
-  ul li{
-    padding: 55px;
-    list-style: none;
-    
-    
-  }
-  #logout{
-    cursor: pointer;
-    border: none;
-    background: none;
-    margin-right:20px ;
-    
-  }
-  .input-group{
+.input-group{
     flex-direction: row;
     width: 60%;
     margin-left: 25%;
 }
-.instEnroll{
-    margin-left: 80%;
+.but{
+    margin-right: 5%;
+    
 }
-.instlogout{
-    margin-left: 80%;
+.card-category-1{
+  font-family: sans-serif;
+    margin-bottom: 10px;
+    text-align: left;
+    display: grid;
+   
 }
-.instsubmit{
-    background-color: darkmagenta;
-    color: white;
-}
-input[type=text] {
-    background-color: lightgray;
-  }
-  .instright-col{
-      margin-left: 30%;
-  }
-  .instcourse-block{
-      background-color: lightgray;
-      position:relative;
-      top: 50;
-      margin-left: 3%;
-      width: 50%;
-      height: 100;
-      padding-left: 10px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-      margin-top: 5px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  }
-.instbtn1{
-    margin-left: 85%;
-}
-
-.button {
-  font-family:'Open Sans';
-  font-size: 20px;
-  font-weight:400;
+.card-category-1 div{
   display:inline-block;
-  color:#FFF;
-  border-radius: .25em;
-  text-shadow: -1px -1px 0px rgba(0,0,0,0.4);
-  text-align: center;
-  margin-left: 2ex;
 }
-.inlineIcon {}
- .enroll:before {
-  font-family: FontAwesome;
-  display: inline-block;
-  font-size:1rem;
-  padding-right:12px;
-  background:none;
-  color:#FFF;
-}
-.inlineIcon.enroll {
-  background: transparent;
+.basic-card {
+  width:700px;
+ 
+  
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+  -o-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
 }
 
-.inlineIcon.enroll:before {
-  line-height:32px;
-  font-size:32px;
-  padding:4px 0px;
-} 
+  .basic-card .card-content {
+      padding: 15px;
+      font-size: 17px;
+      font-family: 'Open Sans', sans-serif;
+  }
 
-
-.primary:hover{
-  transform:scale(1.02);
-  box-shadow:2px 2px 5px rgba(0,0,0,0.20), inset 0 0 0 99999px rgba(0,0,0,0.2);
-}
-.primary {
-  line-height:40px;
-  transition:ease-in-out .2s;
-  padding: 0 16px;
-}
-.enroll {
-  background: rgb(192, 57, 43);
   
 
+  .basic-card .card-text {
+      line-height: 2.0;
+      text-align: right;
+      margin-left: 2ex;
+  }
+  .basic-card-aqua {
+    background-image: linear-gradient(to bottom right, #00bfad, #99a3d4);
 }
 
-.inlineIcon.enroll:before {
-    color:rgb(192, 57, 43);
-}
-.card {
-  background: #fff;
-  border-radius: 2px;
-  display: inline-block;
-  height: 300px;
-  margin: 1rem;
-  position: relative;
-  width: 300px;
-}
+    .basic-card-aqua .card-content{
+        color: #fff;
+    }
+    
+    .button {
+      font-family:'Open Sans';
+      font-size: 16px;
+      font-weight:400;
+      display:inline-block;
+      color:#FFF;
+      border-radius: .25em;
+      text-shadow: -1px -1px 0px rgba(7, 6, 6, 0.4);
+      text-align: center;
+      margin-top: 2ex;
+      margin-left: 50%;
+    }
+    .primary:hover{
+      transform:scale(1.02);
+      box-shadow:2px 2px 5px rgba(0,0,0,0.20), inset 0 0 0 99999px rgba(0,0,0,0.2);
+    }
+  .primary {
+      line-height:40px;
+      transition:ease-in-out .2s;
+      padding: 0 16px;
+    }
+  .enroll {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      background: rgb(0, 161, 73);
+      
+  
+    }
+    
+   

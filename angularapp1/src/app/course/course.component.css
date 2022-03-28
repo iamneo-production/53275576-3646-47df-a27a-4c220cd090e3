@@ -7,9 +7,11 @@ input[type="text"]
     background: transparent;
     border: none;
 }
-/* .button{
-    text-align: end;
-} */
+label{
+    padding: 4px;
+    color:#fcf6f5ff;
+    font-weight:400;
+}
 #sbox{
     margin-left: 20%;
     margin-top: 2%;
@@ -43,6 +45,5 @@ input[type="text"]
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
 }
   

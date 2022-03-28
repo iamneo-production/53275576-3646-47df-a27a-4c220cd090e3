@@ -46,22 +46,22 @@ export class UpdatestudentComponent implements OnInit  {
     }, error => console.log(error)) ;
 
     this.enrolledform=new FormGroup({ 
-      firstName:new FormControl('', [Validators.required]),
-      lastName:new FormControl('', [Validators.required]),
-      fatherName:new FormControl('', [Validators.required]),
-      motherName:new FormControl('', [Validators.required]),
+      firstName:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
+      lastName:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
+      fatherName:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
+      motherName:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
       phoneNumber1:new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
-      emailId : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^([a-zA-Z]+.*?)+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
-      age:new FormControl('', [Validators.required]),
+      emailId : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,30}$')]),
+      age:new FormControl('', [Validators.required,Validators.min(10),Validators.max(110)]),
       phoneNumber2:new FormControl('', [Validators.maxLength(10),Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
      // SSLCorHSCMarks:new FormControl('', [Validators.required]),
      // maleorfemale:new FormControl('', [Validators.required]),
-      houseNo:new FormControl('', [Validators.required]),
-      streetName:new FormControl('', [Validators.required]),
-      areaName:new FormControl('', [Validators.required]),
-      pincode:new FormControl('', [Validators.required]),
-      state:new FormControl('', [Validators.required]),
-      nationality:new FormControl('', [Validators.required])
+      houseNo:new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
+      streetName:new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){0,40}$')]),
+      areaName:new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){0,40}$')]),
+      pincode:new FormControl('', [Validators.required,Validators.pattern('^[0-9]{0,6}$')]),
+      state:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{0,40}$')]),
+      nationality:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')])
     })
   }
   onSubmit(e) {
@@ -90,8 +90,11 @@ export class UpdatestudentComponent implements OnInit  {
      console.log("Button Click");
   }
   enrollnow() {
-    this.studentService.updateStudent(this.id,this.student).subscribe(data=>{});
-    alert("student Updated Successfully!!!");  
+    this.studentService.updateStudent(this.id,this.student).subscribe(data=>{
+      alert("student Updated Successfully!!!");  
+
+    },
+    error => console.log(error,alert("Error - Student Details Not Updated!! (Student with same email already exists.)")));
     this.router.navigate(["/student"])
   }
   viewStudent() {

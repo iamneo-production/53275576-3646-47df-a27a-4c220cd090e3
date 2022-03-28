@@ -1,35 +1,49 @@
-<html>
-  <body>
-<div class="navbar1">
-    <a>School Admission  </a>
-  <a *ngIf="loginService.isUserLoggedIn()" href="/viewacademy" id="userInstitute" >  Institute   </a>
-  <a href="/institute-enroll" id="userEnrolledCourse">   Enrolled Courses   </a>
-  <a  *ngIf="loginService.isUserLoggedIn()" (click)="logout()" href="" class="logout" id="logout">   Logout  </a>
-</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Rubik:400,700"/>
 
-<div class="search"  id="searchButton">
-      <input type="text" name="search" class='search-box' placeholder="Type here to search academy" [(ngModel)]="instituteName" (ngModelChange)="Search()"/>
-      <input type="submit" class="search-txt" value="Search" /><br />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/homepage">School Admission</a>
+    </div>
+    <div class="nav navbar-nav flex-container">
+      <li class="active"><a *ngIf="loginService.isUserLoggedIn()" href="/viewacademy" id="userInstitute">Institute</a></li>
+      <li><a href="/institute-enroll" id="userEnrolledCourse">Enrolled Course</a></li>
+      <li><a  *ngIf="loginService.isUserLoggedIn()" (click)="logout()" href="" style="float:right;"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+  </div>  
+  </div>
+</nav>
+<div id="back"> 
+  <div class="container">
+  <div class="input-group mb-3">
+  <input class="form-control" autocomplete="off" id="sbox" placeholder="Type here to search academy" aria-label="Search" aria-describedby="search-addon" [(ngModel)]="instituteName" (ngModelChange)="Search()"/>
+  <div class="input-group-append">
+    <span class="input-group-text btn" id="basic-addon2" style="margin-top: 2%;"><i class="material-icons">search</i></span>
+  </div>
+  </div>
+  </div>
+  <div class="basic-2">
+
+
+    <div class="team-member" id="userInstituteGrid1" *ngFor="let ins of institutes;  let i=index;">
+      <div class="image-wrapper">
+        <img class="img-fluid" src={{ins.imgUrl}} alt="alternative">
+      </div> 
+      <p class="p-large">{{ins.instituteName}}</p>
+      
+      <p class="p-large">{{ins.mobileNumber}}</p>
+      <p class="p-large">{{ins.email}}</p>
+      <p class="job-title">{{ins.instituteAddress}}</p>
+      <button (click)="institueEnroll()" type="button" class="btn btn-success">View</button>
+    </div>
     
-</div>
+    </div>
+    
 
-<div class="basic-2">
-
-
-<div class="team-member" id="userInstituteGrid1" *ngFor="let ins of institutes;  let i=index;">
-  <div class="image-wrapper">
-    <img class="img-fluid" src={{ins.imgUrl}} alt="alternative">
-  </div> 
-  <p class="p-large">{{ins.instituteName}}</p>
-  
-  <p class="p-large">{{ins.mobileNumber}}</p>
-  <p class="p-large">{{ins.email}}</p>
-  <p class="job-title">{{ins.instituteAddress}}</p>
-  <button (click)="institueEnroll()" type="button" class="btn btn-success"> View</button>
-</div>
-
-</div>
-
-
-</body>
-</html>

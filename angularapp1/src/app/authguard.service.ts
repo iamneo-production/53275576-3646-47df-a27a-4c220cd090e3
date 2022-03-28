@@ -17,11 +17,11 @@ export class AuthguardService implements CanActivate {
       //   this.routes.navigate(['/login']);
       //   return false;
       // }
-      if(this.loginService.isUserLoggedIn())
+      if(this.loginService.isUser())
         return true;
       
       
-        this.routes.navigate(['/homepage']);
+        this.routes.navigate(['/error']);
         return false;
       
   }

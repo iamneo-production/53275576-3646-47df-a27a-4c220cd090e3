@@ -34,7 +34,22 @@ export class LoginComponent implements OnInit {
   }
   saveLogin(){
      this.loginService.loginUser(this.login).subscribe(data=>{
-      console.log(data)}, error=>console.error())
+      console.log(data)
+      if(data){
+      let user = localStorage.getItem('email')
+
+       if(user.includes("admin")){
+        this.router.navigate(["/institute"]);
+        alert("Admin login Successfully!!!");
+       }
+       else{
+        this.router.navigate(["/viewacademy"]);
+        alert("User Login Successfull!!!");
+       }}
+       else{
+         alert("Login Unsuccessfull, Check your USER-ID and PASSWORD!!");
+       }
+    }, error=>console.error(error,this.router.navigate(['/login'])))
   }
   signuppage(){
     console.log("Button Click");
@@ -61,14 +76,16 @@ export class LoginComponent implements OnInit {
   loginfunc() {
     
     this.saveLogin();
-    let user = localStorage.getItem('email')
+    // let user = localStorage.getItem('email')
 
-       if(user.includes("admin")){
-        this.router.navigate(["/institute"]);
-       }
-       else{
-        this.router.navigate(["/viewacademy"]);
-       }
+    //    if(user.includes("admin")){
+    //     this.router.navigate(["/institute"]);
+    //     alert("Admin login Successfully!!!");
+    //    }
+    //    else{
+    //     this.router.navigate(["/viewacademy"]);
+    //     alert("Login Successfull to user");
+    //    }
 
     // console.log("login successful");
     //this.router.navigate(["/viewacademy"]);

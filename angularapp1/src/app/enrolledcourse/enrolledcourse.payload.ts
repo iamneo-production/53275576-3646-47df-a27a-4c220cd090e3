@@ -3,8 +3,8 @@ export class Enrolledcoursepayload{
     lastName!:string;
     fatherName!:string;
     motherName!:string;
-   // phoneNumber1!:string;
-    emailId!:string;
+//    phoneNumber1!:string;
+    // emailId!:string;
     age!:string;
     phoneNumber2!:string;
     //SSLCorHSCMarks!:string;
@@ -15,5 +15,5 @@ export class Enrolledcoursepayload{
     pincode!:string;
     state!:string;
     nationality!:string;
-    id: any;
+    // id: any;
 }

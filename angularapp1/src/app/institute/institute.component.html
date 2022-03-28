@@ -1,11 +1,13 @@
 <body>
   <nav class="navbar" style="background-color:rgb(10, 10, 10); ">
     <div class="container-fluid">
-        <h2  style="color:rgb(255, 255, 255);">School Admission</h2>
-        <h2 style="color:rgb(247, 247, 247);" routerLink="/institute">Academy</h2>
-        <h2 style="color:rgb(253, 253, 253);" routerLink="/course">Course</h2>
-        <h2 style="color:rgb(253, 253, 253);" routerLink="/student">Students</h2>
-        <h2 style="color:rgb(255, 255, 255);" routerLink="/login">Logout</h2>
+        <h2  style="color:rgb(255, 255, 255); cursor: pointer;" routerLink="/homepage">School Admission</h2>
+        <h2 style="color:rgb(247, 247, 247); cursor: pointer;" routerLink="/institute" >Academy</h2>
+        <h2 style="color:rgb(253, 253, 253); cursor: pointer;" routerLink="/course">Course</h2>
+        <h2 style="color:rgb(253, 253, 253); cursor: pointer;" routerLink="/student">Students</h2>
+        <h2 style="color:rgb(253, 253, 253); cursor: pointer;" routerLink="/userreview">Review</h2>
+
+        <h2 style="color:rgb(255, 255, 255); cursor: pointer;" routerLink="/login">Logout</h2>
     </div>
   </nav>
   
@@ -24,13 +26,13 @@
     </li>
   </ng-container> -->
 
-  <div class="college ">
+  <div class="college">
     
 
   <div class="card" style="width: 18rem;margin-top: 2ex;" *ngFor="let ins of institutes;  let i=index;">
     <img class="card-img-top" src={{ins.imgUrl}} alt={{ins.imgUrl}}>
     <div class="card-body"    >
-      <h5 class="card-title">{{ins.instituteId}}</h5>
+      <h5 class="card-title">ID {{ins.instituteId}}</h5>
       <p class="card-text">{{ins.instituteAddress}}</p>
       <p class="card-text">{{ins.email}}</p>
       <p class="card-text">{{ins.instituteName}}</p>
@@ -39,8 +41,8 @@
        
     </div>
     <div class="button">
-      <a (click)="opensweetalert(ins.instituteId)" class="button primary delete">Delete</a>
-      <a (click)="updateInstitute(ins.instituteId)" class="button primary edit" style="margin-left: 1ex;">Edit</a>
+      <a (click)="opensweetalert(ins.instituteId)" style="cursor: pointer;" class="button primary delete">Delete</a>
+      <a (click)="updateInstitute(ins.instituteId)" class="button primary edit" style="margin-left: 1ex; cursor: pointer;">Edit</a>
       
      
     </div>

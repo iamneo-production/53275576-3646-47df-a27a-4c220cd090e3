@@ -38,7 +38,7 @@ export class AddacademyComponent implements OnInit {
       instituteEmail : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^([a-zA-Z]+.*?)+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
       mobileNumber : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{10}$')]),
       academyLocation : new FormControl('', [Validators.required,Validators.minLength(0),Validators.pattern('^[A-Za-z0-9_-]{2,40}$')]),  
-      academyDesc : new FormControl('', [Validators.maxLength(100),])
+      academyDesc : new FormControl('', [Validators.maxLength(100)])
     });
 
   }
@@ -68,17 +68,18 @@ export class AddacademyComponent implements OnInit {
     this.saveInstitute();
     console.log("success");
 
-    alert("Academy Added Successfully!!!");
+    // alert("Academy Added Successfully!!!");
   }
   saveInstitute(){
     this.instituteService.createInstitute(this.institute).subscribe(data => {
       console.log(data);
       console.log("mobile")
       console.log(data["mobileNo"])
-      this.router.navigate(["/updateacademy"]);
+      this.router.navigate(["/institute"]);
+      alert("Academy Added Successfully!!!");
 
     },
-    error => console.log("error"));
+    error => console.log(error, alert("Error - Data Not Added (Academy with same name already exist!!)")));
   }
  
   onSubmit(e){

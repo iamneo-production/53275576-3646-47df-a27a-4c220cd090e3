@@ -24,14 +24,14 @@ export class ReviewComponent implements OnInit
   userreview(){
     console.log("Button Click");
     this.router.navigate(["/userreview"]);
-    alert("thanks for your review,no you can view other's reviews");
+    // alert("thanks for your review,now you can view other's reviews");
   }
 
   ngOnInit(): void 
   {
     this.reviewform=new FormGroup({
-      name:new FormControl('',[Validators.required,Validators.minLength(3)]),
-      comments:new FormControl('',[Validators.required])
+      name:new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(25)]),
+      comments:new FormControl('',[Validators.required,Validators.minLength(2),Validators.maxLength(100)])
     })
   
   }
@@ -40,9 +40,10 @@ export class ReviewComponent implements OnInit
     console.log(this.review);
   this.reviewService.createReview(this.review).subscribe(data=>{
     console.log(this.review);
+    alert("thanks for your review,now you can view other's reviews");
 
   },
-    error => console.log(this.review));
+    error => console.log(error,alert("Error - Review Not Added!!")));
 }
   addreview(){
     console.log(this.review);

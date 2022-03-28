@@ -165,9 +165,9 @@ public class EnrolledCourseModel {
         this.ecourseEmailId = ecourseEmailId;
     }
 
-    public String getECourseMarks(){
-        return ecourseMarks;
-    }
+    // public String getECourseMarks(){
+    //     return ecourseMarks;
+    // }
     public void setECourseMarks(String ecourseMarks) {
         this.ecourseMarks = ecourseMarks;
     }
