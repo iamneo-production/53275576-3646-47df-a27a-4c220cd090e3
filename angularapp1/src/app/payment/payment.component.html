@@ -9,7 +9,13 @@
       >
         <div id="name">
           Full Name
-          <input formControlName="name" type="text" placeholder="Enter name" />
+          <input
+            [(ngModel)]="payment.name"
+            name="name"
+            formControlName="name"
+            type="text"
+            placeholder="Enter name"
+          />
           <small
             *ngIf="
               !detailsform.get('name').valid && detailsform.get('name').touched
@@ -21,6 +27,8 @@
         <div id="email">
           Email
           <input
+            [(ngModel)]="payment.email"
+            name="email"
             formControlName="email"
             type="text"
             name=""
@@ -38,6 +46,8 @@
         <div id="address">
           Address
           <input
+            [(ngModel)]="payment.email"
+            name="email"
             formControlName="address"
             type="text"
             name=""
@@ -55,6 +65,8 @@
         <div id="city">
           City
           <input
+            [(ngModel)]="payment.city"
+            name="city"
             formControlName="city"
             type="text"
             name=""
@@ -123,6 +135,8 @@
             <br />
             Zip code
             <input
+              [(ngModel)]="payment.zipcode"
+              name="zipcode"
               formControlName="zipcode"
               type="number"
               name=""
@@ -149,6 +163,8 @@
         <div id="card">
           Credit / Debit Card number
           <input
+            [(ngModel)]="payment.card"
+            name="card"
             formControlName="card"
             type="number"
             number=""
@@ -165,6 +181,8 @@
         <div id="expirymonth">
           Expiry Month
           <input
+            [(ngModel)]="payment.expiryMonth"
+            name="expiryMonth"
             formControlName="expirymonth"
             type="text"
             name=""
@@ -183,6 +201,8 @@
           Expiry Year
           <br />
           <input
+            [(ngModel)]="payment.expiryYear"
+            name="expiryYear"
             formControlName="expiryyear"
             type="text"
             name=""
@@ -202,6 +222,8 @@
             <br />
             CVV
             <input
+              [(ngModel)]="payment.cvvNum"
+              name="cvvNum"
               formControlName="cvvnum"
               type="number"
               name=""
@@ -221,6 +243,8 @@
           <label>
             Amount
             <input
+              [(ngModel)]="payment.amount"
+              name="amount"
               formControlName="amount"
               type="number"
               name=""
@@ -241,6 +265,8 @@
             <br />
             Mobile Number
             <input
+              [(ngModel)]="payment.mobileNumber"
+              name="mobileNumber"
               formControlName="mobilenumber"
               type="number"
               placeholder="Enter Mobile Number"
@@ -257,9 +283,11 @@
           >
         </div>
       </form>
-      <button [disabled]="!detailsform.valid" (click)="success()" id="submit" >Proceed to Checkout</button>
+      <button [disabled]="!detailsform.valid" (click)="success()" id="submit">
+        Proceed to Checkout
+      </button>
 
-<!--       <button (click)="success()" id="submit">Proceed to Checkout</button> -->
+      <!--       <button (click)="success()" id="submit">Proceed to Checkout</button> -->
     </div>
   </div>
 </header>

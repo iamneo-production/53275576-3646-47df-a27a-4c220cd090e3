@@ -1,25 +1,25 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing' ;
 
-import { ViewpaymentComponent } from './viewpayment.component';
+import { ViewpaymentComponent } from './viewpayment.component' ;
 
-describe('ViewpaymentComponent', () => {
-  let component: ViewpaymentComponent;
-  let fixture: ComponentFixture<ViewpaymentComponent>;
+describe('ViewpaymentComponent', () =>  {
+  let component: ViewpaymentComponent ;
+  let fixture: ComponentFixture<ViewpaymentComponent> ;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ViewpaymentComponent ]
+  beforeEach(async () =>  {
+    await TestBed.configureTestingModule( {
+      declarations : [ ViewpaymentComponent ]
     })
-    .compileComponents();
-  });
+    .compileComponents() ;
+  }) ;
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ViewpaymentComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  beforeEach(() =>  {
+    fixture = TestBed.createComponent(ViewpaymentComponent) ;
+    component = fixture.componentInstance ;
+    fixture.detectChanges() ;
+  }) ;
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  it('should create', () =>  {
+    expect(component).toBeTruthy() ;
+  }) ;
+}) ;

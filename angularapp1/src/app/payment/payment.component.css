@@ -1,106 +1,106 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
+  padding: 0 ;
+  margin: 0 ;
+  box-sizing: border-box ;
+  font-family: sans-serif ;
 }
-header {
-  width: 100vw;
-  min-height: 100vh;
-  background: url(https://www.incedoinc.com/wp-content/uploads/integrated-with-payment-channels.webp);
-  font-size: 1.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+header  {
+  width: 100vw ;
+  min-height: 100vh ;
+  background: url(https://www.incedoinc.com/wp-content/uploads/integrated-with-payment-channels.webp) ;
+  font-size: 1.2rem ;
+  display: flex ;
+  justify-content: center ;
+  align-items: center ;
 }
 .container {
-  background: white;
-  max-width: 900px;
-  min-height: 400px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0.5rem 1.5rem;
+  background: white ;
+  max-width: 900px ;
+  min-height: 400px ;
+  display: flex ;
+  justify-content: space-between ;
+  align-items: flex-start ;
+  padding: 0.5rem 1.5rem ;
 }
-.left {
-  flex-basis: 50%;
+.left  {
+  flex-basis: 50% ;
+ }
+.right  {
+  flex-basis: 50% ;
 }
-.right {
-  flex-basis: 50%;
-}
-form {
-  padding: 1rem;
-}
-
-h3 {
-  margin-top: 1rem;
-  color: #2c3e50;
+form   {
+  padding: 1rem ;
 }
 
-form input[type="text"] {
-  width: 100%;
-  padding: 0.5rem 0.7rem;
-  margin: 0.5rem 0;
-  outline: none;
-}
-form input[type="number"] {
-  width: 100%;
-  padding: 0.5rem 0.7rem;
-  margin: 0.5rem 0;
-  outline: none;
+h3  {
+  margin-top: 1rem ;
+  color: #2c3e50 ;
 }
 
-#year {
-  display: flex;
-  margin-top: 0.5rem;
-}
-#year select {
-  padding: 0.5rem 0.7rem;
-}
-
-#state {
-  display: flex;
-  margin-top: 0.5rem;
-}
-#state select {
-  padding: 0.5rem 0.7rem;
-}
-#state input[type="number"] {
-  padding: 0.5rem 0.7rem;
-  margin-left: 5px;
-}
-input[type="submit"] {
-  width: 100%;
-  padding: 0.7rem 1.5rem;
-  background: #34495e;
-  color: white;
-  border: none;
-  outline: none;
-  margin-top: 1rem;
-  cursor: pointer;
+form input[type="text"]  {
+  width: 100% ;
+  padding: 0.5rem 0.7rem ;
+  margin: 0.5rem 0 ;
+  outline: none ;
+ }
+form input[type="number"]  {
+  width: 100% ;
+  padding: 0.5rem 0.7rem ;
+  margin: 0.5rem 0 ;
+  outline: none ;
 }
 
-input[type="submit"]:hover {
-  background: #2c3e50;
+#year  {
+  display: flex ;
+  margin-top: 0.5rem ;
+ }
+#year select  {
+  padding: 0.5rem 0.7rem ;
 }
 
-@media only screen and (max-width: 770px) {
-  .container {
-    flex-direction: column;
-  }
-  body {
-    overflow-x: hidden;
-  }
+#state  {
+  display: flex ;
+  margin-top: 0.5rem ;
 }
+#state select  {
+  padding: 0.5rem 0.7rem ;
+ }
+#state input[type="number"]  {
+  padding: 0.5rem 0.7rem ;
+  margin-left: 5px ;
+ }
+input[type="submit"]  {
+  width: 100% ;
+  padding: 0.7rem 1.5rem ;
+  background: #34495e ;
+  color: white ;
+  border: none ;
+  outline: none ;
+  margin-top: 1rem ;
+  cursor: pointer ;
+ }
 
-#submit {
-  color: white;
-  width: 100%;
+input[type="submit"]:hover  {
+  background: #2c3e50 ;
+ }
 
-  height: 35px;
-  font-size: 17px;
-  font-weight: bold;
-  background: #34495e;
-  outline: none;
-  cursor: pointer;
-}
+@media only screen and (max-width: 770px)  {
+  .container  {
+    flex-direction: column ;
+   }
+  body  {
+    overflow-x: hidden ;
+   }
+ }
+
+#submit  {
+  color: white ;
+  width: 100% ;
+
+  height: 35px ;
+  font-size: 17px ;
+  font-weight: bold ;
+  background: #34495e ;
+  outline: none ;
+  cursor: pointer ;
+ }

@@ -1,35 +1,19 @@
-<div class="filter"></div>
+<div class ="filter"></div>
 
-<table>
-  <tr>
-    <th>Name</th>
+<table >
+  <tr >
+    <th> Name </th>
+ 
+    <th> Email ID </th>
 
-    <th>Institution Name</th>
+    <th> Amount Paid </th>
+  </tr >
 
-    <th>Amount Paid</th>
-  </tr>
+  <tr *ngFor ="let payment of payments; let i = index">
+    <td >{{ payment.name }}</td>
 
-  <tr>
-    <td>Vasanth</td>
+    <td >{{ payment.email }}</td>
 
-    <td>Vel Tech University</td>
-
-    <td>52500</td>
-  </tr>
-
-  <tr>
-    <td>Sindhuja</td>
-
-    <td>Vel Tech Multi Tech</td>
-
-    <td>52500</td>
-  </tr>
-
-  <tr>
-    <td>Harish</td>
-
-    <td>DG Vaishnav</td>
-
-    <td>28000</td>
-  </tr>
-</table>
+    <td >{{ payment.amount }}</td>
+  </tr >
+</table >
