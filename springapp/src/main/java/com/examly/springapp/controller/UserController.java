@@ -6,6 +6,7 @@ import com.examly.springapp.model.EnrolledCourseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 // import org.springframework.web.bind.annotation.DeletedMapping;
+import javax.validation.Valid;
 
 import org.apache.catalina.User;
 import com.examly.springapp.repository.EnrolledCourseRepository;
@@ -44,7 +45,7 @@ public class UserController {
     }
 
     @PostMapping("/addecourse")
-    public EnrolledCourseModel createECourse(@RequestBody EnrolledCourseModel ecourse){
+    public EnrolledCourseModel createECourse(@Valid @RequestBody EnrolledCourseModel ecourse){
         return ecourseRepository.save(ecourse);
     }
 

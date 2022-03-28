@@ -22,7 +22,7 @@ public class EnrolledCourseModel {
 
     EnrolledCourseModel(){
     }
-    public EnrolledCourseModel(String ecoursename, String ecourseNationality, String ecoursePincode, String ecourseState, String ecourseAreaName, String ecourseSrtreetName, String ecourseHouseNo, String ecourseMarks, String ecourseAge, String ecourseEmailId, String ecourseAlternateNumber, String ecoursePhoneNumber, String ecourseMotherName, String ecourseFatherName, int ecourseId, String ecourseFirstName, String ecourseLastName, String ecourseMaleorFemale, String ecourseStreetName) {
+    public EnrolledCourseModel(String ecoursename, String ecourseNationality, String ecoursePincode, String ecourseState, String ecourseAreaName, String ecourseHouseNo, String ecourseMarks, String ecourseAge, String ecourseEmailId, String ecourseAlternateNumber, String ecoursePhoneNumber, String ecourseMotherName, String ecourseFatherName, int ecourseId, String ecourseFirstName, String ecourseLastName, String ecourseMaleorFemale, String ecourseStreetName) {
         this.ecourseId = ecourseId;
 	    this.ecourseFirstName = ecourseFirstName;
         this.ecourseLastName = ecourseLastName;
@@ -43,70 +43,87 @@ public class EnrolledCourseModel {
         this.ecoursename = ecoursename;
     }
     @NotNull
+    @NotEmpty
     @Column(name="ecourseFirstName")
     private String ecourseFirstName;
-    @NotNull
 
+    @NotEmpty
+    @NotNull
     @Column(name="ecoursename")
     private String ecoursename;
-    @NotNull
 
+    @NotNull
+    @NotEmpty
     @Column(name="ecourseLastName")
     private String ecourseLastName;
-    @NotNull
 
+    @NotEmpty
+    @NotNull
     @Column(name="ecourseFatherName")
     private String ecourseFatherName;
-    @NotNull
 
+    // @NotEmpty
+    // @NotNull
     @Column(name="ecourseMaleorFemale")
     private String ecourseMaleorFemale;
-    @NotNull
 
+    // @NotEmpty
+    // @NotNull
     @Column(name="ecoursePhoneNumber")
     private String ecoursePhoneNumber;
-    @NotNull
 
+    @NotEmpty
+    @NotNull
     @Column(name="ecourseAlternateNumber")
     private String ecourseAlternateNumber;
+
+    @NotEmpty
     @NotNull
     @Email
     @Column(name="ecourseEmailId")
     private String ecourseEmailId;
-    @NotNull
 
+    @NotEmpty
+    @NotNull
     @Column(name="ecourseAge")
     private String ecourseAge;
-    @NotNull
+
 
     @Column(name="ecourseMarks")
     private String ecourseMarks;
-    @NotNull
 
+    @NotEmpty
+    @NotNull
     @Column(name="ecourseHouseNo")
     private String ecourseHouseNo;
-    @NotNull
 
+    @NotEmpty
+    @NotNull
     @Column(name="ecourseStreetName")
     private String ecourseStreetName;
-    @NotNull
 
+    @NotEmpty
+    @NotNull
     @Column(name="ecourseAreaName")
     private String ecourseAreaName;
-    @NotNull
 
+    @NotEmpty
+    @NotNull
     @Column(name="ecoursePincode")
     private String ecoursePincode;
-    @NotNull
 
+    @NotEmpty
+    @NotNull
     @Column(name="ecourseState")
     private String ecourseState;
-    @NotNull
 
+    @NotEmpty
+    @NotNull
     @Column(name="ecourseNationality")
     private String ecourseNationality;
-    @NotNull
 
+    @NotEmpty
+    @NotNull
     @Column(name="ecourseMotherName")
     private String ecourseMotherName;
     

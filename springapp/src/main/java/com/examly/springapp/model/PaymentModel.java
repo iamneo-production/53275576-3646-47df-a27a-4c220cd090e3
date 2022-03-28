@@ -4,6 +4,14 @@ import javax.persistence.*;
 import java.util.Objects;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.Valid;
 
 @Entity
 @Table(name = "paymentdetails")
@@ -13,39 +21,62 @@ public class PaymentModel {
     @Column(name = "email")
     private String email;
 
+    @NotEmpty
+    @NotNull
     @Column(name = "name")
     private String pname;
 
 
 
+    @NotEmpty
+    @NotNull
     @Column(name = "address")
     private String address;
 
+
+    @NotEmpty
+    @NotNull
     @Column(name = "city")
     private String city;
 
+    @NotEmpty
+    @NotNull
     @Column(name = "state")
     private String state;
 
+    @NotEmpty
+    @NotNull
     @Column(name = "zipcode")
     private String zipcode;
 
+    @NotEmpty
+    @NotNull
     @Column(name = "card")
     private String card;
 
+    @NotEmpty
+    @NotNull
     @Column(name = "expiryMonth")
     private String expiryMonth;
 
+    @NotEmpty
+    @NotNull
     @Column(name = "expiryYear")
     private String expiryYear;
 
+    @NotEmpty
+    @NotNull
     @Column(name = "cvvNum")
     private String cvvNum;
 
+    @NotEmpty
+    @NotNull
     @Column(name = "amount")
     private String amount;
 
-    @Column(name = "mobileNumber")
+    @NotEmpty
+    @NotNull
+    @Column(name = "mobileNumber", unique=true)
     private String mobileNumber;
     PaymentModel() {
     }

@@ -11,7 +11,8 @@ import javax.validation.constraints.Size;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.Valid;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.validation.constraints.NotBlank;
 @Entity
 @Table(name="course")
@@ -37,21 +38,25 @@ public class CourseModel {
     @Column(name="courseEnrolled")
     private String courseEnrolled;
 
+    @Column(name="courseName", nullable=false, length=11)
     @NotNull(message = "courseName may not be null")
-    @Column(name="courseName")
+    @NotEmpty(message = "courseName may not be empty")
     private String courseName;
 
+    @Column(name="courseDescription")
+    @NotEmpty
     @NotNull(message = "courseDescription can not be null")
     @Size(min=10, max=100)
-    @Column(name="courseDescription")
     private String courseDescription;
 
-    @NotNull(message = "courseDuration can not be null")
     @Column(name="courseDuration")
+    @NotEmpty
+    @NotNull(message = "courseDuration can not be null")
     private String courseDuration;
 
-    @NotNull(message = "courseTiming can not be null")
     @Column(name="courseTiming")
+    @NotEmpty
+    @NotNull(message = "courseTiming can not be null")
     private String courseTiming;
 
     public int getCourseId(){
