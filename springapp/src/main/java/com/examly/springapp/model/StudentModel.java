@@ -8,6 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import java.util.Objects;
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.Valid;
 
 @Entity
 @Table(name = "student")
@@ -18,48 +26,62 @@ public class StudentModel {
     @Column(name = "studentId")
     private int studentId;
 
-    
+    @NotNull(message="firstName may not be null")
     @Column(name = "firstName")
     private String firstName;
+    @NotNull(message="lastName may not be null")
 
     @Column(name = "lastName")
     private String lastName;
+    @NotNull(message="fatherName may not be null")
 
     @Column(name = "fatherName")
     private String fatherName;
+    @NotNull(message="motherName may not be null")
 
     @Column(name = "motherName")
     private String motherName;
+    @NotNull(message="maleOrFemale may not be null")
 
     @Column(name = "maleOrFemale")
     private String maleOrFemale;
-
+    @NotNull(message="phoneNumber1 may not be null")
+    @Size(max=10)
     @Column(name = "phoneNumber1")
     private String phoneNumber1;
-
+    @NotNull(message="phoneNumber2 may not be null")
+    @Size(max=10)
     @Column(name = "phoneNumber2")
     private String phoneNumber2;
-
+    @NotNull(message="email may not be null")
+    @Email
     @Column(name = "email")
     private String email;
+    @NotNull(message="age may not be null")
 
     @Column(name = "age")
     private int age;
+    @NotNull(message="houseNo may not be null")
 
     @Column(name = "houseNo")
     private String houseNo;
+    @NotNull(message="streetName may not be null")
 
     @Column(name = "streetName")
     private String streetName;
+    @NotNull(message="areaName may not be null")
 
     @Column(name = "areaName")
     private String areaName;
+    @NotNull(message="pincode may not be null")
 
     @Column(name = "pincode")
     private String pincode;
+    @NotNull(message="state may not be null")
 
     @Column(name = "state")
     private String state;
+    @NotNull(message="nationality may not be null")
 
     @Column(name = "nationality")
     private String nationality;
