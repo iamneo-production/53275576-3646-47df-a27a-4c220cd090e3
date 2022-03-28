@@ -1,19 +1,19 @@
-<div class="filter"></div>
+<div class ="filter"></div>
 
-<table>
-  <tr>
-    <th>Name</th>
+<table >
+  <tr >
+    <th> Name </th>
+ 
+    <th> Email ID </th>
 
-    <th>Email ID</th>
+    <th> Amount Paid </th>
+  </tr >
 
-    <th>Amount Paid</th>
-  </tr>
+  <tr *ngFor ="let payment of payments; let i = index">
+    <td >{{ payment.name }}</td>
 
-  <tr *ngFor="let payment of payments; let i = index">
-    <td>{{ payment.name }}</td>
+    <td >{{ payment.email }}</td>
 
-    <td>{{ payment.email }}</td>
-
-    <td>{{ payment.amount }}</td>
-  </tr>
-</table>
+    <td >{{ payment.amount }}</td>
+  </tr >
+</table >
