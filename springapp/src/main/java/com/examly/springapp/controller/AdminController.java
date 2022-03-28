@@ -1,64 +1,64 @@
-package com.examly.springapp.controller;
+package com.examly.springapp.controller ;
 
-import com.examly.springapp.exception.ResourceNotFound;
-import com.examly.springapp.model.InstituteModel;
-import com.examly.springapp.service.InstituteService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import com.examly.springapp.repository.CourseRepository;
-import com.examly.springapp.repository.StudentRepository;
-import com.examly.springapp.model.StudentModel;
-import com.examly.springapp.model.CourseModel;
+import com.examly.springapp.exception.ResourceNotFound ;
+import com.examly.springapp.model.InstituteModel ;
+import com.examly.springapp.service.InstituteService ;
+import org.springframework.beans.factory.annotation.Autowired ;
+import org.springframework.web.bind.annotation.GetMapping ;
+import com.examly.springapp.repository.CourseRepository ;
+import com.examly.springapp.repository.StudentRepository ;
+import com.examly.springapp.model.StudentModel ;
+import com.examly.springapp.model.CourseModel ;
 
-import org.springframework.validation.Errors;
-import javax.validation.Valid;
-import com.examly.springapp.model.PaymentModel;
-import com.examly.springapp.repository.PaymentRepository;
-// import org.springframework.web.bind.annotation.DeletedMapping;
-import org.apache.catalina.User;
-import com.examly.springapp.repository.InstituteRepository;
+import org.springframework.validation.Errors ;
+import javax.validation.Valid ;
+import com.examly.springapp.model.PaymentModel ;
+import com.examly.springapp.repository.PaymentRepository ;
+// import org.springframework.web.bind.annotation.DeletedMapping ;
+import org.apache.catalina.User ;
+import com.examly.springapp.repository.InstituteRepository ;
 import java.lang.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.HashMap ;
+import java.util.List ;
+import java.util.Map ;
 
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity ;
 import org.springframework.web.bind.annotation.*;
-import java.util.Map;
+import java.util.Map ;
 
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("api/v1/")
 public class AdminController {
 
-    // @Autowired
-    // private InstituteService instituteService;
+     // @Autowired
+     // private InstituteService instituteService;
 
-    @Autowired
-    private CourseRepository courseRepository;
+     @Autowired
+     private CourseRepository courseRepository;
 
-    @Autowired
-    private InstituteRepository instituteRepository;
+     @Autowired
+     private InstituteRepository instituteRepository;
 
-    @Autowired
-    private StudentRepository studentRepository;
+     @Autowired
+     private StudentRepository studentRepository;
 
-    @Autowired
-    private PaymentRepository paymentRepository;
+     @Autowired
+     private PaymentRepository paymentRepository;
 
-    @GetMapping("/payment")
-    public List<PaymentModel> getAllPayment() {
-        return paymentRepository.findAll();
-    }
+     @GetMapping("/payment")
+     public List<PaymentModel> getAllPayment() {
+         return paymentRepository.findAll();
+     }
 
-    @PostMapping("/addpayment")
-    public PaymentModel createPayment(@RequestBody PaymentModel payment) {
-        return paymentRepository.save(payment);
-    }
+     @PostMapping("/addpayment")
+     public PaymentModel createPayment(@RequestBody PaymentModel payment) {
+         return paymentRepository.save(payment);
+     }
 
-    // @GetMapping("/institutes")
-    // public List<InstituteModel> getAllInstitute(){ return
-    // instituteService.getAllInstitutes(); }
+     // @GetMapping("/institutes")
+     // public List<InstituteModel> getAllInstitute(){ return
+     // instituteService.getAllInstitutes(); }
 
     @GetMapping("/institute")
     public List<InstituteModel> getAllInstitute() {
@@ -97,7 +97,7 @@ public class AdminController {
 
         institute.setInstituteName(instituteDetails.getInstituteName());
         institute.setInstituteDescription(instituteDetails.getInstituteDescription());
-        // institute.setInstituteAddress(instituteDetails.getInstituteDescription());
+         // institute.setInstituteAddress(instituteDetails.getInstituteDescription());
         institute.setInstituteAddress(instituteDetails.getInstituteAddress());
         institute.setEmail(instituteDetails.getEmail());
         institute.setMobileNo(instituteDetails.getMobileNo());
@@ -115,12 +115,12 @@ public class AdminController {
         response.put("Deleted", Boolean.TRUE);
         return ResponseEntity.ok(response);
     }
-    // @Autowired
-    // private CourseService courseService;
+     // @Autowired
+     // private CourseService courseService;
 
-    // @GetMapping("/courses")
-    // public List<CourseModel> getAllCourse(){ return
-    // courseService.getAllCourses(); }
+     // @GetMapping("/courses")
+     // public List<CourseModel> getAllCourse(){ return
+     // courseService.getAllCourses(); }
 
     @GetMapping("/allcourse")
     public List<CourseModel> getCourse() {

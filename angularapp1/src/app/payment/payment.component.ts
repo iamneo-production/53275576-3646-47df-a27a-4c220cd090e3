@@ -1,25 +1,25 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import {PaymentPayload} from './payment.payload';
-import { FormGroup,FormControl,Validators,FormBuilder } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PaymentService } from '../service/payment.service';
-import { Payment } from '../service/payment';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core' ;
+import { Router } from '@angular/router' ;
+import {PaymentPayload} from './payment.payload' ;
+import { FormGroup,FormControl,Validators,FormBuilder } from '@angular/forms' ;
+import { FormsModule, ReactiveFormsModule } from '@angular/forms' ;
+import { PaymentService } from '../service/payment.service' ;
+import { Payment } from '../service/payment' ;
 
 
 
-@Component({
+@Component( {
   selector: 'app-payment',
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.css']
-})
-export class PaymentComponent implements OnInit {
-  detailsform: FormGroup;
-  paymentpayload:PaymentPayload;
-  payment: Payment = new Payment();
+} )
+export class PaymentComponent implements OnInit  {
+  detailsform: FormGroup ;
+  paymentpayload:PaymentPayload ;
+  payment: Payment = new Payment() ;
 
-  constructor(private paymentService: PaymentService,private formBuilder : FormBuilder , private router: Router) { 
-    this.paymentpayload={
+  constructor(private paymentService: PaymentService,private formBuilder : FormBuilder , private router: Router)  { 
+    this.paymentpayload= {
       name:'',
       email:'',
       address:'',
@@ -32,10 +32,10 @@ export class PaymentComponent implements OnInit {
       expiryyear:'', 
       mobilenumber:'',  
       amount:'',
-    } 
-  }
+     } 
+   }
 
-  ngOnInit(): void {
+  ngOnInit(): void  {
     
     this.detailsform = new FormGroup({
       name : new FormControl('', [Validators.required,Validators.minLength(3),Validators.pattern('^([A-Za-z0-9_-]+.*?){3,18}$')]),
@@ -51,31 +51,31 @@ export class PaymentComponent implements OnInit {
       amount : new FormControl('', [Validators.required,Validators.minLength(2),Validators.pattern('^[0-9]{1,10}$')]),
       
       
-    });
+    }) ;
   }
-  success(){
-    window.alert("Payment Success");
-  }
+  success() {
+    window.alert("Payment Success") ;
+   }
 
-  savePayment(){
+  savePayment() {
     this.paymentService.createPayment(this.payment).subscribe(data => {
-      console.log(data);
-      alert("Payment Successful!");
-    },
+      console.log(data) ; 
+      alert("Payment Successful!") ;
+     },
     error => console.log(error, alert("Error - Payment Unsuccessful !!")));
   }
 
-  onSubmit(e){
-    this.paymentpayload.name = this.detailsform.get('name').value;
-    this.paymentpayload.email = this.detailsform.get('email').value;
-    this.paymentpayload.address = this.detailsform.get('address').value;
-    this.paymentpayload.city = this.detailsform.get('city').value;
-    this.paymentpayload.mobilenumber = this.detailsform.get('mobilenumber').value;
-    this.paymentpayload.zipcode = this.detailsform.get('zipcode').value;
-    this.paymentpayload.cvvnum = this.detailsform.get('cvvnum').value;
-    this.paymentpayload.card = this.detailsform.get('card').value;
-    this.paymentpayload.expirymonth = this.detailsform.get('expirymonth').value;
-    this.paymentpayload.expiryyear = this.detailsform.get('expiryyear').value;
-    this.paymentpayload.amount = this.detailsform.get('amount').value;
-  }
-}
+  onSubmit(e) {
+    this.paymentpayload.name = this.detailsform.get('name').value ;
+    this.paymentpayload.email = this.detailsform.get('email').value ;
+    this.paymentpayload.address = this.detailsform.get('address').value ;
+    this.paymentpayload.city = this.detailsform.get('city').value ;
+    this.paymentpayload.mobilenumber = this.detailsform.get('mobilenumber').value ;
+    this.paymentpayload.zipcode = this.detailsform.get('zipcode').value ;
+    this.paymentpayload.cvvnum = this.detailsform.get('cvvnum').value ;
+    this.paymentpayload.card = this.detailsform.get('card').value ; 
+    this.paymentpayload.expirymonth = this.detailsform.get('expirymonth').value ;
+    this.paymentpayload.expiryyear = this.detailsform.get('expiryyear').value ;
+    this.paymentpayload.amount = this.detailsform.get('amount').value ;
+   }
+ }

@@ -13,10 +13,15 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.Valid;
 
+import javax.persistence.* ;
+import java.util.Objects ;
+import javax.persistence.GeneratedValue ;
+import javax.persistence.GenerationType ;
+ 
 @Entity
-@Table(name = "paymentdetails")
-public class PaymentModel {
-    
+@Table(name  = "paymentdetails")
+public class PaymentModel  {
+     
     @Id
     @Column(name = "email")
     private String email;
