@@ -4,8 +4,12 @@ import java.util.Objects;
 
 public class LoginModel {
 
+    @NotNull
+    @Email
     private String email;
 
+    @NotNull
+    @Size(min = 8, max = 16)
     private String password;
 
     public LoginModel() {

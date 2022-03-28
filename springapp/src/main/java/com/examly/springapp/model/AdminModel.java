@@ -10,7 +10,7 @@ public class AdminModel {
     AdminModel(){}
 
     @Id
-    @Column(name = "email")
+    @Column(name = "email",unique = true)
     private String email;
 
 
@@ -18,7 +18,7 @@ public class AdminModel {
     private String password;
 
 
-    @Column(name= "mobileNumber")
+    @Column(name= "mobileNumber",unique = true)
     private String mobileNumber;
 
     @Column(name = "userRole")
