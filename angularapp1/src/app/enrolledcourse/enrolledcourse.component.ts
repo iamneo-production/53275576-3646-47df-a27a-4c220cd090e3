@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  ElementRef, OnInit , ViewChild } from '@angular/core';
 import { Enrolledcoursepayload } from './enrolledcourse.payload';
 import { Router } from '@angular/router';
 import { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
@@ -23,8 +23,9 @@ export class EnrolledcourseComponent implements OnInit
 
   enrolledform:FormGroup;
   enrolledcoursepayload:Enrolledcoursepayload;
- enrolledcourse1: Enrolledcourse = new Enrolledcourse();
-courses:Course[];
+  enrolledcourse1: Enrolledcourse = new Enrolledcourse();
+  courses:Course[];
+  coursetype:string;
   constructor(private formbuilder:FormBuilder,private router:Router,private enrolledcourseService:EnrolledcourseService,private studentService:StudentService,private courseService:CourseService) 
   {
     this.enrolledcoursepayload={
@@ -104,8 +105,12 @@ courses:Course[];
     },
     error => console.log(error, alert("Error - Not enrolled into the course!!")));
   }
+  @ViewChild("courseName") courseName: ElementRef;
+  @ViewChild("gender") gender: ElementRef;
   addenrolledcourse(){
     console.log(this.enrolledcourse1);
+    this.enrolledcourse1.ecourseName = this.courseName.nativeElement.value;
+    this.enrolledcourse1.ecourseMaleorFemale = this.gender.nativeElement.value;
     this.saveEnrolledcourse();
     console.log("success");
     // alert("Enrolled Course Added Successfully!!!");

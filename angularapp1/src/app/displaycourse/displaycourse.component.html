@@ -27,7 +27,7 @@
       class="course-block" *ngFor="let ecou of ecourse;  let i=index;">
       <label style="padding: 4px;" for="CourseName"><span
           style="font-size:medium;font-weight:bold;color:#fcf6f5ff;">Course Name : </span><span
-          style="font-size:medium;font-weight:bold;color:crimson">{{ecou.ecourseName}}</span>
+          style="font-size:medium;font-weight:bold;color:crimson">{{ecou.ecourseName | uppercase}}</span>
         <hr>
       </label>
       <br>

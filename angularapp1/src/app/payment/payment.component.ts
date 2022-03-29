@@ -17,6 +17,7 @@ export class PaymentComponent implements OnInit  {
   detailsform: FormGroup ;
   paymentpayload:PaymentPayload ;
   payment: Payment = new Payment() ;
+  statetype:string;
 
   constructor(private paymentService: PaymentService,private formBuilder : FormBuilder , private router: Router)  { 
     this.paymentpayload= {
@@ -57,7 +58,9 @@ export class PaymentComponent implements OnInit  {
     window.alert("Payment Success") ;
    }
 
+  @ViewChild("state") state: ElementRef;
   savePayment() {
+    this.payment.state = this.state.nativeElement.value;
     this.paymentService.createPayment(this.payment).subscribe(data => {
       console.log(data) ; 
       alert("Payment Successful!") ;

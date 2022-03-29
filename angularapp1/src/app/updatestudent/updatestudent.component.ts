@@ -1,4 +1,4 @@
-import  { Component, OnInit } from '@angular/core';
+import  { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import  { ActivatedRoute, Router } from '@angular/router';
 import  { FormGroup,FormControl,FormBuilder,Validators } from '@angular/forms';
 import  { UpdateStudentPayload } from './updatestudent.payload';
@@ -16,6 +16,7 @@ export class UpdatestudentComponent implements OnInit  {
 
   id: number ;
   student: Student= new Student();
+  maleOrFemale:string;
   constructor(private formbuilder:FormBuilder,private router:Router, private studentService: StudentService, private route:ActivatedRoute) 
   {
     this.updatestudentpayload={
@@ -47,7 +48,7 @@ export class UpdatestudentComponent implements OnInit  {
 
     this.enrolledform=new FormGroup({ 
       firstName:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
-      lastName:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
+      lastName:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{1,40}$')]),
       fatherName:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
       motherName:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
       phoneNumber1:new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
@@ -60,8 +61,8 @@ export class UpdatestudentComponent implements OnInit  {
       streetName:new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){0,40}$')]),
       areaName:new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){0,40}$')]),
       pincode:new FormControl('', [Validators.required,Validators.pattern('^[0-9]{0,6}$')]),
-      state:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{0,40}$')]),
-      nationality:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')])
+      state:new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){0,40}$')]),
+      nationality:new FormControl('', [Validators.required,Validators.pattern('^([A-Z+a-z+0-9_-]+.*?){0,40}$')])
     })
   }
   onSubmit(e) {
@@ -89,10 +90,11 @@ export class UpdatestudentComponent implements OnInit  {
   viewCourse() {
      console.log("Button Click");
   }
+  @ViewChild("gender") gender: ElementRef;
   enrollnow() {
+    this.student.maleOrFemale = this.gender.nativeElement.value;
     this.studentService.updateStudent(this.id,this.student).subscribe(data=>{
       alert("student Updated Successfully!!!");  
-
     },
     error => console.log(error,alert("Error - Student Details Not Updated!! (Student with same email already exists.)")));
     this.router.navigate(["/student"])

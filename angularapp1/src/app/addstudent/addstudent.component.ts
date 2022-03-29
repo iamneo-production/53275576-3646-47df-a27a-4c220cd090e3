@@ -13,7 +13,7 @@ export class AddstudentComponent implements OnInit {
   addstudentform: FormGroup;
   addstudentpayload:AddstudentPayload;
   student: Student = new Student();
-
+  maleOrFemale: string;
   constructor(private studentService: StudentService) { 
     this.addstudentpayload={
       firstName:'',
@@ -65,9 +65,10 @@ saveStudent(){
   },
     error => console.log(error,alert("Error - Student Not added!!")));
 }
+@ViewChild("gender") gender: ElementRef;
   addstudent(){
     console.log(this.student);
-    
+    this.student.maleOrFemale = this.gender.nativeElement.value;
     this.saveStudent();
     console.log("success");
     // alert("Student Added Successfully!!!");

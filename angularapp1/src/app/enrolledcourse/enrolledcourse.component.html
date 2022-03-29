@@ -30,7 +30,7 @@
         <!-- <small *ngIf="!enrolledform.get('courseName').valid && enrolledform.get('courseName').touched"
             style="color:red;">* Invalid Course Name</small> -->
         <select class="form-control" placeholder="Enter your Course name"
-        [(ngModel)]="enrolledcourse1.ecourseName" name="ecourseName" id="fatherName">
+        [(ngModel)]="enrolledcourse1.ecourseName" name="ecourseName" id="fatherName" #courseName>
           <option selected hidden>Enter the course name</option>
           <option *ngFor="let course of courses" value="{{course.courseName}}">{{course.courseName | uppercase}}</option>
         </select>
@@ -48,7 +48,7 @@
         <input formControlName="lastName" type="text" class="form-control" placeholder="Enter your last  name"
         [(ngModel)]="enrolledcourse1.ecourseLastName" name="ecourseLastName" id="lastName">
         <small *ngIf="!enrolledform.get('lastName').valid && enrolledform.get('lastName').touched"
-          style="color:red;">* Invalid Course Name</small>
+          style="color:red;">* Invalid Last Name</small>
 
     </div><br><br>
       <div id="fatherName" class="form-group">
@@ -73,7 +73,7 @@
     <div id="maleorfemale" class="form-group">
       <label for="maleOrFemale" style="font-weight:500; font-size: medium;">Gender</label>
       <!-- <input  type="text" [(ngModel)]="enrolledcourse1.ecourseMaleorFemale" id="t1" name="ecourseMaleorFemale" id="maleOrFemale" list="l1" class="form-control" placeholder="Enter male or female" required> -->
-     <select [(ngModel)]="enrolledcourse1.ecourseMaleorFemale" id="t1" name="ecourseMaleorFemale" id="maleOrFemale" list="l1" class="form-control" placeholder="Enter male or female" required >
+     <select [(ngModel)]="enrolledcourse1.ecourseMaleorFemale" id="t1" name="ecourseMaleorFemale" id="maleOrFemale" list="l1" class="form-control" placeholder="Enter male or female" required #gender>
       <option selected hidden>Enter Gender</option> 
       <option>Male</option>
        <option>Female</option>
