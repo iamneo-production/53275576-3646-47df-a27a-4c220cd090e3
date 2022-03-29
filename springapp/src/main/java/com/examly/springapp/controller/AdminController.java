@@ -52,7 +52,7 @@ public class AdminController {
      }
 
      @PostMapping("/addpayment")
-     public PaymentModel createPayment(@RequestBody PaymentModel payment) {
+     public PaymentModel createPayment( @RequestBody PaymentModel payment) {
          return paymentRepository.save(payment);
      }
 

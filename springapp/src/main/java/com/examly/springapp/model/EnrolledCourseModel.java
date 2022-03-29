@@ -72,7 +72,6 @@ public class EnrolledCourseModel {
     // @NotEmpty
     // @NotNull
     @Column(name="ecoursePhoneNumber")
-    @NotNull
     private String ecoursePhoneNumber;
 
     // @NotEmpty
@@ -84,8 +83,8 @@ public class EnrolledCourseModel {
     // @NotEmpty
     
     @Column(name="ecourseEmailId")
-    @Email
-    @NotNull
+    // @Email
+    // @NotNull
     private String ecourseEmailId;
 
     // @NotEmpty
