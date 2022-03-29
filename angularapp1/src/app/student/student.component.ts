@@ -52,7 +52,7 @@ export class StudentComponent implements OnInit {
           console.log(data);
           this.getStudent(); 
           console.log("deleted");
-          alert("Institute Deleted Successfully!!!");
+          alert("Student Deleted Successfully!!!");
         })
         Swal.fire(
           'Deleted!',

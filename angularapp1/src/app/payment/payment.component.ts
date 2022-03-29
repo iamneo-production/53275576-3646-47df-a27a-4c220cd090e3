@@ -67,7 +67,11 @@ export class PaymentComponent implements OnInit  {
      },
     error => console.log(error, alert("Error - Payment Unsuccessful !!")));
   }
-
+addPayment(){
+  this.payment.state = this.state.nativeElement.value;
+  this.savePayment();
+  console.log(this.payment);
+}
   onSubmit(e) {
     this.paymentpayload.name = this.detailsform.get('name').value ;
     this.paymentpayload.email = this.detailsform.get('email').value ;

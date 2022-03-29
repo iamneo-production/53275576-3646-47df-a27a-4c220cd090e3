@@ -138,7 +138,7 @@
               [(ngModel)]="payment.zipcode"
               name="zipcode"
               formControlName="zipcode"
-              type="number"
+              type="text"
               name=""
               placeholder="Zip code"
             />
@@ -166,7 +166,7 @@
             [(ngModel)]="payment.card"
             name="card"
             formControlName="card"
-            type="number"
+            type="text"
             number=""
             placeholder="Enter card number"
           />
@@ -225,7 +225,7 @@
               [(ngModel)]="payment.cvvNum"
               name="cvvNum"
               formControlName="cvvnum"
-              type="number"
+              type="text"
               name=""
               placeholder="CVV"
             />
@@ -246,7 +246,7 @@
               [(ngModel)]="payment.amount"
               name="amount"
               formControlName="amount"
-              type="number"
+              type="text"
               name=""
               placeholder="Enter Amount To Be Paid"
             />
@@ -268,7 +268,7 @@
               [(ngModel)]="payment.mobileNumber"
               name="mobileNumber"
               formControlName="mobilenumber"
-              type="number"
+              type="text"
               placeholder="Enter Mobile Number"
               class="form-control"
             />
@@ -283,7 +283,7 @@
           >
         </div>
       </form>
-      <button [disabled]="!detailsform.valid" (click)="success()" id="submit">
+      <button [disabled]="!detailsform.valid" (click)="addPayment()" id="submit">
         Proceed to Checkout
       </button>
 
