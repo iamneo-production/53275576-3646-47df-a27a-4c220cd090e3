@@ -23,64 +23,68 @@ import javax.persistence.GenerationType ;
 public class PaymentModel  {
      
     @Id
-    @Column(name = "email")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name="paymentid")
+    private int paymentid;
+   
+    @Column(name = "email", unique=true)
     private String email;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    // @NotNull
     @Column(name = "name")
     private String pname;
 
 
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    // @NotNull
     @Column(name = "address")
     private String address;
 
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    // @NotNull
     @Column(name = "city")
     private String city;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    // @NotNull
     @Column(name = "state")
     private String state;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    // @NotNull
     @Column(name = "zipcode")
     private String zipcode;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    // @NotNull
     @Column(name = "card")
     private String card;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    // @NotNull
     @Column(name = "expiryMonth")
     private String expiryMonth;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    // @NotNull
     @Column(name = "expiryYear")
     private String expiryYear;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    // @NotNull
     @Column(name = "cvvNum")
     private String cvvNum;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    // @NotNull
     @Column(name = "amount")
     private String amount;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    // @NotNull
     @Column(name = "mobileNumber", unique=true)
     private String mobileNumber;
     PaymentModel() {
