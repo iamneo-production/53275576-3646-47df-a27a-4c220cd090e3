@@ -52,8 +52,8 @@ const routes: Routes = [
   {path:'adminreview',component:AdminreviewComponent,canActivate:[AdminguardService]},
   {path:'displaycourse',component:DisplaycourseComponent,canActivate:[AuthguardService]},
   {path:'userreview',component:UserreviewComponent,canActivate:[AuthguardService]},
-  {path:'payment',component:PaymentComponent},
-  {path:'viewpayment',component:ViewpaymentComponent},  
+  {path:'payment',component:PaymentComponent,canActivate:[AdminguardService]},
+  {path:'viewpayment',component:ViewpaymentComponent, canActivate:[AdminguardService]},  
   {path:'error', component:PagenotfoundComponent},
 
   { path: '**', pathMatch: 'full', component: PagenotfoundComponent },
