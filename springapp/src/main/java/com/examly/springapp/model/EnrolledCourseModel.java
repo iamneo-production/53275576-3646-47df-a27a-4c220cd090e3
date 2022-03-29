@@ -42,89 +42,101 @@ public class EnrolledCourseModel {
         this.ecourseNationality = ecourseNationality;
         this.ecoursename = ecoursename;
     }
-    @NotNull
-    @NotEmpty
+    // @NotEmpty
     @Column(name="ecourseFirstName")
+    @NotNull
     private String ecourseFirstName;
 
-    @NotEmpty
+    // @NotEmpty
     @NotNull
     @Column(name="ecoursename")
+    @NotNull
     private String ecoursename;
 
-    @NotNull
-    @NotEmpty
+    // @NotEmpty
     @Column(name="ecourseLastName")
+    @NotNull
     private String ecourseLastName;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
     @Column(name="ecourseFatherName")
+    @NotNull
     private String ecourseFatherName;
 
     // @NotEmpty
     // @NotNull
     @Column(name="ecourseMaleorFemale")
+    @NotNull
     private String ecourseMaleorFemale;
 
     // @NotEmpty
     // @NotNull
     @Column(name="ecoursePhoneNumber")
+    @NotNull
     private String ecoursePhoneNumber;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+
     @Column(name="ecourseAlternateNumber")
+    @NotNull
     private String ecourseAlternateNumber;
 
-    @NotEmpty
-    @NotNull
-    @Email
+    // @NotEmpty
+    
     @Column(name="ecourseEmailId")
+    @Email
+    @NotNull
     private String ecourseEmailId;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
     @Column(name="ecourseAge")
+    @NotNull
     private String ecourseAge;
 
 
     @Column(name="ecourseMarks")
     private String ecourseMarks;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    
     @Column(name="ecourseHouseNo")
+    @NotNull
     private String ecourseHouseNo;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    
     @Column(name="ecourseStreetName")
+    @NotNull
     private String ecourseStreetName;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    
     @Column(name="ecourseAreaName")
+    @NotNull
     private String ecourseAreaName;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    
     @Column(name="ecoursePincode")
+    @NotNull
     private String ecoursePincode;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    
     @Column(name="ecourseState")
+    @NotNull
     private String ecourseState;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    
     @Column(name="ecourseNationality")
+    @NotNull
     private String ecourseNationality;
 
-    @NotEmpty
-    @NotNull
+    // @NotEmpty
+    
     @Column(name="ecourseMotherName")
+    @NotNull
     private String ecourseMotherName;
     
     public int getECourseId(){

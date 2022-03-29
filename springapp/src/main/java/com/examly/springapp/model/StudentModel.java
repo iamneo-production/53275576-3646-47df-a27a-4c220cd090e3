@@ -26,82 +26,65 @@ public class StudentModel {
     @Column(name = "studentId")
     private int studentId;
 
-    @NotEmpty
-    @NotNull(message="firstName may not be null")
+    
     @Column(name = "firstName")
+    @NotNull
     private String firstName;
 
-    @NotNull(message="lastName may not be null")
-    @NotEmpty
     @Column(name = "lastName")
+    @NotNull
     private String lastName;
 
-    @NotEmpty
-    @NotNull(message="fatherName may not be null")
     @Column(name = "fatherName")
+    @NotNull
     private String fatherName;
 
-    @NotEmpty
-    @NotNull(message="motherName may not be null")
     @Column(name = "motherName")
+    @NotNull
     private String motherName;
 
-    // @NotEmpty
-    // @NotNull(message="maleOrFemale may not be null")
     @Column(name = "maleOrFemale")
+    @NotNull
     private String maleOrFemale;
 
-    @NotEmpty
-    @NotNull(message="phoneNumber1 may not be null")
-    @Size(max=10)
-    @Column(name = "phoneNumber1", unique=true)
+    @Column(name = "phoneNumber1")
+    @NotNull
     private String phoneNumber1;
 
-    @NotEmpty
-    @NotNull(message="phoneNumber2 may not be null")
-    @Size(max=10)
-    @Column(name = "phoneNumber2", unique=true)
+    @Column(name = "phoneNumber2")
+    @NotNull
     private String phoneNumber2;
 
-    @NotEmpty
-    @NotNull(message="email may not be null")
-    @Email
-    @Column(name = "email",unique=true)
+    @Column(name = "email")
+    @NotNull
     private String email;
 
-    @NotEmpty
-    @NotNull(message="age may not be null")
     @Column(name = "age")
+    @NotNull
     private int age;
 
-    @NotEmpty
-    @NotNull(message="houseNo may not be null")
     @Column(name = "houseNo")
+    @NotNull
     private String houseNo;
 
-    @NotEmpty
-    @NotNull(message="streetName may not be null")
     @Column(name = "streetName")
+    @NotNull
     private String streetName;
 
-    @NotEmpty
-    @NotNull(message="areaName may not be null")
     @Column(name = "areaName")
+    @NotNull
     private String areaName;
 
-    @NotEmpty
-    @NotNull(message="pincode may not be null")
     @Column(name = "pincode")
+    @NotNull
     private String pincode;
 
-    @NotEmpty
-    @NotNull(message="state may not be null")
     @Column(name = "state")
+    @NotNull
     private String state;
 
-    @NotEmpty
-    @NotNull(message="nationality may not be null")
     @Column(name = "nationality")
+    @NotNull
     private String nationality;
 
     

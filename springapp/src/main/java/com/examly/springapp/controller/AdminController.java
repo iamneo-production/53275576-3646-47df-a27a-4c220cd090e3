@@ -189,8 +189,8 @@ public class AdminController {
     }
 
     @PostMapping("/addstudent")
-    public Boolean createStudent(@Valid  @RequestBody StudentModel student,Errors erros){
-        if(erros.hasErrors()){
+    public Boolean createStudent(@Valid @RequestBody StudentModel student, Errors errors){
+        if(errors.hasErrors()){
             return false;
         }
          studentRepository.save(student);
