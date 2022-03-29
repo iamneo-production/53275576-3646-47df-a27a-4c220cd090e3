@@ -36,6 +36,7 @@ export class AddcourseComponent implements OnInit {
   saveCourse(){
     this.courseService.createCourse(this.course,this.course["courseTiming"] =this.coursetime, this.course["courseDuration"]=this.cousedue).subscribe(data => {
       console.log(data);
+      alert("Course Added Successfully!!")
     },
     error => console.log(error, alert("Error - Course Not Added !!")));
   }

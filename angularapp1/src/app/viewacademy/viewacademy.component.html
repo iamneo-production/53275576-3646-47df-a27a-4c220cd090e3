@@ -16,6 +16,8 @@
     <div class="nav navbar-nav flex-container">
       <li class="active"><a *ngIf="loginService.isUserLoggedIn()" href="/viewacademy" id="userInstitute">Institute</a></li>
       <li><a href="/institute-enroll" id="userEnrolledCourse">Enrolled Course</a></li>
+      <li><a href="/review" id="userEnrolledCourse">Add Review</a></li>
+      <li><a href="/userreview" id="userEnrolledCourse">Review</a></li>
       <li><a  *ngIf="loginService.isUserLoggedIn()" (click)="logout()" href="" style="float:right;"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
   </div>  
   </div>

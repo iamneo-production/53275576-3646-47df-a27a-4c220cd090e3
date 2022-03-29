@@ -18,7 +18,7 @@
             <li ><a routerLink="/addstudent">ADDSTUDENT</a></li>
             <li><a routerLink="/institute">ACADEMY</a></li>
             <li><a routerLink="/course">ENROLLED COURSE</a></li>
-            <li ><a routerLink="/review">REVIEW</a></li>
+            <li ><a routerLink="/adminreview">REVIEW</a></li>
             <li ><a routerLink="/login" style="float:right;"><span class="glyphicon glyphicon-log-in"></span> LOGOUT</a></li>
         </div>  
         </div>
@@ -48,29 +48,14 @@
                         </div>
                     </div>
                     
-                    <div class="star-icon">
-                      <input type="radio" name="rating1" id="rating1">
-                      <label for="rating1" class="fa fa-star"></label>
-                      
-                      <input type="radio" name="rating1" id="rating2">
-                      <label for="rating2" class="fa fa-star"></label>
-                      
-                      <input type="radio" name="rating1" id="rating3">
-                      <label for="rating3" class="fa fa-star"></label>
-                      
-                      <input type="radio" name="rating1" id="rating4">
-                      <label for="rating4" class="fa fa-star"></label>
-                      
-                      <input type="radio" name="rating1" id="rating5">
-                      <label for="rating5" class="fa fa-star"></label>
-                    </div>
+                   
                 </div>
                 
                 <div class="client-comment">
                     <p>{{rev.reviewComments}}</p>
                 </div>
                 
-                <button id="delete" (click)="delete(rev.reviewId)" ><i class='fas fa-trash'></i></button> 
+                <!-- <button id="delete" (click)="delete(rev.reviewId)" ><i class='fas fa-trash'></i></button>  -->
 
             </div>
             

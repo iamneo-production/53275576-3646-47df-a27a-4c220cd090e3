@@ -87,7 +87,7 @@ export class UpdatecourseComponent implements OnInit {
       alert("Course Updated Successfully!!!");
     },
     error=>console.log(error, alert("Error - Course Details Not Updated!!")));
-    this.router.navigate(["/course"])
+    //this.router.navigate(["/course"])
   }
   onSubmit(e){
     //this.updatecoursepayload.courseId= this.updatecourseform.get('courseId').value;
