@@ -42,7 +42,7 @@ ngOnInit(): void {
     fatherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     motherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
     emailId:new FormControl('', [Validators.required,Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,30}$')]),
-    age: new FormControl('', [Validators.required,Validators.min(10),Validators.max(110)]),
+    age: new FormControl('', [Validators.required,Validators.min(10),Validators.max(70)]),
     lastName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{1,40}$')]),
     phoneNumber: new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
     phoneNumber2: new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
@@ -63,10 +63,13 @@ saveStudent(){
     alert("Student Added Successfully!!!");
 
   },
-    error => console.log(error,alert("Error - Student Not added!!")));
+    error => console.log(error,alert("Error - Student Not added!! Email id or Phone number Already exists")));
 }
 @ViewChild("gender") gender: ElementRef;
   addstudent(){
+    this.student.maleOrFemale = this.gender.nativeElement.value;
+        // this.student.maleOrFemale = this.gender.nativeElement.value;
+
     console.log(this.student);
     this.student.maleOrFemale = this.gender.nativeElement.value;
     this.saveStudent();

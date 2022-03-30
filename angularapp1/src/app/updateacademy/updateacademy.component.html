@@ -59,7 +59,7 @@
         </div><br> 
         <div  id="editEmailId" >
             <label>Enter Email ID</label>
-            <input  formControlName="instituteEmail" type="email" class="form-control" placeholder="Enter the academy email"
+            <input disabled formControlName="instituteEmail" type="email" class="form-control" placeholder="Enter the academy email"
             [(ngModel)]="institute.email" name="email" ><br>
             <small *ngIf="!updateacademyform.get('instituteEmail').valid && updateacademyform.get('instituteEmail').touched" class="text-danger">* Invalid Academy Email ID</small>   
   
