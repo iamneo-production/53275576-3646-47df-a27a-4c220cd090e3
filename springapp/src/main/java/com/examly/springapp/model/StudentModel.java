@@ -47,15 +47,15 @@ public class StudentModel {
     @NotNull
     private String maleOrFemale;
 
-    @Column(name = "phoneNumber1")
+    @Column(name = "phoneNumber1", unique=true)
     @NotNull
     private String phoneNumber1;
 
-    @Column(name = "phoneNumber2")
+    @Column(name = "phoneNumber2", unique=true)
     @NotNull
     private String phoneNumber2;
 
-    @Column(name = "email")
+    @Column(name = "email", unique=true)
     @NotNull
     private String email;
 
