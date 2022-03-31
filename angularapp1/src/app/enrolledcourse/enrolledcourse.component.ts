@@ -56,7 +56,7 @@ export class EnrolledcourseComponent implements OnInit
       fatherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
       motherName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
       // emailId:new FormControl('', [Validators.required,Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,30}$')]),
-      age: new FormControl('', [Validators.required,Validators.min(10),Validators.max(110)]),
+      age: new FormControl('', [Validators.required,Validators.min(10),Validators.max(70)]),
       lastName: new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
       // phoneNumber1: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),
       phoneNumber2: new FormControl('', [Validators.required,Validators.pattern('^[0-9]{1,40}$')]),

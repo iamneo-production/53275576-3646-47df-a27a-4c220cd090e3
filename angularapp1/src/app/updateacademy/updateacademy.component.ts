@@ -48,7 +48,7 @@ logout(){
       instituteId : new FormControl('', [Validators.required,Validators.pattern('^[0-9_-]{1,15}$')]),
       imageUrl : new FormControl('', [Validators.required]),
       instituteName : new FormControl('', [Validators.required,Validators.minLength(3),Validators.pattern('^([A-Za-z0-9_-]+.*?){3,40}$')]),
-      instituteEmail : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,30}$')]),
+      instituteEmail : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,30}$')]),
       mobileNumber : new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
       academyLocation : new FormControl('', [Validators.required,Validators.minLength(0),Validators.pattern('^([A-Za-z0-9_-]+.*?){2,40}$')]),  
       // academyDesc : new FormControl('', [Validators.required,Validators.minLength(0),Validators.pattern('^([A-Za-z0-9_-]+.*?){0,100}$')]),

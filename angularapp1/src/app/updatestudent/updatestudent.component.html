@@ -27,7 +27,7 @@
       <label for="firstName" style="font-size: medium;"><b>First Name</b></label>
 
       <div id ="firstName">
-        <input
+        <input  disabled
           formControlName ="firstName"
           type ="text"
           class ="form-control"
@@ -96,7 +96,7 @@
       <div id ="emailId">
         <label for="emailId" style="font-size: medium;"><b>Email-ID</b></label>
 
-        <input
+        <input disabled
           formControlName ="emailId"
           type ="email"
           class ="form-control"
@@ -160,7 +160,7 @@
       <label for="emailId" style="font-size: medium;"><b>Last Name</b></label>
 
       <div id ="lastName">
-        <input
+        <input disabled
           formControlName ="lastName"
           type ="text"
           class ="form-control"
@@ -182,7 +182,7 @@
       <div id ="phoneNumber1">
         <label for="emailId" style="font-size: medium;"><b>Phone Number 1</b></label>
 
-        <input
+        <input 
           formControlName ="phoneNumber1"
           type ="number"
           class ="form-control"
@@ -205,9 +205,9 @@
 
     <div id="academyRight">
       <div id="maleorfemale">
-        <label for="emailId" style="font-size: medium;"><b>Select Gender</b></label>
+        <label hidden for="emailId" style="font-size: medium;"><b>Select Gender</b></label>
 
-        <select
+        <select hidden
           style="display: inline"
           class="form-control"
           id="maleorfemale"
@@ -217,7 +217,8 @@
           <option selected hidden>Enter Gender</option>
           <option value="Male ">Male</option>
           <option value="Female ">Female</option></select
-        ><br /><br /><br />
+        >
+        <br /><br /><br />
       </div>
 
       <div id="phoneNumber2">

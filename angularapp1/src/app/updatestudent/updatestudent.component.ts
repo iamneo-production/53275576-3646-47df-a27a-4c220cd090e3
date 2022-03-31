@@ -53,7 +53,7 @@ export class UpdatestudentComponent implements OnInit  {
       motherName:new FormControl('', [Validators.required,Validators.pattern('^[A-Z+a-z]{2,40}$')]),
       phoneNumber1:new FormControl('', [Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
       emailId : new FormControl('', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,30}$')]),
-      age:new FormControl('', [Validators.required,Validators.min(10),Validators.max(110)]),
+      age:new FormControl('', [Validators.required,Validators.min(10),Validators.max(70)]),
       phoneNumber2:new FormControl('', [Validators.maxLength(10),Validators.required,Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
      // SSLCorHSCMarks:new FormControl('', [Validators.required]),
      // maleorfemale:new FormControl('', [Validators.required]),
@@ -92,11 +92,11 @@ export class UpdatestudentComponent implements OnInit  {
   }
   @ViewChild("gender") gender: ElementRef;
   enrollnow() {
-    this.student.maleOrFemale = this.gender.nativeElement.value;
+    // this.student.maleOrFemale = this.gender.nativeElement.value;
     this.studentService.updateStudent(this.id,this.student).subscribe(data=>{
       alert("student Updated Successfully!!!");  
     },
-    error => console.log(error,alert("Error - Student Details Not Updated!! (Student with same email already exists.)")));
+    error => console.log(error,alert("Error - Student Details Not Updated!! (Student with same email or phone number already exists.)")));
     this.router.navigate(["/student"])
   }
   viewStudent() {

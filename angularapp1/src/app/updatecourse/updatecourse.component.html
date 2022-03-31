@@ -26,7 +26,7 @@
       <small *ngIf="!updatecourseform.get('courseId').valid && updatecourseform.get('courseId').touched"
       class="text-white">* Invalid Course ID</small> -->
       <p class="text-dark" style="font-size:large; font-weight: 500;">COURSE NAME</p>
-      <input formControlName="courseName" type="text" class="form-control" placeholder="Enter the course Name"
+      <input disabled formControlName="courseName" type="text" class="form-control" placeholder="Enter the course Name"
       [(ngModel)]="course.courseName" name="courseName"><br>
       <small style="color:red;" *ngIf="!updatecourseform.get('courseName').valid && updatecourseform.get('courseName').touched">* Invalid Course Name</small>
   </div>
@@ -46,7 +46,7 @@
       <p class="text-dark" style="font-size:large;font-weight: 500; ">COURSE TIMINGS</p>
           <select style="display:inline;width: 100px;height: 45px;" class="form-control" id="fromduration" name="fromduration" #myNameElem>
             <option value="MONDAY ">Monday</option>
-            <option value="MONDAY ">Tuesday</option>
+            <option value="TUEDAY ">Tuesday</option>
             <option value="WEDNESDAY ">Wednesday</option>
             <option value="THURSDAY ">Thursday</option>
             <option value="FRIDAY ">Friday</option>
@@ -54,12 +54,15 @@
           </select>
           <p class="text-dark" style="display:inline; font-size:medium ; font-weight: 500;"> To </p>
           <select style="display:inline;width: 100px;height: 50px;" class="form-control" id="toduration" name="toduration" #myNameElemtoduration>
-            <option value="MONDAY ">Monday</option>
-            <option value="TUEDAY ">Tuesday</option>
+
+
+            <option value="SATURDAY ">Saturday</option>
+            
+            <option value="MONDAY ">Tuesday</option>
             <option value="WEDNESDAY ">Wednesday</option>
             <option value="THURSDAY ">Thursday</option>
             <option value="FRIDAY ">Friday</option>
-            <option value="SATURDAY ">Saturday</option>
+            <option value="MONDAY ">Monday</option>
           </select><br><br>
 
           <select style="display:inline;width: 100px;height: 50px;margin-top: 0;" class="form-control" id="fromtiming" name="fromtiming"  #myNameElemfromtiming>
@@ -78,7 +81,7 @@
   </div>
   <div id="courseCenter">
       <div id="editCourseEnrolled" >
-        <p class="text-dark" style="font-size:large; font-weight: 500;">MAXIMUM STUDENTS ENROLLED</p>
+        <p class="text-dark" style="font-size:large; font-weight: 500;">MAXIMUM SEATS AVAILABLE</p>
           <input formControlName="courseEnrolled" type="text" class="form-control"
           placeholder="Enter no of student enrolled for the course" [(ngModel)]="course.courseEnrolled"
           name="courseEnrolled"><br>

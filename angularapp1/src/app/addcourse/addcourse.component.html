@@ -54,12 +54,13 @@
           </select>
           <p class="text-dark" style="display:inline; font-size:medium ; font-weight: 500;;"> To </p>
           <select style="display:inline;width: 100px;height: 50px;" class="form-control" id="toduration" name="toduration" #myNameElemtoduration>
-            <option value="MONDAY ">Monday</option>
             <option value="TUEDAY ">Tuesday</option>
             <option value="WEDNESDAY ">Wednesday</option>
             <option value="THURSDAY ">Thursday</option>
             <option value="FRIDAY ">Friday</option>
             <option value="SATURDAY ">Saturday</option>
+            <option value="MONDAY ">Monday</option>
+
           </select><br><br>
 
           <select style="display:inline;width: 100px;height: 50px;margin-top: 0;" class="form-control" id="fromtiming" name="fromtiming"  #myNameElemfromtiming>
@@ -80,7 +81,7 @@
   </div>
   <div id="courseCenter">
       <div id="addCourseEnrolled" >
-        <p class="text-dark" style="font-size:large; font-weight: 500;">MAXIMUM STUDENTS ENROLLED</p>
+        <p class="text-dark" style="font-size:large; font-weight: 500;">MAXIMUM SEATS AVAILABLE</p>
           <input formControlName="courseEnrolled" type="text" class="form-control"
           placeholder="Enter no of student enrolled for the course" [(ngModel)]="course.courseEnrolled"
           name="courseEnrolled"><br>
